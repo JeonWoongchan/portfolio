@@ -1,9 +1,11 @@
-export default function Home() {
-  return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans ">
-      <main className="flex min-h-screen w-full flex-col items-center justify-between sm:items-start">
+import Home from "@/src/components/Home";
 
-      </main>
-    </div>
+export default function App() {
+  return (
+      <div className="min-h-screen bg-zinc-50 font-sans">
+          <main className="flex min-h-screen items-center justify-center">
+              <Home />
+          </main>
+      </div>
   );
 }
