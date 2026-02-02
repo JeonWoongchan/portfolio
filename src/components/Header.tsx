@@ -2,14 +2,12 @@
 
 import {useScroll} from "@/src/hooks/useScroll";
 import {MenuProps} from "@/src/types/menu";
+import {useSectionStore} from "@/src/store/useSectionStore";
 
 export default function Header() {
     const menuList: string[] = ['Home', 'About', 'Skills', 'Work', 'Contact']
     const { scrollY } = useScroll();
-
-    const handleMenuClick = (menu: string): void => {
-        // sectionRefs[menu].current.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    };
+    const { scrollTo } = useSectionStore();
 
     return (
         <header
@@ -18,21 +16,23 @@ export default function Header() {
         >
             <div className="flex justify-between items-center gap-2 h-20">
                 {/*<img className='w-12 h-12' src="/public/globe.svg" alt="로고" />*/}
-                <a href="#home" className='text-[1.8rem] text-white font-bold ml-2.5'>
+                <a className='text-[1.8rem] text-white font-bold ml-2.5'>
                     Woongchan
                 </a>
             </div>
             <nav className='w-full md:w-auto'>
                 <ul className='flex flex-col md:flex-row gap-4 md:gap-1 text-center px-16 md:px-0 py-4 md:py-0'>
                     {menuList.map((a: string, i: number) => (
-                        <Menu key={i} menu={a} handleMenuClick={handleMenuClick} />
+                        <Menu key={i} menu={a} handleMenuClick={scrollTo} />
                     ))}
                 </ul>
             </nav>
         </header>
     )
 }
+
 function Menu({ menu, handleMenuClick }: MenuProps) {
+
     return (
         <li>
             <a
