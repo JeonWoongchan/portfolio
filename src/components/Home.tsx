@@ -3,6 +3,9 @@ import TypeIt from 'typeit-react';
 import {RefObject} from "react";
 import useSectionOpacity from "@/src/hooks/useSectionOpacity";
 import {useRegisterSection} from "@/src/hooks/useRegisterSectionRef";
+import Image from "next/image";
+import HeroText from "@/src/components/BannerText";
+import BannerText from "@/src/components/BannerText";
 
 export default function Home() {
     const sectionRef = useRegisterSection('Home');
@@ -14,26 +17,15 @@ export default function Home() {
                     w-full
                     min-h-screen
                     flex
-                    items-center
-                    justify-center
                     bg-[#1e3155]
                     text-[var(--color-text)]
-                    px-4
                 "
         >
             <div
                 style={{ opacity: useSectionOpacity(sectionRef as RefObject<HTMLElement>) }}
-                className="max-container pt-20"
+                className="w-full flex flex-col justify-center gap-20"
             >
-                {/* 프로필 이미지 */}
-                {/*
-                <img
-                    src="/images/profile.png"
-                    alt=""
-                    className="w-[200px] object-cover mb-4"
-                />
-                */}
-
+                {/*TODO: 텍스트 아이콘 변경 및 아이콘 툴팁 구현*/}
                 <TypeIt
                     options={{
                         speed: 80,
@@ -41,18 +33,17 @@ export default function Home() {
                         cursor: false,
                     }}
                 >
-                    <h1 className="min-h-[132px] text-3xl font-bold leading-tight">
-                        안녕하세요 <br />
-                        <span className="text-[var(--color-accent)]">
-                            전웅찬
-                        </span>
-                        의 포트폴리오 사이트입니다
-                    </h1>
+                    <BannerText align="self-start">
+                        FRONTEND DEVELOPER<span className="float-icon">💻</span>
+                    </BannerText>
                 </TypeIt>
+                <BannerText align="self-end" className="fade-in-up-1">
+                    <span className="float-icon">🌟</span>USER EXPERIENCE
+                </BannerText>
 
-                <p className="mt-4 text-lg opacity-90">
-                    다양한 경험을 통해 항상 발전하는 프론트엔드 개발자를 목표로 하고 있습니다.
-                </p>
+                <BannerText align="self-start" className="fade-in-up-2">
+                    CONTINUOUS<span className="float-icon">📈</span>
+                </BannerText>
 
                 {/*<a*/}
                 {/*    href=""*/}

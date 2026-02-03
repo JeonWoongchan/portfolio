@@ -17,7 +17,7 @@ const useSectionOpacity = (ref: RefObject<HTMLElement>)=>{
         if(sectionY <= 0 && sectionY >= -600){
             setScrollOpacity(Math.max(0, newOpacity))
         }
-    }, [scrollY])
+    }, [scrollY, ref])
 
     return scrollOpacity
 }

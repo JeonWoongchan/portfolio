@@ -11,13 +11,13 @@ export default function Header() {
 
     return (
         <header
-            className='fixed top-0 w-full h-20 flex flex-col md:flex-row justify-between items-start md:items-center z-5 px-4 transition-all duration-300 ease-in-out'
+            className='fixed top-0 w-full h-20 flex flex-col md:flex-row justify-between items-start md:items-center z-5 px-[8rem] transition-all duration-300 ease-in-out'
             style={{ backgroundColor: scrollY < 100 ? 'transparent' : 'var(--color-black)' }}
         >
             <div className="flex justify-between items-center gap-2 h-20">
                 {/*<img className='w-12 h-12' src="/public/globe.svg" alt="로고" />*/}
-                <a className='text-[1.8rem] text-white font-bold ml-2.5'>
-                    Woongchan
+                <a className='text-4xl text-white font-bold cursor-pointer'>
+                    🍀
                 </a>
             </div>
             <nav className='w-full md:w-auto'>
