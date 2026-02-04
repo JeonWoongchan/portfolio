@@ -1,5 +1,4 @@
 'use client'
-import TypeIt from 'typeit-react';
 import {RefObject} from "react";
 import useSectionOpacity from "@/src/hooks/useSectionOpacity";
 import {useRegisterSection} from "@/src/hooks/useRegisterSectionRef";
