@@ -4,17 +4,19 @@ import useSectionOpacity from "@/src/hooks/useSectionOpacity";
 import {useRegisterSection} from "@/src/hooks/useRegisterSectionRef";
 import HeroText from "@/src/components/HeroText";
 import HeroIcon from "@/src/components/HeroIcon";
+import SlideDown from "@/src/components/SlideDown";
 
 export default function Home() {
     const sectionRef = useRegisterSection('Home');
 
     return (
         <section ref={sectionRef}
-                 id='home'
                  className="
                     w-full
                     min-h-screen
                     flex
+                    flex-col
+                    justify-center
                     bg-[#1e3155]
                     text-(--color-text)"
         >
@@ -55,28 +57,8 @@ export default function Home() {
                         tooltip={'지속가능하고 발전하는 개발자를 지향합니다.'}
                     />
                 </HeroText>
-
-                {/*<a*/}
-                {/*    href=""*/}
-                {/*    className="*/}
-                {/*        inline-block*/}
-                {/*        bg-[var(--color-accent)]*/}
-                {/*        rounded*/}
-                {/*        px-4*/}
-                {/*        py-2*/}
-                {/*        font-bold*/}
-                {/*        my-8*/}
-                {/*        transition*/}
-                {/*        hover:bg-transparent*/}
-                {/*        hover:outline*/}
-                {/*        hover:outline-2*/}
-                {/*        hover:outline-[var(--color-accent)]*/}
-                {/*        hover:text-[var(--color-text)]*/}
-                {/*    "*/}
-                {/*>*/}
-                {/*    Contact Me*/}
-                {/*</a>*/}
             </div>
+            <SlideDown next={'About'} />
         </section>
     );
 }

@@ -11,7 +11,7 @@ export default function Header() {
 
     return (
         <header
-            className='fixed top-0 w-full h-20 flex flex-col md:flex-row justify-between items-start md:items-center z-5 px-[8rem] transition-all duration-300 ease-in-out'
+            className='fixed top-0 w-full h-20 flex flex-col md:flex-row justify-between items-start md:items-center z-5 px-32 transition-all duration-300 ease-in-out'
             style={{ backgroundColor: scrollY < 100 ? 'transparent' : 'var(--color-black)' }}
         >
             <div className="flex justify-between items-center gap-2 h-20">
@@ -32,7 +32,6 @@ export default function Header() {
 }
 
 function Menu({ menu, handleMenuClick }: MenuProps) {
-
     return (
         <li>
             <a

@@ -137,6 +137,52 @@ section {
           float 2s ease-in-out 4s infinite;
 }
 
+/*동심원 애니메이션*/
+@keyframes CircleAnimation {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes CircleAnimation2 {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.slide-down::before {
+  content: '';
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  width: 50px;
+  height: 50px;
+  margin: auto;
+  border-radius: 50%;
+  animation: CircleAnimation 3s infinite linear;
+}
+
+.slide-down::after {
+  content: '';
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  width: 50px;
+  height: 50px;
+  margin: auto;
+  border-radius: 50%;
+  animation: CircleAnimation 1.5s infinite linear;
+}
+
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
