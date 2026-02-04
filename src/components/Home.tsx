@@ -3,9 +3,8 @@ import TypeIt from 'typeit-react';
 import {RefObject} from "react";
 import useSectionOpacity from "@/src/hooks/useSectionOpacity";
 import {useRegisterSection} from "@/src/hooks/useRegisterSectionRef";
-import Image from "next/image";
-import HeroText from "@/src/components/BannerText";
-import BannerText from "@/src/components/BannerText";
+import HeroText from "@/src/components/HeroText";
+import HeroIcon from "@/src/components/HeroIcon";
 
 export default function Home() {
     const sectionRef = useRegisterSection('Home');
@@ -18,32 +17,45 @@ export default function Home() {
                     min-h-screen
                     flex
                     bg-[#1e3155]
-                    text-[var(--color-text)]
-                "
+                    text-(--color-text)"
         >
             <div
                 style={{ opacity: useSectionOpacity(sectionRef as RefObject<HTMLElement>) }}
-                className="w-full flex flex-col justify-center gap-20"
+                className="w-full flex flex-col justify-center gap-20 select-none"
             >
-                {/*TODO: 텍스트 아이콘 변경 및 아이콘 툴팁 구현*/}
-                <TypeIt
-                    options={{
-                        speed: 80,
-                        waitUntilVisible: true,
-                        cursor: false,
-                    }}
-                >
-                    <BannerText align="self-start">
-                        FRONTEND DEVELOPER<span className="float-icon">💻</span>
-                    </BannerText>
-                </TypeIt>
-                <BannerText align="self-end" className="fade-in-up-1">
-                    <span className="float-icon">🌟</span>USER EXPERIENCE
-                </BannerText>
+                {/*<TypeIt*/}
+                {/*    options={{*/}
+                {/*        speed: 80,*/}
+                {/*        waitUntilVisible: true,*/}
+                {/*        cursor: false,*/}
+                {/*    }}*/}
+                {/*>*/}
+                {/*</TypeIt>*/}
 
-                <BannerText align="self-start" className="fade-in-up-2">
-                    CONTINUOUS<span className="float-icon">📈</span>
-                </BannerText>
+                <HeroText align="self-start" className="fade-in-up-1">
+                    FRONTEND DEVELOPER
+                    <HeroIcon
+                        src='/images/developer1.svg'
+                        alt={"Developer 이미지"}
+                        tooltip={'안녕하세요. 프론트엔드 개발자 전웅찬입니다.'}
+                    />
+                </HeroText>
+                <HeroText align="self-end" className="fade-in-up-1">
+                    <HeroIcon
+                        src='/images/user_experience.svg'
+                        alt={"UX 이미지"}
+                        tooltip={'디자인 뿐만 아니라\n 원활한 사용자 경험을 고민합니다.'}
+                    />
+                    USER EXPERIENCE
+                </HeroText>
+                <HeroText align="self-start" className="fade-in-up-1">
+                    CONTINUOUS
+                    <HeroIcon
+                        src='/images/thought.svg'
+                        alt={"Continuous 이미지"}
+                        tooltip={'지속가능하고 발전하는 개발자를 지향합니다.'}
+                    />
+                </HeroText>
 
                 {/*<a*/}
                 {/*    href=""*/}
