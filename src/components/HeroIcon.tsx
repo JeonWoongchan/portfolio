@@ -6,12 +6,13 @@ interface HeroIconProps {
     src: string;
     alt: string;
     tooltip: string;
+    side?: "top" | "right" | "bottom" | "left" | undefined;
     className?: string;
     width?: number;
     height?: number;
 }
 
-export default function HeroIcon({src, alt, tooltip, className, width=128, height=128 }: HeroIconProps) {
+export default function HeroIcon({src, alt, tooltip, side, className, width=128, height=128 }: HeroIconProps) {
     return (
         <Tooltip>
             <TooltipTrigger asChild>
@@ -23,7 +24,7 @@ export default function HeroIcon({src, alt, tooltip, className, width=128, heigh
                     alt={alt}
                 />
             </TooltipTrigger>
-            <TooltipContent className="whitespace-pre-line py-3">
+            <TooltipContent className="whitespace-pre-line py-3" side={side}>
                 <p>{tooltip}</p>
             </TooltipContent>
         </Tooltip>

@@ -58,7 +58,8 @@
 
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  /*font-family: 'Open Sans', sans-serif;*/
+  font-family: 'Poppins ', sans-serif;
 }
 
 h1,
@@ -92,12 +93,6 @@ button:focus {
   outline: 1px solid var(--color-accent);
 }
 
-section {
-  padding: 4rem 8rem;
-  text-align: center;
-  min-height: 100vh;
-}
-
 /*나타나는 애니메이션*/
 @keyframes fadeInUp {
   from {
@@ -112,15 +107,20 @@ section {
 
 .fade-in-up-1 {
   opacity: 0;
-  animation: fadeInUp 1s ease-out 1s forwards;
+  animation: fadeInUp 1s ease-out 0.5s forwards;
 }
 
 .fade-in-up-2 {
   opacity: 0;
-  animation: fadeInUp 1s ease-out 1.5s forwards;
+  animation: fadeInUp 1s ease-out 1s forwards;
 }
 
 .fade-in-up-3 {
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 1.5s forwards;
+}
+
+.fade-in-up-4 {
   opacity: 0;
   animation: fadeInUp 1s ease-out 2s forwards;
 }
@@ -165,7 +165,7 @@ section {
 .float-icon {
   opacity: 0;
   display: inline-block;
-  animation: fadeIn 1s ease-out 2s forwards,
+  animation: fadeIn 0.5s ease-out 2.5s forwards,
           float 2s ease-in-out 4s infinite;
 }
 
@@ -298,3 +298,47 @@ section {
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  /* Typography 관련 */
+  .section-title {
+    @apply text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold;
+  }
+
+  .hero-title {
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold;
+  }
+
+  .body-text {
+    @apply text-sm md:text-base lg:text-lg leading-relaxed;
+  }
+
+  .small-text {
+    @apply text-xs md:text-sm lg:text-base leading-relaxed;
+  }
+
+  /* Container 관련 */
+  .section-wrapper {
+    @apply w-full min-h-screen flex flex-col;
+  }
+
+  .section-header {
+    @apply flex justify-start border-b-2 border-gray-300 pb-3;
+  }
+
+  .content-wrapper {
+    @apply flex flex-col xl:flex-row w-full gap-8 xl:px-30 py-8 justify-center items-center;
+  }
+
+  .text-group {
+    @apply space-y-4 md:space-y-6 text-left;
+  }
+
+  .grid-container {
+    @apply grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-4 gap-2 my-9;
+  }
+}
+
+
+
+

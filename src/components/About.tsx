@@ -1,24 +1,26 @@
+// TODO: About 페이지 카드 컴포넌트 내용 변경
 'use client'
 
-import React, { useEffect, useState} from 'react';
+import React, {RefObject, useEffect, useState} from 'react';
 import {useRegisterSection} from "@/src/hooks/useRegisterSectionRef";
 import Image from "next/image";
 import InfoCard from "@/src/components/InfoCard";
 import aboutData from "@/data/about.json"
+import { Section, SectionHeader, ContentWrapper, TextGroup, GridContainer } from "@/src/components/Container";
+import { SectionTitle, BodyText, SmallText } from "@/src/components/Typography";
 
 export default function About()  {
     const sectionRef = useRegisterSection('About');
-    const [isVisible, setIsVisible] = useState(false); // 추가
-    
+    const [isVisible, setIsVisible] = useState(false);
+
     useEffect(() => {
         const observer = new IntersectionObserver(
             ([entry]) => {
-                // 한 번만 트리거되도록
                 if (entry.isIntersecting && !isVisible) {
                     setIsVisible(true);
                 }
             },
-            { threshold: 0.2 } // 20% 보이면 트리거
+            { threshold: 0.2 }
         );
 
         if (sectionRef.current) {
@@ -26,55 +28,46 @@ export default function About()  {
         }
 
         return () => observer.disconnect();
-    }, []);
+    }, [isVisible, sectionRef]);
 
-    // TODO: section 컴포넌트 모듈화
-    // TODO: About 페이지 카드 컴포넌트 내용 변경
-    // TODO: 브라우저 너비에 따른 반응형 구현(이미지+설명 및 카드에서 텍스트 영역과 크기 조절 필요)
     return (
-        <section ref={sectionRef}
-                className="
-                w-full
-                min-h-screen
-                flex
-                flex-col
-                justify-between"
-        >
+        <Section ref={sectionRef as RefObject<HTMLElement>} className="justify-between">
             <div>
-                <div className={`
-                    flex
-                    justify-start
-                    border-b-2 
-                    border-gray-300 
-                    pb-3 
-                    opacity-0 
-                    ${isVisible  ? "fade-in-down"  : ""}`}
-                >
-                    <h1 className="text-8xl font-bold">ABOUT ME</h1>
-                </div>
-                <div className="flex flex-col xl:flex-row w-full gap-8 xl:px-30 py-8 justify-center items-center">
+                {/* 섹션 헤더 */}
+                <SectionHeader className={`opacity-0 ${isVisible ? "fade-in-down" : ""}`}>
+                    <SectionTitle>ABOUT ME</SectionTitle>
+                </SectionHeader>
+
+                {/* 이미지 + 설명 영역 */}
+                <ContentWrapper>
                     <Image
                         src="/images/developer4.svg"
                         alt="logo"
                         width={300}
                         height={300}
-                        className={`opacity-0 ${isVisible  ? "fade-in-up-1" : ""}`}
+                        className={`opacity-0 ${isVisible ? "fade-in-up-1" : ""}`}
                     />
-                    <div className={`space-y-4 md:space-y-6 text-left font-bold opacity-0 ${isVisible  ? "fade-in-up-2" : ""}`}>
-                        <p className="lg:text-lg leading-relaxed">
+
+                    <TextGroup className={`font-bold opacity-0 ${isVisible ? "fade-in-up-2" : ""}`}>
+                        <BodyText>
                             안녕하세요! 2년차 프론트엔드 개발자 전웅찬입니다.
-                        </p>
-                        <p className="lg:text-base leading-relaxed max-w-prose">
+                        </BodyText>
+                        <SmallText className="max-w-prose">
                             HTML, CSS, JavaScript를 시작으로 React를 통해 상태 관리와
-                            컴포넌트 기반 구조에 대해 경험하였고...
-                        </p>
-                    </div>
-                </div>
-                <ul className='grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-4 gap-2 my-9'>
+                            컴포넌트 기반 구조에 대해 경험하였고, SEO를 개선하고 SSR을 경험해보기 위해
+                            Next.js를 이용한 페이지도 구현해보았습니다.
+                            다양한 라이브러리, 프레임워크에 관심을 갖고 항상 배우며
+                            성장하는 개발자를 목표하고 있습니다.
+                        </SmallText>
+                    </TextGroup>
+                </ContentWrapper>
+
+                {/* 카드 그리드 */}
+                <GridContainer>
                     {aboutData.map((data) => (
                         <li
                             key={data.id}
-                            className={`opacity-0 ${isVisible  ? `fade-in-up-3` : ""}`}
+                            className={`opacity-0 ${isVisible ? `fade-in-up-3` : ""}`}
                         >
                             <InfoCard
                                 imageSrc={data.imageSrc}
@@ -84,10 +77,8 @@ export default function About()  {
                             />
                         </li>
                     ))}
-                </ul>
+                </GridContainer>
             </div>
-        </section>
+        </Section>
     );
 };
-
-

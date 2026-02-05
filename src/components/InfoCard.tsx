@@ -1,5 +1,6 @@
 import {Card, CardContent} from "@/components/ui/card";
 import Image from "next/image";
+import {BodyText, SmallText } from "./Typography";
 
 interface InfoCardProps {
     imageSrc: string;
@@ -11,7 +12,7 @@ interface InfoCardProps {
 
 export default function InfoCard({imageSrc, imageAlt, title, description}: InfoCardProps) {
     return(
-        <Card className="bg-(--color-accent) h-80 transition-all duration-500 ease-in-out hover:scale-103 overflow-hidden">
+        <Card className="cursor-default bg-(--color-accent) h-80 transition-all duration-500 ease-in-out hover:scale-103 overflow-hidden">
             <CardContent className="flex flex-col items-center p-4">
                 <Image
                     src={imageSrc}
@@ -19,8 +20,8 @@ export default function InfoCard({imageSrc, imageAlt, title, description}: InfoC
                     className="my-4"
                     width={64}
                     height={64} />
-                <p className='text-3xl font-bold pb-4'>{title}</p>
-                <p className='text-base px-14'>{description}</p>
+                <BodyText>{title}</BodyText>
+                <SmallText>{description}</SmallText>
             </CardContent>
         </Card>
     )
