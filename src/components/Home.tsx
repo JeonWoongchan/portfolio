@@ -3,7 +3,6 @@ import {RefObject} from "react";
 import useSectionOpacity from "@/src/hooks/useSectionOpacity";
 import {useRegisterSection} from "@/src/hooks/useRegisterSectionRef";
 import HeroIcon from "@/src/components/HeroIcon";
-import SlideDown from "@/src/components/SlideDown";
 import { Section } from "@/src/components/Container";
 import {HeroTitle} from "@/src/components/Typography";
 
@@ -13,7 +12,8 @@ export default function Home() {
     return (
         <Section
             ref={sectionRef as RefObject<HTMLElement>}
-            className="justify-center bg-[#1e3155] text-(--color-text)"
+            className=" bg-[#1e3155] text-(--color-text)"
+            nextSection={"About"}
         >
             <div
                 style={{ opacity: useSectionOpacity(sectionRef as RefObject<HTMLElement>) }}
@@ -21,7 +21,6 @@ export default function Home() {
             >
                 <HeroTitle align="self-start" className="fade-in-up-1">
                     FRONTEND
-
                 </HeroTitle>
 
                 <HeroTitle align="self-center" className="fade-in-up-2">
@@ -53,7 +52,6 @@ export default function Home() {
                     />
                 </HeroTitle>
             </div>
-            <SlideDown next={'About'} />
         </Section>
     );
 }
