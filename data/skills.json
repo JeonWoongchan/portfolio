@@ -1,70 +1,69 @@
 [
   {
-    "key": "coding",
-    "title": "Coding Skills",
-    "layoutClass": "md:row-span-2 md:col-span-1",
-    "sectionClass": "bg-[var(--color-primary)]",
+    "key": "frontend",
+    "title": "Frontend",
     "items": [
       {
         "name": "HTML",
-        "content": "편하게 사용할 수 있어요",
-        "img": "/images/html_icon.png"
+        "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+        "content": "Semantic markup & accessibility"
       },
       {
         "name": "CSS",
-        "content": "편하게 사용할 수 있어요",
-        "img": "/images/css_icon.png"
+        "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+        "content": "Responsive layouts & animations"
       },
       {
         "name": "JavaScript",
-        "content": "주로 사용하는 언어에요",
-        "img": "/images/javascript_icon.png"
+        "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+        "content": "ES6+ & DOM manipulation"
       },
       {
-        "name": "React",
-        "content": "가장 많이 사용해봤어요",
-        "img": "/images/react_icon2.png"
-      },
-      {
-        "name": "NextJS",
-        "content": "최근 공부중인 프레임워크에요",
-        "img": "/images/nextjs_icon.png"
+        "name": "TypeScript",
+        "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+        "content": "Type-safe development"
       }
     ]
   },
   {
-    "key": "tools",
-    "title": "Tools",
-    "layoutClass": "md:col-span-1",
-    "sectionClass": "bg-[var(--color-primary-variant)]",
+    "key": "framework",
+    "title": "Library & Framework",
     "items": [
       {
-        "name": "Visual Studio Code",
-        "content": "가장 많이 사용했어요",
-        "img": "/images/vsCode.png"
+        "name": "React",
+        "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+        "content": "Component-based UI development"
       },
       {
-        "name": "Intellij",
-        "content": "팀프로젝트에 많이 사용했어요",
-        "img": "/images/intellij.png"
+        "name": "Next.js",
+        "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+        "content": "SSR & full-stack React framework"
       }
     ]
   },
   {
-    "key": "etc",
-    "title": "Etc",
-    "layoutClass": "md:col-span-1",
-    "sectionClass": "bg-[var(--color-primary)] brightness-125",
+    "key": "devops",
+    "title": "Environment & Deploy",
     "items": [
       {
         "name": "Git",
-        "content": "팀프로젝트에 많이 사용했어요",
-        "img": "/images/git.png"
+        "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+        "content": "Version control & collaboration"
       },
       {
         "name": "Vercel",
-        "content": "배포할 때 사용했어요",
-        "img": "/images/vercel.png"
+        "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg",
+        "content": "Deployment & hosting platform"
+      },
+      {
+        "name": "VS Code",
+        "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
+        "content": "Primary development environment"
+      },
+      {
+        "name": "IntelliJ",
+        "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg",
+        "content": "JetBrains IDE"
       }
     ]
   }

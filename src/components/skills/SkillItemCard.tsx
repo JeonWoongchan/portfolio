@@ -1,39 +1,41 @@
 'use client'
 
-// 스킬 아이템 컴포넌트 분리
 import Image from "next/image";
 import {cn} from "@/lib/utils";
 import {SkillItem} from "@/src/types/skills";
-import React from "react";
 
-export default  function SkillItemCard({ item, sectionKey }: { item: SkillItem; sectionKey: string }) {
-    const [isHovered, setIsHovered] = React.useState(false);
-
+export default function SkillItemCard({ item }: { item: SkillItem }) {
     return (
-        <li className="flex justify-center">
-            <div
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
-                className={cn(
-                    "flex items-center gap-2 rounded-md bg-white px-3 py-1.5",
-                    "font-bold text-black transition-all duration-300",
-                    "hover:outline hover:outline-black hover:shadow-md"
-                )}
-            >
-                <Image
-                    src={item.img}
-                    alt={`${item.name} icon`}
-                    width={15}
-                    height={15}
-                    className="h-3.75 w-3.75"
-                />
-                <span>{item.name}</span>
-                {isHovered && (
-                    <span className="text-base font-medium animate-in fade-in slide-in-from-left-2 duration-200">
-                        {item.content}
-                    </span>
-                )}
-            </div>
-        </li>
+        <div
+            className={cn(
+                "group/item relative flex shrink-0 items-center gap-2 rounded-md",
+                "bg-white px-3 py-1.5",
+                "font-bold text-black transition-all duration-300",
+                "hover:-translate-y-0.5 hover:shadow-md hover:outline hover:outline-black"
+            )}
+        >
+            <Image
+                src={item.img || "/placeholder.svg"}
+                alt={`${item.name} icon`}
+                width={15}
+                height={15}
+                className="h-3.75 w-3.75"
+            />
+            <span className="whitespace-nowrap text-sm">{item.name}</span>
+
+            {/* Hover Tooltip */}
+            {item.content && (
+                <div className={cn(
+                    "pointer-events-none absolute -bottom-9 left-1/2 z-20",
+                    "-translate-x-1/2 whitespace-nowrap rounded-md",
+                    "bg-black px-2.5 py-1 text-xs font-medium text-white",
+                    "opacity-0 transition-all duration-200",
+                    "group-hover/item:opacity-100"
+                )}>
+                    {item.content}
+                    <div className="absolute -top-1 left-1/2 h-2 w-2 -translate-x-1/2 rotate-45 bg-black" />
+                </div>
+            )}
+        </div>
     );
 }

@@ -1,13 +1,11 @@
 export type SkillItem  = {
-    name: string;
-    content: string;
-    img: string;
+    name: string
+    img: string
+    content?: string
 };
 
 export type SkillCategory = {
-    key: string;
-    title: string;
-    layoutClass: string;
-    sectionClass: string;
-    items: SkillItem[];
+    key: string
+    title: string
+    items: SkillItem[]
 };

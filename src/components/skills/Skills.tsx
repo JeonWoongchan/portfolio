@@ -8,30 +8,19 @@ import { useRegisterSection } from '@/src/hooks/useRegisterSectionRef';
 import useSectionOpacity from '@/src/hooks/useSectionOpacity';
 import useSectionVisibility from '@/src/hooks/useSectionVisibility';
 import SKILL_SECTIONS from '@/data/skills.json';
-import { SkillCategory } from "@/src/types/skills";
 import { cn } from '@/lib/utils';
-import SkillSection from "@/src/components/skills/SkillSection";
+import Image from "next/image";
+import {SkillCategory, SkillItem} from "@/src/types/skills";
 
 export default function Skills() {
     const sectionRef = useRegisterSection('Skills');
     const isVisible = useSectionVisibility(sectionRef as RefObject<HTMLElement>, 0.2);
     const opacity = useSectionOpacity(sectionRef as RefObject<HTMLElement>);
 
-    const getAnimationClass = (index: number) => {
-        if (!isVisible) return 'skills-base-position';
-
-        const animations = [
-            'skills-slide-right',
-            'skills-slide-left-fast',
-            'skills-slide-left-slow'
-        ];
-        return animations[index] || 'skills-base-position';
-    };
-
     return (
         <Section
             ref={sectionRef as RefObject<HTMLElement>}
-            className="bg-(--color-primary-variant) text-(--color-text)"
+            className={"bg-(--color-primary-variant) text-(--color-text)"}
         >
             <div style={{ opacity }} className="w-full">
                 {/* 섹션 헤더 */}
@@ -51,19 +40,20 @@ export default function Skills() {
                     </SmallText>
                 </ContentWrapper>
 
-                {/* 스킬 그리드 */}
-                <div className={cn(
-                    `${isVisible ? "" : "opacity-0"}
-                    mx-2 mt-4 mb-8 overflow-hidden rounded-lg`,
-                    "shadow-[0_2.8px_2.2px_rgba(0,0,0,0.034),0_6.7px_5.3px_rgba(0,0,0,0.048),0_12.5px_10px_rgba(0,0,0,0.06),0_22.3px_17.9px_rgba(0,0,0,0.072),0_41.8px_33.4px_rgba(0,0,0,0.086),0_100px_80px_rgba(0,0,0,0.12)]",
-                    `md:mx-12`
-                )}>
-                    <div className="grid select-none md:grid-cols-[6fr_4fr]">
-                        {SKILL_SECTIONS.map((section: SkillCategory, index) => (
-                            <SkillSection
+                {/* 마퀴 스킬 영역 */}
+                <div
+                    className="mx-0 overflow-hidden rounded-lg p-6 md:p-8 xl:mx-28"
+                    style={{
+                        backgroundColor: "#050a13",
+                        boxShadow: "0 2.8px 2.2px rgba(0,0,0,0.034), 0 6.7px 5.3px rgba(0,0,0,0.048), 0 12.5px 10px rgba(0,0,0,0.06), 0 22.3px 17.9px rgba(0,0,0,0.072), 0 41.8px 33.4px rgba(0,0,0,0.086), 0 100px 80px rgba(0,0,0,0.12)",
+                    }}
+                >
+                    <div className="flex flex-col gap-5">
+                        {SKILL_SECTIONS.map((section, index) => (
+                            <MarqueeRow
                                 key={section.key}
                                 section={section}
-                                animationClass={getAnimationClass(index)}
+                                reverse={index % 2 !== 0}
                             />
                         ))}
                     </div>
@@ -72,4 +62,68 @@ export default function Skills() {
             <SlideDown next="Work" />
         </Section>
     );
+}
+
+
+function SkillChip({ item }: { item: SkillItem }) {
+    return (
+        <div className="group/item relative flex shrink-0 cursor-default items-center gap-2.5 rounded-md bg-white px-4 py-2 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg">
+            <Image
+                src={item.img || "/placeholder.svg"}
+                alt={`${item.name} icon`}
+                width={20}
+                height={20}
+                className="h-5 w-5 object-contain"
+                crossOrigin="anonymous"
+                unoptimized
+            />
+            <span className="whitespace-nowrap text-sm font-bold text-black">
+        {item.name}
+      </span>
+
+            {item.content && (
+                <div className="pointer-events-none absolute -bottom-9 left-1/2 z-20 -translate-x-1/2 whitespace-nowrap rounded-md bg-black px-2.5 py-1 text-xs font-medium text-white opacity-0 transition-all duration-200 group-hover/item:opacity-100">
+                    {item.content}
+                    <div className="absolute -top-1 left-1/2 h-2 w-2 -translate-x-1/2 rotate-45 bg-black" />
+                </div>
+            )}
+        </div>
+    )
+}
+
+function MarqueeRow({ section, reverse = false }: { section: SkillCategory; reverse?: boolean }) {
+    const repeated = Array(8).fill(section.items).flat()
+
+    return (
+        <div className="flex flex-col gap-3">
+            {/* Category Label */}
+            <h3
+                className="px-1 text-xs font-bold uppercase tracking-[0.2em]"
+                style={{ color: "#03e8f9" }}
+            >
+                {section.title}
+            </h3>
+
+            {/* Marquee Track */}
+            <div className="marquee-track relative overflow-hidden">
+                {/* Edge fades */}
+                <div
+                    className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12"
+                    style={{ background: "linear-gradient(to right, #050a13, transparent)" }}
+                />
+                <div
+                    className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12"
+                    style={{ background: "linear-gradient(to left, #050a13, transparent)" }}
+                />
+
+                <div
+                    className={`marquee-inner flex w-max gap-3 pb-3 ${reverse ? "marquee-reverse" : "marquee"}`}
+                >
+                    {repeated.map((item, i) => (
+                        <SkillChip key={`${section.key}-${item.name}-${i}`} item={item} />
+                    ))}
+                </div>
+            </div>
+        </div>
+    )
 }
