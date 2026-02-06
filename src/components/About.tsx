@@ -1,34 +1,18 @@
 // TODO: About 페이지 카드 컴포넌트 내용 변경
 'use client'
 
-import React, {RefObject, useEffect, useState} from 'react';
+import React, {RefObject} from 'react';
 import {useRegisterSection} from "@/src/hooks/useRegisterSectionRef";
 import Image from "next/image";
 import InfoCard from "@/src/components/InfoCard";
 import aboutData from "@/data/about.json"
 import { Section, SectionHeader, ContentWrapper, TextGroup, GridContainer } from "@/src/components/Container";
 import { SectionTitle, BodyText, SmallText } from "@/src/components/Typography";
+import useSectionVisibility from "@/src/hooks/useSectionVisibility";
 
 export default function About()  {
     const sectionRef = useRegisterSection('About');
-    const [isVisible, setIsVisible] = useState(false);
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting && !isVisible) {
-                    setIsVisible(true);
-                }
-            },
-            { threshold: 0.2 }
-        );
-
-        if (sectionRef.current) {
-            observer.observe(sectionRef.current);
-        }
-
-        return () => observer.disconnect();
-    }, [isVisible, sectionRef]);
+    const isVisible = useSectionVisibility(sectionRef as RefObject<HTMLElement>, 0.2);
 
     return (
         <Section ref={sectionRef as RefObject<HTMLElement>} className="justify-between">
@@ -47,7 +31,6 @@ export default function About()  {
                         height={300}
                         className={`opacity-0 ${isVisible ? "fade-in-up-1" : ""}`}
                     />
-
                     <TextGroup className={`font-bold opacity-0 ${isVisible ? "fade-in-up-2" : ""}`}>
                         <BodyText>
                             안녕하세요! 2년차 프론트엔드 개발자 전웅찬입니다.
