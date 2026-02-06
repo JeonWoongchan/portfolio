@@ -214,6 +214,45 @@ button:focus {
   animation: CircleAnimation 1.5s infinite linear;
 }
 
+@keyframes skillsSlideRight {
+  from {
+    transform: translateX(-80px);
+    opacity: 0.2;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes skillsSlideLeft {
+  from {
+    transform: translateX(80px);
+    opacity: 0.2;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.skills-base-position {
+  transform: translateY(80px);
+}
+
+.skills-slide-right {
+  animation: skillsSlideRight 1s ease forwards;
+}
+
+.skills-slide-left-fast {
+  animation: skillsSlideLeft 1s ease forwards;
+}
+
+.skills-slide-left-slow {
+  animation: skillsSlideLeft 1.5s ease forwards;
+}
+
+
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);

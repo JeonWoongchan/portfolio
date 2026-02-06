@@ -1,4 +1,5 @@
 import React from 'react';
+import { cn } from '@/lib/utils';
 
 interface ContainerProps {
     children: React.ReactNode,
@@ -9,7 +10,13 @@ interface ContainerProps {
 // 섹션 래퍼 (전체 섹션)
 export function Section({children, className = "", ref}: ContainerProps) {
     return (
-        <section ref={ref} className={`w-full min-h-screen flex flex-col py-16 px-4 xl:px-16 2xl:px-32 ${className}`}>
+        <section
+            ref={ref}
+            className={cn(
+                "w-full min-h-screen flex flex-col justify-between py-16 px-4 xl:px-16 2xl:px-32",
+                className
+            )}
+        >
             {children}
         </section>
     );
@@ -18,7 +25,10 @@ export function Section({children, className = "", ref}: ContainerProps) {
 // 섹션 헤더 (제목 + 구분선)
 export function SectionHeader({children, className = ""}: ContainerProps) {
     return (
-        <div className={`flex justify-start border-b-2 border-gray-300 pb-3 ${className}`}>
+        <div className={cn(
+            "flex justify-start border-b-2 border-gray-300 pb-3",
+            className
+        )}>
             {children}
         </div>
     );
@@ -28,7 +38,11 @@ export function SectionHeader({children, className = ""}: ContainerProps) {
 export function ContentWrapper({children, className = ""}: ContainerProps) {
     return (
         <div
-            className={`flex flex-col xl:flex-row w-full gap-8 xl:px-30 py-8 justify-center items-center ${className}`}>
+            className={cn(
+                "flex flex-col xl:flex-row w-full gap-8 xl:px-30 py-8 justify-center items-center",
+                className
+            )}
+        >
             {children}
         </div>
     );
@@ -37,7 +51,10 @@ export function ContentWrapper({children, className = ""}: ContainerProps) {
 // 텍스트 그룹 (여러 단락 묶음)
 export function TextGroup({children, className = ""}: ContainerProps) {
     return (
-        <div className={`space-y-4 md:space-y-6 text-left ${className}`}>
+        <div className={cn(
+            "space-y-4 md:space-y-6 text-left",
+            className
+        )}>
             {children}
         </div>
     );
@@ -46,7 +63,10 @@ export function TextGroup({children, className = ""}: ContainerProps) {
 // 그리드 컨테이너 (카드 리스트)
 export function GridContainer({children, className = ""}: ContainerProps) {
     return (
-        <ul className={`grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-2 my-9 ${className}`}>
+        <ul className={cn(
+            "grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-2 my-9",
+            className
+        )}>
             {children}
         </ul>
     );

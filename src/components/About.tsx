@@ -1,14 +1,15 @@
-// TODO: About 페이지 카드 컴포넌트 내용 변경
 'use client'
 
 import React, {RefObject} from 'react';
 import {useRegisterSection} from "@/src/hooks/useRegisterSectionRef";
 import Image from "next/image";
 import InfoCard from "@/src/components/InfoCard";
-import aboutData from "@/data/about.json"
+import ABOUT_DATA from "@/data/about.json"
 import { Section, SectionHeader, ContentWrapper, TextGroup, GridContainer } from "@/src/components/Container";
 import { SectionTitle, BodyText, SmallText } from "@/src/components/Typography";
 import useSectionVisibility from "@/src/hooks/useSectionVisibility";
+import SlideDown from "@/src/components/SlideDown";
+import {AboutData} from "@/src/types/about";
 
 export default function About()  {
     const sectionRef = useRegisterSection('About');
@@ -47,7 +48,7 @@ export default function About()  {
 
                 {/* 카드 그리드 */}
                 <GridContainer>
-                    {aboutData.map((data) => (
+                    {ABOUT_DATA.map((data: AboutData) => (
                         <li
                             key={data.id}
                             className={`opacity-0 ${isVisible ? `fade-in-up-3` : ""}`}
@@ -62,6 +63,7 @@ export default function About()  {
                     ))}
                 </GridContainer>
             </div>
+            <SlideDown next={'Skills'} />
         </Section>
     );
 };

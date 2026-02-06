@@ -1,5 +1,7 @@
 import Home from "@/src/components/Home";
 import About from "@/src/components/About";
+import Skills from "@/src/components/skills/Skills";
+
 
 export default function App() {
   return (
@@ -7,6 +9,7 @@ export default function App() {
           <main className="flex flex-col min-h-screen items-center justify-center">
               <Home />
               <About />
+              <Skills />
           </main>
       </div>
   );
