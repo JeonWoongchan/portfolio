@@ -5,37 +5,43 @@ import {useRegisterSection} from "@/src/hooks/useRegisterSectionRef";
 import Image from "next/image";
 import InfoCard from "@/src/components/InfoCard";
 import ABOUT_DATA from "@/data/about.json"
-import { Section, SectionHeader, ContentWrapper, TextGroup, GridContainer } from "@/src/components/Container";
-import { SectionTitle, BodyText, SmallText } from "@/src/components/Typography";
+import {
+    Section,
+    SectionHeader,
+    ContentWrapper,
+    TextGroup,
+    GridContainer,
+    SectionBody
+} from "@/src/components/Container";
+import {SectionTitle, SmallText, SectionDescription} from "@/src/components/Typography";
 import useSectionVisibility from "@/src/hooks/useSectionVisibility";
-import SlideDown from "@/src/components/SlideDown";
 import {AboutData} from "@/src/types/about";
+import {cn} from "@/lib/utils";
+import useSectionOpacity from "@/src/hooks/useSectionOpacity";
 
 export default function About()  {
     const sectionRef = useRegisterSection('About');
     const isVisible = useSectionVisibility(sectionRef as RefObject<HTMLElement>, 0.2);
+    const opacity = useSectionOpacity(sectionRef as RefObject<HTMLElement>);
 
     return (
-        <Section ref={sectionRef as RefObject<HTMLElement>} className="justify-between">
-            <div>
-                {/* 섹션 헤더 */}
-                <SectionHeader className={`opacity-0 ${isVisible ? "fade-in-down" : ""}`}>
-                    <SectionTitle>ABOUT ME</SectionTitle>
-                </SectionHeader>
+        <Section
+            ref={sectionRef as RefObject<HTMLElement>}
+            opacityValue={opacity}
+            nextSection={"Skills"}
+            className={"bg-(--color-navy-light)"}
+        >
+            <SectionHeader className={cn("opacity-0", isVisible && "fade-in-down")}>
+                <SectionTitle>About Me</SectionTitle>
+                <SectionDescription>
+                    사용자 경험을 최우선으로 고려하는 개발자입니다.
+                </SectionDescription>
+            </SectionHeader>
 
+            <SectionBody>
                 {/* 이미지 + 설명 영역 */}
-                <ContentWrapper>
-                    <Image
-                        src="/images/developer4.svg"
-                        alt="logo"
-                        width={300}
-                        height={300}
-                        className={`opacity-0 ${isVisible ? "fade-in-up-1" : ""}`}
-                    />
-                    <TextGroup className={`font-bold opacity-0 ${isVisible ? "fade-in-up-2" : ""}`}>
-                        <BodyText>
-                            안녕하세요! 2년차 프론트엔드 개발자 전웅찬입니다.
-                        </BodyText>
+                <ContentWrapper className={"justify-between"}>
+                    <TextGroup className={`font-bold opacity-0 ${isVisible ? "fade-in-up-1" : ""}`}>
                         <SmallText className="max-w-prose">
                             HTML, CSS, JavaScript를 시작으로 React를 통해 상태 관리와
                             컴포넌트 기반 구조에 대해 경험하였고, SEO를 개선하고 SSR을 경험해보기 위해
@@ -44,6 +50,13 @@ export default function About()  {
                             성장하는 개발자를 목표하고 있습니다.
                         </SmallText>
                     </TextGroup>
+                    <Image
+                        src="/images/developer4.svg"
+                        alt="logo"
+                        width={280}
+                        height={280}
+                        className={`opacity-0 ${isVisible ? "fade-in-up-2" : ""} -translate-y-20 -scale-x-100 absolute right-0`}
+                    />
                 </ContentWrapper>
 
                 {/* 카드 그리드 */}
@@ -62,8 +75,7 @@ export default function About()  {
                         </li>
                     ))}
                 </GridContainer>
-            </div>
-            <SlideDown next={'Skills'} />
+            </SectionBody>
         </Section>
     );
 };

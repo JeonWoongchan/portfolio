@@ -4,6 +4,7 @@ import {useScroll} from "@/src/hooks/useScroll";
 import {MenuProps} from "@/src/types/menu";
 import {useSectionStore} from "@/src/store/useSectionStore";
 
+// TODO: 가운데 정렬된 디자인으로 변경
 export default function Header() {
     const menuList: string[] = ['Home', 'About', 'Skills', 'Work', 'Contact']
     const { scrollY } = useScroll();
@@ -11,8 +12,8 @@ export default function Header() {
 
     return (
         <header
-            className='fixed top-0 w-full h-15 flex flex-row justify-between items-center z-5 px-4 xl:px-16 2xl:px-32 transition-all duration-300 ease-in-out'
-            style={{ backgroundColor: scrollY < 100 ? 'transparent' : 'var(--color-black)' }}
+            className='bg-black fixed top-0 w-full h-16 flex flex-row justify-between items-center z-5 px-4 xl:px-32 transition-all duration-300 ease-in-out'
+            style={{opacity: scrollY === 0 ? 0 : 1}}
         >
             <div className="flex justify-between items-center gap-2 h-20">
                 {/*<img className='w-12 h-12' src="/public/globe.svg" alt="로고" />*/}

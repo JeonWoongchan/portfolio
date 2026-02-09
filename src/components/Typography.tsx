@@ -7,11 +7,11 @@ interface TypographyProps {
     className?: string;
 }
 
-// 섹션 타이틀 (ABOUT ME 같은 큰 제목)
+// 섹션 타이틀
 export function SectionTitle({ children, className = "" }: TypographyProps) {
     return (
         <h1 className={cn(
-            "text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold py-4",
+            "text-left text-4xl md:text-5xl font-bold text-white",
             className
         )}>
             {children}
@@ -19,11 +19,23 @@ export function SectionTitle({ children, className = "" }: TypographyProps) {
     );
 }
 
-// 히어로 텍스트 (Home의 FRONTEND DEVELOPER 같은 메인 텍스트)
+// 섹션 설명
+export function SectionDescription({ children, className = "" }: TypographyProps) {
+    return (
+        <p className={cn(
+            "text-left text-base md:text-lg text-text-secondary leading-relaxed text-gray-400",
+            className
+        )}>
+            {children}
+        </p>
+    );
+}
+
+// 히어로 텍스트
 export function HeroTitle({ children, align = "self-start", className = "" }: TypographyProps) {
     return (
         <div className={cn(
-            "flex gap-4 items-center text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold",
+            "flex gap-12 items-center text-7xl md:text-8xl lg:text-9xl xl:text-[9rem] font-bold",
             align,
             className
         )}>
@@ -32,7 +44,7 @@ export function HeroTitle({ children, align = "self-start", className = "" }: Ty
     );
 }
 
-// 본문 텍스트 (설명 문구)
+// 본문 텍스트
 export function BodyText({ children, className = "" }: TypographyProps) {
     return (
         <p className={cn(
@@ -48,7 +60,7 @@ export function BodyText({ children, className = "" }: TypographyProps) {
 export function SmallText({ children, className = "" }: TypographyProps) {
     return (
         <p className={cn(
-            "text-xs md:text-sm lg:text-base leading-relaxed",
+            "text-xs md:text-sm lg:text-base leading-relaxed text-gray-400",
             className
         )}>
             {children}

@@ -18,6 +18,37 @@
   --color-blue: #03e8f9;
   --color-orange: #fd6413;
   --color-gray: #1b1e26;
+
+  --color-green: #10b981;     /* 민트 그린 - 성공/긍정 표시 */
+  --color-red: #ef4444;       /* 비비드 레드 - 경고/에러 */
+  --color-yellow: #fbbf24;    /* 골드 옐로우 - 특별 강조 */
+
+  --color-navy: #0a0f1a;         /* 배경용 어두운 네이비 (블루 틴트) */
+  --color-navy-light: #151b2e;   /* 배경용 네이비 (블루 틴트) */
+  --color-border: #2a3544;       /* 보더/구분선 (블루 틴트) */
+  --color-border-light: #374a5c; /* 밝은 보더 (블루 틴트) */
+
+  /* 액센트 색상 확장 */
+  --color-cyan: #22d3ee;         /* 밝은 시안 - 호버 효과 */
+  --color-teal: #14b8a6;         /* 틸 - 보조 액센트 */
+  --color-purple: #8b5cf6;       /* 퍼플 - 특별 강조 */
+  --color-pink: #ec4899;         /* 핑크 - 하이라이트 */
+
+  /* 상태 색상 */
+  --color-success: #10b981;      /* 그린 - 성공 */
+  --color-warning: #f59e0b;      /* 엠버 - 경고 */
+  --color-error: #ef4444;        /* 레드 - 에러 */
+  --color-info: #3b82f6;         /* 블루 - 정보 */
+
+  /* 텍스트 색상 */
+  --color-text-primary: #f9fafb;    /* 주요 텍스트 */
+  --color-text-secondary: #9ca3af;  /* 보조 텍스트 (설명글) */
+  --color-text-muted: #6b7280;      /* 희미한 텍스트 */
+
+  /* 오버레이 */
+  --color-overlay: rgba(15, 20, 25, 0.85);
+  --color-overlay-light: rgba(26, 31, 46, 0.7);
+
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -54,12 +85,6 @@
 
 * {
   box-sizing: border-box;
-}
-
-
-body {
-  /*font-family: 'Open Sans', sans-serif;*/
-  font-family: 'Poppins ', sans-serif;
 }
 
 h1,
@@ -232,11 +257,11 @@ button:focus {
 }
 
 .marquee {
-  animation: marquee 25s linear infinite;
+  animation: marquee 60s linear infinite;
 }
 
 .marquee-reverse {
-  animation: marquee-reverse 25s linear infinite;
+  animation: marquee-reverse 60s linear infinite;
 }
 
 .marquee-track:hover .marquee,

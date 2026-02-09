@@ -1,7 +1,7 @@
 export type SkillItem  = {
     name: string
     img: string
-    content?: string
+    content: string
 };
 
 export type SkillCategory = {

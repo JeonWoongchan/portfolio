@@ -12,13 +12,13 @@ interface HeroIconProps {
     height?: number;
 }
 
-export default function HeroIcon({src, alt, tooltip, side, className, width=128, height=128 }: HeroIconProps) {
+export default function TooltipIcon({src, alt, tooltip, side, className, width=128, height=128 }: HeroIconProps) {
     return (
         <Tooltip>
             <TooltipTrigger asChild>
                 <Image
                     src={src}
-                    className={cn("float-icon w-[1.3em] h-[1.3em]", className)}
+                    className={cn("w-[1.3em] h-[1.3em]", className)}
                     width={width}
                     height={height}
                     alt={alt}
@@ -28,6 +28,5 @@ export default function HeroIcon({src, alt, tooltip, side, className, width=128,
                 <p>{tooltip}</p>
             </TooltipContent>
         </Tooltip>
-
     );
 }
