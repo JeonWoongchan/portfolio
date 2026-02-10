@@ -1,4 +1,4 @@
-import Home from "@/src/components/Home";
+import Home from "@/src/components/home/Home";
 import About from "@/src/components/About";
 import Skills from "@/src/components/skills/Skills";
 

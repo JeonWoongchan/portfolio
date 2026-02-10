@@ -1,5 +1,5 @@
 import {SkillItem} from "@/src/types/skills";
-import TooltipIcon from "@/src/components/HeroIcon";
+import TooltipIcon from "@/src/components/home/HeroIcon";
 
 export default function SkillChip({ item }: { item: SkillItem }) {
     return (

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import {Inter} from "next/font/google";
-import Header from "@/src/components/Header";
+import Header from "@/src/components/header/Header";
 import React from "react";
 
 // const openSans = Open_Sans({
