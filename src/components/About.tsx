@@ -2,18 +2,15 @@
 
 import React, {RefObject} from 'react';
 import {useRegisterSection} from "@/src/hooks/useRegisterSectionRef";
-import Image from "next/image";
 import InfoCard from "@/src/components/InfoCard";
 import ABOUT_DATA from "@/data/about.json"
 import {
     Section,
     SectionHeader,
-    ContentWrapper,
-    TextGroup,
     GridContainer,
     SectionBody
 } from "@/src/components/Container";
-import {SectionTitle, SmallText, SectionDescription} from "@/src/components/Typography";
+import {SectionTitle, SectionDescription} from "@/src/components/Typography";
 import useSectionVisibility from "@/src/hooks/useSectionVisibility";
 import {AboutData} from "@/src/types/about";
 import {cn} from "@/lib/utils";
@@ -38,26 +35,26 @@ export default function About()  {
                 </SectionDescription>
             </SectionHeader>
 
-            <SectionBody>
+            <SectionBody className={"justify-center"}>
                 {/* 이미지 + 설명 영역 */}
-                <ContentWrapper className={"justify-between"}>
-                    <TextGroup className={`font-bold opacity-0 ${isVisible ? "fade-in-up-1" : ""}`}>
-                        <SmallText className="max-w-prose">
-                            HTML, CSS, JavaScript를 시작으로 React를 통해 상태 관리와
-                            컴포넌트 기반 구조에 대해 경험하였고, SEO를 개선하고 SSR을 경험해보기 위해
-                            Next.js를 이용한 페이지도 구현해보았습니다.
-                            다양한 라이브러리, 프레임워크에 관심을 갖고 항상 배우며
-                            성장하는 개발자를 목표하고 있습니다.
-                        </SmallText>
-                    </TextGroup>
-                    <Image
-                        src="/images/developer4.svg"
-                        alt="logo"
-                        width={280}
-                        height={280}
-                        className={`opacity-0 ${isVisible ? "fade-in-up-2" : ""} -translate-y-20 -scale-x-100 absolute right-0`}
-                    />
-                </ContentWrapper>
+                {/*<ContentWrapper className={"justify-evenly"}>*/}
+                {/*    <TextGroup className={`font-bold opacity-0 ${isVisible ? "fade-in-up-1" : ""}`}>*/}
+                {/*        <SmallText className="max-w-prose">*/}
+                {/*            HTML, CSS, JavaScript를 시작으로 React를 통해 상태 관리와*/}
+                {/*            컴포넌트 기반 구조에 대해 경험하였고, SEO를 개선하고 SSR을 경험해보기 위해*/}
+                {/*            Next.js를 이용한 페이지도 구현해보았습니다.*/}
+                {/*            다양한 라이브러리, 프레임워크에 관심을 갖고 항상 배우며*/}
+                {/*            성장하는 개발자를 목표하고 있습니다.*/}
+                {/*        </SmallText>*/}
+                {/*    </TextGroup>*/}
+                {/*    <Image*/}
+                {/*        src="/images/developer4.svg"*/}
+                {/*        alt="logo"*/}
+                {/*        width={280}*/}
+                {/*        height={280}*/}
+                {/*        className={`opacity-0 ${isVisible ? "fade-in-up-2" : ""} -scale-x-100`}*/}
+                {/*    />*/}
+                {/*</ContentWrapper>*/}
 
                 {/* 카드 그리드 */}
                 <GridContainer>

@@ -10,10 +10,10 @@ export default function SlideDown({next}: SlideDownProps) {
     const { scrollTo } = useSectionStore();
 
     return (
-        <div className="slide-down relative mx-auto mt-5 flex h-12.5 w-12.5 cursor-pointer items-center justify-center
-            rounded-full border-0 bg-black/30"
+        <div className="relative flex flex-col gap-2 mx-auto mt-5 h-12.5 w-12.5 cursor-pointer items-center justify-center"
             onClick={() => { scrollTo(next) }}>
-            <MdKeyboardArrowDown className="slide-down-btn" />
+            <span className={"opacity-50 text-xs"}>SCROLL</span>
+            <MdKeyboardArrowDown className="float-icon text-xl"/>
         </div>
     );
 }

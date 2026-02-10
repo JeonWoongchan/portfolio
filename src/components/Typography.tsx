@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils';
 
 interface TypographyProps {
     children: React.ReactNode;
-    align?: "self-start" | "self-end" | "self-center";
+    align?: string;
     className?: string;
 }
 
@@ -35,7 +35,7 @@ export function SectionDescription({ children, className = "" }: TypographyProps
 export function HeroTitle({ children, align = "self-start", className = "" }: TypographyProps) {
     return (
         <div className={cn(
-            "flex gap-12 items-center text-7xl md:text-8xl lg:text-9xl xl:text-[9rem] font-bold",
+            "flex gap-12 items-center text-5xl font-bold",
             align,
             className
         )}>

@@ -29,8 +29,8 @@ export function Section({
         <section
             ref={ref}
             className={cn(
-                "w-full min-h-screen flex flex-col justify-between ",
-                "py-16 px-4 xl:px-32 xl:max-h-239.75 bg-(--color-navy) text-(--color-text)",
+                "w-full min-h-screen flex flex-col justify-between",
+                "py-32 px-4 sm:px-8 xl:px-80 xl:max-h-239.75 bg-(--color-navy) text-(--color-text)",
                 className
             )}
         >
@@ -61,7 +61,7 @@ export function SectionHeader({children, className = ""}: ContainerProps) {
 export function SectionBody({children, className = ""}: ContainerProps) {
     return (
         <div className={cn(
-            "flex-1 flex flex-col px-6 justify-between",
+            "flex-1 flex flex-col justify-between",
             className
         )}>
             {children}
@@ -74,7 +74,7 @@ export function ContentWrapper({children, className = ""}: ContainerProps) {
     return (
         <div
             className={cn(
-                "relative flex flex-col xl:flex-row w-full gap-8 justify-center items-start",
+                "relative flex-1 flex flex-col xl:flex-row w-full gap-8 justify-center items-center",
                 className
             )}
         >
@@ -99,7 +99,7 @@ export function TextGroup({children, className = ""}: ContainerProps) {
 export function GridContainer({children, className = ""}: ContainerProps) {
     return (
         <ul className={cn(
-            "grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6",
+            "grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8 justify-items-center",
             className
         )}>
             {children}
