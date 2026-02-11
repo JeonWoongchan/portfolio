@@ -8,8 +8,8 @@ import TypeIt from "typeit-react";
 import {HeroTitle, SectionDescription} from "@/src/components/Typography";
 import {Button} from "@/components/ui/button";
 
-export default function Home() {
-    const sectionRef = useRegisterSection('Home');
+export default function Hero() {
+    const sectionRef = useRegisterSection('Hero');
     const opacity = useSectionOpacity(sectionRef as RefObject<HTMLElement>);
     const [typingDone, setTypingDone] = useState(false);
 

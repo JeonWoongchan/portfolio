@@ -1,7 +1,7 @@
 import {Terminal} from "lucide-react";
 import {cn} from "@/lib/utils";
 
-const MENU_LIST = ['Home', 'About', 'Skills', 'Work', 'Contact'] as const
+const MENU_LIST = ['About', 'Skills', 'Work', 'Contact'] as const
 const MENU_BUTTON_CLASSES = 'px-3 py-1.5 cursor-pointer hover:bg-(--color-gray) hover:rounded-full'
 
 type ExpandedMenuProps = {
@@ -20,7 +20,7 @@ export default function ExpandedMenu({ onMenuClick }: ExpandedMenuProps) {
             <button
                 type="button"
                 className="group flex cursor-pointer items-center gap-1.5 rounded-full px-3 py-1.5 hover:bg-(--color-accent)"
-                onClick={()=>onMenuClick('Home')}
+                onClick={()=>onMenuClick('Hero')}
             >
                 <Terminal className="h-4 w-4 text-(--color-accent) group-hover:text-(--color-navy)" />
                 <span className="font-mono text-sm text-(--color-accent) group-hover:text-(--color-navy)">~/</span>
