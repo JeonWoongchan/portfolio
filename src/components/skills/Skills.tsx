@@ -28,7 +28,7 @@ export default function Skills() {
                 </SectionDescription>
             </SectionHeader>
 
-            <SectionBody>
+            <SectionBody className={`opacity-0 ${isVisible ? `fade-in-up-2` : ""}`}>
                 {/* 설명 영역 */}
                 {/*<ContentWrapper className="xl:flex-col">*/}
                 {/*    <BodyText className={cn("max-w-4xl opacity-0 justify-start", isVisible && "fade-in-up-1")}>*/}
@@ -42,7 +42,7 @@ export default function Skills() {
                 {/*</ContentWrapper>*/}
 
                 {/* 스킬 영역 */}
-                <SkillCardList sections={SKILL_SECTIONS} />
+                <SkillCardList sections={SKILL_SECTIONS}/>
             </SectionBody>
         </Section>
     );

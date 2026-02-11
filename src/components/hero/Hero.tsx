@@ -19,6 +19,7 @@ export default function Hero() {
             className={"bg-[#1e3155] text-(--color-text)"}
             nextSection={"About"}
             contentClassName={"justify-center items-center"}
+            slideDownClassName={`opacity-0 ${typingDone && 'fade-in-up-3'}`}
             opacityValue={opacity}
         >
             <SectionBody className={"w-1/3 flex flex-col justify-center items-center text-center p-0 gap-4"}>
@@ -46,7 +47,7 @@ export default function Hero() {
                     <br />
                     프론트엔드 개발자를 목표로 하고 있습니다.
                 </SectionDescription>
-                <Button variant="navyLight">Contact Me</Button>
+                <Button variant="navyLight" className={`opacity-0 ${typingDone && 'fade-in-up-2'}`}>Contact Me</Button>
             </SectionBody>
         </Section>
     );

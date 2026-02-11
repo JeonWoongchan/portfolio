@@ -37,7 +37,7 @@ export default function About()  {
                 </SectionDescription>
             </SectionHeader>
 
-            <SectionBody>
+            <SectionBody className={`opacity-0 ${isVisible ? `fade-in-up-2` : ""}`}>
                 {/* 이미지 + 설명 영역 */}
                 {/*<ContentWrapper className={"justify-evenly"}>*/}
                 {/*    <TextGroup className={`font-bold opacity-0 ${isVisible ? "fade-in-up-1" : ""}`}>*/}
@@ -61,10 +61,7 @@ export default function About()  {
                 {/* 카드 그리드 */}
                 <GridContainer>
                     {ABOUT_DATA.map((data: AboutData) => (
-                        <li
-                            key={data.id}
-                            className={`opacity-0 ${isVisible ? `fade-in-up-3` : ""}`}
-                        >
+                        <li key={data.id}>
                             <InfoCard
                                 imageSrc={data.imageSrc}
                                 imageAlt={data.imageAlt}

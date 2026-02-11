@@ -6,6 +6,7 @@ interface ContainerProps {
     children: React.ReactNode,
     className?: string,
     contentClassName?: string,
+    slideDownClassName?: string,
     ref?: React.RefObject<HTMLElement>
 }
 
@@ -19,6 +20,7 @@ export function Section({
     children,
     className = "",
     contentClassName = "",
+    slideDownClassName = "",
     ref,
     nextSection,
     opacityValue = 1
@@ -39,7 +41,7 @@ export function Section({
             )}>
                 {children}
             </div>
-            {nextSection && <SlideDown next={nextSection} />}
+            {nextSection && <SlideDown next={nextSection} className={slideDownClassName} />}
         </section>
     );
 }

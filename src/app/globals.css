@@ -104,10 +104,6 @@ a {
   color: var(--color-primary)
 }
 
-span {
-  cursor: default;
-}
-
 /*나타나는 애니메이션*/
 @keyframes fadeInUp {
   from {
@@ -138,6 +134,11 @@ span {
 .fade-in-up-4 {
   opacity: 0;
   animation: fadeInUp 1s ease-out 2s forwards;
+}
+
+.fade-in-up-5 {
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 2.5s forwards;
 }
 
 
