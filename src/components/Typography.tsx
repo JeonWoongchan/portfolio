@@ -11,10 +11,12 @@ interface TypographyProps {
 export function SectionTitle({ children, className = "" }: TypographyProps) {
     return (
         <h1 className={cn(
-            "text-left text-4xl md:text-5xl font-bold text-white",
+            "relative text-center text-4xl md:text-5xl font-bold text-white pb-4",
+            "before:absolute before:left-1/2 before:-translate-x-1/2 before:bottom-0 before:w-16 before:h-0.5 before:bg-(--color-accent)",
             className
         )}>
             {children}
+            <span className={"text-(--color-accent) ml-1"}>.</span>
         </h1>
     );
 }

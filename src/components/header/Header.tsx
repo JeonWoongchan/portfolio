@@ -25,7 +25,7 @@ export default function Header() {
                     onMouseLeave={() => setIsMenuOpen(false)}
                 >
                     {showCollapsedBrand ? (
-                        <CollapsedBrand />
+                        <CollapsedBrand/>
                     ) : (
                         <ExpandedMenu onMenuClick={scrollTo} />
                     )}

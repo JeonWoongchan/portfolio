@@ -20,6 +20,7 @@ export default function ExpandedMenu({ onMenuClick }: ExpandedMenuProps) {
             <button
                 type="button"
                 className="group flex cursor-pointer items-center gap-1.5 rounded-full px-3 py-1.5 hover:bg-(--color-accent)"
+                onClick={()=>onMenuClick('Home')}
             >
                 <Terminal className="h-4 w-4 text-(--color-accent) group-hover:text-(--color-navy)" />
                 <span className="font-mono text-sm text-(--color-accent) group-hover:text-(--color-navy)">~/</span>

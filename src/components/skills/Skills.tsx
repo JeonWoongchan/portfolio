@@ -8,10 +8,8 @@ import useSectionOpacity from '@/src/hooks/useSectionOpacity';
 import useSectionVisibility from '@/src/hooks/useSectionVisibility';
 import SKILL_SECTIONS from '@/data/skills.json';
 import { cn } from '@/lib/utils';
-import SkillMarquee from "@/src/components/skills/SkillMarquee";
-import {Card} from "@/components/ui/card";
+import SkillCardList from "@/src/components/skills/SkillCardList";
 
-// TODO: 마퀴에서 리스트로 변경
 export default function Skills() {
     const sectionRef = useRegisterSection('Skills');
     const isVisible = useSectionVisibility(sectionRef as RefObject<HTMLElement>, 0.2);
@@ -26,7 +24,7 @@ export default function Skills() {
             <SectionHeader className={cn("opacity-0", isVisible && "fade-in-down")}>
                 <SectionTitle>Skills</SectionTitle>
                 <SectionDescription>
-                    기술 스택 및 도구입니다.
+                    프론트엔드 개발에 필요한 핵심 기술들을 꾸준히 학습하고 실무에 적용해왔습니다.
                 </SectionDescription>
             </SectionHeader>
 
@@ -43,16 +41,8 @@ export default function Skills() {
                 {/*    </BodyText>*/}
                 {/*</ContentWrapper>*/}
 
-                {/* 마퀴 스킬 영역 */}
-                <Card
-                    className="mx-0 overflow-hidden rounded-lg p-6"
-                    style={{
-                        backgroundColor: "#050a13",
-                        boxShadow: "0 2.8px 2.2px rgba(0,0,0,0.034), 0 6.7px 5.3px rgba(0,0,0,0.048), 0 12.5px 10px rgba(0,0,0,0.06), 0 22.3px 17.9px rgba(0,0,0,0.072), 0 41.8px 33.4px rgba(0,0,0,0.086), 0 100px 80px rgba(0,0,0,0.12)",
-                    }}
-                >
-                    <SkillMarquee sections={SKILL_SECTIONS} />
-                </Card>
+                {/* 스킬 영역 */}
+                <SkillCardList sections={SKILL_SECTIONS} />
             </SectionBody>
         </Section>
     );

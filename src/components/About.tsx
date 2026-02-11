@@ -29,13 +29,15 @@ export default function About()  {
             className={"bg-(--color-navy-light)"}
         >
             <SectionHeader className={cn("opacity-0", isVisible && "fade-in-down")}>
-                <SectionTitle>About Me</SectionTitle>
+                <SectionTitle>
+                    About Me
+                </SectionTitle>
                 <SectionDescription>
-                    사용자 경험을 최우선으로 고려하는 개발자입니다.
+                    적극적으로 협업하며, 지속가능한 서비스를 개발합니다.
                 </SectionDescription>
             </SectionHeader>
 
-            <SectionBody className={"justify-center"}>
+            <SectionBody>
                 {/* 이미지 + 설명 영역 */}
                 {/*<ContentWrapper className={"justify-evenly"}>*/}
                 {/*    <TextGroup className={`font-bold opacity-0 ${isVisible ? "fade-in-up-1" : ""}`}>*/}

@@ -48,8 +48,7 @@ export function Section({
 export function SectionHeader({children, className = ""}: ContainerProps) {
     return (
         <div className={cn(
-            "relative flex flex-col gap-3 pl-6 my-4",
-            "before:absolute before:left-0 before:top-0 before:w-1 before:h-16 before:bg-(--color-accent)",
+            "relative flex flex-col items-center gap-3 p-4 mb-8",
             className
         )}>
             {children}
@@ -99,7 +98,7 @@ export function TextGroup({children, className = ""}: ContainerProps) {
 export function GridContainer({children, className = ""}: ContainerProps) {
     return (
         <ul className={cn(
-            "grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8 justify-items-center",
+            "grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-12 justify-items-center",
             className
         )}>
             {children}

@@ -5,7 +5,7 @@ import {useRegisterSection} from "@/src/hooks/useRegisterSectionRef";
 import {Section, SectionBody} from "@/src/components/Container";
 import Image from "next/image";
 import TypeIt from "typeit-react";
-import {BodyText, HeroTitle} from "@/src/components/Typography";
+import {HeroTitle, SectionDescription} from "@/src/components/Typography";
 import {Button} from "@/components/ui/button";
 
 export default function Home() {
@@ -41,11 +41,11 @@ export default function Home() {
                         </HeroTitle>
                     </TypeIt>
                 </div>
-                <BodyText className={`opacity-0 text-(--color-primary) font-bold ${typingDone && 'fade-in-up-1'}`}>
+                <SectionDescription className={`opacity-0 text-center ${typingDone && 'fade-in-up-1'}`}>
                     다양한 경험을 통해 항상 발전하는
                     <br />
                     프론트엔드 개발자를 목표로 하고 있습니다.
-                </BodyText>
+                </SectionDescription>
                 <Button variant="navyLight">Contact Me</Button>
             </SectionBody>
         </Section>
