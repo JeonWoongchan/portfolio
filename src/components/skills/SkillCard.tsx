@@ -4,7 +4,7 @@ import Image from "next/image";
 import {Tooltip, TooltipContent, TooltipTrigger} from "@/components/ui/tooltip";
 import {Card} from "@/components/ui/card";
 
-export default function SkillChip({ item }: { item: SkillItem }) {
+export default function SkillCard({ item }: { item: SkillItem }) {
     return (
         <Tooltip>
             <TooltipTrigger asChild>

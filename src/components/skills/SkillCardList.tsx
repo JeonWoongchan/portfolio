@@ -40,11 +40,11 @@ export default function SkillCardList({ sections }: SkillListProps) {
 
             {/* Skill Rows */}
             <div className="flex flex-col gap-4">
-                {filteredSections.map((section, index) => (
+                {filteredSections.map((section) => (
                     <SkillRows
                         key={section.key}
                         section={section}
-                        reverse={index % 2 !== 0}
+                        detail={selectedCategory !== 'all'}
                     />
                 ))}
             </div>

@@ -6,22 +6,26 @@
       {
         "name": "HTML",
         "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
-        "content": "Semantic markup & accessibility"
+        "content": "Semantic markup & accessibility",
+        "tags": ["Semantic", "SEO", "Accessibility"]
       },
       {
         "name": "CSS",
         "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
-        "content": "Responsive layouts & animations"
+        "content": "Responsive layouts & animations",
+        "tags": ["Flexbox", "Grid", "Animation"]
       },
       {
         "name": "JavaScript",
         "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-        "content": "ES6+ & DOM manipulation"
+        "content": "ES6+ & DOM manipulation",
+        "tags": ["ES6+", "DOM API", "Async"]
       },
       {
         "name": "TypeScript",
         "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
-        "content": "Type-safe development"
+        "content": "Type-safe development",
+        "tags": ["Type System", "Generics", "Interface"]
       }
     ]
   },
@@ -32,12 +36,14 @@
       {
         "name": "React",
         "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-        "content": "Component-based UI development"
+        "content": "Component-based UI development",
+        "tags": ["Hooks", "State Mgmt", "Component"]
       },
       {
         "name": "Next.js",
         "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
-        "content": "SSR & full-stack React framework"
+        "content": "SSR & full-stack React framework",
+        "tags": ["SSR", "App Router", "API Route"]
       }
     ]
   },
@@ -48,22 +54,26 @@
       {
         "name": "Git",
         "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
-        "content": "Version control & collaboration"
+        "content": "Version control & collaboration",
+        "tags": ["Branch", "Merge", "GitHub"]
       },
       {
         "name": "Vercel",
         "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg",
-        "content": "Deployment & hosting platform"
+        "content": "Deployment & hosting platform",
+        "tags": ["CI/CD", "Preview", "Domain"]
       },
       {
         "name": "VS Code",
         "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
-        "content": "Primary development environment"
+        "content": "Primary development environment",
+        "tags": ["Extensions", "Debugging", "Snippets"]
       },
       {
         "name": "IntelliJ",
         "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg",
-        "content": "JetBrains IDE"
+        "content": "JetBrains IDE",
+        "tags": ["Refactor", "Debugging", "Plugins"]
       }
     ]
   }
