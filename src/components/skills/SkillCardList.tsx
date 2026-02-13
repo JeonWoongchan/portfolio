@@ -25,6 +25,7 @@ export default function SkillCardList({ sections }: SkillListProps) {
                     defaultValue="all"
                     spacing={2}
                     onValueChange={(value: string) => value && setSelectedCategory(value)}
+                    className={"flex-wrap"}
                 >
                     <ToggleGroupItem value="all">All</ToggleGroupItem>
                     {sections.map(section => (

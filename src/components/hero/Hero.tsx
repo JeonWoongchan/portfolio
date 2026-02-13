@@ -22,9 +22,9 @@ export default function Hero() {
             slideDownClassName={`opacity-0 ${typingDone && 'fade-in-up-3'}`}
             opacityValue={opacity}
         >
-            <SectionBody className={"w-1/3 flex flex-col justify-center items-center text-center p-0 gap-4"}>
+            <SectionBody className={"w-1/2 xl:w-1/3 flex flex-col justify-center items-center text-center p-0 gap-4"}>
                 <Image src="/images/profile.png" alt="프로필 이미지" className={"fade-in-up-1"} width={200} height={200}/>
-                <div className="h-55">
+                <div className="h-35 xl:h-55">
                     <TypeIt
                         options={{
                             speed: 60,

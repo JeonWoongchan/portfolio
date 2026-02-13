@@ -26,6 +26,54 @@
         "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
         "content": "Type-safe development",
         "tags": ["Type System", "Generics", "Interface"]
+      },
+      {
+        "name": "HTML",
+        "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+        "content": "Semantic markup & accessibility",
+        "tags": ["Semantic", "SEO", "Accessibility"]
+      },
+      {
+        "name": "CSS",
+        "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+        "content": "Responsive layouts & animations",
+        "tags": ["Flexbox", "Grid", "Animation"]
+      },
+      {
+        "name": "JavaScript",
+        "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+        "content": "ES6+ & DOM manipulation",
+        "tags": ["ES6+", "DOM API", "Async"]
+      },
+      {
+        "name": "TypeScript",
+        "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+        "content": "Type-safe development",
+        "tags": ["Type System", "Generics", "Interface"]
+      }
+      ,{
+        "name": "HTML",
+        "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+        "content": "Semantic markup & accessibility",
+        "tags": ["Semantic", "SEO", "Accessibility"]
+      },
+      {
+        "name": "CSS",
+        "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+        "content": "Responsive layouts & animations",
+        "tags": ["Flexbox", "Grid", "Animation"]
+      },
+      {
+        "name": "JavaScript",
+        "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+        "content": "ES6+ & DOM manipulation",
+        "tags": ["ES6+", "DOM API", "Async"]
+      },
+      {
+        "name": "TypeScript",
+        "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+        "content": "Type-safe development",
+        "tags": ["Type System", "Generics", "Interface"]
       }
     ]
   },

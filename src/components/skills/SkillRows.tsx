@@ -21,9 +21,9 @@ export default function SkillRows({ section, detail }: { section: SkillCategory;
             </div>
 
             {detail ?
-                <GridContainer className={"xl:grid-cols-2 gap-4"}>{cards}</GridContainer>
+                <GridContainer className={"gap-4"}>{cards}</GridContainer>
                 :
-                <div className={"flex w-max gap-4 py-3"}>{cards}</div>
+                <div className={"flex flex-wrap gap-4"}>{cards}</div>
             }
         </div>
     );
