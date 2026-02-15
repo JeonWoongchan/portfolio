@@ -37,7 +37,7 @@ export function SectionDescription({ children, className = "" }: TypographyProps
 export function HeroTitle({ children, align = "self-start", className = "" }: TypographyProps) {
     return (
         <div className={cn(
-            "flex gap-12 items-center text-xl xl:text-5xl font-bold",
+            "flex gap-12 items-center text-xl sm:text-3xl xl:text-5xl font-bold",
             align,
             className
         )}>
