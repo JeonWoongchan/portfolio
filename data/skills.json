@@ -124,5 +124,35 @@
         "tags": ["Refactor", "Debugging", "Plugins"]
       }
     ]
+  },
+  {
+    "key": "devops1",
+    "title": "Environment & Deploy",
+    "items": [
+      {
+        "name": "Git",
+        "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+        "content": "Version control & collaboration",
+        "tags": ["Branch", "Merge", "GitHub"]
+      },
+      {
+        "name": "Vercel",
+        "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg",
+        "content": "Deployment & hosting platform",
+        "tags": ["CI/CD", "Preview", "Domain"]
+      },
+      {
+        "name": "VS Code",
+        "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
+        "content": "Primary development environment",
+        "tags": ["Extensions", "Debugging", "Snippets"]
+      },
+      {
+        "name": "IntelliJ",
+        "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg",
+        "content": "JetBrains IDE",
+        "tags": ["Refactor", "Debugging", "Plugins"]
+      }
+    ]
   }
 ]

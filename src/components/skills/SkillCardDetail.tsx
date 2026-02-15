@@ -5,27 +5,36 @@ import {SmallText} from "@/src/components/Typography";
 
 export default function SkillCardDetail({ item }: { item: SkillItem }) {
     return (
-        <Card className="w-full group/item relative gap-4 justify-between shrink-0 cursor-default rounded-md
-                        bg-(--color-primary-variant) p-4">
-            <div className={"flex items-center justify-start gap-4"}>
+        <Card
+            className="flex w-full flex-row items-
+                      start gap-4 rounded-md bg-(--color-primary-
+                      variant) p-4"
+        >
+            <div className="relative h-10 w-10 shrink-0 overflow-hidden">
                 <Image
                     src={item.img || "/placeholder.svg"}
                     alt={`${item.name} icon`}
-                    width={40}
-                    height={40}
+                    fill
+                    className="block object-contain object-top"
                 />
-                <SmallText className={"text-white font-bold leading-none"}>{item.name}</SmallText>
             </div>
-            <ul className={"flex gap-2"}>
-                {item.tags.map((tag)=> (
-                    <li key={`${item.name}-${tag}`}
-                        className={"text-white text-xs px-2 py-1 bg-(--color-border-light) rounded-full"}
-                    >
-                        {tag}
-                    </li>
-                ))}
-            </ul>
-        </Card>
 
+            <div className="flex flex-col gap-4">
+                <SmallText className="m-0 font-bold
+                      leading-none text-white">
+                    {item.name}
+                </SmallText>
+                <ul className="flex gap-2">
+                    {item.tags.map((tag) => (
+                        <li
+                            key={`${item.name}-${tag}`}
+                            className="rounded-full bg-(--color-border-light) px-2 py-1 text-xs text-white text-center inline-flex items-center"
+                        >
+                            {tag}
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        </Card>
     )
 }

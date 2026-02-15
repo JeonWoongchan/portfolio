@@ -9,12 +9,15 @@ import useSectionVisibility from '@/src/hooks/useSectionVisibility';
 import SKILL_SECTIONS from '@/data/skills.json';
 import { cn } from '@/lib/utils';
 import SkillCardList from "@/src/components/skills/SkillCardList";
+import useMinWidth from "@/src/hooks/useMinWidth";
 
-// TODO: 카테고리 토글에 카테고리 요소 개수 툴팁으로 구현
+const MIN_OPACITY_WIDTH_PX = 1536;
+
 export default function Skills() {
     const sectionRef = useRegisterSection('Skills');
     const isVisible = useSectionVisibility(sectionRef as RefObject<HTMLElement>, 0.2);
-    const opacity = useSectionOpacity(sectionRef as RefObject<HTMLElement>);
+    const isWide = useMinWidth(MIN_OPACITY_WIDTH_PX);
+    const opacity = useSectionOpacity(sectionRef as RefObject<HTMLElement>, isWide);
 
     return (
         <Section
