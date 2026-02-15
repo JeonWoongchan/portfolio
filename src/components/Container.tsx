@@ -32,7 +32,7 @@ export function Section({
             ref={ref}
             className={cn(
                 "w-full min-h-screen flex flex-col justify-between",
-                "py-28 px-16 xl:px-40 3xl:px-80 xl:max-h-239.75 bg-(--color-navy) text-(--color-text)",
+                "py-28 px-16 xl:px-40 3xl:px-80 2xl:max-h-239.75 bg-(--color-navy) text-(--color-text)",
                 className
             )}
         >
@@ -100,7 +100,7 @@ export function TextGroup({children, className = ""}: ContainerProps) {
 export function GridContainer({children, className = ""}: ContainerProps) {
     return (
         <ul className={cn(
-            "grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-12 justify-items-center",
+            "grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-4 gap-12 justify-items-center",
             className
         )}>
             {children}

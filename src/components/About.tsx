@@ -15,11 +15,15 @@ import useSectionVisibility from "@/src/hooks/useSectionVisibility";
 import {AboutData} from "@/src/types/about";
 import {cn} from "@/lib/utils";
 import useSectionOpacity from "@/src/hooks/useSectionOpacity";
+import useMinWidth from "@/src/hooks/useMinWidth";
+
+const MIN_OPACITY_WIDTH_PX = 1536;
 
 export default function About()  {
     const sectionRef = useRegisterSection('About');
     const isVisible = useSectionVisibility(sectionRef as RefObject<HTMLElement>, 0.2);
-    const opacity = useSectionOpacity(sectionRef as RefObject<HTMLElement>);
+    const isWide = useMinWidth(MIN_OPACITY_WIDTH_PX);
+    const opacity = useSectionOpacity(sectionRef as RefObject<HTMLElement>, isWide);
 
     return (
         <Section

@@ -7,10 +7,14 @@ import Image from "next/image";
 import TypeIt from "typeit-react";
 import {HeroTitle, SectionDescription} from "@/src/components/Typography";
 import {Button} from "@/components/ui/button";
+import useMinWidth from "@/src/hooks/useMinWidth";
+
+const MIN_OPACITY_WIDTH_PX = 1536;
 
 export default function Hero() {
     const sectionRef = useRegisterSection('Hero');
-    const opacity = useSectionOpacity(sectionRef as RefObject<HTMLElement>);
+    const isWide = useMinWidth(MIN_OPACITY_WIDTH_PX);
+    const opacity = useSectionOpacity(sectionRef as RefObject<HTMLElement>, isWide);
     const [typingDone, setTypingDone] = useState(false);
 
     return (
