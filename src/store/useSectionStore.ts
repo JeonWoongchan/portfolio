@@ -19,6 +19,6 @@ export const useSectionStore = create<SectionStore>((set, get) => ({
 
     scrollTo: (key: string) => {
         const { refs } = get();
-        refs[key]?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        refs[key]?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 }));
