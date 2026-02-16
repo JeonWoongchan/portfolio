@@ -24,7 +24,7 @@ export default function SkillCardDetail({ item }: { item: SkillItem }) {
                       leading-none text-white">
                     {item.name}
                 </SmallText>
-                <ul className="flex gap-2">
+                <ul className="flex flex-col md:flex-row gap-2">
                     {item.tags.map((tag) => (
                         <li
                             key={`${item.name}-${tag}`}
