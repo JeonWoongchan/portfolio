@@ -1,30 +1,21 @@
 'use client'
-import {RefObject, useState} from "react";
-import useSectionOpacity from "@/src/hooks/useSectionOpacity";
-import {useRegisterSection} from "@/src/hooks/useRegisterSectionRef";
+import {useState} from "react";
 import {Section, SectionBody} from "@/src/components/Container";
 import Image from "next/image";
 import TypeIt from "typeit-react";
 import {HeroTitle, SectionDescription} from "@/src/components/Typography";
 import {Button} from "@/components/ui/button";
-import useMinWidth from "@/src/hooks/useMinWidth";
-
-const MIN_OPACITY_WIDTH_PX = 1536;
 
 export default function Hero() {
-    const sectionRef = useRegisterSection('Hero');
-    const isWide = useMinWidth(MIN_OPACITY_WIDTH_PX);
-    const opacity = useSectionOpacity(sectionRef as RefObject<HTMLElement>, isWide);
     const [typingDone, setTypingDone] = useState(false);
 
     return (
         <Section
-            ref={sectionRef as RefObject<HTMLElement>}
+            sectionKey={"Hero"}
             className={"bg-[#1e3155] text-(--color-text)"}
             nextSection={"About"}
             contentClassName={"justify-center items-center"}
             slideDownClassName={`opacity-0 ${typingDone && 'fade-in-up-3'}`}
-            opacityValue={opacity}
         >
             <SectionBody className={"lg:w-1/2 2xl:w-1/3 flex flex-col justify-between items-center text-center p-0 gap-4"}>
                 <Image src="/images/profile.png" alt="프로필 이미지" className={"fade-in-up-1"} width={200} height={200}/>

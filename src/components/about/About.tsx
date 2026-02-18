@@ -1,9 +1,8 @@
-'use client'
+﻿'use client'
 
-import React, {RefObject} from 'react';
-import {useRegisterSection} from "@/src/hooks/useRegisterSectionRef";
+import React from 'react';
 import InfoCard from "@/src/components/InfoCard";
-import ABOUT_DATA from "@/data/about.json"
+import ABOUT_DATA from "@/data/about.json";
 import {
     Section,
     SectionHeader,
@@ -11,28 +10,16 @@ import {
     SectionBody
 } from "@/src/components/Container";
 import {SectionTitle, SectionDescription} from "@/src/components/Typography";
-import useSectionVisibility from "@/src/hooks/useSectionVisibility";
 import {AboutData} from "@/src/types/about";
-import {cn} from "@/lib/utils";
-import useSectionOpacity from "@/src/hooks/useSectionOpacity";
-import useMinWidth from "@/src/hooks/useMinWidth";
 
-const MIN_OPACITY_WIDTH_PX = 1536;
-
-export default function About()  {
-    const sectionRef = useRegisterSection('About');
-    const isVisible = useSectionVisibility(sectionRef as RefObject<HTMLElement>, 0.2);
-    const isWide = useMinWidth(MIN_OPACITY_WIDTH_PX);
-    const opacity = useSectionOpacity(sectionRef as RefObject<HTMLElement>, isWide);
-
+export default function About() {
     return (
         <Section
-            ref={sectionRef as RefObject<HTMLElement>}
-            opacityValue={opacity}
+            sectionKey={"About"}
             nextSection={"Skills"}
             className={"bg-(--color-navy-light)"}
         >
-            <SectionHeader className={cn("opacity-0", isVisible && "fade-in-down")}>
+            <SectionHeader animateOnVisible>
                 <SectionTitle>
                     About Me
                 </SectionTitle>
@@ -41,7 +28,7 @@ export default function About()  {
                 </SectionDescription>
             </SectionHeader>
 
-            <SectionBody className={`opacity-0 ${isVisible ? `fade-in-up-2` : ""}`}>
+            <SectionBody animateOnVisible>
                 {/* 카드 그리드 */}
                 <GridContainer>
                     {ABOUT_DATA.map((data: AboutData) => (
@@ -58,4 +45,4 @@ export default function About()  {
             </SectionBody>
         </Section>
     );
-};
+}

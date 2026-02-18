@@ -5,7 +5,7 @@ import {RefObject, useEffect, useState} from "react";
 const OPACITY_OFFSET = 1000;
 
 // section의 스크롤 위치에 따라 opacity를 조절하는 함수
-const useSectionOpacity = (ref: RefObject<HTMLElement>, enabled: boolean = true) => {
+const useSectionOpacity = (ref: RefObject<HTMLElement | null>, enabled: boolean = true) => {
     const [scrollOpacity, setScrollOpacity] = useState(1);
 
     useEffect(() => {
