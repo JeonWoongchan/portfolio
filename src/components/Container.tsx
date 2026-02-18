@@ -32,7 +32,7 @@ export function Section({
             ref={ref}
             className={cn(
                 "w-full min-h-screen flex flex-col justify-between",
-                "py-28 px-16 xl:px-40 2xl:px-80 2xl:max-h-239.75 bg-(--color-navy) text-(--color-text)",
+                "py-28 px-16 xl:px-40 2xl:px-80 min-h-239.75 text-(--color-text)",
                 className
             )}
         >

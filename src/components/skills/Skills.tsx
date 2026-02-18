@@ -24,6 +24,7 @@ export default function Skills() {
             ref={sectionRef as RefObject<HTMLElement>}
             opacityValue={opacity}
             nextSection={"Work"}
+            className={"bg-(--color-navy)"}
         >
             <SectionHeader className={cn("opacity-0", isVisible && "fade-in-down")}>
                 <SectionTitle>Skills</SectionTitle>
