@@ -12,6 +12,7 @@ interface SkillListProps {
 
 const ALL_CATEGORY_KEY = "all" as const;
 
+// TODO: Sections props명 수정
 export default function SkillCardList({ sections }: SkillListProps) {
     const [selectedCategory, setSelectedCategory] = useState<string>(ALL_CATEGORY_KEY);
 

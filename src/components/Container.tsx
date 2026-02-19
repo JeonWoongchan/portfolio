@@ -77,8 +77,8 @@ export function Section({
             <section
                 ref={sectionRef}
                 className={cn(
-                    'w-full min-h-screen flex flex-col justify-between',
-                    'py-28 px-16 xl:px-40 2xl:px-80 min-h-239.75 text-(--color-text)',
+                    'w-full min-h-lvh flex flex-col justify-between',
+                    'py-28 px-16 xl:px-40 2xl:px-80 text-(--color-text)',
                     className
                 )}
             >
@@ -146,10 +146,6 @@ export function ContentWrapper({children, className = ''}: ContainerProps) {
             {children}
         </div>
     );
-}
-
-export function TextGroup({children, className = ''}: ContainerProps) {
-    return <div className={cn('space-y-4 md:space-y-6 text-left', className)}>{children}</div>;
 }
 
 export function GridContainer({children, className = ''}: ContainerProps) {

@@ -3,10 +3,13 @@
 import React from 'react';
 import {Section, SectionBody, SectionHeader} from '@/src/components/Container';
 import {SectionDescription, SectionTitle} from '@/src/components/Typography';
-import SKILL_SECTIONS from '@/data/skills.json';
+import SKILL_DATA from '@/data/skills.json';
 import SkillCardList from '@/src/components/skills/SkillCardList';
+import {SkillCategory} from "@/src/types/skills";
 
 export default function Skills() {
+    const skilled = SKILL_DATA as SkillCategory[];
+
     return (
         <Section
             sectionKey={"Skills"}
@@ -22,7 +25,7 @@ export default function Skills() {
 
             <SectionBody animateOnVisible>
                 {/* 스킬 영역 */}
-                <SkillCardList sections={SKILL_SECTIONS} />
+                <SkillCardList sections={skilled} />
             </SectionBody>
         </Section>
     );

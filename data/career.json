@@ -1,0 +1,49 @@
+[
+  {
+    "company": "(주) ABC Company",
+    "subtitle": "글로벌 Company, 소프트웨어개발 Cell",
+    "period": "2024 - 현재",
+    "isCurrent": true,
+    "stack": [
+      "React",
+      "JavaScript",
+      "TypeScript"
+    ],
+    "tasks": [
+      "React, Typescript 기반의 Micro Frontend Service 개발 및 유지보수",
+      "소켓 통신의 양방향 수업 플랫폼 개발 및 유지보수",
+      "레거시 코드 개선 및 리팩토링 (Webpack, React 버전 업그레이드, 상태 관리 store 도메인 기준 분리 등)"
+    ]
+  },
+  {
+    "company": "(주) XYZ Studio",
+    "subtitle": "IT 교육 부트캠프 스타트업, Frontend-Engineer",
+    "period": "2022 - 2023",
+    "isCurrent": false,
+    "stack": [
+      "React",
+      "JavaScript",
+      "TypeScript",
+      "Next.js"
+    ],
+    "tasks": [
+      "Next.js 기반 SSR/SSG 웹 애플리케이션 개발",
+      "내부 관리 시스템 프론트엔드 설계 및 구현",
+      "공통 컴포넌트 라이브러리 구축 및 문서화"
+    ]
+  },
+  {
+    "company": "프리랜서",
+    "subtitle": "홈페이지 제작 외주, UI/UX 디자이너 및 Frontend 개발자",
+    "period": "2021.09 - 2022",
+    "isCurrent": false,
+    "stack": [
+      "React",
+      "JavaScript"
+    ],
+    "tasks": [
+      "소규모 비즈니스 웹사이트 기획 및 개발",
+      "반응형 디자인 구현 및 퍼블리싱"
+    ]
+  }
+]

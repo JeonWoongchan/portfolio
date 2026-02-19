@@ -3,7 +3,9 @@ import {cn} from "@/lib/utils";
 import Image from "next/image";
 import {Tooltip, TooltipContent, TooltipTrigger} from "@/components/ui/tooltip";
 import {Card} from "@/components/ui/card";
+import {stackMeta, StackName} from "@/src/types/stack";
 
+// TODO: Footer에 Icons provided by Devicon. 문구 삽입
 export default function SkillCard({ item }: { item: SkillItem }) {
     return (
         <Tooltip>
@@ -11,8 +13,8 @@ export default function SkillCard({ item }: { item: SkillItem }) {
                 <Card className="group/item relative flex flex-col shrink-0 cursor-default items-center gap-2.5 rounded-md
                         bg-(--color-primary-variant) px-4 py-4 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg">
                     <Image
-                        src={item.img || "/placeholder.svg"}
-                        alt={`${item.name} icon`}
+                        src={stackMeta[item.name as StackName].img || "/placeholder.svg"}
+                        alt={`skill-icon ${item.name}`}
                         width={30}
                         height={30}
                         className={cn("h-8 w-8 object-contain")}

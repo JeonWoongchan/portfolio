@@ -19,7 +19,7 @@ export default function SkillCardDetail({ item }: { item: SkillItem }) {
                 />
             </div>
 
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 justify-between cursor-default">
                 <SmallText className="m-0 font-bold
                       leading-none text-white">
                     {item.name}

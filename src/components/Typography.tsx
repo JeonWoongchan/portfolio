@@ -25,7 +25,7 @@ export function SectionTitle({ children, className = "" }: TypographyProps) {
 export function SectionDescription({ children, className = "" }: TypographyProps) {
     return (
         <p className={cn(
-            "text-left text-base md:text-lg text-text-secondary leading-relaxed text-gray-400",
+            "text-left text-base md:text-lg text-text-secondary leading-relaxed text-(--color-text-body)",
             className
         )}>
             {children}

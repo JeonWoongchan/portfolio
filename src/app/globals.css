@@ -1,4 +1,4 @@
-@import "tailwindcss";
+﻿@import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
@@ -44,6 +44,18 @@
   --color-text-primary: #f9fafb;    /* 주요 텍스트 */
   --color-text-secondary: #9ca3af;  /* 보조 텍스트 (설명글) */
   --color-text-muted: #6b7280;      /* 희미한 텍스트 */
+
+  /* 의미 기반 확장 색상 */
+  --color-surface-strong: #0d1117;
+  --color-text-heading: #e8edf2;
+  --color-text-body: #6b7c8d;
+  --color-text-caption: #8899aa;
+  --color-divider-muted: #1e2a38;
+  --color-highlight: #00d4aa;
+  --color-highlight-soft: rgba(0, 212, 170, 0.08);
+  --color-highlight-border: rgba(0, 212, 170, 0.25);
+  --color-highlight-trace-start: rgba(0, 212, 170, 0.27);
+  --color-highlight-trace-mid: rgba(0, 212, 170, 0.13);
 
   /* 오버레이 */
   --color-overlay: rgba(15, 20, 25, 0.85);
