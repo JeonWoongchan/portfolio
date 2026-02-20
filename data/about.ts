@@ -1,4 +1,6 @@
-[
+import type { AboutData } from "@/src/types/about";
+
+export const ABOUT_DATA = [
   {
     "id": 1,
     "imageSrc": "/images/javascript.svg",
@@ -27,4 +29,6 @@
     "title": "Next.js",
     "description": "리액트와 함께 서버 기능도 구현해보고자 MongoDB를 이용하여 구현해보았습니다. 리액트와 함께 서버 기능도 구현해보고자 MongoDB를 이용하여 구현해보았습니다."
   }
-]
+] satisfies readonly AboutData[];
+
+export default ABOUT_DATA;

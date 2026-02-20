@@ -1,7 +1,7 @@
 import About from "@/src/components/about/About";
 import Skills from "@/src/components/skills/Skills";
 import Hero from "@/src/components/hero/Hero";
-import Career from "@/src/components/career/Carrer";
+import Career from "@/src/components/career/Career";
 
 
 export default function App() {

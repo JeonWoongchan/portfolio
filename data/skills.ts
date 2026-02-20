@@ -1,4 +1,6 @@
-[
+import type { SkillCategory } from "@/src/types/skills";
+
+export const SKILL_DATA = [
   {
     "key": "frontend",
     "title": "Frontend",
@@ -6,22 +8,37 @@
       {
         "name": "HTML",
         "content": "Semantic markup & accessibility",
-        "tags": ["Semantic", "SEO", "Accessibility"]
+        "tags": [
+          "Semantic",
+          "SEO",
+          "Accessibility"
+        ]
       },
       {
         "name": "CSS",
         "content": "Responsive layouts & animations",
-        "tags": ["Flexbox", "Grid", "Animation"]
+        "tags": [
+          "Flexbox",
+          "Grid",
+          "Animation"
+        ]
       },
       {
         "name": "JavaScript",
         "content": "ES6+ & DOM manipulation",
-        "tags": ["ES6+", "DOM API", "Async"]
+        "tags": [
+          "ES6+",
+          "DOM API",
+          "Async"
+        ]
       },
       {
         "name": "TypeScript",
         "content": "Type-safe development",
-        "tags": ["Type System", "Generics"]
+        "tags": [
+          "Type System",
+          "Generics"
+        ]
       }
     ]
   },
@@ -32,12 +49,20 @@
       {
         "name": "React",
         "content": "Component-based UI development",
-        "tags": ["Hooks", "State Mgmt", "Component"]
+        "tags": [
+          "Hooks",
+          "State Mgmt",
+          "Component"
+        ]
       },
       {
         "name": "Next.js",
         "content": "SSR & full-stack React framework",
-        "tags": ["SSR", "App Router", "API Route"]
+        "tags": [
+          "SSR",
+          "App Router",
+          "API Route"
+        ]
       }
     ]
   },
@@ -48,23 +73,41 @@
       {
         "name": "Git",
         "content": "Version control & collaboration",
-        "tags": ["Branch", "Merge", "GitHub"]
+        "tags": [
+          "Branch",
+          "Merge",
+          "GitHub"
+        ]
       },
       {
         "name": "Vercel",
         "content": "Deployment & hosting platform",
-        "tags": ["CI/CD", "Preview", "Domain"]
+        "tags": [
+          "CI/CD",
+          "Preview",
+          "Domain"
+        ]
       },
       {
         "name": "VS Code",
         "content": "Primary development environment",
-        "tags": ["Extensions", "Debugging", "Snippets"]
+        "tags": [
+          "Extensions",
+          "Debugging",
+          "Snippets"
+        ]
       },
       {
         "name": "IntelliJ",
         "content": "JetBrains IDE",
-        "tags": ["Refactor", "Debugging", "Plugins"]
+        "tags": [
+          "Refactor",
+          "Debugging",
+          "Plugins"
+        ]
       }
     ]
   }
-]
+] satisfies readonly SkillCategory[];
+
+export default SKILL_DATA;

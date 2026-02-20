@@ -60,6 +60,7 @@
   /* 오버레이 */
   --color-overlay: rgba(15, 20, 25, 0.85);
   --color-overlay-light: rgba(26, 31, 46, 0.7);
+  --career-card-bg: linear-gradient(180deg, rgba(24, 34, 50, 0.96), rgba(25, 35, 52, 0.82));
 
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -97,13 +98,6 @@
 
 * {
   box-sizing: border-box;
-}
-
-h1,
-h2,
-h3,
-p {
-  margin: 0;
 }
 
 ul {

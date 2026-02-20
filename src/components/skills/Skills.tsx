@@ -1,19 +1,15 @@
-﻿'use client'
-
-import React from 'react';
-import {Section, SectionBody, SectionHeader} from '@/src/components/Container';
+﻿import {Section, SectionBody, SectionHeader} from '@/src/components/Container';
 import {SectionDescription, SectionTitle} from '@/src/components/Typography';
-import SKILL_DATA from '@/data/skills.json';
+import SKILL_DATA from '@/data/skills';
 import SkillCardList from '@/src/components/skills/SkillCardList';
-import {SkillCategory} from "@/src/types/skills";
 
 export default function Skills() {
-    const skilled = SKILL_DATA as SkillCategory[];
+    const skilled = SKILL_DATA;
 
     return (
         <Section
             sectionKey={"Skills"}
-            nextSection={"Work"}
+            nextSection={"Career"}
             className={"bg-(--color-navy)"}
         >
             <SectionHeader animateOnVisible>

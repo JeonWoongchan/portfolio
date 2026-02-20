@@ -1,8 +1,6 @@
-﻿'use client'
-
-import React from 'react';
+﻿import React from 'react';
 import InfoCard from "@/src/components/InfoCard";
-import ABOUT_DATA from "@/data/about.json";
+import ABOUT_DATA from "@/data/about";
 import {
     Section,
     SectionHeader,
@@ -10,7 +8,6 @@ import {
     SectionBody
 } from "@/src/components/Container";
 import {SectionTitle, SectionDescription} from "@/src/components/Typography";
-import {AboutData} from "@/src/types/about";
 
 export default function About() {
     return (
@@ -31,7 +28,7 @@ export default function About() {
             <SectionBody animateOnVisible>
                 {/* 카드 그리드 */}
                 <GridContainer>
-                    {ABOUT_DATA.map((data: AboutData) => (
+                    {ABOUT_DATA.map((data) => (
                         <li key={data.id}>
                             <InfoCard
                                 imageSrc={data.imageSrc}

@@ -7,7 +7,7 @@ import { SkillCategory } from "@/src/types/skills";
 import {Tooltip, TooltipContent, TooltipTrigger} from "@/components/ui/tooltip";
 
 interface SkillListProps {
-    sections: SkillCategory[];
+    sections: readonly SkillCategory[];
 }
 
 const ALL_CATEGORY_KEY = "all" as const;

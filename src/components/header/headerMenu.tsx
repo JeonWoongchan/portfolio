@@ -1,7 +1,7 @@
 import {Terminal} from "lucide-react";
 import {cn} from "@/lib/utils";
 
-const MENU_LIST = ['About', 'Skills', 'Career', 'Archive', "Contact"] as const
+const MENU_LIST = ['About', 'Skills', 'Career', 'Archive'] as const
 const MENU_BUTTON_CLASSES = 'px-3 py-1.5 cursor-pointer hover:bg-(--color-gray) hover:rounded-full'
 
 type ExpandedMenuProps = {

@@ -1,15 +1,21 @@
-import {StackName} from "@/src/types/stack";
+import type {StackName} from '@/src/types/stack';
+
+export interface CareerProject {
+    title: string;
+    period: string;
+    description: string;
+    stack: readonly StackName[];
+}
 
 export interface CareerItem {
     company: string;
-    subtitle: string;
     period: string;
-    isCurrent: boolean;
-    stack: StackName[];
-    tasks: string[];
-}
-
-export interface TimelineItemProps {
-    item: CareerItem;
-    isLast: boolean;
+    quote: string;
+    location: string;
+    role: string;
+    badges: readonly string[];
+    stack: readonly StackName[];
+    highlights: readonly string[];
+    projects: readonly CareerProject[];
+    isCurrent?: boolean;
 }
