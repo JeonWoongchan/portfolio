@@ -11,7 +11,7 @@ export default function SkillCard({ item }: { item: SkillItem }) {
         <Tooltip>
             <TooltipTrigger asChild>
                 <Card className="group/item relative flex flex-col shrink-0 cursor-default items-center gap-2.5 rounded-md
-                        px-4 py-4 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg">
+                        px-4 py-4 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg bg-(--color-navy-light)">
                     <Image
                         src={stackMeta[item.name as StackName].img || "/placeholder.svg"}
                         alt={`skill-icon ${item.name}`}

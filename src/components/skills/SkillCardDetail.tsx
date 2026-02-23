@@ -9,8 +9,7 @@ export default function SkillCardDetail({ item }: { item: SkillItem }) {
     return (
         <Card
             className="flex w-full flex-row items-
-                      start gap-4 rounded-md bg-(--color-primary-
-                      variant) p-4"
+                      start gap-4 rounded-md bg-(--color-navy-light) p-4"
         >
             <div className="relative h-10 w-10 shrink-0 overflow-hidden">
                 <Image
