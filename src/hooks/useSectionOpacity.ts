@@ -1,25 +1,40 @@
 'use client'
 
-//section의 스크롤 위치에 따라 opacity 조절하는 함수
-import {useScroll} from "@/src/hooks/useScroll";
 import {RefObject, useEffect, useState} from "react";
 
-const useSectionOpacity = (ref: RefObject<HTMLElement>)=>{
-    const [scrollOpacity, setScrollOpacity] = useState(1)
-    const { scrollY } = useScroll()
+const OPACITY_OFFSET = 1000;
+
+// section의 스크롤 위치에 따라 opacity를 조절하는 함수
+const useSectionOpacity = (ref: RefObject<HTMLElement | null>, enabled: boolean = true) => {
+    const [scrollOpacity, setScrollOpacity] = useState(1);
 
     useEffect(() => {
-        if(!ref || !ref.current) return;
+        if (!enabled) return;
 
-        const sectionY = ref.current.getBoundingClientRect().y
-        const newOpacity = (1 / 1000) * sectionY + 1
+        // 현재 섹션의 Y 위치를 기준으로 opacity를 계산하고 0~1 범위로 보정한다.
+        const updateOpacity = () => {
+            const section = ref.current;
+            if (!section) return;
 
-        if(sectionY <= 0 && sectionY >= -600){
-            setScrollOpacity(Math.max(0, newOpacity))
-        }
-    }, [scrollY, ref])
+            const sectionRect = section.getBoundingClientRect();
+            const rawOpacity = sectionRect.y / OPACITY_OFFSET + 1;
+            const nextOpacity = Math.max(0, Math.min(1, rawOpacity));
+            setScrollOpacity(nextOpacity);
+        };
 
-    return scrollOpacity
-}
+        const frameId = window.requestAnimationFrame(updateOpacity);
+
+        window.addEventListener("scroll", updateOpacity, {passive: true});
+        window.addEventListener("resize", updateOpacity);
+
+        return () => {
+            window.cancelAnimationFrame(frameId);
+            window.removeEventListener("scroll", updateOpacity);
+            window.removeEventListener("resize", updateOpacity);
+        };
+    }, [enabled, ref]);
+
+    return enabled ? scrollOpacity : 1;
+};
 
 export default useSectionOpacity;

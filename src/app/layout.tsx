@@ -1,14 +1,7 @@
-import type { Metadata } from "next";
-import { Open_Sans } from "next/font/google";
+import type {Metadata} from "next";
 import "./globals.css";
-import Header from "@/src/components/Header";
-
-const openSans = Open_Sans({
-    variable: "--font-open-sans",
-    subsets: ["latin", "korean"],
-    weight: ["300", "400", "500", "600"],
-    style: ["normal", "italic"],
-});
+import Header from "@/src/components/header/Header";
+import React from "react";
 
 export const metadata: Metadata = {
     title: "전웅찬 포트폴리오",
@@ -16,13 +9,13 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-                                       children,
-                                   }: Readonly<{
+    children,
+}: Readonly<{
     children: React.ReactNode;
 }>) {
     return (
         <html lang="ko">
-        <body className={`${openSans.variable} antialiased font-sans`}>
+        <body className="antialiased font-['Pretendard']">
         <Header />
         {children}
         </body>

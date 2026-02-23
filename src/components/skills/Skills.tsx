@@ -1,0 +1,28 @@
+﻿import {Section, SectionBody, SectionHeader} from '@/src/components/Container';
+import {SectionDescription, SectionTitle} from '@/src/components/Typography';
+import SKILL_DATA from '@/data/skills';
+import SkillCardList from '@/src/components/skills/SkillCardList';
+
+export default function Skills() {
+    const skilled = SKILL_DATA;
+
+    return (
+        <Section
+            sectionKey={"Skills"}
+            nextSection={"Career"}
+            className={"bg-(--color-navy)"}
+        >
+            <SectionHeader animateOnVisible>
+                <SectionTitle>Skills</SectionTitle>
+                <SectionDescription>
+                    프론트엔드 개발에 필요한 핵심 기술들을 꾸준히 학습하고 실무에 적용합니다.
+                </SectionDescription>
+            </SectionHeader>
+
+            <SectionBody animateOnVisible>
+                {/* 스킬 영역 */}
+                <SkillCardList sections={skilled} />
+            </SectionBody>
+        </Section>
+    );
+}
