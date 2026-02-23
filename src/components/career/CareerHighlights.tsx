@@ -10,7 +10,7 @@ interface CareerHighlightsProps {
 export default function CareerHighlights({company, highlights}: CareerHighlightsProps) {
     return (
         <div className="border-t border-(--color-border) pt-4">
-            <p className="mb-3 text-xs tracking-wide text-(--color-text-muted)">{HIGHLIGHT_LABEL}</p>
+            <p className="mb-1.5 text-xs tracking-wide text-(--color-text-muted)">{HIGHLIGHT_LABEL}</p>
             <ul className="space-y-1.5">
                 {highlights.map((highlight) => (
                     <li key={`${company}-${highlight}`} className="flex items-start gap-2 text-sm text-white">

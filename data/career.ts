@@ -2,7 +2,7 @@ import type { CareerItem } from "@/src/types/career";
 
 export const CAREER_DATA = [
   {
-    company: '(주) ABC Company',
+    company: '(주)유리네트웍스',
     period: '2024.11 - 현재',
     quote: '"사용자 중심의 서비스를 만들어가고 있습니다."',
     location: '서울, 대한민국',
@@ -33,7 +33,7 @@ export const CAREER_DATA = [
     isCurrent: true,
   },
   {
-    company: '(주) XYZ Studio',
+    company: '(주)글로벌브릿지',
     period: '2019.08 - 2023.09',
     quote: '"고객과 창작자를 연결하는 플랫폼 서비스"',
     location: '서울, 대한민국',

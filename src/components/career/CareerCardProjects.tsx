@@ -8,10 +8,9 @@ interface CareerCardProjectsProps {
     item: CareerItem;
 }
 
-// TODO: 리팩토링 및 UI 배치 수정
 export default function CareerCardProjects({item}: CareerCardProjectsProps) {
     return (
-        <div className="p-6">
+        <div className="p-6 flex-1 min-w-0">
             <div className="mb-4 flex items-center justify-between">
                 <h4 className="text-xs tracking-wide text-(--color-text-muted)">PROJECTS ({item.projects.length})</h4>
             </div>

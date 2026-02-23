@@ -13,13 +13,11 @@ export default function Career() {
             </SectionHeader>
 
             <SectionBody animateOnVisible className="mx-auto w-full max-w-7xl">
-                <div className="space-y-6">
-                    {CAREER_DATA.map((item, index) => (
-                        <div key={`${item.company}-${item.period}`} className={`fade-in-up-${index + 2}`}>
-                            <CareerCard item={item} />
-                        </div>
-                    ))}
-                </div>
+                {CAREER_DATA.map((item, index) => (
+                    <div key={`${item.company}-${item.period}`} className={`fade-in-up-${index + 2}`}>
+                        <CareerCard item={item} />
+                    </div>
+                ))}
             </SectionBody>
         </Section>
     );
