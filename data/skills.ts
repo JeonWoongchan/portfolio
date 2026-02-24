@@ -52,7 +52,6 @@ export const SKILL_DATA = [
         "tags": [
           "Hooks",
           "State Mgmt",
-          "Component"
         ]
       },
       {
@@ -61,7 +60,6 @@ export const SKILL_DATA = [
         "tags": [
           "SSR",
           "App Router",
-          "API Route"
         ]
       }
     ]
