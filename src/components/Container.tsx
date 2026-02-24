@@ -5,8 +5,6 @@ import {cn} from '@/lib/utils';
 import SlideDown from '@/src/components/SlideDown';
 import {useRegisterSection} from '@/src/hooks/useRegisterSectionRef';
 import useSectionVisibility from '@/src/hooks/useSectionVisibility';
-import useSectionOpacity from '@/src/hooks/useSectionOpacity';
-import useMinWidth from '@/src/hooks/useMinWidth';
 
 interface ContainerProps {
     children: React.ReactNode;
@@ -34,7 +32,6 @@ interface SectionChildProps extends ContainerProps {
     visibleClassName?: string;
 }
 
-const DEFAULT_OPACITY_MIN_WIDTH_PX = 1536;
 const SECTION_VISIBILITY_CONTEXT_DEFAULT: SectionVisibilityContextValue = {
     isVisible: false,
 };
@@ -54,11 +51,8 @@ export function Section({
     slideDownClassName = '',
     ref,
     nextSection,
-    opacityValue,
     sectionKey,
     visibilityThreshold = 0.2,
-    opacityMinWidthPx = DEFAULT_OPACITY_MIN_WIDTH_PX,
-    enableOpacityAnimation = true,
 }: SectionProps) {
     const sectionRef = useRegisterSection(
         sectionKey,
@@ -66,23 +60,18 @@ export function Section({
     );
     const shouldObserveVisibility = Boolean(sectionKey);
     const isVisible = useSectionVisibility(sectionRef, visibilityThreshold, shouldObserveVisibility);
-    const isWide = useMinWidth(opacityMinWidthPx);
-    const shouldAnimateOpacity = shouldObserveVisibility && enableOpacityAnimation && isWide;
-    const calculatedOpacity = useSectionOpacity(sectionRef, shouldAnimateOpacity);
-    const resolvedOpacity = opacityValue ?? calculatedOpacity;
-    const style = {opacity: resolvedOpacity};
 
     return (
         <SectionVisibilityContext.Provider value={{isVisible}}>
             <section
                 ref={sectionRef}
                 className={cn(
-                    'w-full min-h-lvh flex flex-col justify-between',
-                    'py-28 px-16 xl:px-40 2xl:px-80 text-(--color-text)',
+                    'w-full min-h-dvh flex flex-col justify-between',
+                    'py-28 px-16 xl:px-40 2xl:px-80 text-(--color-text) select-none',
                     className
                 )}
             >
-                <div style={style} className={cn('w-full flex-1 flex flex-col justify-between', contentClassName)}>
+                <div className={cn('w-full flex-1 flex flex-col justify-between', contentClassName)}>
                     {children}
                 </div>
                 {nextSection && <SlideDown next={nextSection} className={slideDownClassName} />}
@@ -124,7 +113,7 @@ export function SectionBody({
     return (
         <div
             className={cn(
-                'flex-1 flex flex-col justify-between',
+                'flex-1 flex flex-col justify-between min-h-150',
                 animateOnVisible && 'opacity-0',
                 animateOnVisible && isVisible && visibleClassName,
                 className

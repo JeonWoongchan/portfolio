@@ -12,7 +12,7 @@ export default function Career() {
                 <SectionDescription>다양한 업무와 프로젝트를 통해 경험과 노하우를 쌓고 있습니다.</SectionDescription>
             </SectionHeader>
 
-            <SectionBody animateOnVisible className="mx-auto w-full max-w-7xl">
+            <SectionBody animateOnVisible className="mx-auto w-full max-w-7xl justify-start gap-4">
                 {CAREER_DATA.map((item, index) => (
                     <div key={`${item.company}-${item.period}`} className={`fade-in-up-${index + 2}`}>
                         <CareerCard item={item} />

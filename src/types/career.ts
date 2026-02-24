@@ -4,6 +4,7 @@ export interface CareerProject {
     title: string;
     period: string;
     description: string;
+    roles: string[]
     stack: readonly StackName[];
 }
 
@@ -12,7 +13,7 @@ export interface CareerItem {
     period: string;
     quote: string;
     location: string;
-    role: string;
+    team: string;
     badges: readonly string[];
     stack: readonly StackName[];
     highlights: readonly string[];
