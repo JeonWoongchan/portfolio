@@ -1,18 +1,15 @@
-import {BriefcaseBusiness, MapPin, Users2} from 'lucide-react';
-import type {CareerItem} from '@/src/types/career';
+import { BriefcaseBusiness, MapPin, Users2 } from 'lucide-react';
 import CareerCurrentBadge from '@/src/components/career/CareerCurrentBadge';
-import React from "react";
-import CareerMetaItem from "@/src/components/career/CareerMetaItem";
-import {BodyText} from "@/src/components/Typography";
-import StackCardList from "@/src/components/common/StackCardList";
-
-interface CareerCardHeaderProps {
-    item: Pick<CareerItem, 'company' | 'period' | 'quote' | 'location' | 'team' | 'stack' | 'isCurrent'>;
-}
+import CareerMetaItem from '@/src/components/career/CareerMetaItem';
+import { BodyText } from '@/src/components/Typography';
+import StackCardList from '@/src/components/common/StackCardList';
+import { useCareerCardItem } from '@/src/components/career/CareerCardContext';
 
 const CURRENT_LABEL = '재직 중';
 
-export default function CareerCardHeader({item}: CareerCardHeaderProps) {
+export default function CareerCardHeader() {
+    const item = useCareerCardItem();
+
     return (
         <div className="space-y-6">
             <div className="flex items-start gap-4">

@@ -1,14 +1,12 @@
-import type {CareerItem} from '@/src/types/career';
-import {SmallText} from '@/src/components/Typography';
-import StackCardList from "@/src/components/common/StackCardList";
-import InlineTagList from "@/src/components/common/InlineTagList";
-import {VerticalDivider} from "@/src/components/common/VerticalDivider";
+import { SmallText } from '@/src/components/Typography';
+import StackCardList from '@/src/components/common/StackCardList';
+import InlineTagList from '@/src/components/common/InlineTagList';
+import { VerticalDivider } from '@/src/components/common/VerticalDivider';
+import { useCareerCardItem } from '@/src/components/career/CareerCardContext';
 
-interface CareerCardProjectsProps {
-    item: CareerItem;
-}
+export default function CareerCardProjects() {
+    const item = useCareerCardItem();
 
-export default function CareerCardProjects({item}: CareerCardProjectsProps) {
     return (
         <div className="min-w-0 flex-1">
             <div className="mb-4 flex items-center justify-between">
@@ -27,17 +25,17 @@ export default function CareerCardProjects({item}: CareerCardProjectsProps) {
                                 <p className="text-base font-semibold text-white">{project.title}</p>
                                 <p className="text-(--color-text-secondary)">{project.period}</p>
                                 <SmallText>{project.description}</SmallText>
-                            <div className="flex gap-4">
-                                <InlineTagList
-                                    items={project.roles}
-                                    keyPrefix={`${item.company}-${project.title}-roles`}
-                                />
-                                <StackCardList
-                                    stackNames={item.stack}
-                                    keyPrefix={`${item.company}-${project.title}`}
-                                    compact={true}
-                                    border={true}
-                                />
+                                <div className="flex gap-4">
+                                    <InlineTagList
+                                        items={project.roles}
+                                        keyPrefix={`${item.company}-${project.title}-roles`}
+                                    />
+                                    <StackCardList
+                                        stackNames={item.stack}
+                                        keyPrefix={`${item.company}-${project.title}`}
+                                        compact={true}
+                                        border={true}
+                                    />
                                 </div>
                             </div>
                         </div>

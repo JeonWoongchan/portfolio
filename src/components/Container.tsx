@@ -1,17 +1,18 @@
 ﻿'use client'
 
-import React, {createContext, RefObject, useContext} from 'react';
+import {createContext, useContext} from 'react';
+import type { ReactNode, RefObject } from 'react';
 import {cn} from '@/lib/utils';
 import SlideDown from '@/src/components/SlideDown';
 import {useRegisterSection} from '@/src/hooks/useRegisterSectionRef';
 import useSectionVisibility from '@/src/hooks/useSectionVisibility';
 
 interface ContainerProps {
-    children: React.ReactNode;
+    children: ReactNode;
     className?: string;
     contentClassName?: string;
     slideDownClassName?: string;
-    ref?: React.RefObject<HTMLElement | null>;
+    ref?: RefObject<HTMLElement | null>;
 }
 
 interface SectionProps extends ContainerProps {
@@ -113,7 +114,7 @@ export function SectionBody({
     return (
         <div
             className={cn(
-                'flex-1 flex flex-col justify-between min-h-140',
+                'flex-1 flex flex-col justify-start',
                 animateOnVisible && 'opacity-0',
                 animateOnVisible && isVisible && visibleClassName,
                 className

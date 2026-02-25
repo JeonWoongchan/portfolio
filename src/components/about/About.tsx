@@ -1,20 +1,19 @@
-﻿import React from 'react';
-import InfoCard from "@/src/components/InfoCard";
-import ABOUT_DATA from "@/data/about";
+import InfoCard from '@/src/components/InfoCard';
+import ABOUT_DATA from '@/data/about';
 import {
     Section,
     SectionHeader,
     GridContainer,
-    SectionBody
-} from "@/src/components/Container";
-import {SectionTitle, SectionDescription} from "@/src/components/Typography";
+    SectionBody,
+} from '@/src/components/Container';
+import { SectionTitle, SectionDescription } from '@/src/components/Typography';
 
 export default function About() {
     return (
         <Section
-            sectionKey={"About"}
-            nextSection={"Skills"}
-            className={"bg-(--color-navy-light)"}
+            sectionKey={'About'}
+            nextSection={'Skills'}
+            className={'bg-(--color-navy-light)'}
         >
             <SectionHeader animateOnVisible>
                 <SectionTitle>

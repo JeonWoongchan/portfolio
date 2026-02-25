@@ -78,6 +78,7 @@ description: >
 - 컴포넌트 합성 패턴 선호
 - Early Return 사용
 - 재사용 가능한 타입/유틸 우선 탐색
+- React 직접 import 비선호
 
 ## 에러 처리
 

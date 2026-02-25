@@ -1,4 +1,3 @@
-import React from 'react';
 import {Section, SectionBody, SectionHeader} from '@/src/components/Container';
 import {SectionDescription, SectionTitle} from '@/src/components/Typography';
 import CAREER_DATA from '@/data/career';

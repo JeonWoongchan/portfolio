@@ -1,6 +1,5 @@
 'use client'
 
-import React from 'react';
 import { MdKeyboardArrowDown } from "react-icons/md";
 import {useSectionStore} from "@/src/store/useSectionStore";
 import {cn} from "@/lib/utils";
@@ -21,4 +20,3 @@ export default function SlideDown({next, className}: SlideDownProps) {
         </button>
     );
 }
-

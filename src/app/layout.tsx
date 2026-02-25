@@ -1,7 +1,7 @@
 import type {Metadata} from "next";
+import type { ReactNode } from 'react';
 import "./globals.css";
 import Header from "@/src/components/header/Header";
-import React from "react";
 
 export const metadata: Metadata = {
     title: "전웅찬 포트폴리오",
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function RootLayout({
     children,
 }: Readonly<{
-    children: React.ReactNode;
+    children: ReactNode;
 }>) {
     return (
         <html lang="ko">

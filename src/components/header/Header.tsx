@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import { useState } from 'react'
 import { Terminal } from 'lucide-react'
 import { useScroll } from '@/src/hooks/useScroll'
 import { useSectionStore } from '@/src/store/useSectionStore'
@@ -13,7 +13,7 @@ const CONTAINER_CLASSES =
 export default function Header() {
     const { scrollY } = useScroll()
     const { scrollTo } = useSectionStore()
-    const [isMenuOpen, setIsMenuOpen] = React.useState(false)
+    const [isMenuOpen, setIsMenuOpen] = useState(false)
 
     const showCollapsedBrand = !isMenuOpen && scrollY < 300
 
@@ -28,7 +28,7 @@ export default function Header() {
                     {showCollapsedBrand ? (
                         <CollapsedBrand/>
                     ) : (
-                        <ExpandedMenu onMenuClick={scrollTo} />
+                        <ExpandedMenu onMenuClickAction={scrollTo} />
                     )}
                 </div>
             </nav>

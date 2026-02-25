@@ -1,8 +1,8 @@
-import React from 'react';
+import type { ReactNode } from 'react';
 import { cn } from '@/lib/utils';
 
 interface TypographyProps {
-    children: React.ReactNode;
+    children: ReactNode;
     align?: string;
     className?: string;
 }
@@ -62,7 +62,7 @@ export function BodyText({ children, className = "" }: TypographyProps) {
 export function SmallText({ children, className = "" }: TypographyProps) {
     return (
         <p className={cn(
-            "text-xs md:text-sm lg:text-base leading-relaxed text-gray-400",
+            "text-xs md:text-sm leading-relaxed text-gray-400",
             className
         )}>
             {children}
