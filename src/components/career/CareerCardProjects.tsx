@@ -1,5 +1,3 @@
-'use client';
-
 import type {CareerItem} from '@/src/types/career';
 import {SmallText} from '@/src/components/Typography';
 import StackCardList from "@/src/components/common/StackCardList";

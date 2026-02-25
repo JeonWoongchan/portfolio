@@ -113,7 +113,7 @@ export function SectionBody({
     return (
         <div
             className={cn(
-                'flex-1 flex flex-col justify-between min-h-150',
+                'flex-1 flex flex-col justify-between min-h-140',
                 animateOnVisible && 'opacity-0',
                 animateOnVisible && isVisible && visibleClassName,
                 className

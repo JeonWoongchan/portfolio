@@ -32,7 +32,7 @@ export default function CareerCard({item}: CareerCardProps) {
                     >
                         <span className="inline-flex items-center gap-1 text-sm">
                             <ToggleIcon className="text-lg" />
-                            주요 업무 내용 보기
+                            {isDetailOpen ? "상세 내용 접기" : "상세 내용 보기"}
                         </span>
                     </AccordionTrigger>
                     <AccordionContent className="flex gap-8 p-6">
