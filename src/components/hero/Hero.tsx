@@ -17,7 +17,7 @@ export default function Hero() {
             contentClassName={"justify-center items-center"}
             slideDownClassName={`opacity-0 ${typingDone && 'fade-in-up-3'}`}
         >
-            <SectionBody className={"lg:w-1/2 2xl:w-1/3 flex flex-col justify-between items-center text-center p-0 gap-4"}>
+            <SectionBody className={"lg:w-1/2 flex flex-col justify-between items-center text-center p-0 gap-4"}>
                 <Image src="/images/profile.png" alt="프로필 이미지" className={"fade-in-up-1"} width={200} height={200}/>
                 <div className="h-35 xl:h-55">
                     <TypeIt

@@ -2,6 +2,7 @@ import type {CareerItem} from '@/src/types/career';
 import {SmallText} from '@/src/components/Typography';
 import StackCardList from "@/src/components/common/StackCardList";
 import InlineTagList from "@/src/components/common/InlineTagList";
+import {VerticalDivider} from "@/src/components/common/VerticalDivider";
 
 interface CareerCardProjectsProps {
     item: CareerItem;
@@ -21,7 +22,7 @@ export default function CareerCardProjects({item}: CareerCardProjectsProps) {
                         className="rounded-xl border border-(--color-border) p-4"
                     >
                         <div className="flex gap-4">
-                            <div className="w-0.5 shrink-0 rounded-full bg-(--color-accent)" />
+                            <VerticalDivider className="h-auto w-0.5 rounded-full bg-(--color-accent)" />
                             <div className="space-y-2">
                                 <p className="text-base font-semibold text-white">{project.title}</p>
                                 <p className="text-(--color-text-secondary)">{project.period}</p>

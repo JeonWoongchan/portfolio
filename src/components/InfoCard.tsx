@@ -13,7 +13,7 @@ interface InfoCardProps {
 export default function InfoCard({imageSrc, imageAlt, title, description}: InfoCardProps) {
     return(
         <div className={"flex flex-col gap-2"}>
-            <Card className="cursor-default text-white h-60 transition-all duration-300 ease-in-out hover:scale-101 overflow-hidden">
+            <Card className="cursor-default text-white h-55 transition-all duration-300 ease-in-out hover:scale-101 overflow-hidden">
                 <CardContent className="flex flex-col items-center p-4">
                     <Image
                         src={imageSrc}

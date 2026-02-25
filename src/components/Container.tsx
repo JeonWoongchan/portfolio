@@ -139,7 +139,7 @@ export function ContentWrapper({children, className = ''}: ContainerProps) {
 
 export function GridContainer({children, className = ''}: ContainerProps) {
     return (
-        <ul className={cn('grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-4 gap-12 justify-items-center', className)}>
+        <ul className={cn('grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-4 gap-8 justify-items-center', className)}>
             {children}
         </ul>
     );

@@ -1,6 +1,7 @@
 import StackCard from "@/src/components/common/StackCard";
 import type {StackName} from "@/src/types/stack";
 import {cn} from "@/lib/utils";
+import {VerticalInsetDivider} from "@/src/components/common/VerticalDivider";
 
 interface StackCardListProps {
     stackNames: readonly StackName[];
@@ -17,8 +18,8 @@ export default function StackCardList({
     border = false,
     className
 }: StackCardListProps) {
-    return (
-        <div className={cn(`flex flex-wrap gap-2 ${border && "border-l border-(--color-border) pl-4"}`, className)}>
+    const listContent = (
+        <div className={cn("flex flex-wrap gap-2", className)}>
             {stackNames.map((stackName, index) => (
                 <StackCard
                     key={`${keyPrefix}-${stackName}-${index}`}
@@ -27,5 +28,13 @@ export default function StackCardList({
                 />
             ))}
         </div>
+    );
+
+    if (border) {
+        return <VerticalInsetDivider side="left">{listContent}</VerticalInsetDivider>;
+    }
+
+    return (
+        listContent
     );
 }

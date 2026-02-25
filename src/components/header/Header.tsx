@@ -5,6 +5,7 @@ import { Terminal } from 'lucide-react'
 import { useScroll } from '@/src/hooks/useScroll'
 import { useSectionStore } from '@/src/store/useSectionStore'
 import ExpandedMenu from "@/src/components/header/headerMenu";
+import {VerticalDivider} from "@/src/components/common/VerticalDivider";
 
 const CONTAINER_CLASSES =
     'flex items-center rounded-full border border-border/50 bg-(--color-navy) backdrop-blur-md transition-all duration-500 text-(--color-accent)'
@@ -41,8 +42,7 @@ function CollapsedBrand() {
             <Terminal className="h-4 w-4" />
             <span className="font-mono text-md text-muted-foreground">Jeon.Woongchan</span>
             <span className="font-mono text-sm">~</span>
-            <span className="inline-block h-4 w-0.5 animate-pulse bg-(--color-accent)" />
+            <VerticalDivider className="h-4 w-0.5 animate-pulse bg-(--color-accent)" />
         </div>
     )
 }
-
