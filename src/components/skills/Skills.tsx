@@ -4,7 +4,7 @@ import SKILL_DATA from '@/data/skills';
 import SkillCardList from '@/src/components/skills/SkillCardList';
 
 export default function Skills() {
-    const skilled = SKILL_DATA;
+    const categories = SKILL_DATA;
 
     return (
         <Section
@@ -21,7 +21,7 @@ export default function Skills() {
 
             <SectionBody animateOnVisible>
                 {/* 스킬 영역 */}
-                <SkillCardList sections={skilled} />
+                <SkillCardList categories={categories} />
             </SectionBody>
         </Section>
     );
