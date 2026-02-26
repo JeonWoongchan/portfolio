@@ -1,5 +1,5 @@
 import type {LucideIcon} from 'lucide-react';
-import {VerticalInsetDivider} from "@/src/components/common/VerticalDivider";
+import {SmallText} from "@/src/components/Typography";
 
 interface CareerMetaItemProps {
     icon: LucideIcon;
@@ -8,11 +8,9 @@ interface CareerMetaItemProps {
 
 export default function CareerMetaItem({icon: Icon, text}: CareerMetaItemProps) {
     return (
-        <VerticalInsetDivider side="left">
-            <div className="flex items-center gap-2">
-                <Icon className="size-4 text-(--color-accent)" aria-hidden="true" />
-                <span>{text}</span>
-            </div>
-        </VerticalInsetDivider>
+          <div className="flex items-center gap-2">
+              <Icon className="size-4 text-(--color-accent)" aria-hidden="true" />
+              <SmallText>{text}</SmallText>
+          </div>
     );
 }

@@ -8,6 +8,7 @@ import CareerHighlights from '@/src/components/career/CareerHighlights';
 import CareerCardProjects from '@/src/components/career/CareerCardProjects';
 import CareerCardOverview from '@/src/components/career/CareerCardOverview';
 import { CareerCardProvider } from '@/src/components/career/CareerCardContext';
+import { Card } from "@/components/ui/card";
 
 interface CareerCardProps {
     item: CareerItem;
@@ -23,14 +24,14 @@ export default function CareerCard({ item }: CareerCardProps) {
 
     return (
         <CareerCardProvider item={item}>
-            <article className="w-full rounded-2xl border border-(--color-border-light) bg-(--color-navy)">
+            <Card className="gap-0 bg-(--color-navy) p-0">
                 <Accordion type="single" collapsible value={isDetailOpen ? 'open' : ''}>
                     <AccordionItem value="open" className="border-none">
                         <CareerCardOverview />
                         <AccordionTrigger
                             onClick={handleToggleDetail}
                             className={`flex h-10 w-full justify-center hover:no-underline [&>svg:last-child]:hidden
-                        ${isDetailOpen ? 'rounded-none bg-(--color-accent) text-(--color-navy)' : 'rounded-t-none rounded-b-xl bg-(--color-border) text-white'}`}
+                        ${isDetailOpen ? 'rounded-none bg-(--color-accent) text-(--color-navy)' : 'rounded-t-none bg-(--color-border) text-white'}`}
                         >
                             <span className="inline-flex items-center gap-1 text-sm">
                                 <ToggleIcon className="text-lg" />
@@ -43,7 +44,7 @@ export default function CareerCard({ item }: CareerCardProps) {
                         </AccordionContent>
                     </AccordionItem>
                 </Accordion>
-            </article>
+            </Card>
         </CareerCardProvider>
     );
 }

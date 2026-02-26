@@ -18,7 +18,6 @@ export default function CategoryFilterToggle({
     return (
         <ToggleGroup
             type="single"
-            variant="outline"
             value={selectedKey}
             spacing={2}
             onValueChange={(value: string) => {
