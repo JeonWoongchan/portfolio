@@ -42,7 +42,7 @@ function CollapsedBrand() {
             <Terminal className="h-4 w-4" />
             <span className="font-mono text-md text-muted-foreground">Jeon.Woongchan</span>
             <span className="font-mono text-sm">~</span>
-            <VerticalDivider className="h-4 w-0.5 animate-pulse bg-(--color-accent)" />
+            <VerticalDivider className="h-4 w-0.5 mx-0 animate-pulse bg-(--color-accent)" />
         </div>
     )
 }

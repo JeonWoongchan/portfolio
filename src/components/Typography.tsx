@@ -50,7 +50,7 @@ export function HeroTitle({ children, align = "self-start", className = "" }: Ty
 export function BodyText({ children, className = "" }: TypographyProps) {
     return (
         <p className={cn(
-            "text-sm md:text-base lg:text-lg leading-relaxed",
+            "text-sm md:text-base font-semibold leading-relaxed text-white",
             className
         )}>
             {children}

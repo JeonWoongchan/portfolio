@@ -28,7 +28,7 @@ export default function ExpandedMenu({ onMenuClickAction }: ExpandedMenuProps) {
                 <Terminal className="h-4 w-4 text-(--color-accent) group-hover:text-(--color-navy)" />
                 <span className="font-mono text-sm text-(--color-accent) group-hover:text-(--color-navy)">~/</span>
             </button>
-            <VerticalDivider className="mx-0.5 bg-border/60" />
+            <VerticalDivider className="mx-0 bg-border/60" />
             {MENU_LIST.map((menu) => (
                 <MenuButton key={menu} menu={menu} onClick={onMenuClickAction} />
             ))}

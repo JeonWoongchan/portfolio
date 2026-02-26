@@ -9,7 +9,7 @@ export default function InlineTagList({items, keyPrefix}: InlineTagListProps) {
             {items.map((item) => (
                 <li
                     key={`${keyPrefix}-${item}`}
-                    className="inline-flex items-center rounded-full bg-(--color-border-light) px-3 py-1 text-center text-xs text-white"
+                    className="inline-flex items-center rounded-full bg-(--color-border-light) px-3 py-1 text-center text-xs text-gray-300"
                 >
                     {item}
                 </li>

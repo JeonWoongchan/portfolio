@@ -14,3 +14,5 @@ export interface ArchiveData {
 export interface ArchiveCardItem extends ArchiveEntry {
     type: "project" | "post";
 }
+
+export type ArchiveFilter = "all" | ArchiveCardItem["type"];
