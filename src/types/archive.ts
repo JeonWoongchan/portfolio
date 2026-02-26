@@ -1,4 +1,8 @@
-export interface ArchiveEntry {
+import type { CategoryGroup } from "@/src/types/category";
+
+export type ArchiveCategoryKey = "project" | "blog";
+
+export interface ArchiveItem {
     id: number;
     date: string;
     title: string;
@@ -6,13 +10,10 @@ export interface ArchiveEntry {
     tags: readonly string[];
 }
 
-export interface ArchiveData {
-    projects: readonly ArchiveEntry[];
-    posts: readonly ArchiveEntry[];
+export type ArchiveCategory = CategoryGroup<ArchiveItem, ArchiveCategoryKey>;
+
+export interface ArchiveCardItem extends ArchiveItem {
+    category: ArchiveCategoryKey;
 }
 
-export interface ArchiveCardItem extends ArchiveEntry {
-    type: "project" | "post";
-}
-
-export type ArchiveFilter = "all" | ArchiveCardItem["type"];
+export type ArchiveFilter = "all" | ArchiveCategoryKey;

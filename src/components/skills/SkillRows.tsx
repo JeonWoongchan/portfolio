@@ -6,10 +6,10 @@ import StackCardList from "@/src/components/common/StackCardList";
 
 interface SkillRowsProps {
     category: SkillCategory;
-    detail: boolean;
+    isAllSelected: boolean;
 }
 
-export default function SkillRows({category, detail}: SkillRowsProps) {
+export default function SkillRows({category, isAllSelected}: SkillRowsProps) {
     const stackNames = category.items.map((item) => item.name as StackName);
 
     return (
@@ -21,17 +21,17 @@ export default function SkillRows({category, detail}: SkillRowsProps) {
                 <div className="h-px flex-1 bg-accent opacity-10"/>
             </div>
 
-            {detail ?
+            {isAllSelected ?
+                <StackCardList
+                  stackNames={stackNames}
+                  keyPrefix={category.key}
+                />
+                :
                 <GridContainer className={"gap-4 2xl:grid-cols-3"}>
                     {category.items.map((item, i) => (
                         <SkillCardDetail key={`${category.key}-${item.name}-${i}`} item={item} />
                     ))}
                 </GridContainer>
-                :
-                <StackCardList
-                    stackNames={stackNames}
-                    keyPrefix={category.key}
-                />
             }
         </div>
     );

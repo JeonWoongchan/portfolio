@@ -13,7 +13,6 @@ export default function SkillCardList({ categories }: SkillCardListProps) {
     const { selectedKey, setSelectedKey, categoryOptions, filteredCategories, isAllSelected } =
         useCategoryFilter({ categories });
 
-
     return (
         <div className="flex flex-col gap-6">
             <div className="flex justify-start">
@@ -29,7 +28,7 @@ export default function SkillCardList({ categories }: SkillCardListProps) {
                     <SkillRows
                         key={category.key}
                         category={category}
-                        detail={!isAllSelected}
+                        isAllSelected={isAllSelected}
                     />
                 ))}
             </div>

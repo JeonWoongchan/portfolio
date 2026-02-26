@@ -2,19 +2,13 @@
 
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
-import type { CategoryOption } from "@/src/hooks/useCategoryFilter";
-
-interface CategoryFilterToggleProps {
-    selectedKey: string;
-    options: readonly CategoryOption[];
-    onSelect: (key: string) => void;
-}
+import {CategoryFilterProps} from "@/src/types/category";
 
 export default function CategoryFilterToggle({
     selectedKey,
     options,
     onSelect,
-}: CategoryFilterToggleProps) {
+}: CategoryFilterProps) {
     return (
         <ToggleGroup
             type="single"

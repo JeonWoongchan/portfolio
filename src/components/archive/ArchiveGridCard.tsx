@@ -10,7 +10,7 @@ interface ArchiveGridCardProps {
 }
 
 export default function ArchiveGridCard({ item }: ArchiveGridCardProps) {
-    const isProject = item.type === "project";
+    const isProject = item.category === "project";
 
     return (
         <Card className="group bg-(--color-navy-light) hover:border-(--color-accent)">
@@ -28,7 +28,7 @@ export default function ArchiveGridCard({ item }: ArchiveGridCardProps) {
             </CardContent>
 
             <CardFooter className="mt-auto">
-                <InlineTagList items={item.tags} keyPrefix={`${item.type}-${item.id}`} />
+                <InlineTagList items={item.tags} keyPrefix={`${item.category}-${item.id}`} />
             </CardFooter>
         </Card>
     );
