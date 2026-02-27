@@ -36,10 +36,10 @@ export default function Header() {
     )
 }
 
-function CollapsedBrand() {
+export function CollapsedBrand() {
     return (
         <div className="flex cursor-pointer items-center gap-2 px-5 py-2.5">
-            <Terminal className="h-4 w-4" />
+            <Terminal className="h-4 w-4 text-(--color-accent)"/>
             <span className="font-mono text-md text-muted-foreground">Jeon.Woongchan</span>
             <span className="font-mono text-sm">~</span>
             <VerticalDivider className="h-4 w-0.5 mx-0 animate-pulse bg-(--color-accent)" />

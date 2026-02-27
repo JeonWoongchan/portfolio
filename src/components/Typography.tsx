@@ -46,6 +46,19 @@ export function HeroTitle({ children, align = "self-start", className = "" }: Ty
     );
 }
 
+// 히어로 텍스트
+export function FooterTitle({ children, align = "self-start", className = "" }: TypographyProps) {
+    return (
+        <div className={cn(
+            "w-full text-xl sm:text-3xl font-bold",
+            align,
+            className
+        )}>
+            {children}
+        </div>
+    );
+}
+
 // 본문 텍스트
 export function BodyText({ children, className = "" }: TypographyProps) {
     return (

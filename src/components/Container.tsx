@@ -68,7 +68,7 @@ export function Section({
                 ref={sectionRef}
                 className={cn(
                     'w-full min-h-dvh flex flex-col justify-between',
-                    'py-24 px-16 xl:px-40 2xl:px-100 text-(--color-text) select-none',
+                    'pt-24 px-16 xl:px-40 2xl:px-100 text-(--color-text) select-none',
                     className
                 )}
             >
@@ -92,7 +92,7 @@ export function SectionHeader({
     return (
         <div
             className={cn(
-                'relative flex flex-col items-center gap-3 p-4 mb-8',
+                'relative flex flex-col items-center gap-3 p-4 mb-6',
                 animateOnVisible && 'opacity-0',
                 animateOnVisible && isVisible && visibleClassName,
                 className

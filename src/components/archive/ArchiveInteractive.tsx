@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { Button } from "@/components/ui/button";
+import SectionActionButton from "@/src/components/common/SectionActionButton";
 import { GridContainer } from "@/src/components/Container";
 import ArchiveCountItem from "@/src/components/archive/ArchiveCountItem";
 import ArchiveGridCard from "@/src/components/archive/ArchiveGridCard";
@@ -64,10 +64,14 @@ export default function ArchiveInteractive({ categories }: ArchiveInteractivePro
                 ))}
             </GridContainer>
             {canToggleItems && (
-                <div className="mt-8 flex justify-center">
-                    <Button type="button" variant="navyLight" onClick={handleToggleVisible}>
+                <div className="mt-4 flex justify-center">
+                    <SectionActionButton
+                        type="button"
+                        className="w-[15%]"
+                        onClick={handleToggleVisible}
+                    >
                         {isExpanded ? "접기" : "더보기"}
-                    </Button>
+                    </SectionActionButton>
                 </div>
             )}
         </>

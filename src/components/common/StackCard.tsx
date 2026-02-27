@@ -9,7 +9,6 @@ interface StackCardProps {
     compact?: boolean;
 }
 
-// TODO: Footer에 Icons provided by Devicon. 추가
 export default function StackCard({stackName, compact = false}: StackCardProps) {
     const stack = stackMeta[stackName] ?? {img: "/placeholder.svg", color: "#ffffff"};
 

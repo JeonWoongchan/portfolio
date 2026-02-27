@@ -3,6 +3,7 @@ import Skills from "@/src/components/skills/Skills";
 import Hero from "@/src/components/hero/Hero";
 import Career from "@/src/components/career/Career";
 import Archive from "@/src/components/archive/Archive";
+import Footer from "@/src/components/footer/Footer";
 
 
 export default function App() {
@@ -14,6 +15,7 @@ export default function App() {
               <Skills />
               <Career />
               <Archive />
+              <Footer />
           </main>
       </div>
   );

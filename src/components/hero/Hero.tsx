@@ -1,10 +1,10 @@
 'use client'
 import {useState} from "react";
-import {Section, SectionBody, SectionHeader} from "@/src/components/Container";
+import {Section, SectionBody} from "@/src/components/Container";
 import Image from "next/image";
 import TypeIt from "typeit-react";
 import {HeroTitle, SectionDescription} from "@/src/components/Typography";
-import {Button} from "@/components/ui/button";
+import SectionActionButton from "@/src/components/common/SectionActionButton";
 
 export default function Hero() {
     const [typingDone, setTypingDone] = useState(false);
@@ -17,11 +17,8 @@ export default function Hero() {
             contentClassName={"justify-center items-center"}
             slideDownClassName={`opacity-0 ${typingDone && 'fade-in-up-3'}`}
         >
-            <SectionHeader>
+            <SectionBody className={"lg:w-1/2 items-center text-center p-0 gap-4 justify-center"}>
                 <Image src="/images/profile.png" alt="프로필 이미지" className={"fade-in-up-1"} width={200} height={200}/>
-            </SectionHeader>
-
-            <SectionBody className={"lg:w-1/2 items-center text-center p-0 gap-4"}>
                 <div className="h-35 xl:h-55">
                     <TypeIt
                         options={{
@@ -45,7 +42,7 @@ export default function Hero() {
                     <br />
                     프론트엔드 개발자를 목표로 하고 있습니다.
                 </SectionDescription>
-                <Button variant="navyLight" className={`opacity-0 ${typingDone && 'fade-in-up-2'}`}>Contact Me</Button>
+                <SectionActionButton className={`opacity-0 ${typingDone && 'fade-in-up-2'}`}>Contact Me</SectionActionButton>
             </SectionBody>
         </Section>
     );
