@@ -7,9 +7,11 @@ import {stackMeta, type StackName} from "@/src/types/stack";
 interface StackCardProps {
     stackName: StackName;
     compact?: boolean;
+    imageClassName?: string;
+    tooltipSide?: "top" | "right" | "bottom" | "left";
 }
 
-export default function StackCard({stackName, compact = false}: StackCardProps) {
+export default function StackCard({stackName, compact = false, imageClassName, tooltipSide = "bottom"}: StackCardProps) {
     const stack = stackMeta[stackName] ?? {img: "/placeholder.svg", color: "#ffffff"};
 
     return (
@@ -21,7 +23,7 @@ export default function StackCard({stackName, compact = false}: StackCardProps) 
                         alt={`skill-icon ${stackName}`}
                         width={30}
                         height={30}
-                        className={cn("h-7 w-7 object-contain")}
+                        className={cn("h-7 w-7 object-contain", imageClassName)}
                     />
                 ) : (
                     <Card
@@ -34,14 +36,14 @@ export default function StackCard({stackName, compact = false}: StackCardProps) 
                             alt={`skill-icon ${stackName}`}
                             width={30}
                             height={30}
-                            className={cn("h-8 w-8 object-contain")}
+                            className={cn("h-8 w-8 object-contain", imageClassName)}
                         />
                     </Card>
                 )}
             </TooltipTrigger>
             <TooltipContent
                 className="rounded-md border bg-white text-(--color-navy)"
-                side={"bottom"}
+                side={tooltipSide}
                 sideOffset={5}
             >
                 <p>{stackName}</p>

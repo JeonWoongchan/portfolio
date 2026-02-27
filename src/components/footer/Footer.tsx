@@ -1,38 +1,48 @@
 import {Section, SectionBody} from "@/src/components/Container";
-import {FooterTitle, SectionDescription} from "@/src/components/Typography";
-import {CollapsedBrand} from "@/src/components/header/Header";
-import {Terminal} from "lucide-react";
-import SectionActionButton from "@/src/components/common/SectionActionButton";
+import {SectionDescription} from "@/src/components/Typography";
+import StackCard from "@/src/components/common/StackCard";
+import CopyEmailMetaItem from "@/src/components/footer/CopyEmailMetaItem";
+import BrandSignature from "@/src/components/common/BrandSignature";
+import SectionScrollAction from "@/src/components/common/SectionScrollAction";
 
 export default function Footer() {
-
     return (
         <Section
             sectionKey={"Footer"}
             tone="navyLight"
-            className="min-h-0"
+            className="min-h-0 py-6"
         >
-            <SectionBody className="items-center text-center gap-2">
-                <span className="p-2.5 items-center rounded-full border border-(--color-teal) bg-(--color-badge-bg)">
-                    <Terminal className="h-7 w-7 text-(--color-accent) "/>
-                </span>
-                <FooterTitle>
-                    함께 일하고 싶으신가요<span className="text-(--color-accent)">?</span>
-                </FooterTitle>
-                <SectionDescription>
-                    다양한 경험을 통해 항상 발전하는
-                </SectionDescription>
-                <SectionActionButton>Contact Me</SectionActionButton>
-                <div className="flex">
-
+            <SectionBody className="space-y-6">
+                <div className="flex w-full flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+                    <div className="space-y-2 w-full">
+                        <BrandSignature
+                            className="gap-2"
+                            nameClassName="text-sm font-semibold leading-relaxed text-white md:text-base"
+                        />
+                        <div className="flex gap-4">
+                            <CopyEmailMetaItem email="jchan71589@gmail.com" textClassName="text-xs" />
+                        </div>
+                    </div>
+                    <div className="flex gap-2 self-end sm:self-auto">
+                        <StackCard
+                            stackName={'GitHub'}
+                            compact={true}
+                            imageClassName="bg-white rounded-sm cursor-pointer"
+                            tooltipSide="top"
+                        />
+                        <StackCard
+                            stackName={'Velog'}
+                            compact={true}
+                            imageClassName="cursor-pointer"
+                            tooltipSide="top"
+                        />
+                    </div>
+                </div>
+                <div className="flex w-full items-end justify-between border-t border-(--color-border) pt-4">
+                    <SectionDescription className="text-sm opacity-70">2026 Jeon Woongchan. All rights reserved.</SectionDescription>
+                    <SectionScrollAction target="Hero" direction="up" variant="inline" />
                 </div>
             </SectionBody>
-            <div className="flex justify-between">
-                <div className="flex items-center font-mono">
-                    <SectionDescription>2026</SectionDescription>
-                    <CollapsedBrand/>
-                </div>
-            </div>
         </Section>
     );
 }

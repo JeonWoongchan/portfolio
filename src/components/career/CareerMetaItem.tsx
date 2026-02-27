@@ -1,16 +1,19 @@
 import type {LucideIcon} from 'lucide-react';
 import {SmallText} from "@/src/components/Typography";
+import {cn} from "@/lib/utils";
 
 interface CareerMetaItemProps {
-    icon: LucideIcon;
-    text: string;
+        icon: LucideIcon;
+        text: string;
+        iconClassName?: string;
+        textClassName?: string;
 }
 
-export default function CareerMetaItem({icon: Icon, text}: CareerMetaItemProps) {
-    return (
-          <div className="flex items-center gap-2">
-              <Icon className="size-4 text-(--color-accent)" aria-hidden="true" />
-              <SmallText>{text}</SmallText>
-          </div>
-    );
+export default function CareerMetaItem({icon: Icon, text, iconClassName, textClassName}: CareerMetaItemProps) {
+        return (
+                    <div className="flex items-center gap-2">
+                            <Icon className={cn("size-4 text-(--color-accent)", iconClassName)} aria-hidden="true" />
+                            <SmallText className={cn(textClassName)}>{text}</SmallText>
+                    </div>
+        );
 }

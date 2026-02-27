@@ -3,7 +3,7 @@
 import {createContext, useContext} from 'react';
 import type {CSSProperties, ReactNode, RefObject} from 'react';
 import {cn} from '@/lib/utils';
-import SlideDown from '@/src/components/SlideDown';
+import SectionScrollAction from "@/src/components/common/SectionScrollAction";
 import {useRegisterSection} from '@/src/hooks/useRegisterSectionRef';
 import useSectionVisibility from '@/src/hooks/useSectionVisibility';
 
@@ -115,7 +115,14 @@ export function Section({
                 <div className={cn('w-full flex-1 flex flex-col justify-between', contentClassName)}>
                     {children}
                 </div>
-                {nextSection && <SlideDown next={nextSection} className={slideDownClassName} />}
+                {nextSection && (
+                    <SectionScrollAction
+                        target={nextSection}
+                        direction="down"
+                        variant="hint"
+                        className={slideDownClassName}
+                    />
+                )}
             </section>
         </SectionVisibilityContext.Provider>
     );

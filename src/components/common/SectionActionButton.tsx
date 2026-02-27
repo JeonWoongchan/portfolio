@@ -5,15 +5,15 @@ import { cn } from "@/lib/utils";
 type SectionActionButtonProps = ComponentProps<typeof Button>;
 
 export default function SectionActionButton({
-  className,
-  variant = "surface",
-  ...props
+    className,
+    variant = "surface",
+    ...props
 }: SectionActionButtonProps) {
-  return (
-    <Button
-      variant={variant}
-      className={cn("text-sm font-medium", className)}
-      {...props}
-    />
-  );
+    return (
+        <Button
+            variant={variant}
+            className={cn("text-sm font-medium", className)}
+            {...props}
+        />
+    );
 }

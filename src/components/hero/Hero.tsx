@@ -4,7 +4,6 @@ import {Section, SectionBody} from "@/src/components/Container";
 import Image from "next/image";
 import TypeIt from "typeit-react";
 import {HeroTitle, SectionDescription} from "@/src/components/Typography";
-import SectionActionButton from "@/src/components/common/SectionActionButton";
 
 export default function Hero() {
     const [typingDone, setTypingDone] = useState(false);
@@ -42,7 +41,6 @@ export default function Hero() {
                     <br />
                     프론트엔드 개발자를 목표로 하고 있습니다.
                 </SectionDescription>
-                <SectionActionButton className={`opacity-0 ${typingDone && 'fade-in-up-2'}`}>Contact Me</SectionActionButton>
             </SectionBody>
         </Section>
     );

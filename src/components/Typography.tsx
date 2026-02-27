@@ -25,7 +25,7 @@ export function SectionTitle({ children, className = "" }: TypographyProps) {
 export function SectionDescription({ children, className = "" }: TypographyProps) {
     return (
         <p className={cn(
-            "text-left text-base md:text-lg text-text-secondary leading-relaxed text-(--color-text-body)",
+            "text-left text-base leading-relaxed text-(--color-text-body)",
             className
         )}>
             {children}
@@ -38,19 +38,6 @@ export function HeroTitle({ children, align = "self-start", className = "" }: Ty
     return (
         <div className={cn(
             "flex gap-12 items-center text-xl sm:text-3xl xl:text-5xl font-bold",
-            align,
-            className
-        )}>
-            {children}
-        </div>
-    );
-}
-
-// 히어로 텍스트
-export function FooterTitle({ children, align = "self-start", className = "" }: TypographyProps) {
-    return (
-        <div className={cn(
-            "w-full text-xl sm:text-3xl font-bold",
             align,
             className
         )}>

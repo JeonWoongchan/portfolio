@@ -5,393 +5,393 @@
 
 :root {
 
-  /* App Colors */
-  --color-primary: var(--color-black);
-  --color-primary-variant: var(--color-gray);
-  --color-accent: rgb(3 232 249 / 82%);
-  --color-accent-variant: var(--color-orange);
-  --color-text: var(--color-white);
+    /* App Colors */
+    --color-primary: var(--color-black);
+    --color-primary-variant: var(--color-gray);
+    --color-accent: rgb(3 232 249 / 82%);
+    --color-accent-variant: var(--color-orange);
+    --color-text: var(--color-white);
 
-  /* Colors */
-  --color-white: #ffffff;
-  --color-black: #050a13;
-  --color-blue: #03e8f9;
-  --color-orange: #fd6413;
-  --color-gray: #1b1e26;
+    /* Colors */
+    --color-white: #ffffff;
+    --color-black: #050a13;
+    --color-blue: #03e8f9;
+    --color-orange: #fd6413;
+    --color-gray: #1b1e26;
 
-  --color-green: #10b981;     /* 민트 그린 - 성공/긍정 표시 */
-  --color-red: #ef4444;       /* 비비드 레드 - 경고/에러 */
-  --color-yellow: #fbbf24;    /* 골드 옐로우 - 특별 강조 */
+    --color-green: #10b981;     /* 민트 그린 - 성공/긍정 표시 */
+    --color-red: #ef4444;       /* 비비드 레드 - 경고/에러 */
+    --color-yellow: #fbbf24;    /* 골드 옐로우 - 특별 강조 */
 
-  --color-navy: #0a0f1a;         /* 배경용 어두운 네이비 (블루 틴트) */
-  --color-navy-light: #151b2e;   /* 배경용 네이비 (블루 틴트) */
-  --color-border: #2a3544;       /* 보더/구분선 (블루 틴트) */
-  --color-border-light: #374a5c; /* 밝은 보더 (블루 틴트) */
+    --color-navy: #0a0f1a;         /* 배경용 어두운 네이비 (블루 틴트) */
+    --color-navy-light: #151b2e;   /* 배경용 네이비 (블루 틴트) */
+    --color-border: #2a3544;       /* 보더/구분선 (블루 틴트) */
+    --color-border-light: #374a5c; /* 밝은 보더 (블루 틴트) */
 
-  /* 액센트 색상 확장 */
-  --color-cyan: #22d3ee;         /* 밝은 시안 - 호버 효과 */
-  --color-teal: #14b8a6;         /* 틸 - 보조 액센트 */
-  --color-purple: #8b5cf6;       /* 퍼플 - 특별 강조 */
-  --color-pink: #ec4899;         /* 핑크 - 하이라이트 */
+    /* 액센트 색상 확장 */
+    --color-cyan: #22d3ee;         /* 밝은 시안 - 호버 효과 */
+    --color-teal: #14b8a6;         /* 틸 - 보조 액센트 */
+    --color-purple: #8b5cf6;       /* 퍼플 - 특별 강조 */
+    --color-pink: #ec4899;         /* 핑크 - 하이라이트 */
 
-  /* 상태 색상 */
-  --color-success: #10b981;      /* 그린 - 성공 */
-  --color-warning: #f59e0b;      /* 엠버 - 경고 */
-  --color-error: #ef4444;        /* 레드 - 에러 */
-  --color-info: #3b82f6;         /* 블루 - 정보 */
+    /* 상태 색상 */
+    --color-success: #10b981;      /* 그린 - 성공 */
+    --color-warning: #f59e0b;      /* 엠버 - 경고 */
+    --color-error: #ef4444;        /* 레드 - 에러 */
+    --color-info: #3b82f6;         /* 블루 - 정보 */
 
-  /* 텍스트 색상 */
-  --color-text-primary: #f9fafb;    /* 주요 텍스트 */
-  --color-text-secondary: #9ca3af;  /* 보조 텍스트 (설명글) */
-  --color-text-muted: #6b7280;      /* 희미한 텍스트 */
+    /* 텍스트 색상 */
+    --color-text-primary: #f9fafb;    /* 주요 텍스트 */
+    --color-text-secondary: #9ca3af;  /* 보조 텍스트 (설명글) */
+    --color-text-muted: #6b7280;      /* 희미한 텍스트 */
 
-  /* 의미 기반 확장 색상 */
-  --color-surface-strong: #0d1117;
-  --color-text-heading: #e8edf2;
-  --color-text-body: #6b7c8d;
-  --color-text-caption: #8899aa;
-  --color-divider-muted: #1e2a38;
-  --color-highlight: #00d4aa;
-  --color-highlight-soft: rgba(0, 212, 170, 0.08);
-  --color-highlight-border: rgba(0, 212, 170, 0.25);
-  --color-highlight-trace-start: rgba(0, 212, 170, 0.27);
-  --color-highlight-trace-mid: rgba(0, 212, 170, 0.13);
-  --color-badge-bg: rgba(20, 184, 166, 0.15);
-  --surface-card: var(--color-navy-light);
-  --surface-card-border: var(--color-border-light);
-  --surface-button: var(--color-navy-light);
-  --surface-button-text: var(--color-white);
-  --surface-button-hover: var(--color-accent);
-  --surface-button-hover-text: var(--color-black);
+    /* 의미 기반 확장 색상 */
+    --color-surface-strong: #0d1117;
+    --color-text-heading: #e8edf2;
+    --color-text-body: #6b7c8d;
+    --color-text-caption: #8899aa;
+    --color-divider-muted: #1e2a38;
+    --color-highlight: #00d4aa;
+    --color-highlight-soft: rgba(0, 212, 170, 0.08);
+    --color-highlight-border: rgba(0, 212, 170, 0.25);
+    --color-highlight-trace-start: rgba(0, 212, 170, 0.27);
+    --color-highlight-trace-mid: rgba(0, 212, 170, 0.13);
+    --color-badge-bg: rgba(20, 184, 166, 0.15);
+    --surface-card: var(--color-navy-light);
+    --surface-card-border: var(--color-border-light);
+    --surface-button: var(--color-navy-light);
+    --surface-button-text: var(--color-white);
+    --surface-button-hover: var(--color-accent);
+    --surface-button-hover-text: var(--color-black);
 
-  /* 오버레이 */
-  --color-overlay: rgba(15, 20, 25, 0.85);
-  --color-overlay-light: rgba(26, 31, 46, 0.7);
-  --career-card-bg: linear-gradient(180deg, rgba(24, 34, 50, 0.96), rgba(25, 35, 52, 0.82));
+    /* 오버레이 */
+    --color-overlay: rgba(15, 20, 25, 0.85);
+    --color-overlay-light: rgba(26, 31, 46, 0.7);
+    --career-card-bg: linear-gradient(180deg, rgba(24, 34, 50, 0.96), rgba(25, 35, 52, 0.82));
 
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+    --radius: 0.625rem;
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.145 0 0);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.145 0 0);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.145 0 0);
+    --primary: oklch(0.205 0 0);
+    --primary-foreground: oklch(0.985 0 0);
+    --secondary: oklch(0.97 0 0);
+    --secondary-foreground: oklch(0.205 0 0);
+    --muted: oklch(0.97 0 0);
+    --muted-foreground: oklch(0.556 0 0);
+    --accent: oklch(0.97 0 0);
+    --accent-foreground: oklch(0.205 0 0);
+    --destructive: oklch(0.577 0.245 27.325);
+    --border: oklch(0.922 0 0);
+    --input: oklch(0.922 0 0);
+    --ring: oklch(0.708 0 0);
+    --chart-1: oklch(0.646 0.222 41.116);
+    --chart-2: oklch(0.6 0.118 184.704);
+    --chart-3: oklch(0.398 0.07 227.392);
+    --chart-4: oklch(0.828 0.189 84.429);
+    --chart-5: oklch(0.769 0.188 70.08);
+    --sidebar: oklch(0.985 0 0);
+    --sidebar-foreground: oklch(0.145 0 0);
+    --sidebar-primary: oklch(0.205 0 0);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.97 0 0);
+    --sidebar-accent-foreground: oklch(0.205 0 0);
+    --sidebar-border: oklch(0.922 0 0);
+    --sidebar-ring: oklch(0.708 0 0);
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 a {
-  text-decoration: none;
-  color: var(--color-primary)
+    text-decoration: none;
+    color: var(--color-primary)
 }
 
 /*나타나는 애니메이션*/
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    user-select: none;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    user-select: auto;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        user-select: none;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        user-select: auto;
+        transform: translateY(0);
+    }
 }
 
 .fade-in-up-1 {
-  opacity: 0;
-  animation: fadeInUp 1s ease-out 0.5s forwards;
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 0.5s forwards;
 }
 
 .fade-in-up-2 {
-  opacity: 0;
-  animation: fadeInUp 1s ease-out 1s forwards;
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 1s forwards;
 }
 
 .fade-in-up-3 {
-  opacity: 0;
-  animation: fadeInUp 1s ease-out 1.5s forwards;
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 1.5s forwards;
 }
 
 .fade-in-up-4 {
-  opacity: 0;
-  animation: fadeInUp 1s ease-out 2s forwards;
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 2s forwards;
 }
 
 .fade-in-up-5 {
-  opacity: 0;
-  animation: fadeInUp 1s ease-out 2.5s forwards;
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 2.5s forwards;
 }
 
 
 @keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .fade-in-down {
-  opacity: 0;
-  animation: fadeInDown 0.8s ease-out 0.2s forwards;
+    opacity: 0;
+    animation: fadeInDown 0.8s ease-out 0.2s forwards;
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 /*움직이는 아이콘 애니메이션*/
 @keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
 }
 
 .float-icon {
-  opacity: 0;
-  display: inline-block;
-  animation: fadeIn 0.5s ease-out 2.5s forwards,
-          float 2s ease-in-out 4s infinite;
+    opacity: 0;
+    display: inline-block;
+    animation: fadeIn 0.5s ease-out 2.5s forwards,
+                    float 2s ease-in-out 4s infinite;
 }
 
 /*동심원 애니메이션*/
 @keyframes CircleAnimation {
-  0% {
-    transform: scale(0);
-    opacity: 1;
-  }
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
 
-  100% {
-    transform: scale(1.5);
-    opacity: 0;
-  }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
 }
 
 @keyframes CircleAnimation2 {
-  0% {
-    transform: scale(0);
-  }
+    0% {
+        transform: scale(0);
+    }
 
-  100% {
-    transform: scale(1);
-  }
+    100% {
+        transform: scale(1);
+    }
 }
 
 .slide-down::before {
-  content: '';
-  position: absolute;
-  background: rgba(0, 0, 0, 0.5);
-  width: 50px;
-  height: 50px;
-  margin: auto;
-  border-radius: 50%;
-  animation: CircleAnimation 3s infinite linear;
+    content: '';
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    border-radius: 50%;
+    animation: CircleAnimation 3s infinite linear;
 }
 
 .slide-down::after {
-  content: '';
-  position: absolute;
-  background: rgba(0, 0, 0, 0.5);
-  width: 50px;
-  height: 50px;
-  margin: auto;
-  border-radius: 50%;
-  animation: CircleAnimation 1.5s infinite linear;
+    content: '';
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    border-radius: 50%;
+    animation: CircleAnimation 1.5s infinite linear;
 }
 
 @keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
 @keyframes marquee-reverse {
-  0% {
-    transform: translateX(-50%);
-  }
-  100% {
-    transform: translateX(0);
-  }
+    0% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(0);
+    }
 }
 
 .marquee {
-  animation: marquee 60s linear infinite;
+    animation: marquee 60s linear infinite;
 }
 
 .marquee-reverse {
-  animation: marquee-reverse 60s linear infinite;
+    animation: marquee-reverse 60s linear infinite;
 }
 
 .marquee-track:hover .marquee,
 .marquee-track:hover .marquee-reverse {
-  animation-play-state: paused;
+    animation-play-state: paused;
 }
 
 @theme inline {
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --radius-2xl: calc(var(--radius) + 8px);
-  --radius-3xl: calc(var(--radius) + 12px);
-  --radius-4xl: calc(var(--radius) + 16px);
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
+    --radius-sm: calc(var(--radius) - 4px);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) + 4px);
+    --radius-2xl: calc(var(--radius) + 8px);
+    --radius-3xl: calc(var(--radius) + 12px);
+    --radius-4xl: calc(var(--radius) + 16px);
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-destructive: var(--destructive);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+    --color-sidebar: var(--sidebar);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+    --background: oklch(0.145 0 0);
+    --foreground: oklch(0.985 0 0);
+    --card: oklch(0.205 0 0);
+    --card-foreground: oklch(0.985 0 0);
+    --popover: oklch(0.205 0 0);
+    --popover-foreground: oklch(0.985 0 0);
+    --primary: oklch(0.922 0 0);
+    --primary-foreground: oklch(0.205 0 0);
+    --secondary: oklch(0.269 0 0);
+    --secondary-foreground: oklch(0.985 0 0);
+    --muted: oklch(0.269 0 0);
+    --muted-foreground: oklch(0.708 0 0);
+    --accent: oklch(0.269 0 0);
+    --accent-foreground: oklch(0.985 0 0);
+    --destructive: oklch(0.704 0.191 22.216);
+    --border: oklch(1 0 0 / 10%);
+    --input: oklch(1 0 0 / 15%);
+    --ring: oklch(0.556 0 0);
+    --chart-1: oklch(0.488 0.243 264.376);
+    --chart-2: oklch(0.696 0.17 162.48);
+    --chart-3: oklch(0.769 0.188 70.08);
+    --chart-4: oklch(0.627 0.265 303.9);
+    --chart-5: oklch(0.645 0.246 16.439);
+    --sidebar: oklch(0.205 0 0);
+    --sidebar-foreground: oklch(0.985 0 0);
+    --sidebar-primary: oklch(0.488 0.243 264.376);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.269 0 0);
+    --sidebar-accent-foreground: oklch(0.985 0 0);
+    --sidebar-border: oklch(1 0 0 / 10%);
+    --sidebar-ring: oklch(0.556 0 0);
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
+    * {
+        @apply border-border outline-ring/50;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
 }
 
 @layer components {
-  /* Typography 관련 */
-  .section-title {
-    @apply text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold;
-  }
+    /* Typography 관련 */
+    .section-title {
+        @apply text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold;
+    }
 
-  .hero-title {
-    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold;
-  }
+    .hero-title {
+        @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold;
+    }
 
-  .body-text {
-    @apply text-sm md:text-base lg:text-lg leading-relaxed;
-  }
+    .body-text {
+        @apply text-sm md:text-base lg:text-lg leading-relaxed;
+    }
 
-  .small-text {
-    @apply text-xs md:text-sm lg:text-base leading-relaxed;
-  }
+    .small-text {
+        @apply text-xs md:text-sm lg:text-base leading-relaxed;
+    }
 
-  /* Container 관련 */
-  .section-wrapper {
-    @apply w-full min-h-screen flex flex-col;
-  }
+    /* Container 관련 */
+    .section-wrapper {
+        @apply w-full min-h-screen flex flex-col;
+    }
 
-  .section-header {
-    @apply flex justify-start border-b-2 border-gray-300 pb-3;
-  }
+    .section-header {
+        @apply flex justify-start border-b-2 border-gray-300 pb-3;
+    }
 
-  .content-wrapper {
-    @apply flex flex-col xl:flex-row w-full gap-8 xl:px-30 py-8 justify-center items-center;
-  }
+    .content-wrapper {
+        @apply flex flex-col xl:flex-row w-full gap-8 xl:px-30 py-8 justify-center items-center;
+    }
 
-  .text-group {
-    @apply space-y-4 md:space-y-6 text-left;
-  }
+    .text-group {
+        @apply space-y-4 md:space-y-6 text-left;
+    }
 
-  .grid-container {
-    @apply grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-4 gap-2 my-9;
-  }
+    .grid-container {
+        @apply grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-4 gap-2 my-9;
+    }
 }
 
 

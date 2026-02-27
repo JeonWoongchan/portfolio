@@ -7,16 +7,16 @@ import Footer from "@/src/components/footer/Footer";
 
 
 export default function App() {
-  return (
-      <div className="min-h-screen bg-zinc-50 font-sans">
-          <main className="flex flex-col min-h-screen items-center justify-center">
-              <Hero />
-              <About />
-              <Skills />
-              <Career />
-              <Archive />
-              <Footer />
-          </main>
-      </div>
-  );
+    return (
+            <div className="min-h-screen bg-zinc-50 font-sans">
+                    <main className="flex flex-col min-h-screen items-center justify-center">
+                            <Hero />
+                            <About />
+                            <Skills />
+                            <Career />
+                            <Archive />
+                            <Footer />
+                    </main>
+            </div>
+    );
 }
