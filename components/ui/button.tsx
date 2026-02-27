@@ -19,6 +19,8 @@ const buttonVariants = cva(
         ghost:
           "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
         link: "text-primary underline-offset-4 hover:underline",
+        surface:
+          "bg-(--surface-button) text-(--surface-button-text) hover:bg-(--surface-button-hover) hover:text-(--surface-button-hover-text) hover:font-bold",
         navy: "bg-(--color-navy) text-white",
         navyLight: "bg-(--color-navy-light) text-white hover:bg-(--color-accent) hover:text-black hover:font-bold"
       },

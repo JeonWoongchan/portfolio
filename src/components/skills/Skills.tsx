@@ -10,7 +10,7 @@ export default function Skills() {
         <Section
             sectionKey={"Skills"}
             nextSection={"Career"}
-            className={"bg-(--color-navy)"}
+            tone="navy"
         >
             <SectionHeader animateOnVisible>
                 <SectionTitle>Skills</SectionTitle>

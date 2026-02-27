@@ -13,7 +13,7 @@ export default function About() {
         <Section
             sectionKey={'About'}
             nextSection={'Skills'}
-            className={'bg-(--color-navy-light)'}
+            tone="navyLight"
         >
             <SectionHeader animateOnVisible>
                 <SectionTitle>

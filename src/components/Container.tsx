@@ -1,7 +1,7 @@
-﻿'use client'
+'use client'
 
 import {createContext, useContext} from 'react';
-import type { ReactNode, RefObject } from 'react';
+import type {CSSProperties, ReactNode, RefObject} from 'react';
 import {cn} from '@/lib/utils';
 import SlideDown from '@/src/components/SlideDown';
 import {useRegisterSection} from '@/src/hooks/useRegisterSectionRef';
@@ -12,8 +12,11 @@ interface ContainerProps {
     className?: string;
     contentClassName?: string;
     slideDownClassName?: string;
+    style?: CSSProperties;
     ref?: RefObject<HTMLElement | null>;
 }
+
+type SectionTone = 'navy' | 'navyLight';
 
 interface SectionProps extends ContainerProps {
     nextSection?: string;
@@ -22,6 +25,7 @@ interface SectionProps extends ContainerProps {
     visibilityThreshold?: number;
     opacityMinWidthPx?: number;
     enableOpacityAnimation?: boolean;
+    tone?: SectionTone;
 }
 
 interface SectionVisibilityContextValue {
@@ -41,6 +45,37 @@ const SectionVisibilityContext = createContext<SectionVisibilityContextValue>(
     SECTION_VISIBILITY_CONTEXT_DEFAULT
 );
 
+const SECTION_TONE_STYLE_MAP: Record<
+    SectionTone,
+    {
+        sectionClassName: string;
+        surfaceVars: Record<string, string>;
+    }
+> = {
+    navy: {
+        sectionClassName: 'bg-(--color-navy)',
+        surfaceVars: {
+            '--surface-card': 'var(--color-navy-light)',
+            '--surface-card-border': 'var(--color-border-light)',
+            '--surface-button': 'var(--color-navy-light)',
+            '--surface-button-text': 'var(--color-white)',
+            '--surface-button-hover': 'var(--color-accent)',
+            '--surface-button-hover-text': 'var(--color-black)',
+        },
+    },
+    navyLight: {
+        sectionClassName: 'bg-(--color-navy-light)',
+        surfaceVars: {
+            '--surface-card': 'var(--color-navy)',
+            '--surface-card-border': 'var(--color-border)',
+            '--surface-button': 'var(--color-navy)',
+            '--surface-button-text': 'var(--color-white)',
+            '--surface-button-hover': 'var(--color-accent)',
+            '--surface-button-hover-text': 'var(--color-black)',
+        },
+    },
+};
+
 function useSectionVisibilityContext() {
     return useContext(SectionVisibilityContext);
 }
@@ -50,10 +85,12 @@ export function Section({
     className = '',
     contentClassName = '',
     slideDownClassName = '',
+    style,
     ref,
     nextSection,
     sectionKey,
     visibilityThreshold = 0.2,
+    tone,
 }: SectionProps) {
     const sectionRef = useRegisterSection(
         sectionKey,
@@ -61,14 +98,17 @@ export function Section({
     );
     const shouldObserveVisibility = Boolean(sectionKey);
     const isVisible = useSectionVisibility(sectionRef, visibilityThreshold, shouldObserveVisibility);
+    const toneConfig = tone ? SECTION_TONE_STYLE_MAP[tone] : null;
 
     return (
         <SectionVisibilityContext.Provider value={{isVisible}}>
             <section
                 ref={sectionRef}
+                style={{...(toneConfig?.surfaceVars ?? {}), ...style}}
                 className={cn(
                     'w-full min-h-dvh flex flex-col justify-between',
                     'pt-24 px-16 xl:px-40 2xl:px-100 text-(--color-text) select-none',
+                    toneConfig?.sectionClassName,
                     className
                 )}
             >

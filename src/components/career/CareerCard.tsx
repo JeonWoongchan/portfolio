@@ -24,7 +24,7 @@ export default function CareerCard({ item }: CareerCardProps) {
 
     return (
         <CareerCardProvider item={item}>
-            <Card className="gap-0 bg-(--color-navy) p-0">
+            <Card variant="surface" className="gap-0 p-0">
                 <Accordion type="single" collapsible value={isDetailOpen ? 'open' : ''}>
                     <AccordionItem value="open" className="border-none">
                         <CareerCardOverview />

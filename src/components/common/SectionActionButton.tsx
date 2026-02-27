@@ -6,7 +6,7 @@ type SectionActionButtonProps = ComponentProps<typeof Button>;
 
 export default function SectionActionButton({
   className,
-    variant = "navyLight",
+  variant = "surface",
   ...props
 }: SectionActionButtonProps) {
   return (

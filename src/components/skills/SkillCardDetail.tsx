@@ -8,7 +8,8 @@ import InlineTagList from "@/src/components/common/InlineTagList";
 export default function SkillCardDetail({ item }: { item: SkillItem }) {
     return (
         <Card
-            className="w-full items-start gap-4 rounded-md bg-(--color-navy-light) p-4"
+            variant="surface"
+            className="w-full items-start gap-4 rounded-md p-4"
         >
             <div className="flex gap-2 items-center cursor-default">
                 <div className="flex h-10 w-10 items-center justify-center">

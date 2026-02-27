@@ -9,7 +9,8 @@ export default function Footer() {
     return (
         <Section
             sectionKey={"Footer"}
-            className={'bg-(--color-navy-light) min-h-0'}
+            tone="navyLight"
+            className="min-h-0"
         >
             <SectionBody className="items-center text-center gap-2">
                 <span className="p-2.5 items-center rounded-full border border-(--color-teal) bg-(--color-badge-bg)">
@@ -21,7 +22,7 @@ export default function Footer() {
                 <SectionDescription>
                     다양한 경험을 통해 항상 발전하는
                 </SectionDescription>
-                <SectionActionButton variant="navy">Contact Me</SectionActionButton>
+                <SectionActionButton>Contact Me</SectionActionButton>
                 <div className="flex">
 
                 </div>

@@ -5,7 +5,7 @@ import ArchiveInteractive from "@/src/components/archive/ArchiveInteractive";
 
 export default function Archive() {
     return (
-        <Section sectionKey={"Archive"} nextSection={"Footer"} className={"bg-(--color-navy)"}>
+        <Section sectionKey={"Archive"} nextSection={"Footer"} tone="navy">
             <SectionHeader animateOnVisible>
                 <SectionTitle>Archive</SectionTitle>
                 <SectionDescription>

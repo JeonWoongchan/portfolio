@@ -13,7 +13,7 @@ export default function ArchiveGridCard({ item }: ArchiveGridCardProps) {
     const isProject = item.category === "project";
 
     return (
-        <Card className="group bg-(--color-navy-light) hover:border-(--color-accent) cursor-pointer">
+        <Card variant="surface" className="group hover:border-(--color-accent) cursor-pointer">
             <CardHeader className="p-0 flex items-baseline">
                 <IconBadge icon={isProject ? Code2 : FileText} tone={isProject ? "green" : "yellow"} className="size-7" />
                 <span className="text-xs text-(--color-text-body)">{item.date}</span>

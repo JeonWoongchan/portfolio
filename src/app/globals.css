@@ -57,6 +57,12 @@
   --color-highlight-trace-start: rgba(0, 212, 170, 0.27);
   --color-highlight-trace-mid: rgba(0, 212, 170, 0.13);
   --color-badge-bg: rgba(20, 184, 166, 0.15);
+  --surface-card: var(--color-navy-light);
+  --surface-card-border: var(--color-border-light);
+  --surface-button: var(--color-navy-light);
+  --surface-button-text: var(--color-white);
+  --surface-button-hover: var(--color-accent);
+  --surface-button-hover-text: var(--color-black);
 
   /* 오버레이 */
   --color-overlay: rgba(15, 20, 25, 0.85);
@@ -387,6 +393,5 @@ a {
     @apply grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-4 gap-2 my-9;
   }
 }
-
 
 

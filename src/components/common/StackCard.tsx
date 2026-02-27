@@ -25,8 +25,9 @@ export default function StackCard({stackName, compact = false}: StackCardProps) 
                     />
                 ) : (
                     <Card
+                        variant="surface"
                         className="group/item relative flex shrink-0 cursor-default flex-col items-center gap-2.5 rounded-md
-                        bg-(--color-navy-light) px-4 py-4 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+                        px-4 py-4 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
                     >
                         <Image
                             src={stack.img}
