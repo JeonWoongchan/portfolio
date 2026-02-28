@@ -1,8 +1,8 @@
-'use client'
+﻿'use client'
 
-import {useEffect, useState} from "react";
+import { useEffect, useState } from 'react';
 
-// 스크롤 움직일 때마다 스크롤Y 값 return 하는 함수
+// 현재 페이지의 세로 스크롤 위치(window.scrollY)를 구독하는 훅
 export const useScroll = () => {
     const [scrollY, setScrollY] = useState(0);
 
@@ -16,7 +16,7 @@ export const useScroll = () => {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, [])
+    }, []);
 
-    return {scrollY}
+    return { scrollY };
 };
