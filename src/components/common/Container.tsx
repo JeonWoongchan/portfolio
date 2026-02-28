@@ -6,6 +6,7 @@ import {cn} from '@/lib/utils';
 import SectionScrollAction from "@/src/components/common/SectionScrollAction";
 import {useRegisterSection} from '@/src/hooks/useRegisterSectionRef';
 import useSectionVisibility from '@/src/hooks/useSectionVisibility';
+import {SECTION_TONE_STYLE_MAP, type SectionTone} from "@/src/utils/sectionTone";
 
 interface ContainerProps {
     children: ReactNode;
@@ -16,10 +17,9 @@ interface ContainerProps {
     ref?: RefObject<HTMLElement | null>;
 }
 
-type SectionTone = 'navy' | 'navyLight';
-
 interface SectionProps extends ContainerProps {
     nextSection?: string;
+    onNextAction?: () => void;
     opacityValue?: number;
     sectionKey?: string;
     visibilityThreshold?: number;
@@ -45,37 +45,6 @@ const SectionVisibilityContext = createContext<SectionVisibilityContextValue>(
     SECTION_VISIBILITY_CONTEXT_DEFAULT
 );
 
-const SECTION_TONE_STYLE_MAP: Record<
-    SectionTone,
-    {
-        sectionClassName: string;
-        surfaceVars: Record<string, string>;
-    }
-> = {
-    navy: {
-        sectionClassName: 'bg-(--color-navy)',
-        surfaceVars: {
-            '--surface-card': 'var(--color-navy-light)',
-            '--surface-card-border': 'var(--color-border-light)',
-            '--surface-button': 'var(--color-navy-light)',
-            '--surface-button-text': 'var(--color-white)',
-            '--surface-button-hover': 'var(--color-accent)',
-            '--surface-button-hover-text': 'var(--color-black)',
-        },
-    },
-    navyLight: {
-        sectionClassName: 'bg-(--color-navy-light)',
-        surfaceVars: {
-            '--surface-card': 'var(--color-navy)',
-            '--surface-card-border': 'var(--color-border)',
-            '--surface-button': 'var(--color-navy)',
-            '--surface-button-text': 'var(--color-white)',
-            '--surface-button-hover': 'var(--color-accent)',
-            '--surface-button-hover-text': 'var(--color-black)',
-        },
-    },
-};
-
 function useSectionVisibilityContext() {
     return useContext(SectionVisibilityContext);
 }
@@ -88,6 +57,7 @@ export function Section({
     style,
     ref,
     nextSection,
+    onNextAction,
     sectionKey,
     visibilityThreshold = 0.2,
     tone,
@@ -115,9 +85,10 @@ export function Section({
                 <div className={cn('w-full flex-1 flex flex-col justify-between', contentClassName)}>
                     {children}
                 </div>
-                {nextSection && (
+                {(nextSection || onNextAction) && (
                     <SectionScrollAction
                         target={nextSection}
+                        onAction={onNextAction}
                         direction="down"
                         variant="hint"
                         className={slideDownClassName}

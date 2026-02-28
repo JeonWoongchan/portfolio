@@ -1,6 +1,6 @@
 import { Code2, ExternalLink, FileText } from "lucide-react";
 import type { ArchiveCardItem } from "@/src/types/archive";
-import { BodyText, SmallText } from "@/src/components/Typography";
+import { BodyText, SmallText } from "@/src/components/common/Typography";
 import InlineTagList from "@/src/components/common/InlineTagList";
 import IconBadge from "@/src/components/common/IconBadge";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";

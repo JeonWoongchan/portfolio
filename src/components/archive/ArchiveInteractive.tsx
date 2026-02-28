@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import SectionActionButton from "@/src/components/common/SectionActionButton";
-import { GridContainer } from "@/src/components/Container";
+import { GridContainer } from "@/src/components/common/Container";
 import ArchiveCountItem from "@/src/components/archive/ArchiveCountItem";
 import ArchiveGridCard from "@/src/components/archive/ArchiveGridCard";
 import { useCategoryFilter } from "@/src/hooks/useCategoryFilter";

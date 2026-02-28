@@ -1,5 +1,5 @@
-import {Section, SectionBody, SectionHeader} from '@/src/components/Container';
-import {SectionDescription, SectionTitle} from '@/src/components/Typography';
+import {Section, SectionBody, SectionHeader} from '@/src/components/common/Container';
+import {SectionDescription, SectionTitle} from '@/src/components/common/Typography';
 import CAREER_DATA from '@/data/career';
 import CareerCard from '@/src/components/career/CareerCard';
 

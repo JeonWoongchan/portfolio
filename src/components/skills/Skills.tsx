@@ -1,5 +1,5 @@
-﻿import {Section, SectionBody, SectionHeader} from '@/src/components/Container';
-import {SectionDescription, SectionTitle} from '@/src/components/Typography';
+﻿import {Section, SectionBody, SectionHeader} from '@/src/components/common/Container';
+import {SectionDescription, SectionTitle} from '@/src/components/common/Typography';
 import SKILL_DATA from '@/data/skills';
 import SkillCardList from '@/src/components/skills/SkillCardList';
 

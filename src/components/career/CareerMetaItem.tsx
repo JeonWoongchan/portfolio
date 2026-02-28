@@ -1,5 +1,5 @@
 import type {LucideIcon} from 'lucide-react';
-import {SmallText} from "@/src/components/Typography";
+import {SmallText} from "@/src/components/common/Typography";
 import {cn} from "@/lib/utils";
 
 interface CareerMetaItemProps {

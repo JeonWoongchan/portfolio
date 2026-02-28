@@ -44,7 +44,7 @@ export default function CopyEmailMetaItem({
     };
 
     return (
-        <div className={cn("flex items-center gap-2", className)}>
+        <div className={cn("flex items-center gap-2 flex-wrap", className)}>
             <CareerMetaItem icon={Mail} text={email} textClassName={textClassName} />
             <button
                 type="button"

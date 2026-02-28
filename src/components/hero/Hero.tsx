@@ -1,9 +1,9 @@
 'use client'
 import {useState} from "react";
-import {Section, SectionBody} from "@/src/components/Container";
+import {Section, SectionBody} from "@/src/components/common/Container";
 import Image from "next/image";
 import TypeIt from "typeit-react";
-import {HeroTitle, SectionDescription} from "@/src/components/Typography";
+import {HeroTitle, SectionDescription} from "@/src/components/common/Typography";
 
 export default function Hero() {
     const [typingDone, setTypingDone] = useState(false);

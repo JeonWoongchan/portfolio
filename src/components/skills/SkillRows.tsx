@@ -1,5 +1,5 @@
 import {SkillCategory} from "@/src/types/skills";
-import {GridContainer} from "@/src/components/Container";
+import {GridContainer} from "@/src/components/common/Container";
 import SkillCardDetail from "@/src/components/skills/SkillCardDetail";
 import type {StackName} from "@/src/types/stack";
 import StackCardList from "@/src/components/common/StackCardList";

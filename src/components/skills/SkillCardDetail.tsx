@@ -1,7 +1,7 @@
 import {SkillItem} from "@/src/types/skills";
 import Image from "next/image";
 import {Card} from "@/components/ui/card";
-import {SmallText} from "@/src/components/Typography";
+import {SmallText} from "@/src/components/common/Typography";
 import {stackMeta, StackName} from "@/src/types/stack";
 import InlineTagList from "@/src/components/common/InlineTagList";
 

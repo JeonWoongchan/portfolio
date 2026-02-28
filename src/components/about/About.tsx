@@ -2,11 +2,11 @@ import {
     Section,
     SectionBody,
     SectionHeader,
-} from "@/src/components/Container";
+} from "@/src/components/common/Container";
 import {
     SectionDescription,
     SectionTitle,
-} from "@/src/components/Typography";
+} from "@/src/components/common/Typography";
 import AboutInfoGrid from "@/src/components/about/AboutInfoGrid";
 import AboutProfileCard from "@/src/components/about/AboutProfileCard";
 import AboutQuoteCard from "@/src/components/about/AboutQuoteCard";

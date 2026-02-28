@@ -2,7 +2,7 @@ import CareerBadgeList from "@/src/components/career/CareerBadgeList";
 import InlineTagList from "@/src/components/common/InlineTagList";
 import { useCareerCardItem } from "@/src/components/career/CareerCardContext";
 import { BriefcaseBusiness, MapPin, Users2 } from "lucide-react";
-import { BodyText, SmallText } from "@/src/components/Typography";
+import { BodyText, SmallText } from "@/src/components/common/Typography";
 import CareerCurrentBadge from "@/src/components/career/CareerCurrentBadge";
 import CareerMetaItem from "@/src/components/career/CareerMetaItem";
 import StackCardList from "@/src/components/common/StackCardList";

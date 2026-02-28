@@ -4,17 +4,18 @@ import { ArrowUp } from "lucide-react";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { cn } from "@/lib/utils";
 import { useSectionStore } from "@/src/store/useSectionStore";
-import { SmallText } from "@/src/components/Typography";
+import { SmallText } from "@/src/components/common/Typography";
 
 type ScrollDirection = "down" | "up";
 type ScrollActionVariant = "hint" | "inline";
 
 interface SectionScrollActionProps {
-    target: string;
+    target?: string;
     direction?: ScrollDirection;
     variant?: ScrollActionVariant;
     label?: string;
     className?: string;
+    onAction?: () => void;
 }
 
 const DIRECTION_LABEL_MAP: Record<ScrollDirection, string> = {
@@ -28,6 +29,7 @@ export default function SectionScrollAction({
     variant = "hint",
     label,
     className,
+    onAction,
 }: SectionScrollActionProps) {
     const { scrollTo } = useSectionStore();
     const text = label ?? DIRECTION_LABEL_MAP[direction];
@@ -37,7 +39,14 @@ export default function SectionScrollAction({
             type="button"
             aria-label={text}
             onClick={() => {
-                scrollTo(target);
+                if (onAction) {
+                    onAction();
+                    return;
+                }
+
+                if (target) {
+                    scrollTo(target);
+                }
             }}
             className={cn(
                 variant === "hint"

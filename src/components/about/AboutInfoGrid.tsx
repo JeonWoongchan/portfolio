@@ -1,6 +1,6 @@
 import ABOUT_DATA from "@/data/about";
-import { GridContainer } from "@/src/components/Container";
-import InfoCard from "@/src/components/InfoCard";
+import { GridContainer } from "@/src/components/common/Container";
+import InfoCard from "@/src/components/about/InfoCard";
 
 export default function AboutInfoGrid() {
     return (

@@ -1,4 +1,4 @@
-import { BodyText, SmallText } from '@/src/components/Typography';
+import { BodyText, SmallText } from '@/src/components/common/Typography';
 import StackCardList from '@/src/components/common/StackCardList';
 import { VerticalDivider } from '@/src/components/common/VerticalDivider';
 import { useCareerCardItem } from '@/src/components/career/CareerCardContext';

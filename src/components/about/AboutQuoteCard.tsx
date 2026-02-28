@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import { BodyText } from "@/src/components/Typography";
+import { BodyText } from "@/src/components/common/Typography";
 
 export default function AboutQuoteCard() {
     return (

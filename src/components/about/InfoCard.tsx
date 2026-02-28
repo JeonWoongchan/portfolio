@@ -1,5 +1,5 @@
 import {Card, CardContent, CardHeader} from "@/components/ui/card";
-import {BodyText, SmallText } from "./Typography";
+import {BodyText, SmallText } from "../common/Typography";
 import IconBadge from "@/src/components/common/IconBadge";
 import type { LucideIcon } from "lucide-react";
 

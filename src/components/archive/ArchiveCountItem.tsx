@@ -1,4 +1,4 @@
-import { SmallText } from "@/src/components/Typography";
+import { SmallText } from "@/src/components/common/Typography";
 import { VerticalDivider } from "@/src/components/common/VerticalDivider";
 import { cn } from "@/lib/utils";
 import {CategoryFilterProps} from "@/src/types/category";

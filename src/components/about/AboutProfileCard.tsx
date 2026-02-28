@@ -3,7 +3,7 @@ import { BadgeCheck, Code, Code2, GraduationCap, Mail } from "lucide-react";
 import SocialStackLinks from "@/src/components/common/SocialStackLinks";
 import IconBadge from "@/src/components/common/IconBadge";
 import CareerMetaItem from "@/src/components/career/CareerMetaItem";
-import { BodyText, SmallText } from "@/src/components/Typography";
+import { BodyText, SmallText } from "@/src/components/common/Typography";
 
 export default function AboutProfileCard() {
     return (
