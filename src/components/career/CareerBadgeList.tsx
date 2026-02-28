@@ -5,7 +5,7 @@ interface CareerBadgeListProps {
 
 export default function CareerBadgeList({company, badges}: CareerBadgeListProps) {
     return (
-        <ul className="flex gap-2">
+        <ul className="flex flex-wrap gap-2">
             {badges.map((badge) => (
                 <li
                     key={`${company}-${badge}`}

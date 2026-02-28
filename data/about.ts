@@ -1,33 +1,30 @@
 import type { AboutData } from "@/src/types/about";
+import {Code2, Palette, UsersRound, Zap} from "lucide-react";
 
 export const ABOUT_DATA = [
     {
         "id": 1,
-        "imageSrc": "/images/javascript.svg",
-        "imageAlt": "JavaScript 로고",
-        "title": "JavaScript",
-        "description": "프론트엔드 개발에 기본이 되는 JavaScript부터 제 것으로 만들기 위해 노력했습니다. 프론트엔드 개발에 기본이 되는 JavaScript부터 제 것으로 만들기 위해 노력했습니다."
+        "icon": Zap,
+        "title": "Performance",
+        "description": "사용자가 기다리지 않는 서비스를 만들고자 합니다. 페이지 초기 로딩을 5초에서 1초 미만으로, 3D 렌더링 로딩을 30초에서 1.5초로 단축하며 성능 최적화의 실질적인 효과를 경험했습니다."
     },
     {
         "id": 2,
-        "imageSrc": "/images/typescript.svg",
-        "imageAlt": "TypeScript 로고",
-        "title": "TypeScript",
-        "description": "타입 안정성을 확보하여 더 견고한 코드를 작성하기 위해 TypeScript를 학습하고 적용하였습니다. 타입 안정성을 확보하여 더 견고한 코드를 작성하기 위해 TypeScript를 학습하고 적용하였습니다."
+        "icon": Palette,
+        "title": "UI/UX Focus",
+        "description": "코딩을 넘어 사용자 경험을 고민하는 개발자를 지향합니다. 스켈레톤 UI 적용과 디자인 토큰 기반 시스템 구축으로 사용자가 더 편하게 느끼는 인터페이스를 만들어왔습니다."
     },
     {
         "id": 3,
-        "imageSrc": "/images/react.svg",
-        "imageAlt": "React 로고",
-        "title": "React",
-        "description": "상태 관리와 컴포넌트 재사용성을 고려한 UI를 개발하고자 노력하였습니다. 상태 관리와 컴포넌트 재사용성을 고려한 UI를 개발하고자 노력하였습니다."
+        "icon": Code2,
+        "title": "Clean Architecture",
+        "description": "다음 개발자가 읽기 좋은 코드와 구조를 지향합니다. 모노레포 도입으로 공통 컴포넌트를 통합 관리하고, 신규 개발 기간을 약 2주 단축하는 성과로 이어졌습니다."
     },
     {
         "id": 4,
-        "imageSrc": "/images/nextjs.svg",
-        "imageAlt": "Next.js 로고",
-        "title": "Next.js",
-        "description": "리액트와 함께 서버 기능도 구현해보고자 MongoDB를 이용하여 구현해보았습니다. 리액트와 함께 서버 기능도 구현해보고자 MongoDB를 이용하여 구현해보았습니다."
+        "icon": UsersRound,
+        "title": "Collaboration",
+        "description": "좋은 서비스는 좋은 협업에서 나온다고 믿습니다. 코드 리뷰, API 명세 관리, 개발 히스토리 문서화를 주도하며 팀 전체의 생산성과 유지보수 효율을 높여왔습니다."
     }
 ] satisfies readonly AboutData[];
 

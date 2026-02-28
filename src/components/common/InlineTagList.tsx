@@ -5,7 +5,7 @@ interface InlineTagListProps {
 
 export default function InlineTagList({items, keyPrefix}: InlineTagListProps) {
     return (
-        <ul className="flex flex-col gap-2 md:flex-row">
+        <ul className="flex gap-2 flex-wrap">
             {items.map((item) => (
                 <li
                     key={`${keyPrefix}-${item}`}

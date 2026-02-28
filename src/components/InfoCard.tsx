@@ -1,30 +1,30 @@
-import {Card, CardContent} from "@/components/ui/card";
-import Image from "next/image";
+import {Card, CardContent, CardHeader} from "@/components/ui/card";
 import {BodyText, SmallText } from "./Typography";
+import IconBadge from "@/src/components/common/IconBadge";
+import type { LucideIcon } from "lucide-react";
 
 interface InfoCardProps {
-    imageSrc: string;
-    imageAlt: string;
+    icon: LucideIcon;
     title: string;
     description: string;
 
 }
 
-export default function InfoCard({imageSrc, imageAlt, title, description}: InfoCardProps) {
+export default function InfoCard({icon, title, description}: InfoCardProps) {
     return(
-        <div className="flex flex-col gap-2">
-            <Card variant="surface" className="cursor-default h-55 transition-all duration-300 ease-in-out hover:scale-101 overflow-hidden">
-                <CardContent className="flex flex-col items-center p-4">
-                    <Image
-                        src={imageSrc}
-                        alt={imageAlt}
-                        className="my-4"
-                        width={64}
-                        height={64} />
-                </CardContent>
-            </Card>
-            <BodyText className={"lg:text-xl font-bold"}>{title}</BodyText>
-            <SmallText>{description}</SmallText>
-        </div>
+        <Card variant="surface" className="h-full">
+            <CardHeader>
+                <IconBadge
+                    icon={icon}
+                    tone={"accent"}
+                    className="size-10 rounded-lg p-2"
+                    iconClassName="size-5"
+                />
+            </CardHeader>
+            <CardContent>
+                <BodyText className={"lg:text-lg"}>{title}</BodyText>
+                <SmallText>{description}</SmallText>
+            </CardContent>
+        </Card>
     )
 }

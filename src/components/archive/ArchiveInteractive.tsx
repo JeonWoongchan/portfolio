@@ -56,7 +56,7 @@ export default function ArchiveInteractive({ categories }: ArchiveInteractivePro
                 onSelect={handleSelectCategory}
             />
 
-            <GridContainer className="mx-auto mt-8 w-full max-w-6xl gap-4 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3">
+            <GridContainer className="mx-auto mt-8 w-full max-w-6xl md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3">
                 {visibleItems.map((item) => (
                     <li key={`${item.category}-${item.id}`} className="w-full">
                         <ArchiveGridCard item={item} />

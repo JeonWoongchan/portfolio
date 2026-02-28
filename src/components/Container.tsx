@@ -107,7 +107,7 @@ export function Section({
                 style={{...(toneConfig?.surfaceVars ?? {}), ...style}}
                 className={cn(
                     'w-full min-h-dvh flex flex-col justify-between',
-                    'pt-24 px-16 xl:px-40 2xl:px-100 text-(--color-text) select-none',
+                    'pt-24 px-16 2xl:px-100 text-(--color-text) select-none',
                     toneConfig?.sectionClassName,
                     className
                 )}
@@ -187,7 +187,7 @@ export function ContentWrapper({children, className = ''}: ContainerProps) {
 
 export function GridContainer({children, className = ''}: ContainerProps) {
     return (
-        <ul className={cn('grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-4 gap-8 justify-items-center', className)}>
+        <ul className={cn('grid grid-cols-1 sm:grid-cols-2 gap-4 justify-items-center', className)}>
             {children}
         </ul>
     );

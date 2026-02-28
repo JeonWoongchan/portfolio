@@ -38,7 +38,7 @@ export default function CareerCard({ item }: CareerCardProps) {
                                 {isDetailOpen ? '상세 내용 접기' : '상세 내용 보기'}
                             </span>
                         </AccordionTrigger>
-                        <AccordionContent className="flex gap-8 p-6">
+                        <AccordionContent className="flex flex-col md:flex-row gap-8 p-6">
                             <CareerCardProjects />
                             <CareerHighlights />
                         </AccordionContent>

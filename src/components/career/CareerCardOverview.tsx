@@ -18,7 +18,7 @@ export default function CareerCardOverview() {
 
     return (
         <Card className="gap-2 border-none p-4">
-            <CardHeader className="flex gap-4">
+            <CardHeader className="flex gap-4 flex-col md:flex-row">
                 <IconBadge
                     icon={BriefcaseBusiness}
                     tone="accent"
@@ -27,10 +27,10 @@ export default function CareerCardOverview() {
                 />
                 <div className="space-y-1">
                     <div className="flex flex-wrap items-center gap-2">
-                        <BodyText className="font-bold lg:text-xl">{item.company}</BodyText>
+                        <BodyText className="lg:text-lg">{item.company}</BodyText>
                         {item.isCurrent ? <CareerCurrentBadge label={CURRENT_LABEL} /> : null}
                     </div>
-                    <div className="flex text-sm">
+                    <div className="flex flex-wrap text-sm">
                         <SmallText>{item.period}</SmallText>
                         <VerticalDivider />
                         <CareerMetaItem icon={MapPin} text={item.location} />

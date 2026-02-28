@@ -27,7 +27,7 @@ export default function SkillRows({category, isAllSelected}: SkillRowsProps) {
                                     keyPrefix={category.key}
                                 />
                                 :
-                                <GridContainer className={"gap-4 2xl:grid-cols-3"}>
+                                <GridContainer className="2xl:grid-cols-3">
                                         {category.items.map((item, i) => (
                                                 <SkillCardDetail key={`${category.key}-${item.name}-${i}`} item={item} />
                                         ))}

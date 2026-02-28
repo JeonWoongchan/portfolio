@@ -21,7 +21,7 @@ export default function ArchiveGridCard({ item }: ArchiveGridCardProps) {
             </CardHeader>
 
             <CardContent>
-                <BodyText className="font-semibold">{item.title}</BodyText>
+                <BodyText>{item.title}</BodyText>
                 <SmallText className="line-clamp-3">
                     {item.description}
                 </SmallText>
