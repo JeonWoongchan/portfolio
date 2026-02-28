@@ -11,14 +11,14 @@ export default function Hero() {
     return (
         <Section
             sectionKey={"Hero"}
-            className={"bg-[#1e3155] text-(--color-text)"}
+            className={"hero-bg text-(--color-text)"}
             nextSection={"About"}
             contentClassName={"justify-center items-center"}
             slideDownClassName={`opacity-0 ${typingDone && 'fade-in-up-3'}`}
         >
-            <SectionBody className={"lg:w-[60%] items-center text-center p-0 gap-6 justify-center"}>
+            <SectionBody className={"w-full max-w-4xl items-center gap-6 p-0 text-center justify-center"}>
                 <Image src="/images/profile.png" alt="프로필 이미지" className={"fade-in-up-1"} width={200} height={200}/>
-                <div className="h-35 xl:h-55">
+                <div className="h-36 xl:h-56">
                     <TypeIt
                         options={{
                             speed: 60,
@@ -28,7 +28,7 @@ export default function Hero() {
                         }}
                     >
                         <HeroTitle className={"text-center flex flex-col gap-4"}>
-                            <h1>안녕하세요</h1>
+                            <h1>안녕하세요.</h1>
                             <h1>프론트엔드 개발자</h1>
                             <h1>
                                 <span className={"text-(--color-accent)"}>전웅찬</span>입니다.

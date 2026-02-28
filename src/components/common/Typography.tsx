@@ -25,7 +25,7 @@ export function SectionTitle({ children, className = "" }: TypographyProps) {
 export function SectionDescription({ children, className = "" }: TypographyProps) {
     return (
         <p className={cn(
-            "text-left text-base leading-relaxed text-(--color-text-body)",
+            "text-left text-base leading-relaxed text-(--color-text-content)",
             className
         )}>
             {children}
@@ -62,7 +62,7 @@ export function BodyText({ children, className = "" }: TypographyProps) {
 export function SmallText({ children, className = "" }: TypographyProps) {
     return (
         <p className={cn(
-            "text-xs md:text-sm leading-relaxed text-(--color-text-body)",
+            "text-xs md:text-sm leading-relaxed text-(--color-text-content)",
             className
         )}>
             {children}

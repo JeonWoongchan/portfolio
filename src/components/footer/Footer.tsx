@@ -2,7 +2,7 @@
 
 import { useCallback } from "react";
 import type { CSSProperties } from "react";
-import { Drawer, DrawerContent, DrawerDescription, DrawerTitle } from "@/components/ui/drawer";
+import { Drawer, DrawerContent } from "@/components/ui/drawer";
 import { SectionDescription } from "@/src/components/common/Typography";
 import CopyEmailMetaItem from "@/src/components/footer/CopyEmailMetaItem";
 import BrandSignature from "@/src/components/common/BrandSignature";
@@ -31,10 +31,6 @@ export default function Footer({ open, onOpenChange }: FooterProps) {
                 className="border-(--color-border) bg-(--color-navy-light) text-(--color-text)"
                 style={footerSurfaceVars}
             >
-                <DrawerTitle className="sr-only">Footer Contact Drawer</DrawerTitle>
-                <DrawerDescription className="sr-only">
-                    연락 정보와 소셜 링크를 확인할 수 있는 푸터 드로워입니다.
-                </DrawerDescription>
                 <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-6 pb-6 pt-2 md:px-12">
                     <div className="flex w-full flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
                         <div className="w-full space-y-2">

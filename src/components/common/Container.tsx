@@ -77,7 +77,7 @@ export function Section({
                 style={{...(toneConfig?.surfaceVars ?? {}), ...style}}
                 className={cn(
                     'w-full min-h-dvh flex flex-col justify-between',
-                    'pt-24 px-16 2xl:px-100 text-(--color-text) select-none',
+                    'pt-24 px-6 sm:px-10 lg:px-16 xl:px-24 2xl:px-100 text-(--color-text) select-none',
                     toneConfig?.sectionClassName,
                     className
                 )}

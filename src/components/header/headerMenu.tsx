@@ -5,7 +5,7 @@ import {cn} from "@/lib/utils";
 import {VerticalDivider} from "@/src/components/common/VerticalDivider";
 
 const MENU_LIST = ['About', 'Skills', 'Career', 'Archive'] as const
-const MENU_BUTTON_CLASSES = 'px-3 py-1.5 cursor-pointer hover:bg-(--color-gray) hover:rounded-full'
+const MENU_BUTTON_CLASSES = 'px-3 py-1.5 cursor-pointer hover:bg-(--color-gray) hover:rounded-full text-white'
 
 type ExpandedMenuProps = {
     onMenuClickAction: (menu: string) => void
@@ -40,7 +40,7 @@ function MenuButton({ menu, onClick }: MenuButtonProps) {
     return (
         <button
             type="button"
-            className={cn(MENU_BUTTON_CLASSES, 'text-white!')}
+            className={cn(MENU_BUTTON_CLASSES)}
             onClick={() => onClick(menu)}
         >
             {menu}

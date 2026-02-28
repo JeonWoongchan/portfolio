@@ -30,7 +30,7 @@ function CountCell({
                         <p className={cn("text-4xl font-bold", countClassName)}>{count}</p>
                         <SmallText
                                 className={`text-center transition-colors ${
-                                        isActive ? activeLabelClassName : "text-(--color-text-body)"
+                                        isActive ? activeLabelClassName : "text-(--color-text-content)"
                                 }`}
                         >
                                 {label}

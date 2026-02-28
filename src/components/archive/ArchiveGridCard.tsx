@@ -16,7 +16,7 @@ export default function ArchiveGridCard({ item }: ArchiveGridCardProps) {
         <Card variant="surface" className="group hover:border-(--color-accent) cursor-pointer">
             <CardHeader className="p-0 flex items-baseline">
                 <IconBadge icon={isProject ? Code2 : FileText} tone={isProject ? "green" : "yellow"} className="size-7" />
-                <span className="text-xs text-(--color-text-body)">{item.date}</span>
+                <span className="text-xs text-(--color-text-content)">{item.date}</span>
                 <ExternalLink className="ml-auto size-3.5 shrink-0 text-(--color-text-muted) opacity-0 transition-opacity group-hover:opacity-100" />
             </CardHeader>
 

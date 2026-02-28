@@ -9,8 +9,10 @@
     --color-primary: var(--color-black);
     --color-primary-variant: var(--color-gray);
     --color-accent: rgb(3 232 249 / 82%);
+    --color-accent-soft: rgb(3 232 249 / 10%);
     --color-accent-variant: var(--color-orange);
     --color-text: var(--color-white);
+    --color-hero: #1e3155;
 
     /* Colors */
     --color-white: #ffffff;
@@ -48,7 +50,7 @@
     /* 의미 기반 확장 색상 */
     --color-surface-strong: #0d1117;
     --color-text-heading: #e8edf2;
-    --color-text-body: #6b7c8d;
+    --color-text-content: #6b7c8d;
     --color-text-caption: #8899aa;
     --color-divider-muted: #1e2a38;
     --color-highlight: #00d4aa;
@@ -113,6 +115,7 @@ a {
 }
 
 /*나타나는 애니메이션*/
+
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -150,8 +153,6 @@ a {
     opacity: 0;
     animation: fadeInUp 1s ease-out 2.5s forwards;
 }
-
-
 @keyframes fadeInDown {
     from {
         opacity: 0;
@@ -355,6 +356,10 @@ a {
 }
 
 @layer components {
+    .hero-bg {
+        @apply bg-(--color-hero);
+    }
+
     /* Typography 관련 */
     .section-title {
         @apply text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold;
@@ -393,5 +398,4 @@ a {
         @apply grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-4 gap-2 my-9;
     }
 }
-
 
