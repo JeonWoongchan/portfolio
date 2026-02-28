@@ -1,23 +1,21 @@
 "use client";
 
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useState } from "react";
 import ARCHIVE_DATA from "@/data/archive";
 import { Section, SectionBody, SectionHeader } from "@/src/components/common/Container";
 import { SectionDescription, SectionTitle } from "@/src/components/common/Typography";
 import ArchiveInteractive from "@/src/components/archive/ArchiveInteractive";
 import Footer from "@/src/components/footer/Footer";
-import { useArchiveFooterTrigger } from "@/src/hooks/useArchiveFooterTrigger";
+import { useFooterOverscrollTrigger } from "@/src/hooks/useFooterOverscrollTrigger";
 
 export default function Archive() {
-    const archiveSectionRef = useRef<HTMLElement | null>(null);
     const [isFooterOpen, setIsFooterOpen] = useState(false);
 
     const handleOpenDrawer = useCallback(() => {
         setIsFooterOpen(true);
     }, []);
 
-    useArchiveFooterTrigger({
-        archiveSectionRef,
+    useFooterOverscrollTrigger({
         isFooterOpen,
         onOpenFooter: handleOpenDrawer,
     });
@@ -25,7 +23,6 @@ export default function Archive() {
     return (
         <>
             <Section
-                ref={archiveSectionRef}
                 sectionKey={"Archive"}
                 onNextAction={handleOpenDrawer}
                 tone="navy"
