@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useState } from 'react'
 import { useScroll } from '@/src/hooks/useScroll'
@@ -39,7 +39,6 @@ export function CollapsedBrand() {
     return (
         <div className="flex cursor-pointer items-center gap-2 px-5 py-2.5">
             <BrandSignature
-                prompt="~"
                 nameClassName="text-md text-muted-foreground"
             />
         </div>

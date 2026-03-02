@@ -132,7 +132,7 @@ export function SectionBody({
     return (
         <div
             className={cn(
-                'flex-1 flex flex-col justify-start',
+                'relative flex-1 flex flex-col justify-start',
                 animateOnVisible && 'opacity-0',
                 animateOnVisible && isVisible && visibleClassName,
                 className

@@ -1,28 +1,24 @@
-import { Terminal } from "lucide-react";
-import { cn } from "@/lib/utils";
+﻿import { cn } from "@/lib/utils";
+import { BrandLogo } from "@/src/components/common/BrandLogo";
 import {VerticalDivider} from "@/src/components/common/VerticalDivider";
+import { BRAND_DEFAULT_NAME } from "@/data/brand.constants";
 
 interface BrandSignatureProps {
     name?: string;
-    prompt?: string;
     className?: string;
-    iconClassName?: string;
-    promptClassName?: string;
+    logoClassName?: string;
     nameClassName?: string;
 }
 
 export default function BrandSignature({
-    name = "Jeon.Woongchan",
-    prompt = "~/",
+    name = BRAND_DEFAULT_NAME,
     className,
-    iconClassName,
-    promptClassName,
+    logoClassName,
     nameClassName,
 }: BrandSignatureProps) {
     return (
         <div className={cn("flex items-center gap-2", className)}>
-            <Terminal className={cn("h-4 w-4 text-(--color-accent)", iconClassName)} aria-hidden="true" />
-            <span className={cn("font-mono text-(--color-accent)", promptClassName)}>{prompt}</span>
+            <BrandLogo className={logoClassName} />
             <span className={cn("font-mono text-white", nameClassName)}>{name}</span>
             <VerticalDivider className="mx-0 h-4 w-0.5 animate-pulse bg-(--color-accent)" />
         </div>
