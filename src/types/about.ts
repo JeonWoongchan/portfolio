@@ -6,3 +6,17 @@ export type AboutData = {
     title: string;
     description: string;
 };
+
+export type AboutProfileMetaKey = "email" | "position" | "education" | "certification";
+
+export type AboutProfileMetaText = {
+    id: number;
+    key: AboutProfileMetaKey;
+    text: string;
+};
+
+export type AboutProfileTextData = {
+    name: string;
+    role: string;
+    metaItems: readonly AboutProfileMetaText[];
+};

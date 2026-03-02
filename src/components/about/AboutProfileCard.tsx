@@ -1,9 +1,18 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { BadgeCheck, Code, Code2, GraduationCap, Mail } from "lucide-react";
+import { ABOUT_PROFILE_TEXT_DATA } from "@/data/about";
 import SocialStackLinks from "@/src/components/common/SocialStackLinks";
-import IconBadge from "@/src/components/common/IconBadge";
-import CareerMetaItem from "@/src/components/career/CareerMetaItem";
 import { BodyText, SmallText } from "@/src/components/common/Typography";
+import CareerMetaItem from "@/src/components/career/CareerMetaItem";
+import IconBadge from "@/src/components/common/IconBadge";
+import type { AboutProfileMetaKey } from "@/src/types/about";
+import { BadgeCheck, Code, Code2, GraduationCap, Mail, type LucideIcon } from "lucide-react";
+
+const META_ITEM_ICON_MAP: Record<AboutProfileMetaKey, LucideIcon> = {
+    email: Mail,
+    position: Code2,
+    education: GraduationCap,
+    certification: BadgeCheck,
+};
 
 export default function AboutProfileCard() {
     return (
@@ -15,14 +24,17 @@ export default function AboutProfileCard() {
                     className="size-25 rounded-lg p-2 justify-self-center"
                     iconClassName="size-5"
                 />
-                <BodyText className={"lg:text-lg"}>전웅찬</BodyText>
-                <SmallText className="mb-4 text-(--color-accent)">Frontend Developer</SmallText>
+                <BodyText className={"lg:text-lg"}>{ABOUT_PROFILE_TEXT_DATA.name}</BodyText>
+                <SmallText className="mb-4 text-(--color-accent)">{ABOUT_PROFILE_TEXT_DATA.role}</SmallText>
             </CardHeader>
             <CardContent className="self-center">
-                <CareerMetaItem icon={Mail} text="jchan71589@gmail.com" />
-                <CareerMetaItem icon={Code2} text="Frontend Developer" />
-                <CareerMetaItem icon={GraduationCap} text="컴퓨터소프트웨어 전공" />
-                <CareerMetaItem icon={BadgeCheck} text="정보처리기사" />
+                {ABOUT_PROFILE_TEXT_DATA.metaItems.map((metaItem) => (
+                    <CareerMetaItem
+                        key={metaItem.id}
+                        icon={META_ITEM_ICON_MAP[metaItem.key]}
+                        text={metaItem.text}
+                    />
+                ))}
                 <SocialStackLinks className="mt-4 justify-center gap-4" />
             </CardContent>
         </Card>
