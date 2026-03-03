@@ -1,7 +1,7 @@
 ﻿import { cn } from "@/lib/utils";
 import { BrandLogo } from "@/src/components/common/BrandLogo";
 import {VerticalDivider} from "@/src/components/common/VerticalDivider";
-import { BRAND_DEFAULT_NAME } from "@/data/brand.constants";
+import { BRAND_DEFAULT_NAME } from "@/data/brand";
 
 interface BrandSignatureProps {
     name?: string;

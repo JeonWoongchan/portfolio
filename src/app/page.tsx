@@ -10,7 +10,6 @@ import Archive from "@/src/components/archive/Archive";
 // TODO: 블로그 - 이번 Tailwind 유지보수 개선(토큰화, 반응형 표준화, 버튼 폭 정책) 내용을 회고로 작성한다.
 // TODO: 아카이브 - 카드 클릭 시 링크 이동 구현
 // TODO: Hero 섹션에서 헤더가 스크롤 버튼이랑 동시에 나타나도록 수정
-// TODO: Hero, Archive 클라이언트 컴포넌트 개선 검토
 export default function App() {
     return (
             <div className="min-h-screen bg-zinc-50 font-sans">

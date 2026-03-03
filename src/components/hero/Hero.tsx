@@ -8,11 +8,11 @@ import {
 import HeroLogo from "@/src/components/hero/HeroLogo";
 import CodeBackground from "@/src/components/hero/CodeBackground";
 import TerminalLine from "@/src/components/hero/TerminalLine";
-import { BOOT_LINES } from "@/src/components/hero/constants";
-import { useHeroPhase } from "@/src/hooks/useHeroPhase";
+import { BOOT_LINES } from "@/data/brand";
+import { useHeroIntroSequence } from "@/src/hooks/useHeroIntroSequence";
 
 export default function Hero() {
-    const phase = useHeroPhase();
+    const phase = useHeroIntroSequence();
     const isContentVisible = phase >= 2;
     const contentAnimationClassName = isContentVisible
         ? "translate-y-0 opacity-100"

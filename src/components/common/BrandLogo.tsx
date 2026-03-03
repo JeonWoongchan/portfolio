@@ -1,5 +1,5 @@
 ﻿import { cn } from "@/lib/utils";
-import { BRAND_HERO_FULL_LOGO } from "@/data/brand.constants";
+import { BRAND_HERO_FULL_LOGO } from "@/data/brand";
 
 interface BrandLogoProps {
     className?: string;

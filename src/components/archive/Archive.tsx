@@ -34,7 +34,7 @@ export default function Archive() {
                     </SectionDescription>
                 </SectionHeader>
 
-                <SectionBody animateOnVisible>
+                <SectionBody>
                     <ArchiveInteractive categories={ARCHIVE_DATA} />
                 </SectionBody>
             </Section>

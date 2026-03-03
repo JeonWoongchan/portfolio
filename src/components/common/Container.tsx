@@ -49,6 +49,11 @@ function useSectionVisibilityContext() {
     return useContext(SectionVisibilityContext);
 }
 
+export function useSectionVisible() {
+    const {isVisible} = useSectionVisibilityContext();
+    return isVisible;
+}
+
 export function Section({
     children,
     className = '',

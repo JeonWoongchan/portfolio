@@ -1,4 +1,4 @@
-﻿import { CODE_COLUMNS, CODE_LINES } from "@/src/components/hero/constants";
+import { CODE_COLUMNS, CODE_LINES } from "@/data/brand";
 
 export default function CodeBackground() {
   return (
@@ -16,7 +16,7 @@ export default function CodeBackground() {
             }}
           >
             {[...CODE_LINES, ...CODE_LINES].map((line, i) => (
-              <div key={`${col}-${i}`} className="whitespace-nowrap">
+              <div key={`${col}-${i}`} className="whitespace-pre">
                 {line}
               </div>
             ))}
