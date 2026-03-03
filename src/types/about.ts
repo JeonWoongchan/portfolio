@@ -7,7 +7,7 @@ export type AboutData = {
     description: string;
 };
 
-export type AboutProfileMetaKey = "email" | "position" | "education" | "certification";
+export type AboutProfileMetaKey = "email" | "position" | "education" | "tags";
 
 export type AboutProfileMetaText = {
     id: number;

@@ -103,10 +103,13 @@ export function SectionHeader({
     children,
     className = '',
 }: ContainerProps) {
+    const {isVisible} = useSectionVisibilityContext();
+
     return (
         <div
             className={cn(
                 'relative flex flex-col items-center gap-3 p-4 mb-6',
+                isVisible ? 'fade-in-down' : 'opacity-0',
                 className
             )}
         >

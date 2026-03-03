@@ -53,8 +53,8 @@ export const ABOUT_PROFILE_TEXT_DATA = {
         },
         {
             id: 4,
-            key: "certification",
-            text: "정보처리기사",
+            key: "tags",
+            text: "#클린코드 #문서화 #성장",
         },
     ],
 } as const satisfies AboutProfileTextData;

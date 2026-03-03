@@ -5,13 +5,13 @@ import { BodyText, SmallText } from "@/src/components/common/Typography";
 import CareerMetaItem from "@/src/components/career/CareerMetaItem";
 import IconBadge from "@/src/components/common/IconBadge";
 import type { AboutProfileMetaKey } from "@/src/types/about";
-import { BadgeCheck, Code, Code2, GraduationCap, Mail, type LucideIcon } from "lucide-react";
+import {Code, Code2, GraduationCap, LucideIcon, Mail, Tags} from "lucide-react";
 
 const META_ITEM_ICON_MAP: Record<AboutProfileMetaKey, LucideIcon> = {
     email: Mail,
     position: Code2,
     education: GraduationCap,
-    certification: BadgeCheck,
+    tags: Tags,
 };
 
 export default function AboutProfileCard() {
