@@ -1,11 +1,11 @@
-'use client'
+﻿'use client'
 
 import {createContext, useContext} from 'react';
 import type {CSSProperties, ReactNode, RefObject} from 'react';
 import {cn} from '@/lib/utils';
 import SectionScrollAction from "@/src/components/common/SectionScrollAction";
-import {useRegisterSection} from '@/src/hooks/useRegisterSectionRef';
-import useSectionVisibility from '@/src/hooks/useSectionVisibility';
+import {useRegisterSection} from '@/src/hooks/section/useRegisterSectionRef';
+import useSectionVisibility from '@/src/hooks/section/useSectionVisibility';
 import {SECTION_TONE_STYLE_MAP, type SectionTone} from "@/src/utils/sectionTone";
 
 interface ContainerProps {
@@ -30,11 +30,6 @@ interface SectionProps extends ContainerProps {
 
 interface SectionVisibilityContextValue {
     isVisible: boolean;
-}
-
-interface SectionChildProps extends ContainerProps {
-    animateOnVisible?: boolean;
-    visibleClassName?: string;
 }
 
 const SECTION_VISIBILITY_CONTEXT_DEFAULT: SectionVisibilityContextValue = {
@@ -107,17 +102,11 @@ export function Section({
 export function SectionHeader({
     children,
     className = '',
-    animateOnVisible = false,
-    visibleClassName = 'fade-in-down',
-}: SectionChildProps) {
-    const {isVisible} = useSectionVisibilityContext();
-
+}: ContainerProps) {
     return (
         <div
             className={cn(
                 'relative flex flex-col items-center gap-3 p-4 mb-6',
-                animateOnVisible && 'opacity-0',
-                animateOnVisible && isVisible && visibleClassName,
                 className
             )}
         >
@@ -129,17 +118,11 @@ export function SectionHeader({
 export function SectionBody({
     children,
     className = '',
-    animateOnVisible = false,
-    visibleClassName = 'fade-in-up-2',
-}: SectionChildProps) {
-    const {isVisible} = useSectionVisibilityContext();
-
+}: ContainerProps) {
     return (
         <div
             className={cn(
                 'relative flex-1 flex flex-col justify-start',
-                animateOnVisible && 'opacity-0',
-                animateOnVisible && isVisible && visibleClassName,
                 className
             )}
         >
@@ -168,3 +151,4 @@ export function GridContainer({children, className = ''}: ContainerProps) {
         </ul>
     );
 }
+

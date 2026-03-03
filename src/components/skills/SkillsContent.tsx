@@ -1,11 +1,11 @@
-'use client'
+﻿'use client'
 
 import SkillRows from "@/src/components/skills/SkillRows";
 import { SkillCategory } from "@/src/types/skills";
 import CategoryFilterToggle from "@/src/components/common/CategoryFilterToggle";
 import { useSectionVisible } from "@/src/components/common/Container";
-import { useCategoryFilter } from "@/src/hooks/useCategoryFilter";
-import { useRevealStyle } from "@/src/hooks/useRevealStyle";
+import { useCategoryFilter } from "@/src/hooks/shared/useCategoryFilter";
+import { useRevealStyle } from "@/src/hooks/ui/useRevealStyle";
 import { cn } from "@/lib/utils";
 
 const TOGGLE_DELAY_MS = 100;
@@ -49,3 +49,4 @@ export default function SkillsContent({ categories }: SkillsContentProps) {
         </div>
     );
 }
+

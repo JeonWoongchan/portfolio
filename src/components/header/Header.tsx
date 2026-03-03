@@ -1,7 +1,7 @@
 ﻿'use client'
 
 import { useState } from 'react'
-import { useScroll } from '@/src/hooks/useScroll'
+import { useScroll } from '@/src/hooks/scroll/useScroll'
 import { useSectionStore } from '@/src/store/useSectionStore'
 import { useHeroIntroStore } from '@/src/store/useHeroIntroStore'
 import ExpandedMenu from "@/src/components/header/headerMenu";
@@ -51,3 +51,4 @@ export function CollapsedBrand() {
         </div>
     )
 }
+

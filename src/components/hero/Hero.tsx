@@ -9,7 +9,7 @@ import HeroLogo from "@/src/components/hero/HeroLogo";
 import CodeBackground from "@/src/components/hero/CodeBackground";
 import TerminalLine from "@/src/components/hero/TerminalLine";
 import { BOOT_LINES } from "@/data/brand";
-import { useHeroIntroSequence } from "@/src/hooks/useHeroIntroSequence";
+import { useHeroIntroSequence } from "@/src/hooks/hero/useHeroIntroSequence";
 
 export default function Hero() {
     const phase = useHeroIntroSequence();
@@ -68,3 +68,4 @@ export default function Hero() {
         </Section>
     );
 }
+

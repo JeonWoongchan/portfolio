@@ -1,11 +1,11 @@
-"use client";
+﻿"use client";
 
 import SectionActionButton from "@/src/components/common/SectionActionButton";
 import { GridContainer, useSectionVisible } from "@/src/components/common/Container";
 import ArchiveCountItem from "@/src/components/archive/ArchiveCountItem";
 import ArchiveGridCard from "@/src/components/archive/ArchiveGridCard";
-import { useArchiveInteractive } from "@/src/hooks/useArchiveInteractive";
-import { useRevealStyle } from "@/src/hooks/useRevealStyle";
+import { useArchiveInteractive } from "@/src/hooks/archive/useArchiveInteractive";
+import { useRevealStyle } from "@/src/hooks/ui/useRevealStyle";
 import { ArchiveCategory } from "@/src/types/archive";
 import { cn } from "@/lib/utils";
 
@@ -78,3 +78,4 @@ export default function ArchiveInteractive({ categories }: ArchiveInteractivePro
         </>
     );
 }
+

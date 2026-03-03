@@ -1,4 +1,4 @@
-import {
+﻿import {
     Section,
     SectionBody,
     SectionHeader,
@@ -16,7 +16,7 @@ export default function About() {
             nextSection={"Skills"}
             tone="navyLight"
         >
-            <SectionHeader animateOnVisible>
+            <SectionHeader>
                 <SectionTitle>About Me</SectionTitle>
                 <SectionDescription>
                     적극적으로 협업하며, 지속가능한 서비스를 개발합니다.

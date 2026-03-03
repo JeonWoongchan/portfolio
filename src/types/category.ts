@@ -1,4 +1,4 @@
-import {CategoryOption} from "@/src/hooks/useCategoryFilter";
+﻿import {CategoryOption} from "@/src/hooks/shared/useCategoryFilter";
 
 export interface CategoryGroup<TItem, TKey extends string = string> {
         key: TKey;
@@ -11,3 +11,4 @@ export interface CategoryFilterProps {
     options: readonly CategoryOption[];
     onSelect: (key: string) => void;
 }
+

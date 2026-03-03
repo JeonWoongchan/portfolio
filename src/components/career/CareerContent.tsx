@@ -1,8 +1,8 @@
-"use client";
+﻿"use client";
 
 import CareerCard from "@/src/components/career/CareerCard";
 import { useSectionVisible } from "@/src/components/common/Container";
-import { useRevealStyle } from "@/src/hooks/useRevealStyle";
+import { useRevealStyle } from "@/src/hooks/ui/useRevealStyle";
 import type { CareerItem } from "@/src/types/career";
 import { cn } from "@/lib/utils";
 
@@ -31,3 +31,4 @@ export default function CareerContent({ items }: CareerContentProps) {
         </>
     );
 }
+

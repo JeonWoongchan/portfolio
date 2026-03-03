@@ -1,10 +1,10 @@
-"use client";
+﻿"use client";
 
 import AboutInfoGrid from "@/src/components/about/AboutInfoGrid";
 import AboutProfileCard from "@/src/components/about/AboutProfileCard";
 import AboutQuoteCard from "@/src/components/about/AboutQuoteCard";
 import { useSectionVisible } from "@/src/components/common/Container";
-import { useRevealStyle } from "@/src/hooks/useRevealStyle";
+import { useRevealStyle } from "@/src/hooks/ui/useRevealStyle";
 import { cn } from "@/lib/utils";
 
 const PROFILE_DELAY_MS = 140;
@@ -38,3 +38,4 @@ export default function AboutContent() {
         </>
     );
 }
+

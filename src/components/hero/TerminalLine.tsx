@@ -1,4 +1,4 @@
-﻿import { useTypewriterText } from "@/src/hooks/useTypewriterText";
+﻿import { useTypewriterText } from "@/src/hooks/ui/useTypewriterText";
 
 interface TerminalLineProps {
   text: string;
@@ -23,3 +23,4 @@ export default function TerminalLine({ text, delay }: TerminalLineProps) {
     </div>
   );
 }
+

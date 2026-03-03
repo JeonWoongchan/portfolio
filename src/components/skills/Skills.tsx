@@ -12,7 +12,7 @@ export default function Skills() {
             nextSection={"Career"}
             tone="navy"
         >
-            <SectionHeader animateOnVisible>
+            <SectionHeader>
                 <SectionTitle>Skills</SectionTitle>
                 <SectionDescription>
                     프론트엔드 개발에 필요한 핵심 기술들을 꾸준히 학습하고 실무에 적용합니다.

@@ -1,7 +1,7 @@
-"use client";
+﻿"use client";
 
 import { useCallback, useMemo, useState } from "react";
-import { useCategoryFilter } from "@/src/hooks/useCategoryFilter";
+import { useCategoryFilter } from "@/src/hooks/shared/useCategoryFilter";
 import type { ArchiveCardItem, ArchiveCategory } from "@/src/types/archive";
 
 interface UseArchiveInteractiveParams {
@@ -80,3 +80,4 @@ export function useArchiveInteractive({
         handleToggleVisible,
     };
 }
+
