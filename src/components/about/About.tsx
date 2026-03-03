@@ -7,9 +7,7 @@ import {
     SectionDescription,
     SectionTitle,
 } from "@/src/components/common/Typography";
-import AboutInfoGrid from "@/src/components/about/AboutInfoGrid";
-import AboutProfileCard from "@/src/components/about/AboutProfileCard";
-import AboutQuoteCard from "@/src/components/about/AboutQuoteCard";
+import AboutContent from "@/src/components/about/AboutContent";
 
 export default function About() {
     return (
@@ -25,16 +23,8 @@ export default function About() {
                 </SectionDescription>
             </SectionHeader>
 
-            <SectionBody animateOnVisible className="space-y-4">
-                <div className="flex flex-col gap-4 lg:flex-row lg:items-stretch">
-                    <div className="lg:basis-1/4">
-                        <AboutProfileCard />
-                    </div>
-                    <div className="min-w-0 lg:basis-3/4">
-                        <AboutInfoGrid />
-                    </div>
-                </div>
-                <AboutQuoteCard />
+            <SectionBody className="space-y-4">
+                <AboutContent />
             </SectionBody>
         </Section>
     );

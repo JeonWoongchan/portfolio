@@ -1,7 +1,7 @@
 import {Section, SectionBody, SectionHeader} from '@/src/components/common/Container';
 import {SectionDescription, SectionTitle} from '@/src/components/common/Typography';
 import CAREER_DATA from '@/data/career';
-import CareerCard from '@/src/components/career/CareerCard';
+import CareerContent from '@/src/components/career/CareerContent';
 
 export default function Career() {
     return (
@@ -11,12 +11,8 @@ export default function Career() {
                 <SectionDescription>다양한 업무와 프로젝트를 통해 경험과 노하우를 쌓고 있습니다.</SectionDescription>
             </SectionHeader>
 
-            <SectionBody animateOnVisible className="mx-auto w-full max-w-7xl justify-start gap-4">
-                {CAREER_DATA.map((item, index) => (
-                    <div key={`${item.company}-${item.period}`} className={`fade-in-up-${index + 2}`}>
-                        <CareerCard item={item} />
-                    </div>
-                ))}
+            <SectionBody className="mx-auto w-full max-w-7xl justify-start gap-4">
+                <CareerContent items={CAREER_DATA} />
             </SectionBody>
         </Section>
     );

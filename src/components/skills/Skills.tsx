@@ -1,7 +1,7 @@
 ﻿import {Section, SectionBody, SectionHeader} from '@/src/components/common/Container';
 import {SectionDescription, SectionTitle} from '@/src/components/common/Typography';
 import SKILL_DATA from '@/data/skills';
-import SkillCardList from '@/src/components/skills/SkillCardList';
+import SkillsContent from '@/src/components/skills/SkillsContent';
 
 export default function Skills() {
     const categories = SKILL_DATA;
@@ -19,9 +19,9 @@ export default function Skills() {
                 </SectionDescription>
             </SectionHeader>
 
-            <SectionBody animateOnVisible>
+            <SectionBody>
                 {/* 스킬 영역 */}
-                <SkillCardList categories={categories} />
+                <SkillsContent categories={categories} />
             </SectionBody>
         </Section>
     );
