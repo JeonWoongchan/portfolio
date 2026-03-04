@@ -1,10 +1,13 @@
 import type {StackName} from '@/src/types/stack';
+import type { YearMonth } from "@/src/types/yearMonth";
 
 export interface CareerProject {
     title: string;
-    period: string;
+    periodStart: YearMonth;
+    periodEnd: YearMonth;
     description: string;
-    roles: string[]
+    roles: string[];
+    link: string;
     stack: readonly StackName[];
 }
 

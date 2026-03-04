@@ -11,9 +11,14 @@ const cardVariants = cva(
                 default: "bg-transparent border-(--color-border-light)",
                 surface: "bg-(--surface-card) border-(--surface-card-border)",
             },
+            interaction: {
+                static: "",
+                hoverable: "cursor-pointer hover:border-(--color-accent)",
+            },
         },
         defaultVariants: {
             variant: "default",
+            interaction: "static",
         },
     }
 )
@@ -21,14 +26,49 @@ const cardVariants = cva(
 function Card({
     className,
     variant = "default",
+    interaction = "static",
     ...props
 }: React.ComponentProps<"div"> & VariantProps<typeof cardVariants>) {
     return (
         <div
             data-slot="card"
-            className={cn(cardVariants({ variant, className }))}
+            className={cn(cardVariants({ variant, interaction, className }))}
             {...props}
         />
+    )
+}
+
+type CardLinkProps = React.ComponentProps<"a"> &
+    VariantProps<typeof cardVariants> & {
+        cardClassName?: string
+    }
+
+function CardLink({
+    className,
+    cardClassName,
+    variant = "default",
+    interaction = "hoverable",
+    rel,
+    target,
+    children,
+    ...props
+}: CardLinkProps) {
+    const resolvedRel = target === "_blank" ? (rel ?? "noopener noreferrer") : rel
+
+    return (
+        <a
+            className={cn(
+                "block rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--color-accent)",
+                className
+            )}
+            rel={resolvedRel}
+            target={target}
+            {...props}
+        >
+            <Card variant={variant} interaction={interaction} className={cardClassName}>
+                {children}
+            </Card>
+        </a>
     )
 }
 
@@ -100,6 +140,7 @@ function CardFooter({ className, ...props }: React.ComponentProps<"div">) {
 
 export {
     Card,
+    CardLink,
     CardHeader,
     CardFooter,
     CardTitle,

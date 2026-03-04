@@ -51,7 +51,7 @@ export default function ArchiveInteractive({ categories }: ArchiveInteractivePro
             <GridContainer className="mx-auto mt-8 w-full max-w-6xl md:grid-cols-2 xl:grid-cols-3">
                 {visibleItems.map((item, index) => (
                     <li
-                        key={`${item.category}-${item.id}`}
+                        key={`${selectedKey}-${item.category}-${item.id}`}
                         className={cn("w-full", revealClassName)}
                         style={getRevealStyle(
                             GRID_CARD_BASE_DELAY_MS + index * GRID_CARD_STAGGER_MS
