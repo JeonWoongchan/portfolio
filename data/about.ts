@@ -43,8 +43,8 @@ export const ABOUT_PROFILE_TEXT_DATA = {
         },
         {
             id: 2,
-            key: "position",
-            text: "Frontend Developer",
+            key: "techStack",
+            text: "React · TypeScript · Next.js",
         },
         {
             id: 3,
@@ -54,7 +54,7 @@ export const ABOUT_PROFILE_TEXT_DATA = {
         {
             id: 4,
             key: "tags",
-            text: "#클린코드 #문서화 #성장",
+            text: "#클린코드 #협업 #성장",
         },
     ],
 } as const satisfies AboutProfileTextData;

@@ -9,7 +9,7 @@ import {Code, Code2, GraduationCap, LucideIcon, Mail, Tags} from "lucide-react";
 
 const META_ITEM_ICON_MAP: Record<AboutProfileMetaKey, LucideIcon> = {
     email: Mail,
-    position: Code2,
+    techStack: Code2,
     education: GraduationCap,
     tags: Tags,
 };
