@@ -18,13 +18,15 @@ export default function StackCard({stackName, compact = false, imageClassName, t
         <Tooltip>
             <TooltipTrigger asChild>
                 {compact ? (
-                    <Image
-                        src={stack.img}
-                        alt={`skill-icon ${stackName}`}
-                        width={30}
-                        height={30}
-                        className={cn("h-7 w-7 object-contain", imageClassName)}
-                    />
+                    <span className="inline-flex items-center justify-center">
+                        <Image
+                            src={stack.img}
+                            alt={`skill-icon ${stackName}`}
+                            width={30}
+                            height={30}
+                            className={cn("h-5 w-5 object-contain", imageClassName)}
+                        />
+                    </span>
                 ) : (
                     <Card
                         variant="surface"
@@ -36,7 +38,7 @@ export default function StackCard({stackName, compact = false, imageClassName, t
                             alt={`skill-icon ${stackName}`}
                             width={30}
                             height={30}
-                            className={cn("h-8 w-8 object-contain", imageClassName)}
+                            className={cn("mx-auto h-8 w-8 object-contain", imageClassName)}
                         />
                     </Card>
                 )}

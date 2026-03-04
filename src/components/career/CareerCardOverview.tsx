@@ -1,7 +1,7 @@
 import CareerBadgeList from "@/src/components/career/CareerBadgeList";
 import InlineTagList from "@/src/components/common/InlineTagList";
 import { useCareerCardItem } from "@/src/components/career/CareerCardContext";
-import { BriefcaseBusiness, MapPin, Users2 } from "lucide-react";
+import { BriefcaseBusiness, Users2 } from "lucide-react";
 import { BodyText, SmallText } from "@/src/components/common/Typography";
 import CareerCurrentBadge from "@/src/components/career/CareerCurrentBadge";
 import CareerMetaItem from "@/src/components/career/CareerMetaItem";
@@ -32,8 +32,6 @@ export default function CareerCardOverview() {
                     </div>
                     <div className="flex flex-wrap text-sm">
                         <SmallText>{item.period}</SmallText>
-                        <VerticalDivider />
-                        <CareerMetaItem icon={MapPin} text={item.location} />
                         <VerticalDivider />
                         <CareerMetaItem icon={Users2} text={item.team} />
                     </div>

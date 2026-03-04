@@ -1,17 +1,37 @@
+import {useEffect, useRef, useState} from "react";
 import TypeIt from "typeit-react";
 import {BrandLogo} from "@/src/components/common/BrandLogo";
-import {useSectionVisible} from "@/src/components/common/Container";
 
 interface HeroLogoProps {
     visible: boolean;
 }
 
 export default function HeroLogo({ visible }: HeroLogoProps) {
-    const isHeroSectionVisible = useSectionVisible();
-    const shouldRenderTyping = visible && isHeroSectionVisible;
+    const logoWrapperRef = useRef<HTMLDivElement | null>(null);
+    const [isLogoInViewport, setIsLogoInViewport] = useState(false);
+
+    useEffect(() => {
+        const logoElement = logoWrapperRef.current;
+        if (!logoElement) {
+            return;
+        }
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setIsLogoInViewport(entry.isIntersecting);
+            },
+            { threshold: 0.2 }
+        );
+
+        observer.observe(logoElement);
+        return () => observer.disconnect();
+    }, []);
+
+    const shouldRenderTyping = visible && isLogoInViewport;
 
     return (
         <div
+            ref={logoWrapperRef}
             className={`absolute transition-all duration-700
             ${visible ? "opacity-100 scale-100" : "opacity-0 scale-75"}`}
         >
@@ -23,7 +43,7 @@ export default function HeroLogo({ visible }: HeroLogoProps) {
                                 speed: 120,
                                 cursor: true,
                                 cursorChar: "|",
-                                waitUntilVisible: true,
+                                waitUntilVisible: false,
                             }}
                         >
                             <BrandLogo className="text-(--color-accent)"/>

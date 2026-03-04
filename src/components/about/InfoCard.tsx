@@ -1,5 +1,5 @@
-import {Card, CardContent, CardHeader} from "@/components/ui/card";
-import {BodyText, SmallText } from "../common/Typography";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { BodyText, SmallText } from "../common/Typography";
 import IconBadge from "@/src/components/common/IconBadge";
 import type { LucideIcon } from "lucide-react";
 
@@ -7,11 +7,28 @@ interface InfoCardProps {
     icon: LucideIcon;
     title: string;
     description: string;
-
 }
 
-export default function InfoCard({icon, title, description}: InfoCardProps) {
-    return(
+const BOLD_TAG_PATTERN = /<b>(.*?)<\/b>/g;
+
+export default function InfoCard({ icon, title, description }: InfoCardProps) {
+    const descriptionNodes = description
+        .split(BOLD_TAG_PATTERN)
+        .filter((text) => text.length > 0)
+        .map((text, index) => {
+            const isBold = index % 2 === 1;
+
+            return (
+                <span
+                    key={`${title}-description-${index}`}
+                    className={isBold ? "font-bold text-white" : undefined}
+                >
+                    {text}
+                </span>
+            );
+        });
+
+    return (
         <Card variant="surface" className="h-full">
             <CardHeader>
                 <IconBadge
@@ -23,8 +40,8 @@ export default function InfoCard({icon, title, description}: InfoCardProps) {
             </CardHeader>
             <CardContent>
                 <BodyText className={"lg:text-lg"}>{title}</BodyText>
-                <SmallText>{description}</SmallText>
+                <SmallText>{descriptionNodes}</SmallText>
             </CardContent>
         </Card>
-    )
+    );
 }

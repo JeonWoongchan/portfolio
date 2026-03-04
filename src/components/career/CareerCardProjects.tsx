@@ -12,7 +12,7 @@ export default function CareerCardProjects() {
     const sortedProjects = [...item.projects].sort(compareYearMonthRangeByLatest);
 
     return (
-        <div className="min-w-0 flex-1">
+        <div className="min-w-0 md:basis-[70%] md:max-w-[70%]">
             <div className="mb-4 flex items-center justify-between">
                 <h4 className="text-xs tracking-wide text-(--color-text-muted)">PROJECTS ({item.projects.length})</h4>
             </div>
@@ -35,7 +35,7 @@ export default function CareerCardProjects() {
                                             <CareerBadgeList company={item.company} badges={project.roles} />
                                             <VerticalDivider className="h-auto bg-(--color-border)" />
                                             <StackCardList
-                                                stackNames={item.stack}
+                                                stackNames={project.stack}
                                                 keyPrefix={`${item.company}-${project.title}`}
                                                 compact={true}
                                             />

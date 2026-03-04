@@ -7,7 +7,7 @@ export default function CareerHighlights() {
     const item = useCareerCardItem();
 
     return (
-        <div>
+        <div className="min-w-0 md:basis-[30%] md:max-w-[30%]">
             <p className="mb-4 text-xs tracking-wide text-(--color-text-muted)">{HIGHLIGHT_LABEL}</p>
             <ul className="space-y-4">
                 {item.highlights.map((highlight) => (
