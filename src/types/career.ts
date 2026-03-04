@@ -15,7 +15,6 @@ export interface CareerItem {
     company: string;
     period: string;
     quote: string;
-    location: string;
     team: string;
     badges: readonly string[];
     stack: readonly StackName[];

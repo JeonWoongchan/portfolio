@@ -8,17 +8,17 @@ export const SKILL_DATA = [
             {
                 "name": "HTML",
                 "content": "Semantic markup & accessibility",
-                "tags": ["Semantic", "SEO", "Accessibility"]
+                "tags": ["HTML5", "Semantic"]
             },
             {
                 "name": "CSS",
                 "content": "Responsive layouts & animations",
-                "tags": ["Flexbox", "Grid", "Animation"]
+                "tags": ["CSS3", "Flexbox & Grid", "Responsive Design"]
             },
             {
                 "name": "JavaScript",
                 "content": "ES6+ & DOM manipulation",
-                "tags": ["ES6+", "DOM API", "Async"]
+                "tags": ["ES6+", "DOM", "비동기"]
             },
             {
                 "name": "TypeScript",
@@ -28,12 +28,12 @@ export const SKILL_DATA = [
             {
                 "name": "React",
                 "content": "Component-based UI development",
-                "tags": ["Hooks", "State Mgmt"]
+                "tags": ["Hooks", "State Management"]
             },
             {
                 "name": "Next.js",
-                "content": "SSR & full-stack React framework",
-                "tags": ["SSR", "App Router"]
+                "content": "Full-stack React framework with SSR",
+                "tags": ["App Router", "SSR"]
             }
         ]
     },
@@ -44,57 +44,57 @@ export const SKILL_DATA = [
             {
                 "name": "Tailwind CSS",
                 "content": "Utility-first CSS framework",
-                "tags": ["Utility-first", "Responsive", "Dark Mode"]
+                "tags": ["Responsive Design", "Design System"]
             },
             {
                 "name": "Material UI",
-                "content": "Google Material Design component library",
-                "tags": ["Components", "Theming", "Accessibility"]
+                "content": "Material Design React component library",
+                "tags": ["Component UI Library"]
             },
             {
                 "name": "Ant Design",
-                "content": "Enterprise-grade UI component library",
-                "tags": ["Components", "Form", "Table"]
+                "content": "Enterprise React UI component library",
+                "tags": ["Component UI Library"]
             },
             {
                 "name": "shadcn/ui",
-                "content": "Composable & unstyled component library",
-                "tags": ["Radix UI", "Tailwind CSS", "Composable"]
+                "content": "Composable React component library",
+                "tags": ["Headless UI Library", "Customization"]
             },
             {
                 "name": "Redux Toolkit",
                 "content": "Predictable global state management",
-                "tags": ["Slice", "RTK Query", "Middleware"]
+                "tags": ["State Management"]
             },
             {
                 "name": "Zustand",
                 "content": "Lightweight client state management",
-                "tags": ["Store", "Middleware", "Devtools"]
+                "tags": ["Client State Management"]
             },
             {
                 "name": "TanStack Query",
                 "content": "Async server state management",
-                "tags": ["Caching", "Refetch", "Optimistic UI"]
+                "tags": ["Server State Management"]
             },
             {
                 "name": "Jest",
-                "content": "JavaScript unit & integration testing",
-                "tags": ["Unit Test", "Mocking", "Coverage"]
+                "content": "JavaScript testing framework",
+                "tags": ["Unit Testing", "Mocking"]
             },
             {
                 "name": "Vitest",
-                "content": "Vite-native fast unit testing",
-                "tags": ["Unit Test", "ESM", "Vite"]
+                "content": "Vite-native testing framework",
+                "tags": ["Unit Testing", "ESM"]
             },
             {
                 "name": "Storybook",
                 "content": "UI component development & documentation",
-                "tags": ["Component Driven", "Docs", "Addons"]
+                "tags": ["Component Driven Development", "Docs"]
             },
             {
                 "name": "CesiumJS",
                 "content": "3D geospatial visualization engine",
-                "tags": ["3D Globe", "GIS", "WebGL"]
+                "tags": ["3D Visualization", "GIS"]
             }
         ]
     },
@@ -105,17 +105,17 @@ export const SKILL_DATA = [
             {
                 "name": "Vite",
                 "content": "Next-generation frontend build tool",
-                "tags": ["HMR", "ESM", "Bundle"]
+                "tags": ["Bundling", "ESM"]
             },
             {
                 "name": "Webpack",
                 "content": "Module bundler for complex builds",
-                "tags": ["Bundling", "Loader", "Plugin"]
+                "tags": ["Bundling"]
             },
             {
                 "name": "Turborepo",
                 "content": "High-performance monorepo build system",
-                "tags": ["Monorepo", "Cache", "Pipeline"]
+                "tags": ["Monorepo", "Next.js"]
             },
             {
                 "name": "Docker",
@@ -125,17 +125,17 @@ export const SKILL_DATA = [
             {
                 "name": "Git",
                 "content": "Version control & collaboration",
-                "tags": ["Branch", "Merge", "GitHub"]
+                "tags": ["Branch Strategy", "GitHub", "GitLab"]
             },
             {
                 "name": "Vercel",
                 "content": "Deployment & hosting platform",
-                "tags": ["CI/CD", "Preview", "Domain"]
+                "tags": ["CI/CD"]
             },
             {
                 "name": "Figma",
                 "content": "Collaborative UI/UX design tool",
-                "tags": ["Design", "Prototype", "Handoff"]
+                "tags": ["Design", "Prototype"]
             }
         ]
     },
@@ -146,7 +146,7 @@ export const SKILL_DATA = [
             {
                 "name": "Nest.js",
                 "content": "Scalable Node.js server-side framework",
-                "tags": ["REST API", "DI", "Decorator"]
+                "tags": ["REST API", "DI"]
             },
             {
                 "name": "MariaDB",
@@ -156,7 +156,7 @@ export const SKILL_DATA = [
             {
                 "name": "PostgreSQL",
                 "content": "Advanced open-source relational database",
-                "tags": ["SQL", "JSONB", "Extensions"]
+                "tags": ["SQL", "JSONB"]
             }
         ]
     },
