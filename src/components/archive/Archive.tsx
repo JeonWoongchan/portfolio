@@ -14,10 +14,14 @@ export default function Archive() {
     const handleOpenDrawer = useCallback(() => {
         setIsFooterOpen(true);
     }, []);
+    const handleCloseDrawer = useCallback(() => {
+        setIsFooterOpen(false);
+    }, []);
 
     useFooterOverscrollTrigger({
         isFooterOpen,
         onOpenFooter: handleOpenDrawer,
+        onCloseFooter: handleCloseDrawer,
     });
 
     return (

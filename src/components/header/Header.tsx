@@ -21,7 +21,7 @@ export default function Header() {
 
     return (
         <header
-            className={`fixed top-0 z-5 flex h-20 w-full select-none items-center justify-center transition-all duration-500 ease-in-out ${
+            className={`fixed top-0 z-5 flex h-20 left-0 right-0 select-none items-center justify-center transition-all duration-500 ease-in-out ${
                 isHeaderVisible ? "translate-y-0 opacity-100" : "-translate-y-3 opacity-0 pointer-events-none"
             }`}
         >

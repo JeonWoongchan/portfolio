@@ -3,10 +3,12 @@
 import { useEffect, useRef } from "react";
 
 const BOTTOM_THRESHOLD_PX = 2;
+const CLOSE_WHEEL_DELTA_THRESHOLD = -2;
 
 interface UseFooterOverscrollTriggerParams {
     isFooterOpen: boolean;
     onOpenFooter: () => void;
+    onCloseFooter: () => void;
 }
 
 function isAtPageBottom(): boolean {
@@ -19,16 +21,17 @@ function isAtPageBottom(): boolean {
 export function useFooterOverscrollTrigger({
     isFooterOpen,
     onOpenFooter,
+    onCloseFooter,
 }: UseFooterOverscrollTriggerParams) {
     const wasAtBottomRef = useRef(false);
     const isArmedRef = useRef(false);
 
     useEffect(() => {
-        if (isFooterOpen) {
-            return;
-        }
-
         const handleScroll = () => {
+            if (isFooterOpen) {
+                return;
+            }
+
             const atBottom = isAtPageBottom();
 
             if (!atBottom) {
@@ -45,6 +48,13 @@ export function useFooterOverscrollTrigger({
         };
 
         const handleWheel = (event: WheelEvent) => {
+            if (isFooterOpen) {
+                if (event.deltaY < CLOSE_WHEEL_DELTA_THRESHOLD) {
+                    onCloseFooter();
+                }
+                return;
+            }
+
             if (event.deltaY <= 0 || !isAtPageBottom()) {
                 return;
             }
@@ -65,5 +75,5 @@ export function useFooterOverscrollTrigger({
             window.removeEventListener("scroll", handleScroll);
             window.removeEventListener("wheel", handleWheel);
         };
-    }, [isFooterOpen, onOpenFooter]);
+    }, [isFooterOpen, onOpenFooter, onCloseFooter]);
 }

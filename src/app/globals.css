@@ -4,6 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+    --removed-body-scroll-bar-size: 0px;
 
     /* App Colors */
     --color-primary: var(--color-black);
@@ -107,6 +108,12 @@
 
 * {
     box-sizing: border-box;
+}
+
+/*Footer(shadcn drawer) 동작 시 헤더 정렬 밀리는 문제 보정*/
+header {
+    right: var(--removed-body-scroll-bar-size, 0px) !important;
+    transition-property: transform, opacity !important;
 }
 
 a {
