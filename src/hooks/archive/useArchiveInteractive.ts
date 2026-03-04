@@ -3,7 +3,7 @@
 import { useCallback, useMemo, useState } from "react";
 import { useCategoryFilter } from "@/src/hooks/shared/useCategoryFilter";
 import type { ArchiveCardItem, ArchiveCategory } from "@/src/types/archive";
-import { compareYearMonthRangeByLatest } from "@/src/utils/yearMonthPeriod";
+import { sortByLatestPeriod } from "@/src/utils/yearMonthPeriod";
 
 interface UseArchiveInteractiveParams {
     categories: readonly ArchiveCategory[];
@@ -20,12 +20,7 @@ interface UseArchiveInteractiveResult {
     handleToggleVisible: () => void;
 }
 
-function compareArchiveItemsByLatestDate(left: ArchiveCardItem, right: ArchiveCardItem): number {
-    const periodOrder = compareYearMonthRangeByLatest(left, right);
-    if (periodOrder !== 0) {
-        return periodOrder;
-    }
-
+function compareArchiveItemsTieBreaker(left: ArchiveCardItem, right: ArchiveCardItem): number {
     const titleOrder = left.title.localeCompare(right.title, "ko");
 
     if (titleOrder !== 0) {
@@ -47,14 +42,15 @@ export function useArchiveInteractive({
     // 카테고리 필터 결과를 평탄화한 뒤 최신순으로 정렬
     const filteredItems = useMemo<ArchiveCardItem[]>(
         () =>
-            filteredCategories
-                .flatMap((category) =>
+            sortByLatestPeriod(
+                filteredCategories.flatMap((category) =>
                     category.items.map((item) => ({
                         ...item,
                         category: category.key,
                     }))
-                )
-                .sort(compareArchiveItemsByLatestDate),
+                ),
+                compareArchiveItemsTieBreaker
+            ),
         [filteredCategories]
     );
 

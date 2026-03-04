@@ -33,7 +33,7 @@ export const ABOUT_DATA = [
 ] satisfies readonly AboutData[];
 
 export const ABOUT_PROFILE_TEXT_DATA = {
-    name: "전진찬",
+    name: "전웅찬",
     role: "Frontend Developer",
     metaItems: [
         {

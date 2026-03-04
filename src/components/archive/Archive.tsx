@@ -34,7 +34,7 @@ export default function Archive() {
                 <SectionHeader>
                     <SectionTitle>Archive</SectionTitle>
                     <SectionDescription>
-                        경력 사이드 프로젝트와 기술 블로그를 모아둔 아카이브입니다.
+                        사이드 프로젝트와 기술 블로그를 모아둔 아카이브입니다.
                     </SectionDescription>
                 </SectionHeader>
 

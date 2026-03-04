@@ -16,7 +16,7 @@ const META_ITEM_ICON_MAP: Record<AboutProfileMetaKey, LucideIcon> = {
 
 export default function AboutProfileCard() {
     return (
-        <Card variant={"surface"} className="h-full p-8 text-center justify-between">
+        <Card variant={"surface"} className="h-full p-8 text-center justify-evenly">
             <CardHeader>
                 <IconBadge
                     icon={Code}

@@ -13,7 +13,7 @@ export const ARCHIVE_DATA = [
                 link: "https://github.com/JeonWoongchan/BomBomOTT",
                 description:
                     "대학 진학 중 처음 진행한 웹개발 팀 프로젝트. TMDB API를 활용한 디즈니플러스 클론코딩에 커뮤니티를 접목시킨 사이트",
-                tags: ["React", "캡스톤 프로젝트", "TMDB API"],
+                tags: ["React", "Team Development", "TMDB API"],
             },
             {
                 id: 2,
@@ -23,7 +23,7 @@ export const ARCHIVE_DATA = [
                 link: "https://github.com/JeonWoongchan/Portfolio_old",
                 description:
                     "신입 프론트엔드 개발자 취업을 위해 나를 소개하는 포트폴리오 사이트 개발. 반응형 웹 구현에 신경쓰며 개발",
-                tags: ["React", "반응형 웹"],
+                tags: ["React", "Responsive Design"],
             },
             {
                 id: 3,
@@ -33,7 +33,7 @@ export const ARCHIVE_DATA = [
                 link: "https://github.com/JeonWoongchan/weatherLife",
                 description:
                     "기상청 Open API를 사용한 초단기/단기 예보 정보 제공 사이트. 신입 개발자 준비 과정에서 진행한 개인 프로젝트",
-                tags: ["React", "기상청 Open API"],
+                tags: ["React", "Open API"],
             },
             {
                 id: 4,
@@ -43,7 +43,7 @@ export const ARCHIVE_DATA = [
                 link: "https://github.com/JeonWoongchan/restaurant",
                 description:
                     "레스토랑 홍보 및 예약 기능을 구현한 레스토랑 홈페이지. 신입 개발자 준비 과정에서 진행한 팀 프로젝트로, 사용자 경험을 고려한 UI와 예약 기능 구현에 초점을 맞춰 진행",
-                tags: ["React", "팀 프로젝트"],
+                tags: ["React", "Team Development"],
             },
             {
                 id: 5,
@@ -75,23 +75,14 @@ export const ARCHIVE_DATA = [
                 id: 2,
                 periodStart: "2024-06",
                 periodEnd: "2024-06",
-                title: "Restaurant Woody",
+                title: "Restaurant Woody 캘린더 구현",
                 link: "https://velog.io/@jchan715/React-%EC%BA%98%EB%A6%B0%EB%8D%94-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0",
                 description:
-                    "라이브러리 사용 없이 레스토랑 우디의 예약 기능에 사용하는 캘린더를 직접 구현해보기",
+                    "라이브러리 사용 없이 Restaurant Woody 프로젝트 예약 기능에 사용하는 캘린더를 직접 구현",
                 tags: ["React", "UI/UX"],
             },
             {
                 id: 3,
-                periodStart: "2024-08",
-                periodEnd: "2024-08",
-                title: "Restaurant Woody 캘린더 구현 보완",
-                link: "https://velog.io/@jchan715/React-%EC%BA%98%EB%A6%B0%EB%8D%94-%EA%B5%AC%ED%98%84-%EB%B3%B4%EC%99%84",
-                description: "구현한 캘린더 보완",
-                tags: ["React", "UI/UX"],
-            },
-            {
-                id: 4,
                 periodStart: "2024-10",
                 periodEnd: "2024-10",
                 title: "JWT를 활용한 React 로그인 구현",
@@ -101,14 +92,14 @@ export const ARCHIVE_DATA = [
                 tags: ["React", "JWT"],
             },
             {
-                id: 5,
+                id: 4,
                 periodStart: "2025-02",
                 periodEnd: "2025-02",
-                title: "Props Drilling 줄이기:Context/Zustand/Tanstack Query",
+                title: "Props Drilling 줄이기",
                 link: "https://velog.io/@jchan715/Props-Drilling-%EC%A4%84%EC%9D%B4%EA%B8%B0ContextZustandTanstack-Query",
                 description:
                     "RSC의 동작 원리와 기존 SSR과의 차이점을 정리한 글. 번들 사이즈 최적화와 서버-클라이언트 경계에 대한 심층 분석.",
-                tags: ["React", "상태 관리"],
+                tags: ["React", "State Management"],
             },
         ],
     },

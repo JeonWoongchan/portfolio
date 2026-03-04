@@ -58,9 +58,9 @@ export default function Hero() {
                         <SectionDescription
                             className={`text-center md:text-lg transition-all duration-700 delay-150 ${contentAnimationClassName}`}
                         >
-                            다양한 경험을 통해 항상 발전하는
-                            <br />
-                            프론트엔드 개발자를 목표로 하고 있습니다.
+                            문제 해결을 위해 항상 더 나은 방향을 고민하는 개발자입니다.
+                            <br/>
+                            지속가능한 서비스를 만드는 것을 목표로 합니다.
                         </SectionDescription>
                     </div>
                 </div>

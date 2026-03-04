@@ -15,7 +15,7 @@ export default function Skills() {
             <SectionHeader>
                 <SectionTitle>Skills</SectionTitle>
                 <SectionDescription>
-                    프론트엔드 개발에 필요한 핵심 기술들을 꾸준히 학습하고 실무에 적용합니다.
+                    프론트엔드 개발에 필요한 핵심 기술을 이해하고 프로젝트에 적용합니다.
                 </SectionDescription>
             </SectionHeader>
 

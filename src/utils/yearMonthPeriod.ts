@@ -36,3 +36,17 @@ export function compareYearMonthRangeByLatest(
 
     return right.periodStart.localeCompare(left.periodStart);
 }
+
+export function sortByLatestPeriod<T extends { periodStart: YearMonth; periodEnd: YearMonth }>(
+    items: readonly T[],
+    tieBreaker?: (left: T, right: T) => number
+): T[] {
+    return [...items].sort((left, right) => {
+        const periodOrder = compareYearMonthRangeByLatest(left, right);
+        if (periodOrder !== 0) {
+            return periodOrder;
+        }
+
+        return tieBreaker ? tieBreaker(left, right) : 0;
+    });
+}

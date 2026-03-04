@@ -5,11 +5,11 @@ import { useCareerCardItem } from '@/src/components/career/CareerCardContext';
 import { CardContent, CardLink } from '@/components/ui/card';
 import CareerBadgeList from "@/src/components/career/CareerBadgeList";
 import {ExternalLink} from "lucide-react";
-import { compareYearMonthRangeByLatest, formatYearMonthRange } from "@/src/utils/yearMonthPeriod";
+import { formatYearMonthRange, sortByLatestPeriod } from "@/src/utils/yearMonthPeriod";
 
 export default function CareerCardProjects() {
     const item = useCareerCardItem();
-    const sortedProjects = [...item.projects].sort(compareYearMonthRangeByLatest);
+    const sortedProjects = sortByLatestPeriod(item.projects);
 
     return (
         <div className="min-w-0 md:basis-[70%] md:max-w-[70%]">

@@ -13,7 +13,8 @@ export interface CareerProject {
 
 export interface CareerItem {
     company: string;
-    period: string;
+    periodStart: YearMonth;
+    periodEnd: YearMonth;
     quote: string;
     team: string;
     badges: readonly string[];
