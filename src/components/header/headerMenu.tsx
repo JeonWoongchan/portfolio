@@ -25,7 +25,7 @@ export default function ExpandedMenu({ onMenuClickAction }: ExpandedMenuProps) {
                 className="group flex cursor-pointer items-center gap-1.5 rounded-full px-3 py-1.5 hover:bg-(--color-accent)"
                 onClick={()=>onMenuClickAction('Hero')}
             >
-                <BrandLogo className="text-sm group-hover:text-(--color-navy)" />
+                <BrandLogo className="text-xs md:text-sm group-hover:text-(--color-navy)" />
             </button>
             <VerticalDivider className="mx-0 bg-border/60" />
             {MENU_LIST.map((menu) => (
