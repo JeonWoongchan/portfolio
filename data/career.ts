@@ -21,7 +21,6 @@ export const CAREER_DATA = [
                 periodStart: "2025.10",
                 periodEnd: "2025.12",
                 roles: ['Frontend 개발'],
-                link: 'https://example.com/projects/artist-portfolio-renewal',
                 description:
                     '교차로 내 차량/보행자 신호 데이터와 신호최적화 알고리즘 결과를 3D모델/히트맵/차트 등으로 시각화하는 교통 관제 대시보드 솔루션',
                 stack: ['JavaScript', 'React', 'Redux Toolkit', 'TanStack Query', 'Docker'],
@@ -51,7 +50,6 @@ export const CAREER_DATA = [
                 roles: ['기획', 'Frontend 개발'],
                 description:
                     'AI 객체 검지 데이터를 고객 맞춤형 요구사항에 따라 시각화하는 범용 대시보드 솔루션',
-                link: '',
                 stack: ['TypeScript', 'Next.js', 'Turborepo', 'Tailwind CSS', 'Zustand', 'shadcn/ui', 'Docker'],
             },
             {
@@ -61,7 +59,6 @@ export const CAREER_DATA = [
                 roles: ['Frontend 개발'],
                 description:
                     '교차로 내 차량과 보행자 정보 수집 및 분석하여 3D모델을 활용한 디지털트윈으로 표출하는 대시보드 솔루션',
-                link: '',
                 stack: ['JavaScript', 'React', 'Redux Toolkit', 'CesiumJS'],
             },
             {
@@ -71,7 +68,6 @@ export const CAREER_DATA = [
                 roles: ['Frontend 개발'],
                 description:
                     '인천항 부잔교 출입 인원에 대한 돌발상황 검지 결과와 CCTV 영상을 실시간으로 표출하는 대시보드',
-                link: '',
                 stack: ['JavaScript', 'React', 'Redux Toolkit', 'Docker'],
             },
             {
@@ -81,7 +77,6 @@ export const CAREER_DATA = [
                 roles: ['기획', 'Frontend 개발'],
                 description:
                     '모델 파일과 함께 학습 모델, 학습 클래스 등의 데이터를 통합 관리할 수 있는 AI 모델 관리 시스템',
-                link: '',
                 stack: ['JavaScript', 'Next.js', 'Nest.js', 'Tailwind CSS', 'Zustand', 'shadcn/ui', 'Docker', 'Storybook'],
             },
         ],

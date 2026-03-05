@@ -4,7 +4,6 @@ import { useState } from 'react';
 import type { CareerItem } from '@/src/types/career';
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import CareerHighlights from '@/src/components/career/CareerHighlights';
 import CareerCardProjects from '@/src/components/career/CareerCardProjects';
 import CareerCardOverview from '@/src/components/career/CareerCardOverview';
 import { CareerCardProvider } from '@/src/components/career/CareerCardContext';
@@ -40,7 +39,6 @@ export default function CareerCard({ item }: CareerCardProps) {
                         </AccordionTrigger>
                         <AccordionContent className="flex flex-col md:flex-row gap-8 p-6">
                             <CareerCardProjects />
-                            <CareerHighlights />
                         </AccordionContent>
                     </AccordionItem>
                 </Accordion>
