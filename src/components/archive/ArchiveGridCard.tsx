@@ -11,6 +11,7 @@ interface ArchiveGridCardProps {
 
 export default function ArchiveGridCard({ item }: ArchiveGridCardProps) {
     const isProject = item.category === "project";
+    const periodLabel = isProject ? `${item.periodStart} ~ ${item.periodEnd}` : item.periodStart;
 
     return (
         <CardLink
@@ -22,7 +23,7 @@ export default function ArchiveGridCard({ item }: ArchiveGridCardProps) {
         >
             <CardHeader className="p-0 flex items-baseline">
                 <IconBadge icon={isProject ? Code2 : FileText} tone={isProject ? "green" : "yellow"} className="size-7" />
-                <span className="text-xs text-(--color-text-content)">{item.periodStart} ~ {item.periodEnd}</span>
+                <span className="text-xs text-(--color-text-content)">{periodLabel}</span>
                 <ExternalLink className="ml-auto size-3.5 shrink-0 text-(--color-text-muted) opacity-0 transition-opacity group-hover:opacity-100" />
             </CardHeader>
 
