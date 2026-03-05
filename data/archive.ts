@@ -75,10 +75,10 @@ export const ARCHIVE_DATA = [
                 id: 2,
                 periodStart: "2024.06",
                 periodEnd: "2024.06",
-                title: "Restaurant Woody 캘린더 구현",
+                title: "Restaurant WooDy 캘린더 구현",
                 link: "https://velog.io/@jchan715/React-%EC%BA%98%EB%A6%B0%EB%8D%94-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0",
                 description:
-                    "라이브러리 사용 없이 Restaurant Woody 프로젝트 예약 기능에 사용하는 캘린더를 직접 구현",
+                    "라이브러리 사용 없이 Restaurant WooDy 프로젝트 예약 기능에 사용하는 캘린더를 직접 구현",
                 tags: ["React", "UI/UX"],
             },
             {
@@ -88,17 +88,17 @@ export const ARCHIVE_DATA = [
                 title: "JWT를 활용한 React 로그인 구현",
                 link: "https://velog.io/@jchan715/React-%EB%A6%AC%EC%95%A1%ED%8A%B8-%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EC%B2%98%EB%A6%ACJWT",
                 description:
-                    "실무에서 자주 사용하는 TypeScript 제네릭 패턴 정리. 유틸리티 타입 구현부터 조건부 타입까지 단계별로 설명.",
+                    "JWT를 활용한 로그인 동작방식과 AccessToken, RefreshToken 관리 방안 기록",
                 tags: ["React", "JWT"],
             },
             {
                 id: 4,
                 periodStart: "2025.02",
                 periodEnd: "2025.02",
-                title: "Props Drilling 줄이기",
+                title: "Props Drilling 개선 방향",
                 link: "https://velog.io/@jchan715/Props-Drilling-%EC%A4%84%EC%9D%B4%EA%B8%B0ContextZustandTanstack-Query",
                 description:
-                    "RSC의 동작 원리와 기존 SSR과의 차이점을 정리한 글. 번들 사이즈 최적화와 서버-클라이언트 경계에 대한 심층 분석.",
+                    "포트폴리오 리뉴얼 프로젝트 중 상태 관리 기준에 맞는 Props Drilling 개선에 대해 고민한 내용을 기록",
                 tags: ["React", "State Management"],
             },
         ],

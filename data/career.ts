@@ -10,10 +10,10 @@ export const CAREER_DATA = [
         badges: ['Frontend 개발'],
         stack: ['JavaScript','React', 'Redux Toolkit', 'TanStack Query', 'Docker'],
         highlights: [
+            '지도 위 평균 20개 이상의 교차로 데이터와 차트 데이터를 동시에 처리하는 대시보드 UI 구현',
             '대용량 신호 데이터 로딩 구조 개선으로 초기 페이지 로딩 5초 → 1초 미만 단축',
-            '지도 기반 교차로 UI를 우선 렌더링하는 구조로 사용자 체감 로딩 속도 개선',
-            'React Query 캐싱 구조 도입으로 신호 데이터 및 분석 결과 요청 최적화',
-            '지도 위 평균 20개 이상의 교차로 데이터와 차트 데이터를 동시에 처리하는 대시보드 UI 구현'
+            '넓은 범위 지도 타일 렌더링 시 사용자 시야 영역을 우선 렌더링하여 체감 로딩 속도를 개선',
+            'TanStack Query 캐싱 구조 도입으로 신호 데이터 및 분석 결과 요청 최적화',
         ],
         projects: [
             {
@@ -38,8 +38,8 @@ export const CAREER_DATA = [
         badges: ['Frontend 개발', 'Backend 개발'],
         stack: ['TypeScript', 'React', 'Next.js', 'Nest.js', 'Turborepo', 'Docker'],
         highlights: [
-            '디지털트윈 3D 렌더링 구조 개선으로 초기 로딩 30초 → 1.5초 단축',
-            '모노레포 및 공통 컴포넌트 약 15개 정리로 개발 생산성 개선',
+            'Cesium.js 기반 디지털트윈 3D모델 렌더링 구조 개선으로 초기 로딩 30초 → 1.5초 단축',
+            '모노레포 도입을 통한 공통 컴포넌트 약 15개 정리로 개발 생산성 개선',
             '디자인 토큰 기반 디자인 시스템 구축으로 UI/UX 일관성 확보',
             'HLS → WebRTC 전환으로 영상 지연 시간 약 10초 → 0.5초 단축'
         ],
