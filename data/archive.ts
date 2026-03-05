@@ -53,7 +53,7 @@ export const ARCHIVE_DATA = [
                 link: "https://github.com/JeonWoongchan/portfolio",
                 description:
                     "프론트엔드 개발자 경력 소개를 위한 포트폴리오 사이트 리뉴얼 프로젝트",
-                tags: ["Next.js", "SSR"],
+                tags: ["TypeScript", "Next.js", "SSG"],
             },
         ],
     },
