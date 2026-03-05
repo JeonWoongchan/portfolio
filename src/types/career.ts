@@ -7,6 +7,7 @@ export interface CareerProject {
     periodEnd: YearMonth | "";
     description: string;
     roles: string[];
+    highlights: readonly string[];
     stack: readonly StackName[];
 }
 
@@ -18,7 +19,6 @@ export interface CareerItem {
     team: string;
     badges: readonly string[];
     stack: readonly StackName[];
-    highlights: readonly string[];
     projects: readonly CareerProject[];
     isCurrent?: boolean;
 }
