@@ -7,7 +7,6 @@ export interface CareerProject {
     periodEnd: YearMonth | "";
     description: string;
     roles: string[];
-    link: string;
     stack: readonly StackName[];
 }
 
