@@ -40,7 +40,10 @@ export default function CareerCardProjects() {
                                             badges={project.roles}
                                         />
                                         <SmallText>{project.description}</SmallText>
-                                        <CareerHighlights />
+                                        <CareerHighlights
+                                            company={item.company}
+                                            highlights={project.highlights}
+                                        />
                                     </div>
                                 </div>
                             </CardContent>
