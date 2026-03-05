@@ -4,7 +4,7 @@ import type { YearMonth } from "@/src/types/yearMonth";
 export interface CareerProject {
     title: string;
     periodStart: YearMonth;
-    periodEnd: YearMonth;
+    periodEnd: YearMonth | "";
     description: string;
     roles: string[];
     link: string;
@@ -14,7 +14,7 @@ export interface CareerProject {
 export interface CareerItem {
     company: string;
     periodStart: YearMonth;
-    periodEnd: YearMonth;
+    periodEnd: YearMonth | "";
     quote: string;
     team: string;
     badges: readonly string[];

@@ -3,8 +3,8 @@ import type { CareerItem } from "@/src/types/career";
 export const CAREER_DATA = [
     {
         company: '(주)유리네트웍스',
-        periodStart: "2025-10",
-        periodEnd: "2025-12",
+        periodStart: "2025.10",
+        periodEnd: "2025.12",
         quote: '지능형 교통 관제 시스템(ITS) 솔루션을 개발하는 기업',
         team: 'ITS개발팀 · 프리랜서',
         badges: ['Frontend 개발'],
@@ -18,8 +18,8 @@ export const CAREER_DATA = [
         projects: [
             {
                 title: '인천광역시 지능형 교통체계(ITS) 신호최적화 대시보드',
-                periodStart: "2025-10",
-                periodEnd: "2025-12",
+                periodStart: "2025.10",
+                periodEnd: "2025.12",
                 roles: ['Frontend 개발'],
                 link: 'https://example.com/projects/artist-portfolio-renewal',
                 description:
@@ -31,8 +31,8 @@ export const CAREER_DATA = [
     },
     {
         company: '(주)글로벌브릿지',
-        periodStart: "2024-04",
-        periodEnd: "2025-09",
+        periodStart: "2024.04",
+        periodEnd: "2025.09",
         quote: '컴퓨터 비전 기반 스마트 횡단보도 및 지능형 교통 관제 시스템(ITS)을 개발하는 모빌리티 솔루션 기업',
         team: 'AI 솔루션팀',
         badges: ['Frontend 개발', 'Backend 개발'],
@@ -46,8 +46,8 @@ export const CAREER_DATA = [
         projects: [
             {
                 title: 'AI 객체 검지 기반 대시보드 솔루션',
-                periodStart: "2025-08",
-                periodEnd: "2025-09",
+                periodStart: "2025.08",
+                periodEnd: "2025.09",
                 roles: ['기획', 'Frontend 개발'],
                 description:
                     'AI 객체 검지 데이터를 고객 맞춤형 요구사항에 따라 시각화하는 범용 대시보드 솔루션',
@@ -56,8 +56,8 @@ export const CAREER_DATA = [
             },
             {
                 title: '인천광역시 지능형 교통체계(ITS) 디지털트윈 대시보드',
-                periodStart: "2024-08",
-                periodEnd: "2025-06",
+                periodStart: "2024.08",
+                periodEnd: "2025.06",
                 roles: ['Frontend 개발'],
                 description:
                     '교차로 내 차량과 보행자 정보 수집 및 분석하여 3D모델을 활용한 디지털트윈으로 표출하는 대시보드 솔루션',
@@ -66,8 +66,8 @@ export const CAREER_DATA = [
             },
             {
                 title: '인천항만공사 돌발상황 검지 대시보드',
-                periodStart: "2024-10",
-                periodEnd: "2024-11",
+                periodStart: "2024.10",
+                periodEnd: "2024.11",
                 roles: ['Frontend 개발'],
                 description:
                     '인천항 부잔교 출입 인원에 대한 돌발상황 검지 결과와 CCTV 영상을 실시간으로 표출하는 대시보드',
@@ -76,8 +76,8 @@ export const CAREER_DATA = [
             },
             {
                 title: 'AI 모델 학습 파일 관리 시스템',
-                periodStart: "2024-05",
-                periodEnd: "2024-07",
+                periodStart: "2024.05",
+                periodEnd: "2024.07",
                 roles: ['기획', 'Frontend 개발'],
                 description:
                     '모델 파일과 함께 학습 모델, 학습 클래스 등의 데이터를 통합 관리할 수 있는 AI 모델 관리 시스템',

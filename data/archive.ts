@@ -7,8 +7,8 @@ export const ARCHIVE_DATA = [
         items: [
             {
                 id: 1,
-                periodStart: "2023-09",
-                periodEnd: "2023-11",
+                periodStart: "2023.09",
+                periodEnd: "2023.11",
                 title: "커뮤니티+OTT 사이트",
                 link: "https://github.com/JeonWoongchan/BomBomOTT",
                 description:
@@ -17,8 +17,8 @@ export const ARCHIVE_DATA = [
             },
             {
                 id: 2,
-                periodStart: "2023-11",
-                periodEnd: "2024-04",
+                periodStart: "2023.11",
+                periodEnd: "2024.04",
                 title: "포트폴리오 사이트",
                 link: "https://github.com/JeonWoongchan/Portfolio_old",
                 description:
@@ -27,8 +27,8 @@ export const ARCHIVE_DATA = [
             },
             {
                 id: 3,
-                periodStart: "2024-01",
-                periodEnd: "2024-04",
+                periodStart: "2024.01",
+                periodEnd: "2024.04",
                 title: "Weather Life",
                 link: "https://github.com/JeonWoongchan/weatherLife",
                 description:
@@ -37,8 +37,8 @@ export const ARCHIVE_DATA = [
             },
             {
                 id: 4,
-                periodStart: "2024-09",
-                periodEnd: "2024-09",
+                periodStart: "2024.09",
+                periodEnd: "2024.09",
                 title: "Restaurant WooDy",
                 link: "https://github.com/JeonWoongchan/restaurant",
                 description:
@@ -47,8 +47,8 @@ export const ARCHIVE_DATA = [
             },
             {
                 id: 5,
-                periodStart: "2026-02",
-                periodEnd: "2026-03",
+                periodStart: "2026.02",
+                periodEnd: "2026.03",
                 title: "포트폴리오 사이트 리뉴얼",
                 link: "https://github.com/JeonWoongchan/portfolio",
                 description:
@@ -63,8 +63,8 @@ export const ARCHIVE_DATA = [
         items: [
             {
                 id: 1,
-                periodStart: "2024-03",
-                periodEnd: "2024-03",
+                periodStart: "2024.03",
+                periodEnd: "2024.03",
                 title: "useRef를 이용하여 원하는 컴포넌트 위치로 스크롤 이동시키기",
                 link: "https://velog.io/@jchan715/React-useRef%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%98%EC%97%AC-%EC%9B%90%ED%95%98%EB%8A%94-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EC%9C%84%EC%B9%98%EB%A1%9C-%EC%8A%A4%ED%81%AC%EB%A1%A4-%EC%9D%B4%EB%8F%99%EC%8B%9C%ED%82%A4%EA%B8%B0",
                 description:
@@ -73,8 +73,8 @@ export const ARCHIVE_DATA = [
             },
             {
                 id: 2,
-                periodStart: "2024-06",
-                periodEnd: "2024-06",
+                periodStart: "2024.06",
+                periodEnd: "2024.06",
                 title: "Restaurant Woody 캘린더 구현",
                 link: "https://velog.io/@jchan715/React-%EC%BA%98%EB%A6%B0%EB%8D%94-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0",
                 description:
@@ -83,8 +83,8 @@ export const ARCHIVE_DATA = [
             },
             {
                 id: 3,
-                periodStart: "2024-10",
-                periodEnd: "2024-10",
+                periodStart: "2024.10",
+                periodEnd: "2024.10",
                 title: "JWT를 활용한 React 로그인 구현",
                 link: "https://velog.io/@jchan715/React-%EB%A6%AC%EC%95%A1%ED%8A%B8-%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EC%B2%98%EB%A6%ACJWT",
                 description:
@@ -93,8 +93,8 @@ export const ARCHIVE_DATA = [
             },
             {
                 id: 4,
-                periodStart: "2025-02",
-                periodEnd: "2025-02",
+                periodStart: "2025.02",
+                periodEnd: "2025.02",
                 title: "Props Drilling 줄이기",
                 link: "https://velog.io/@jchan715/Props-Drilling-%EC%A4%84%EC%9D%B4%EA%B8%B0ContextZustandTanstack-Query",
                 description:

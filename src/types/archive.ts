@@ -6,7 +6,7 @@ export type ArchiveCategoryKey = "project" | "blog";
 export interface ArchiveItem {
     id: number;
     periodStart: YearMonth;
-    periodEnd: YearMonth;
+    periodEnd: YearMonth | "";
     title: string;
     link: string;
     description: string;

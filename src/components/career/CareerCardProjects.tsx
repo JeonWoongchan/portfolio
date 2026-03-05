@@ -5,7 +5,7 @@ import { useCareerCardItem } from '@/src/components/career/CareerCardContext';
 import { CardContent, CardLink } from '@/components/ui/card';
 import CareerBadgeList from "@/src/components/career/CareerBadgeList";
 import {ExternalLink} from "lucide-react";
-import { formatYearMonthRange, sortByLatestPeriod } from "@/src/utils/yearMonthPeriod";
+import { sortByLatestPeriod } from "@/src/utils/yearMonthPeriod";
 
 export default function CareerCardProjects() {
     const item = useCareerCardItem();
@@ -29,7 +29,7 @@ export default function CareerCardProjects() {
                                             <BodyText>{project.title}</BodyText>
                                             <ExternalLink className="ml-auto size-3.5 shrink-0 text-(--color-text-muted) opacity-0 transition-opacity group-hover:opacity-100" />
                                         </div>
-                                        <SmallText>{formatYearMonthRange(project.periodStart, project.periodEnd)}</SmallText>
+                                        <SmallText>{project.periodStart} ~ {project.periodEnd}</SmallText>
                                         <SmallText>{project.description}</SmallText>
                                         <div className="flex">
                                             <CareerBadgeList company={item.company} badges={project.roles} />

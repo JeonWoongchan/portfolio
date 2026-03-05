@@ -12,4 +12,4 @@ export type YearMonthToken =
     | "11"
     | "12";
 
-export type YearMonth = `${number}${number}${number}${number}-${YearMonthToken}`;
+export type YearMonth = `${number}${number}${number}${number}.${YearMonthToken}`;

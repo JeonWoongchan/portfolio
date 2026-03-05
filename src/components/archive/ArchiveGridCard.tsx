@@ -4,7 +4,6 @@ import { BodyText, SmallText } from "@/src/components/common/Typography";
 import InlineTagList from "@/src/components/common/InlineTagList";
 import IconBadge from "@/src/components/common/IconBadge";
 import { CardContent, CardFooter, CardHeader, CardLink } from "@/components/ui/card";
-import { formatYearMonthRange } from "@/src/utils/yearMonthPeriod";
 
 interface ArchiveGridCardProps {
     item: ArchiveCardItem;
@@ -12,7 +11,6 @@ interface ArchiveGridCardProps {
 
 export default function ArchiveGridCard({ item }: ArchiveGridCardProps) {
     const isProject = item.category === "project";
-    const periodText = formatYearMonthRange(item.periodStart, item.periodEnd);
 
     return (
         <CardLink
@@ -24,7 +22,7 @@ export default function ArchiveGridCard({ item }: ArchiveGridCardProps) {
         >
             <CardHeader className="p-0 flex items-baseline">
                 <IconBadge icon={isProject ? Code2 : FileText} tone={isProject ? "green" : "yellow"} className="size-7" />
-                <span className="text-xs text-(--color-text-content)">{periodText}</span>
+                <span className="text-xs text-(--color-text-content)">{item.periodStart} ~ {item.periodEnd}</span>
                 <ExternalLink className="ml-auto size-3.5 shrink-0 text-(--color-text-muted) opacity-0 transition-opacity group-hover:opacity-100" />
             </CardHeader>
 

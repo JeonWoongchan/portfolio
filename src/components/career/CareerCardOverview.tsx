@@ -9,14 +9,12 @@ import IconBadge from "@/src/components/common/IconBadge";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { VerticalDivider } from "@/src/components/common/VerticalDivider";
 import InlineTagList from "@/src/components/common/InlineTagList";
-import { formatYearMonthRange } from "@/src/utils/yearMonthPeriod";
 
 const CURRENT_LABEL = "재직 중";
 
 export default function CareerCardOverview() {
     const item = useCareerCardItem();
     const projectTitles = item.projects.map((project) => project.title);
-    const periodText = formatYearMonthRange(item.periodStart, item.periodEnd);
 
     return (
         <Card className="gap-4 border-none p-4">
@@ -30,10 +28,10 @@ export default function CareerCardOverview() {
                 <div className="space-y-2">
                     <div className="flex flex-wrap items-center gap-2">
                         <BodyText className="lg:text-xl">{item.company}</BodyText>
-                        {item.isCurrent ? <CareerCurrentBadge label={CURRENT_LABEL} /> : null}
+                        {item.periodEnd === "" ? <CareerCurrentBadge label={CURRENT_LABEL} /> : null}
                     </div>
                     <div className="flex flex-wrap text-sm">
-                        <SmallText>{periodText}</SmallText>
+                        <SmallText>{item.periodStart} ~ {item.periodEnd}</SmallText>
                         <VerticalDivider />
                         <CareerMetaItem icon={Users2} text={item.team} />
                         <VerticalDivider />
