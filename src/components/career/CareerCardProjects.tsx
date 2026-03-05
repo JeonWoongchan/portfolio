@@ -3,9 +3,9 @@ import StackCardList from '@/src/components/common/StackCardList';
 import { VerticalDivider } from '@/src/components/common/VerticalDivider';
 import { useCareerCardItem } from '@/src/components/career/CareerCardContext';
 import {Card, CardContent} from '@/components/ui/card';
-import CareerBadgeList from "@/src/components/career/CareerBadgeList";
 import { sortByLatestPeriod } from "@/src/utils/yearMonthPeriod";
 import CareerHighlights from "@/src/components/career/CareerHighlights";
+import CareerMetaRow from "@/src/components/career/CareerMetaRow";
 
 export default function CareerCardProjects() {
     const item = useCareerCardItem();
@@ -25,7 +25,7 @@ export default function CareerCardProjects() {
                                 <div className="flex gap-4">
                                     <VerticalDivider className="w-0.5 mx-0 h-auto rounded-full bg-(--color-accent)" />
                                     <div className="w-full space-y-4">
-                                        <div className="flex justify-between">
+                                        <div className="flex flex-col gap-2 md:flex-row md:gap-0 justify-between">
                                             <BodyText>{project.title}</BodyText>
                                             <StackCardList
                                                 stackNames={project.stack}
@@ -33,11 +33,12 @@ export default function CareerCardProjects() {
                                                 compact={true}
                                             />
                                         </div>
-                                        <div className="flex">
-                                            <SmallText>{project.periodStart} ~ {project.periodEnd}</SmallText>
-                                            <VerticalDivider className="h-auto bg-(--color-border)" />
-                                            <CareerBadgeList company={item.company} badges={project.roles} />
-                                        </div>
+                                        <CareerMetaRow
+                                            periodStart={project.periodStart}
+                                            periodEnd={project.periodEnd}
+                                            company={item.company}
+                                            badges={project.roles}
+                                        />
                                         <SmallText>{project.description}</SmallText>
                                         <CareerHighlights />
                                     </div>

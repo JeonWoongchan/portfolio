@@ -1,14 +1,12 @@
-import CareerBadgeList from "@/src/components/career/CareerBadgeList";
 import { useCareerCardItem } from "@/src/components/career/CareerCardContext";
 import { BriefcaseBusiness, Users2 } from "lucide-react";
 import { BodyText, SmallText } from "@/src/components/common/Typography";
 import CareerCurrentBadge from "@/src/components/career/CareerCurrentBadge";
-import CareerMetaItem from "@/src/components/career/CareerMetaItem";
 import StackCardList from "@/src/components/common/StackCardList";
 import IconBadge from "@/src/components/common/IconBadge";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { VerticalDivider } from "@/src/components/common/VerticalDivider";
 import InlineTagList from "@/src/components/common/InlineTagList";
+import CareerMetaRow from "@/src/components/career/CareerMetaRow";
 
 const CURRENT_LABEL = "재직 중";
 
@@ -30,13 +28,14 @@ export default function CareerCardOverview() {
                         <BodyText className="lg:text-xl">{item.company}</BodyText>
                         {item.periodEnd === "" ? <CareerCurrentBadge label={CURRENT_LABEL} /> : null}
                     </div>
-                    <div className="flex flex-wrap text-sm">
-                        <SmallText>{item.periodStart} ~ {item.periodEnd}</SmallText>
-                        <VerticalDivider />
-                        <CareerMetaItem icon={Users2} text={item.team} />
-                        <VerticalDivider />
-                        <CareerBadgeList company={item.company} badges={item.badges} />
-                    </div>
+                    <CareerMetaRow
+                        periodStart={item.periodStart}
+                        periodEnd={item.periodEnd}
+                        company={item.company}
+                        badges={item.badges}
+                        team={item.team}
+                        teamIcon={Users2}
+                    />
                 </div>
                 <StackCardList
                     stackNames={item.stack}
