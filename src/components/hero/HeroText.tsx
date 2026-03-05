@@ -1,7 +1,8 @@
 import { cn } from "@/lib/utils";
+import type { ReactNode } from 'react';
 
 interface HeroTextProps {
-    children: React.ReactNode;
+    children: ReactNode;
     align?: "self-start" | "self-end";
     className?: string;
     imageSrc?: string;

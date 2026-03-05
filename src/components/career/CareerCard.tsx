@@ -1,18 +1,50 @@
-import type {CareerItem} from '@/src/types/career';
+'use client'
+
+import { useState } from 'react';
+import type { CareerItem } from '@/src/types/career';
+import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import CareerHighlights from '@/src/components/career/CareerHighlights';
+import CareerCardProjects from '@/src/components/career/CareerCardProjects';
 import CareerCardOverview from '@/src/components/career/CareerCardOverview';
+import { CareerCardProvider } from '@/src/components/career/CareerCardContext';
+import { Card } from "@/components/ui/card";
 
 interface CareerCardProps {
     item: CareerItem;
 }
 
-export default function CareerCard({item}: CareerCardProps) {
+export default function CareerCard({ item }: CareerCardProps) {
+    const [isDetailOpen, setIsDetailOpen] = useState(false);
+    const ToggleIcon = isDetailOpen ? MdKeyboardArrowUp : MdKeyboardArrowDown;
+
+    const handleToggleDetail = () => {
+        setIsDetailOpen((prev) => !prev);
+    };
+
     return (
-        // <article className="grid w-full grid-cols-1 rounded-2xl border border-(--color-border-light) bg-(--career-card-bg) lg:grid-cols-[1fr_2fr]">
-        //     <CareerCardOverview item={item} />
-        //     <CareerCardProjects item={item} />
-        // </article>
-        <article className="w-full rounded-2xl border border-(--color-border-light) bg-(--color-navy)">
-            <CareerCardOverview item={item} />
-        </article>
+        <CareerCardProvider item={item}>
+            <Card variant="surface" className="gap-0 p-0">
+                <Accordion type="single" collapsible value={isDetailOpen ? 'open' : ''}>
+                    <AccordionItem value="open" className="border-none">
+                        <CareerCardOverview />
+                        <AccordionTrigger
+                            onClick={handleToggleDetail}
+                            className={`flex h-10 w-full justify-center hover:no-underline [&>svg:last-child]:hidden
+                        ${isDetailOpen ? 'rounded-none bg-(--color-accent) text-(--color-navy)' : 'rounded-t-none bg-(--color-border) text-white'}`}
+                        >
+                            <span className="inline-flex items-center gap-1 text-sm">
+                                <ToggleIcon className="text-lg" />
+                                {isDetailOpen ? '상세 내용 접기' : '상세 내용 보기'}
+                            </span>
+                        </AccordionTrigger>
+                        <AccordionContent className="flex flex-col md:flex-row gap-8 p-6">
+                            <CareerCardProjects />
+                            <CareerHighlights />
+                        </AccordionContent>
+                    </AccordionItem>
+                </Accordion>
+            </Card>
+        </CareerCardProvider>
     );
 }

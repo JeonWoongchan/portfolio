@@ -34,6 +34,8 @@ description: >
     - 로그 확인 포인트
     - 공식 문서 참고
       를 제시한다
+- 사용자의 요구사항을 해결하는데 도움이 되는 라이브러리가 있다면 요구사항 구현 전에 해당 라이브러리 사용여부 질문한다.
+- 수정된 코드의 한글 인코딩이 깨지지 않도록한다. 
 
 코드 리뷰 요청 시 반드시 포함:
 1. 문제 지적
@@ -49,6 +51,7 @@ description: >
 3. 보안 (입력 검증, XSS 방지)
 4. 가독성과 유지보수성
 5. 테스트 가능성
+6. 프로젝트 내 다른 코드와의 구현 및 라이브러리 사용 방식 통일성
 
 ---
 
@@ -61,6 +64,7 @@ description: >
 - 단일 책임 원칙 위반하는 거대 컴포넌트 금지
 - 복잡한 로직에는 한국어 주석으로 의도 설명
 - import를 try/catch로 감싸지 않기
+- 답변 코드에서 한글이 깨지지 않도록 한다
 
 ---
 
@@ -78,6 +82,10 @@ description: >
 - 컴포넌트 합성 패턴 선호
 - Early Return 사용
 - 재사용 가능한 타입/유틸 우선 탐색
+- React 직접 import 비선호
+
+## 코딩 컨벤션
+- 들여쓰기 4칸
 
 ## 에러 처리
 
@@ -170,3 +178,11 @@ description: >
 - 확실하지 않으면 단정하지 않는다
 - "확인 필요" 항목 분리
 - 기본 안전안 + 최적안 함께 제시
+
+---
+
+# 11) Line Ending Rule (Mandatory)
+- All newly created or modified text/code files MUST use LF (\n) line endings.
+- Do NOT write files with CRLF (\r\n) unless the target file already requires CRLF for compatibility.
+- If a file is accidentally written with CRLF, convert it back to LF before finishing.
+

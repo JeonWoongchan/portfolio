@@ -1,10 +1,11 @@
-'use client'
+﻿'use client'
 
-import React from 'react'
-import { Terminal } from 'lucide-react'
-import { useScroll } from '@/src/hooks/useScroll'
+import { useState } from 'react'
+import { useScroll } from '@/src/hooks/scroll/useScroll'
 import { useSectionStore } from '@/src/store/useSectionStore'
+import { useHeroIntroStore } from '@/src/store/useHeroIntroStore'
 import ExpandedMenu from "@/src/components/header/headerMenu";
+import BrandSignature from "@/src/components/common/BrandSignature";
 
 const CONTAINER_CLASSES =
     'flex items-center rounded-full border border-border/50 bg-(--color-navy) backdrop-blur-md transition-all duration-500 text-(--color-accent)'
@@ -12,12 +13,18 @@ const CONTAINER_CLASSES =
 export default function Header() {
     const { scrollY } = useScroll()
     const { scrollTo } = useSectionStore()
-    const [isMenuOpen, setIsMenuOpen] = React.useState(false)
+    const phase = useHeroIntroStore((state) => state.phase)
+    const [isMenuOpen, setIsMenuOpen] = useState(false)
 
+    const isHeaderVisible = phase >= 2
     const showCollapsedBrand = !isMenuOpen && scrollY < 300
 
     return (
-        <header className="fixed top-0 z-5 flex h-20 w-full select-none items-center justify-center transition-all duration-300 ease-in-out">
+        <header
+            className={`fixed top-0 z-5 flex h-20 left-0 right-0 select-none items-center justify-center transition-all duration-500 ease-in-out ${
+                isHeaderVisible ? "translate-y-0 opacity-100" : "-translate-y-3 opacity-0 pointer-events-none"
+            }`}
+        >
             <nav className="flex items-center justify-center py-4">
                 <div
                     className={CONTAINER_CLASSES}
@@ -27,7 +34,7 @@ export default function Header() {
                     {showCollapsedBrand ? (
                         <CollapsedBrand/>
                     ) : (
-                        <ExpandedMenu onMenuClick={scrollTo} />
+                        <ExpandedMenu onMenuClickAction={scrollTo} />
                     )}
                 </div>
             </nav>
@@ -35,13 +42,12 @@ export default function Header() {
     )
 }
 
-function CollapsedBrand() {
+export function CollapsedBrand() {
     return (
         <div className="flex cursor-pointer items-center gap-2 px-5 py-2.5">
-            <Terminal className="h-4 w-4" />
-            <span className="font-mono text-md text-muted-foreground">Jeon.Woongchan</span>
-            <span className="font-mono text-sm">~</span>
-            <span className="inline-block h-4 w-0.5 animate-pulse bg-(--color-accent)" />
+            <BrandSignature
+                nameClassName="text-md text-muted-foreground"
+            />
         </div>
     )
 }

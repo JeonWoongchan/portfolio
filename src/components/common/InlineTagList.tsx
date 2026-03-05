@@ -5,11 +5,11 @@ interface InlineTagListProps {
 
 export default function InlineTagList({items, keyPrefix}: InlineTagListProps) {
     return (
-        <ul className="flex flex-col gap-2 md:flex-row">
+        <ul className="flex gap-2 flex-wrap">
             {items.map((item) => (
                 <li
                     key={`${keyPrefix}-${item}`}
-                    className="inline-flex items-center rounded-sm bg-(--color-border-light) px-2 py-1 text-center text-xs text-white"
+                    className="inline-flex items-center rounded-full bg-(--color-border-light) px-3 py-1 text-center text-xs text-gray-300"
                 >
                     {item}
                 </li>

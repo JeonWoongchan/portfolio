@@ -1,44 +1,54 @@
-'use client'
+import CareerBadgeList from "@/src/components/career/CareerBadgeList";
+import { useCareerCardItem } from "@/src/components/career/CareerCardContext";
+import { BriefcaseBusiness, Users2 } from "lucide-react";
+import { BodyText, SmallText } from "@/src/components/common/Typography";
+import CareerCurrentBadge from "@/src/components/career/CareerCurrentBadge";
+import CareerMetaItem from "@/src/components/career/CareerMetaItem";
+import StackCardList from "@/src/components/common/StackCardList";
+import IconBadge from "@/src/components/common/IconBadge";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { VerticalDivider } from "@/src/components/common/VerticalDivider";
+import InlineTagList from "@/src/components/common/InlineTagList";
 
-import type {CareerItem} from '@/src/types/career';
-import CareerHighlights from '@/src/components/career/CareerHighlights';
-import CareerCardHeader from '@/src/components/career/CareerCardHeader';
-import CareerCardProjects from "@/src/components/career/CareerCardProjects";
-import {useState} from "react";
+const CURRENT_LABEL = "재직 중";
 
-interface CareerCardOverviewProps {
-    item: CareerItem;
-}
-
-export default function CareerCardOverview({item}: CareerCardOverviewProps) {
-    const [isExpanded, setExpanded] = useState(false);
+export default function CareerCardOverview() {
+    const item = useCareerCardItem();
+    const projectTitles = item.projects.map((project) => project.title);
 
     return (
-        // <div className="space-y-4 border-r-0 border-(--color-border) p-6 lg:border-r">
-        //     <CareerCardHeader item={item} />
-        //
-        //     <SmallText className="text-sm text-(--color-text-secondary)">{item.quote}</SmallText>
-        //
-        //     <div className="flex gap-4 text-sm text-(--color-text-secondary)">
-        //         <CareerMetaItem icon={MapPin} text={item.location} />
-        //         <CareerMetaItem icon={Users2} text={item.role} />
-        //     </div>
-        //
-        //     <CareerBadgeList company={item.company} badges={item.badges} />
-        //     <CareerStackIcons company={item.company} stack={item.stack} />
-        //     <CareerHighlights company={item.company} highlights={item.highlights} />
-        // </div>
-        <div className="flex">
-            <div className={`${isExpanded ? 'w-[30%]' : 'w-full'} shrink-0 border-(--color-border) p-6`}>
-                <CareerCardHeader item={item} />
-                <CareerHighlights company={item.company} highlights={item.highlights}/>
-                <div className="text-center md:absolute top-5 right-5 cursor-pointer text-sm font-medium text-(--color-accent)"
-                    onClick={() => setExpanded(!isExpanded)}
-                >
-                    자세히
+        <Card className="gap-4 border-none p-4">
+            <CardHeader className="flex gap-4 flex-col md:flex-row">
+                <IconBadge
+                    icon={BriefcaseBusiness}
+                    tone="accent"
+                    className="size-11 rounded-xl"
+                    iconClassName="size-5"
+                />
+                <div className="space-y-2">
+                    <div className="flex flex-wrap items-center gap-2">
+                        <BodyText className="lg:text-xl">{item.company}</BodyText>
+                        {item.periodEnd === "" ? <CareerCurrentBadge label={CURRENT_LABEL} /> : null}
+                    </div>
+                    <div className="flex flex-wrap text-sm">
+                        <SmallText>{item.periodStart} ~ {item.periodEnd}</SmallText>
+                        <VerticalDivider />
+                        <CareerMetaItem icon={Users2} text={item.team} />
+                        <VerticalDivider />
+                        <CareerBadgeList company={item.company} badges={item.badges} />
+                    </div>
                 </div>
-            </div>
-            {isExpanded && <CareerCardProjects item={item} />}
-        </div>
+                <StackCardList
+                    stackNames={item.stack}
+                    keyPrefix={`${item.company}-${item.stack}`}
+                    compact={true}
+                    className="absolute right-6"
+                />
+            </CardHeader>
+            <CardContent className="space-y-4">
+                <SmallText className="text-(--color-accent)">{item.quote}</SmallText>
+                <InlineTagList items={projectTitles} keyPrefix={`${item.company}-projects`} />
+            </CardContent>
+        </Card>
     );
 }

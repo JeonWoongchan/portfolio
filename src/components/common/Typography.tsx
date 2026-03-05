@@ -1,8 +1,8 @@
-import React from 'react';
+import type { ReactNode } from 'react';
 import { cn } from '@/lib/utils';
 
 interface TypographyProps {
-    children: React.ReactNode;
+    children: ReactNode;
     align?: string;
     className?: string;
 }
@@ -25,7 +25,7 @@ export function SectionTitle({ children, className = "" }: TypographyProps) {
 export function SectionDescription({ children, className = "" }: TypographyProps) {
     return (
         <p className={cn(
-            "text-left text-base md:text-lg text-text-secondary leading-relaxed text-(--color-text-body)",
+            "text-left text-base leading-relaxed text-(--color-text-content)",
             className
         )}>
             {children}
@@ -37,7 +37,7 @@ export function SectionDescription({ children, className = "" }: TypographyProps
 export function HeroTitle({ children, align = "self-start", className = "" }: TypographyProps) {
     return (
         <div className={cn(
-            "flex gap-12 items-center text-xl sm:text-3xl xl:text-5xl font-bold",
+            "flex gap-12 items-center text-4xl md:text-5xl lg:text-6xl font-bold",
             align,
             className
         )}>
@@ -50,7 +50,7 @@ export function HeroTitle({ children, align = "self-start", className = "" }: Ty
 export function BodyText({ children, className = "" }: TypographyProps) {
     return (
         <p className={cn(
-            "text-sm md:text-base lg:text-lg leading-relaxed",
+            "text-sm md:text-base font-semibold leading-relaxed text-white",
             className
         )}>
             {children}
@@ -62,7 +62,7 @@ export function BodyText({ children, className = "" }: TypographyProps) {
 export function SmallText({ children, className = "" }: TypographyProps) {
     return (
         <p className={cn(
-            "text-xs md:text-sm lg:text-base leading-relaxed text-gray-400",
+            "text-xs md:text-sm leading-relaxed text-(--color-text-content)",
             className
         )}>
             {children}

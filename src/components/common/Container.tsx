@@ -1,40 +1,37 @@
 ﻿'use client'
 
-import React, {createContext, RefObject, useContext} from 'react';
+import {createContext, useContext} from 'react';
+import type {CSSProperties, ReactNode, RefObject} from 'react';
 import {cn} from '@/lib/utils';
-import SlideDown from '@/src/components/SlideDown';
-import {useRegisterSection} from '@/src/hooks/useRegisterSectionRef';
-import useSectionVisibility from '@/src/hooks/useSectionVisibility';
-import useSectionOpacity from '@/src/hooks/useSectionOpacity';
-import useMinWidth from '@/src/hooks/useMinWidth';
+import SectionScrollAction from "@/src/components/common/SectionScrollAction";
+import {useRegisterSection} from '@/src/hooks/section/useRegisterSectionRef';
+import useSectionVisibility from '@/src/hooks/section/useSectionVisibility';
+import {SECTION_TONE_STYLE_MAP, type SectionTone} from "@/src/utils/sectionTone";
 
 interface ContainerProps {
-    children: React.ReactNode;
+    children: ReactNode;
     className?: string;
     contentClassName?: string;
     slideDownClassName?: string;
-    ref?: React.RefObject<HTMLElement | null>;
+    style?: CSSProperties;
+    ref?: RefObject<HTMLElement | null>;
 }
 
 interface SectionProps extends ContainerProps {
     nextSection?: string;
+    onNextAction?: () => void;
     opacityValue?: number;
     sectionKey?: string;
     visibilityThreshold?: number;
     opacityMinWidthPx?: number;
     enableOpacityAnimation?: boolean;
+    tone?: SectionTone;
 }
 
 interface SectionVisibilityContextValue {
     isVisible: boolean;
 }
 
-interface SectionChildProps extends ContainerProps {
-    animateOnVisible?: boolean;
-    visibleClassName?: string;
-}
-
-const DEFAULT_OPACITY_MIN_WIDTH_PX = 1536;
 const SECTION_VISIBILITY_CONTEXT_DEFAULT: SectionVisibilityContextValue = {
     isVisible: false,
 };
@@ -47,18 +44,23 @@ function useSectionVisibilityContext() {
     return useContext(SectionVisibilityContext);
 }
 
+export function useSectionVisible() {
+    const {isVisible} = useSectionVisibilityContext();
+    return isVisible;
+}
+
 export function Section({
     children,
     className = '',
     contentClassName = '',
     slideDownClassName = '',
+    style,
     ref,
     nextSection,
-    opacityValue,
+    onNextAction,
     sectionKey,
     visibilityThreshold = 0.2,
-    opacityMinWidthPx = DEFAULT_OPACITY_MIN_WIDTH_PX,
-    enableOpacityAnimation = true,
+    tone,
 }: SectionProps) {
     const sectionRef = useRegisterSection(
         sectionKey,
@@ -66,26 +68,32 @@ export function Section({
     );
     const shouldObserveVisibility = Boolean(sectionKey);
     const isVisible = useSectionVisibility(sectionRef, visibilityThreshold, shouldObserveVisibility);
-    const isWide = useMinWidth(opacityMinWidthPx);
-    const shouldAnimateOpacity = shouldObserveVisibility && enableOpacityAnimation && isWide;
-    const calculatedOpacity = useSectionOpacity(sectionRef, shouldAnimateOpacity);
-    const resolvedOpacity = opacityValue ?? calculatedOpacity;
-    const style = {opacity: resolvedOpacity};
+    const toneConfig = tone ? SECTION_TONE_STYLE_MAP[tone] : null;
 
     return (
         <SectionVisibilityContext.Provider value={{isVisible}}>
             <section
                 ref={sectionRef}
+                style={{...(toneConfig?.surfaceVars ?? {}), ...style}}
                 className={cn(
-                    'w-full min-h-lvh flex flex-col justify-between',
-                    'py-28 px-16 xl:px-40 2xl:px-80 text-(--color-text)',
+                    'w-full min-h-dvh flex flex-col justify-between',
+                    'pt-24 px-6 sm:px-10 lg:px-16 xl:px-24 2xl:px-100 text-(--color-text) select-none',
+                    toneConfig?.sectionClassName,
                     className
                 )}
             >
-                <div style={style} className={cn('w-full flex-1 flex flex-col justify-between', contentClassName)}>
+                <div className={cn('w-full flex-1 flex flex-col justify-between', contentClassName)}>
                     {children}
                 </div>
-                {nextSection && <SlideDown next={nextSection} className={slideDownClassName} />}
+                {(nextSection || onNextAction) && (
+                    <SectionScrollAction
+                        target={nextSection}
+                        onAction={onNextAction}
+                        direction="down"
+                        variant="hint"
+                        className={slideDownClassName}
+                    />
+                )}
             </section>
         </SectionVisibilityContext.Provider>
     );
@@ -94,17 +102,12 @@ export function Section({
 export function SectionHeader({
     children,
     className = '',
-    animateOnVisible = false,
-    visibleClassName = 'fade-in-down',
-}: SectionChildProps) {
-    const {isVisible} = useSectionVisibilityContext();
+}: ContainerProps) {
 
     return (
         <div
             className={cn(
-                'relative flex flex-col items-center gap-3 p-4 mb-8',
-                animateOnVisible && 'opacity-0',
-                animateOnVisible && isVisible && visibleClassName,
+                'relative flex flex-col items-center gap-3 p-4 mb-6', 'fade-in-down',
                 className
             )}
         >
@@ -116,17 +119,11 @@ export function SectionHeader({
 export function SectionBody({
     children,
     className = '',
-    animateOnVisible = false,
-    visibleClassName = 'fade-in-up-2',
-}: SectionChildProps) {
-    const {isVisible} = useSectionVisibilityContext();
-
+}: ContainerProps) {
     return (
         <div
             className={cn(
-                'flex-1 flex flex-col justify-between',
-                animateOnVisible && 'opacity-0',
-                animateOnVisible && isVisible && visibleClassName,
+                'relative flex-1 flex flex-col justify-start',
                 className
             )}
         >
@@ -150,8 +147,9 @@ export function ContentWrapper({children, className = ''}: ContainerProps) {
 
 export function GridContainer({children, className = ''}: ContainerProps) {
     return (
-        <ul className={cn('grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-4 gap-12 justify-items-center', className)}>
+        <ul className={cn('grid grid-cols-1 sm:grid-cols-2 gap-4 justify-items-center', className)}>
             {children}
         </ul>
     );
 }
+

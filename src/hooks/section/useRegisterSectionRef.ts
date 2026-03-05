@@ -1,7 +1,9 @@
-import { RefObject, useEffect, useRef } from 'react';
-import {useSectionStore} from '@/src/store/useSectionStore';
+﻿'use client'
 
-// 컴포넌트 ref를 store에 저장
+import { RefObject, useEffect, useRef } from 'react';
+import { useSectionStore } from '@/src/store/useSectionStore';
+
+// 섹션 DOM ref를 전역 스토어에 등록/해제해 다른 컴포넌트에서 스크롤 이동에 사용할 수 있게 하는 훅
 export const useRegisterSection = (
     key?: string,
     externalRef?: RefObject<HTMLElement | null>

@@ -1,11 +1,11 @@
-'use client'
+﻿'use client'
 
-import {useEffect, useState} from "react";
+import { useEffect, useState } from 'react';
 
-// 뷰포트 너비가 기준값 이상인지 반응형으로 감지하는 훅
+// 뷰포트 너비가 지정한 최소 폭 이상인지 반응형으로 추적하는 훅
 const useMinWidth = (minWidthPx: number) => {
     const [isMinWidth, setIsMinWidth] = useState(() => {
-        if (typeof window === "undefined") return false;
+        if (typeof window === 'undefined') return false;
         return window.innerWidth >= minWidthPx;
     });
 
@@ -16,10 +16,10 @@ const useMinWidth = (minWidthPx: number) => {
             setIsMinWidth(event.matches);
         };
 
-        mediaQuery.addEventListener("change", handleChange);
+        mediaQuery.addEventListener('change', handleChange);
 
         return () => {
-            mediaQuery.removeEventListener("change", handleChange);
+            mediaQuery.removeEventListener('change', handleChange);
         };
     }, [minWidthPx]);
 

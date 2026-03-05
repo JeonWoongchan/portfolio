@@ -1,44 +1,30 @@
-﻿import React from 'react';
-import InfoCard from "@/src/components/InfoCard";
-import ABOUT_DATA from "@/data/about";
-import {
+﻿import {
     Section,
+    SectionBody,
     SectionHeader,
-    GridContainer,
-    SectionBody
-} from "@/src/components/Container";
-import {SectionTitle, SectionDescription} from "@/src/components/Typography";
+} from "@/src/components/common/Container";
+import {
+    SectionDescription,
+    SectionTitle,
+} from "@/src/components/common/Typography";
+import AboutContent from "@/src/components/about/AboutContent";
 
 export default function About() {
     return (
         <Section
             sectionKey={"About"}
             nextSection={"Skills"}
-            className={"bg-(--color-navy-light)"}
+            tone="navyLight"
         >
-            <SectionHeader animateOnVisible>
-                <SectionTitle>
-                    About Me
-                </SectionTitle>
+            <SectionHeader>
+                <SectionTitle>About Me</SectionTitle>
                 <SectionDescription>
-                    적극적으로 협업하며, 지속가능한 서비스를 개발합니다.
+                    이러한 개발 방식을 바탕으로 꾸준히 성장하고 있습니다.
                 </SectionDescription>
             </SectionHeader>
 
-            <SectionBody animateOnVisible>
-                {/* 카드 그리드 */}
-                <GridContainer>
-                    {ABOUT_DATA.map((data) => (
-                        <li key={data.id}>
-                            <InfoCard
-                                imageSrc={data.imageSrc}
-                                imageAlt={data.imageAlt}
-                                title={data.title}
-                                description={data.description}
-                            />
-                        </li>
-                    ))}
-                </GridContainer>
+            <SectionBody className="space-y-4">
+                <AboutContent />
             </SectionBody>
         </Section>
     );

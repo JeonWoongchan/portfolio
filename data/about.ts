@@ -1,34 +1,62 @@
-import type { AboutData } from "@/src/types/about";
+﻿import type { AboutData, AboutProfileTextData } from "@/src/types/about";
+import { Code2, Palette, UsersRound, Zap } from "lucide-react";
 
 export const ABOUT_DATA = [
-  {
-    "id": 1,
-    "imageSrc": "/images/javascript.svg",
-    "imageAlt": "JavaScript 로고",
-    "title": "JavaScript",
-    "description": "프론트엔드 개발에 기본이 되는 JavaScript부터 제 것으로 만들기 위해 노력했습니다. 프론트엔드 개발에 기본이 되는 JavaScript부터 제 것으로 만들기 위해 노력했습니다."
-  },
-  {
-    "id": 2,
-    "imageSrc": "/images/typescript.svg",
-    "imageAlt": "TypeScript 로고",
-    "title": "TypeScript",
-    "description": "타입 안정성을 확보하여 더 견고한 코드를 작성하기 위해 TypeScript를 학습하고 적용하였습니다. 타입 안정성을 확보하여 더 견고한 코드를 작성하기 위해 TypeScript를 학습하고 적용하였습니다."
-  },
-  {
-    "id": 3,
-    "imageSrc": "/images/react.svg",
-    "imageAlt": "React 로고",
-    "title": "React",
-    "description": "상태 관리와 컴포넌트 재사용성을 고려한 UI를 개발하고자 노력하였습니다. 상태 관리와 컴포넌트 재사용성을 고려한 UI를 개발하고자 노력하였습니다."
-  },
-  {
-    "id": 4,
-    "imageSrc": "/images/nextjs.svg",
-    "imageAlt": "Next.js 로고",
-    "title": "Next.js",
-    "description": "리액트와 함께 서버 기능도 구현해보고자 MongoDB를 이용하여 구현해보았습니다. 리액트와 함께 서버 기능도 구현해보고자 MongoDB를 이용하여 구현해보았습니다."
-  }
+    {
+        id: 1,
+        icon: Code2,
+        title: "Clean Architecture",
+        description:
+            "코드의 품질과 팀 컨벤션에 맞는 구조적 일관성을 중요시합니다. <b>모노레포</b> 구조와 <b>디자인 토큰</b> 도입을 제안하고, 공통 컴포넌트와 스타일 토큰을 정리하여 실제 프로젝트에 적용한 경헙이 있습니다.",
+    },
+    {
+        id: 2,
+        icon: Palette,
+        title: "UX Focus",
+        description:
+            "단순한 기능 구현을 넘어 <b>사용자가 체감하는 경험을 설계</b>합니다. 사용자 관점에서 정보의 우선순위를 기준으로 렌더링 구조를 고민하고, 상황에 맞는 최선의 로딩 방식과 화면 구성을 선택하고자 노력합니다.",
+    },
+    {
+        id: 3,
+        icon: Zap,
+        title: "Performance",
+        description:
+            "서비스 전반에서 성능적으로 개선할 수 있는 지점을 지속적으로 고민합니다. 대용량 3D 모델의 렌더링 방식을 개선하여 <b>초기 로딩 시간을 약 30초에서 1.5초</b>로 단축시킨 경험이 있습니다.",
+    },
+    {
+        id: 4,
+        icon: UsersRound,
+        title: "Collaboration",
+        description:
+            "좋은 서비스는 좋은 협업에서 나온다고 믿습니다. 단순한 요청 기반 협업이 아니라 더 나은 해결 방안을 함께 고민하는 것을 지향하며 협업 일관성을 위해 <b>코드리뷰</b>, <b>개발 히스토리 문서화</b>를 진행했습니다.",
+    },
 ] satisfies readonly AboutData[];
+
+export const ABOUT_PROFILE_TEXT_DATA = {
+    name: "전웅찬",
+    role: "Frontend Developer",
+    metaItems: [
+        {
+            id: 1,
+            key: "email",
+            text: "jchan71589@gmail.com",
+        },
+        {
+            id: 2,
+            key: "techStack",
+            text: "React · TypeScript · Next.js",
+        },
+        {
+            id: 3,
+            key: "education",
+            text: "컴퓨터소프트웨어 전공",
+        },
+        {
+            id: 4,
+            key: "tags",
+            text: "#문제해결 #협업 #성장",
+        },
+    ],
+} as const satisfies AboutProfileTextData;
 
 export default ABOUT_DATA;

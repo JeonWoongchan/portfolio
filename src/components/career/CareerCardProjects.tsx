@@ -1,57 +1,49 @@
-'use client';
+import { BodyText, SmallText } from '@/src/components/common/Typography';
+import StackCardList from '@/src/components/common/StackCardList';
+import { VerticalDivider } from '@/src/components/common/VerticalDivider';
+import { useCareerCardItem } from '@/src/components/career/CareerCardContext';
+import { CardContent, CardLink } from '@/components/ui/card';
+import CareerBadgeList from "@/src/components/career/CareerBadgeList";
+import {ExternalLink} from "lucide-react";
+import { sortByLatestPeriod } from "@/src/utils/yearMonthPeriod";
 
-import type {CareerItem} from '@/src/types/career';
-import {SmallText} from '@/src/components/Typography';
-import {Accordion, AccordionContent, AccordionItem, AccordionTrigger} from '@/components/ui/accordion';
+export default function CareerCardProjects() {
+    const item = useCareerCardItem();
+    const sortedProjects = sortByLatestPeriod(item.projects);
 
-interface CareerCardProjectsProps {
-    item: CareerItem;
-}
-
-export default function CareerCardProjects({item}: CareerCardProjectsProps) {
     return (
-        <div className="p-6 flex-1 min-w-0">
+        <div className="min-w-0 md:basis-[70%] md:max-w-[70%]">
             <div className="mb-4 flex items-center justify-between">
                 <h4 className="text-xs tracking-wide text-(--color-text-muted)">PROJECTS ({item.projects.length})</h4>
             </div>
 
-            <ul className="space-y-3">
-                {item.projects.map((project) => (
-                    <li
-                        key={`${item.company}-${project.title}`}
-                        className="rounded-xl border border-(--color-border) bg-[rgba(10,15,26,0.34)] px-4 py-0"
-                    >
-                        <Accordion type="single" collapsible>
-                            <AccordionItem value={`${item.company}-${project.title}`} className="border-none">
-                                <div className="flex gap-4 py-3">
-                                    <div className="w-0.5 shrink-0 rounded-full bg-(--color-accent)" />
-                                    <div className="min-w-0 text-left">
-                                        <AccordionTrigger className="w-fit py-0 hover:no-underline [&>svg]:hidden">
-                                            <p className="text-base font-semibold text-white hover:text-(--color-accent)">{project.title}</p>
-                                        </AccordionTrigger>
-                                        <p className="mt-1 text-sm text-(--color-text-secondary)">{project.period}</p>
-                                    </div>
-                                </div>
-
-                                <AccordionContent className="pb-3">
-                                    <div className="flex gap-4">
-                                        <div className="min-w-0 space-y-2">
-                                            <SmallText>{project.description}</SmallText>
-                                            <ul className="flex flex-col gap-2 md:flex-row">
-                                                {project.stack.map((stack) => (
-                                                    <li
-                                                        key={`${project.title}-${stack}`}
-                                                        className="inline-flex items-center rounded-sm bg-(--color-border-light) px-2 py-1 text-center text-xs text-white"
-                                                    >
-                                                        {stack}
-                                                    </li>
-                                                ))}
-                                            </ul>
+            <ul className="space-y-2">
+                {sortedProjects.map((project) => (
+                    <li key={`${item.company}-${project.title}`}>
+                        <CardLink href={project.link} target="_blank" cardClassName="group gap-2 p-4">
+                            <CardContent className="space-y-2 p-0">
+                                <div className="flex gap-4">
+                                    <VerticalDivider className="w-0.5 mx-0 h-auto rounded-full bg-(--color-accent)" />
+                                    <div className="w-full space-y-2">
+                                        <div className="flex justify-between">
+                                            <BodyText>{project.title}</BodyText>
+                                            <ExternalLink className="ml-auto size-3.5 shrink-0 text-(--color-text-muted) opacity-0 transition-opacity group-hover:opacity-100" />
+                                        </div>
+                                        <SmallText>{project.periodStart} ~ {project.periodEnd}</SmallText>
+                                        <SmallText>{project.description}</SmallText>
+                                        <div className="flex">
+                                            <CareerBadgeList company={item.company} badges={project.roles} />
+                                            <VerticalDivider className="h-auto bg-(--color-border)" />
+                                            <StackCardList
+                                                stackNames={project.stack}
+                                                keyPrefix={`${item.company}-${project.title}`}
+                                                compact={true}
+                                            />
                                         </div>
                                     </div>
-                                </AccordionContent>
-                            </AccordionItem>
-                        </Accordion>
+                                </div>
+                            </CardContent>
+                        </CardLink>
                     </li>
                 ))}
             </ul>
