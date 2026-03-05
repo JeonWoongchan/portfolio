@@ -5,7 +5,7 @@ import {VerticalDivider} from "@/src/components/common/VerticalDivider";
 import { BrandLogo } from "@/src/components/common/BrandLogo";
 
 const MENU_LIST = ['About', 'Skills', 'Career', 'Archive'] as const
-const MENU_BUTTON_CLASSES = 'px-3 py-1.5 cursor-pointer hover:bg-(--color-gray) hover:rounded-full text-white'
+const MENU_BUTTON_CLASSES = 'px-1 py-1 md:px-3 md:py-1.5 text-sm md:text-md cursor-pointer hover:bg-(--color-gray) hover:rounded-full text-white'
 
 type ExpandedMenuProps = {
     onMenuClickAction: (menu: string) => void
