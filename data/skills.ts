@@ -33,7 +33,7 @@ export const SKILL_DATA = [
             {
                 "name": "Next.js",
                 "content": "Full-stack React framework with SSR",
-                "tags": ["App Router", "SSR"]
+                "tags": ["App Router", "SSR", "SSG"]
             }
         ]
     },

@@ -178,3 +178,11 @@ description: >
 - 확실하지 않으면 단정하지 않는다
 - "확인 필요" 항목 분리
 - 기본 안전안 + 최적안 함께 제시
+
+---
+
+# 11) Line Ending Rule (Mandatory)
+- All newly created or modified text/code files MUST use LF (\n) line endings.
+- Do NOT write files with CRLF (\r\n) unless the target file already requires CRLF for compatibility.
+- If a file is accidentally written with CRLF, convert it back to LF before finishing.
+
