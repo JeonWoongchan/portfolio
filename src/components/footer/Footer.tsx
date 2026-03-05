@@ -46,7 +46,7 @@ export default function Footer({ open, onOpenChange }: FooterProps) {
                                 />
                             </div>
                         </div>
-                        <SocialStackLinks className="self-end sm:self-auto" />
+                        <SocialStackLinks className="self-end sm:self-auto" clickable={true}/>
                     </div>
                     <div className="flex w-full items-end justify-between border-t border-(--color-border) pt-4">
                         <SectionDescription className="text-sm opacity-70">

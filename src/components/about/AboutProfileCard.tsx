@@ -3,6 +3,7 @@ import { ABOUT_PROFILE_TEXT_DATA } from "@/data/about";
 import SocialStackLinks from "@/src/components/common/SocialStackLinks";
 import { BodyText, SmallText } from "@/src/components/common/Typography";
 import CareerMetaItem from "@/src/components/career/CareerMetaItem";
+import CopyEmailMetaItem from "@/src/components/footer/CopyEmailMetaItem";
 import IconBadge from "@/src/components/common/IconBadge";
 import type { AboutProfileMetaKey } from "@/src/types/about";
 import {Code, Code2, GraduationCap, LucideIcon, Mail, Tags} from "lucide-react";
@@ -28,14 +29,20 @@ export default function AboutProfileCard() {
                 <SmallText className="mb-4 text-(--color-accent)">{ABOUT_PROFILE_TEXT_DATA.role}</SmallText>
             </CardHeader>
             <CardContent className="self-center">
-                {ABOUT_PROFILE_TEXT_DATA.metaItems.map((metaItem) => (
-                    <CareerMetaItem
-                        key={metaItem.id}
-                        icon={META_ITEM_ICON_MAP[metaItem.key]}
-                        text={metaItem.text}
-                    />
-                ))}
-                <SocialStackLinks className="mt-4 justify-center gap-4" />
+                {ABOUT_PROFILE_TEXT_DATA.metaItems.map((metaItem) => {
+                    if (metaItem.key === "email") {
+                        return <CopyEmailMetaItem key={metaItem.id} email={metaItem.text} showLabel={false} />;
+                    }
+
+                    return (
+                        <CareerMetaItem
+                            key={metaItem.id}
+                            icon={META_ITEM_ICON_MAP[metaItem.key]}
+                            text={metaItem.text}
+                        />
+                    );
+                })}
+                <SocialStackLinks className="mt-4 justify-center gap-4" clickable={true} />
             </CardContent>
         </Card>
     );

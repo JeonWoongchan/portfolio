@@ -54,7 +54,7 @@ export const ABOUT_PROFILE_TEXT_DATA = {
         {
             id: 4,
             key: "tags",
-            text: "#클린코드 #협업 #성장",
+            text: "#문제해결 #협업 #성장",
         },
     ],
 } as const satisfies AboutProfileTextData;

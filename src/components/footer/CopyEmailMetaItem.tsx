@@ -9,6 +9,7 @@ interface CopyEmailMetaItemProps {
     email: string;
     textClassName?: string;
     className?: string;
+    showLabel?: boolean;
 }
 
 const COPIED_RESET_DELAY_MS = 1600;
@@ -17,6 +18,7 @@ export default function CopyEmailMetaItem({
     email,
     textClassName,
     className,
+    showLabel = true,
 }: CopyEmailMetaItemProps) {
     const [isCopied, setIsCopied] = useState(false);
 
@@ -56,9 +58,10 @@ export default function CopyEmailMetaItem({
                         : "text-(--color-text-muted) hover:text-(--color-accent)"
                 )}
                 aria-live="polite"
+                aria-label={isCopied ? "Copied email" : "Copy email"}
             >
                 {isCopied ? <Check className="size-3" aria-hidden="true" /> : <Copy className="size-3" aria-hidden="true" />}
-                <span>{isCopied ? "copyed!" : "Click to copy"}</span>
+                {showLabel ? <span>{isCopied ? "copyed!" : "Click to copy"}</span> : null}
             </button>
         </div>
     );
