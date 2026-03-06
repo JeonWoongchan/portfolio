@@ -16,7 +16,7 @@ export default function CareerCardOverview() {
 
     return (
         <Card className="gap-4 border-none p-4">
-            <CardHeader className="flex gap-4 flex-col md:flex-row">
+            <CardHeader className="flex flex-row gap-4 max-md:flex-col">
                 <IconBadge
                     icon={BriefcaseBusiness}
                     tone="accent"

@@ -19,7 +19,7 @@ export default function About() {
             <SectionHeader>
                 <SectionTitle>About Me</SectionTitle>
                 <SectionDescription>
-                    이러한 개발 방식을 바탕으로 꾸준히 성장하고 있습니다.
+                    깊이 있는 고민을 바탕으로 더 나은 해답을 찾아갑니다.
                 </SectionDescription>
             </SectionHeader>
 

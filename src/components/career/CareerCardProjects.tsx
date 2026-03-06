@@ -25,7 +25,7 @@ export default function CareerCardProjects() {
                                 <div className="flex gap-4">
                                     <VerticalDivider className="w-0.5 mx-0 h-auto rounded-full bg-(--color-accent)" />
                                     <div className="w-full space-y-4">
-                                        <div className="flex flex-col gap-2 md:flex-row md:gap-0 justify-between">
+                                        <div className="flex justify-between max-md:flex-col max-md:gap-2">
                                             <BodyText>{project.title}</BodyText>
                                             <StackCardList
                                                 stackNames={project.stack}

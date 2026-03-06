@@ -32,21 +32,21 @@ export default function Footer({ open, onOpenChange }: FooterProps) {
                 style={footerSurfaceVars}
             >
                 <DrawerTitle className="sr-only">Footer Contact Panel</DrawerTitle>
-                <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-6 pb-6 pt-2 md:px-12">
+                <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 p-6 md:px-12">
                     <div className="flex w-full flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
                         <div className="w-full space-y-2">
                             <BrandSignature
-                                className="gap-2"
+                                className="gap-2 max-md:justify-center"
                                 nameClassName="text-sm font-semibold leading-relaxed text-white md:text-base"
                             />
-                            <div className="flex gap-4">
+                            <div className="flex gap-4 max-md:justify-center">
                                 <CopyEmailMetaItem
                                     email="jchan71589@gmail.com"
                                     textClassName="text-xs"
                                 />
                             </div>
                         </div>
-                        <SocialStackLinks className="self-end sm:self-auto" clickable={true}/>
+                        <SocialStackLinks className="self-end max-md:self-center" clickable={true}/>
                     </div>
                     <div className="flex w-full items-end justify-between border-t border-(--color-border) pt-4">
                         <SectionDescription className="text-sm opacity-70">

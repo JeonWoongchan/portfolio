@@ -30,7 +30,7 @@ export default function CareerMetaRow({
     const hasBadges = badges.length > 0;
 
     return (
-        <div className={cn("flex flex-col flex-wrap gap-2 md:flex-row md:gap-0", className)}>
+        <div className={cn("flex flex-wrap max-md:flex-col max-md:gap-2", className)}>
             <SmallText>{periodStart} ~ {periodEnd}</SmallText>
             {(hasTeamMeta || hasBadges) ? <VerticalDivider /> : null}
 
