@@ -8,14 +8,12 @@ import Archive from "@/src/components/archive/Archive";
 // TODO: 모바일: Hero 설명글, Footer 가운데 정렬
 export default function App() {
     return (
-            <div className="min-h-screen bg-zinc-50 font-sans">
-                    <main className="flex min-h-screen flex-col items-center justify-center">
-                            <Hero />
-                            <About />
-                            <Skills />
-                            <Career />
-                            <Archive />
-                    </main>
-            </div>
+        <main className="flex min-h-screen flex-col items-center justify-center">
+            <Hero />
+            <About />
+            <Skills />
+            <Career />
+            <Archive />
+        </main>
     );
 }

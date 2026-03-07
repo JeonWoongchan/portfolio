@@ -110,6 +110,29 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-snap-type: y proximity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+main > section {
+    min-height: 100dvh;
+    scroll-snap-stop: normal;
+}
+
+main > section[data-snap="on"] {
+    scroll-snap-align: start;
+}
+
+main > section[data-snap="off"] {
+    scroll-snap-align: none;
+}
+
 /*Footer(shadcn drawer) 동작 시 헤더 정렬 밀리는 문제 보정*/
 header {
     right: var(--removed-body-scroll-bar-size, 0px) !important;

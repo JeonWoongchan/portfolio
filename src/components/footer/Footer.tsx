@@ -2,7 +2,7 @@
 
 import { useCallback } from "react";
 import type { CSSProperties } from "react";
-import { Drawer, DrawerContent, DrawerTitle } from "@/components/ui/drawer";
+import { Drawer, DrawerContent, DrawerDescription, DrawerTitle } from "@/components/ui/drawer";
 import { SectionDescription } from "@/src/components/common/Typography";
 import CopyEmailMetaItem from "@/src/components/footer/CopyEmailMetaItem";
 import BrandSignature from "@/src/components/common/BrandSignature";
@@ -32,6 +32,9 @@ export default function Footer({ open, onOpenChange }: FooterProps) {
                 style={footerSurfaceVars}
             >
                 <DrawerTitle className="sr-only">Footer Contact Panel</DrawerTitle>
+                <DrawerDescription className="sr-only">
+                    Contact links and back-to-top action in the footer panel.
+                </DrawerDescription>
                 <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 p-6 md:px-12">
                     <div className="flex w-full flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
                         <div className="w-full space-y-2">
