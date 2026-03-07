@@ -5,7 +5,7 @@ import type {CSSProperties, ReactNode, RefObject} from 'react';
 import {cn} from '@/lib/utils';
 import SectionScrollAction from "@/src/components/common/SectionScrollAction";
 import {useRegisterSection} from '@/src/hooks/section/useRegisterSectionRef';
-import useSectionVisibility from '@/src/hooks/section/useSectionVisibility';
+import useSectionVisibility, {useSectionSnapState} from '@/src/hooks/section/useSectionVisibility';
 import {SECTION_TONE_STYLE_MAP, type SectionTone} from "@/src/utils/sectionTone";
 
 interface ContainerProps {
@@ -68,6 +68,8 @@ export function Section({
     );
     const shouldObserveVisibility = Boolean(sectionKey);
     const isVisible = useSectionVisibility(sectionRef, visibilityThreshold, shouldObserveVisibility);
+    // 동적 콘텐츠로 섹션 높이가 커진 경우 내부 스크롤이 막히지 않도록 스냅 상태를 조정한다.
+    useSectionSnapState(sectionRef);
     const toneConfig = tone ? SECTION_TONE_STYLE_MAP[tone] : null;
 
     return (
@@ -152,4 +154,3 @@ export function GridContainer({children, className = ''}: ContainerProps) {
         </ul>
     );
 }
-
