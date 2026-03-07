@@ -186,3 +186,11 @@ description: >
 - Do NOT write files with CRLF (\r\n) unless the target file already requires CRLF for compatibility.
 - If a file is accidentally written with CRLF, convert it back to LF before finishing.
 
+---
+
+# 12) Encoding Rule (Mandatory)
+- README.md를 포함한 모든 텍스트/코드 파일은 UTF-8 인코딩으로 유지한다.
+- 한글이 포함된 파일 수정 시 인코딩 변환(CP949/EUC-KR/ANSI)으로 재저장하지 않는다.
+- PowerShell/스크립트로 파일을 쓸 때는 UTF-8(가능하면 BOM 없음)으로 명시 저장한다.
+- 한글 깨짐이 감지되면 즉시 작업을 중단하고 원본 복구 후 재적용한다.
+
