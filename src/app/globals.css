@@ -120,18 +120,18 @@ html {
     }
 }
 
-main > section {
-    min-height: 100dvh;
-    scroll-snap-stop: normal;
-}
+/*main > section {*/
+/*    min-height: 100dvh;*/
+/*    scroll-snap-stop: normal;*/
+/*}*/
 
-main > section[data-snap="on"] {
-    scroll-snap-align: start;
-}
+/*main > section[data-snap="on"] {*/
+/*    scroll-snap-align: start;*/
+/*}*/
 
-main > section[data-snap="off"] {
-    scroll-snap-align: none;
-}
+/*main > section[data-snap="off"] {*/
+/*    scroll-snap-align: none;*/
+/*}*/
 
 /*Footer(shadcn drawer) 동작 시 헤더 정렬 밀리는 문제 보정*/
 header {
