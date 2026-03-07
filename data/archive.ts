@@ -42,7 +42,7 @@ export const ARCHIVE_DATA = [
                 title: "Restaurant WooDy",
                 link: "https://github.com/JeonWoongchan/restaurant",
                 description:
-                    "레스토랑 홍보 및 예약 기능을 구현한 레스토랑 홈페이지. 신입 개발자 준비 과정에서 진행한 팀 프로젝트로, 사용자 경험을 고려한 UI와 예약 기능 구현에 초점을 맞춰 진행",
+                    "레스토랑 홍보 및 예약 기능을 구현한 레스토랑 홈페이지. 사용자 경험을 고려한 UI와 예약 기능 구현에 초점을 맞춰 진행",
                 tags: ["React", "Team Development"],
             },
             {
