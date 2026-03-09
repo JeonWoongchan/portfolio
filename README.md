@@ -3,7 +3,7 @@
 프론트엔드 개발자 포트폴리오 웹사이트입니다.  
 Next.js 기반으로, 섹션 중심 싱글 페이지 구조와 인터랙션(스크롤 이동, 인트로 애니메이션, 필터 UI)을 제공합니다.
 
-- 배포 URL: https://woongchan-portfolio.vercel.app/
+- 배포 URL: https://woongchan.vercel.app/
 
 ## 기술 스택
 
