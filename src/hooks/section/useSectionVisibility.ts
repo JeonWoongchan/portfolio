@@ -1,7 +1,8 @@
 'use client'
 
-// TODO: 추후 섹션 관찰 로직은 라이브러리(예: react-intersection-observer, react-use-measure) 전환 검토
 import { RefObject, useEffect, useState } from 'react';
+import { useInView } from 'react-intersection-observer';
+import useMeasure from 'react-use-measure';
 
 const SNAP_DISABLE_RATIO = 1.05;
 
@@ -11,39 +12,12 @@ const useSectionVisibility = (
     threshold = 0.2,
     enabled = true
 ) => {
-    const [isVisible, setIsVisible] = useState(false);
+    const { ref: inViewRef, inView } = useInView({
+        threshold,
+        triggerOnce: true,
+        skip: !enabled,
+    });
 
-    useEffect(() => {
-        if (!enabled) {
-            return;
-        }
-
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting && !isVisible) {
-                    setIsVisible(true);
-                }
-            },
-            { threshold }
-        );
-
-        if (ref.current) {
-            observer.observe(ref.current);
-        }
-
-        return () => observer.disconnect();
-    }, [enabled, isVisible, ref, threshold]);
-
-    return isVisible;
-};
-
-export default useSectionVisibility;
-
-// 섹션 높이가 뷰포트보다 크게 확장되면 스냅을 끄고, 일반 길이면 스냅을 유지한다.
-export function useSectionSnapState(
-    ref: RefObject<HTMLElement | null>,
-    enabled = true
-) {
     useEffect(() => {
         if (!enabled) {
             return;
@@ -55,26 +29,75 @@ export function useSectionSnapState(
             return;
         }
 
-        const updateSnapState = () => {
-            const viewportHeight = window.innerHeight;
-            const sectionHeight = sectionElement.scrollHeight;
-            const isLargeSection = sectionHeight > viewportHeight * SNAP_DISABLE_RATIO;
-
-            sectionElement.dataset.snap = isLargeSection ? 'off' : 'on';
-        };
-
-        updateSnapState();
-
-        const resizeObserver = new ResizeObserver(() => {
-            updateSnapState();
-        });
-
-        resizeObserver.observe(sectionElement);
-        window.addEventListener('resize', updateSnapState);
+        inViewRef(sectionElement);
 
         return () => {
-            resizeObserver.disconnect();
-            window.removeEventListener('resize', updateSnapState);
+            inViewRef(null);
         };
-    }, [enabled, ref]);
+    }, [enabled, inViewRef, ref]);
+
+    return enabled ? inView : false;
+};
+
+export default useSectionVisibility;
+
+// 섹션 높이가 뷰포트보다 크게 확장되면 스냅을 끄고, 일반 길이면 스냅을 유지한다.
+export function useSectionSnapState(
+    ref: RefObject<HTMLElement | null>,
+    enabled = true
+) {
+    const [measureRef, bounds] = useMeasure();
+    const [viewportHeight, setViewportHeight] = useState<number>(() => (
+        typeof window === 'undefined' ? 0 : window.innerHeight
+    ));
+
+    useEffect(() => {
+        if (!enabled) {
+            return;
+        }
+
+        const handleResize = () => {
+            setViewportHeight(window.innerHeight);
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, [enabled]);
+
+    useEffect(() => {
+        if (!enabled) {
+            return;
+        }
+
+        const sectionElement = ref.current;
+
+        if (!sectionElement) {
+            return;
+        }
+
+        measureRef(sectionElement);
+        return () => {
+            measureRef(null);
+        };
+    }, [enabled, measureRef, ref]);
+
+    useEffect(() => {
+        if (!enabled) {
+            return;
+        }
+
+        const sectionElement = ref.current;
+
+        if (!sectionElement || viewportHeight <= 0) {
+            return;
+        }
+
+        const sectionHeight = bounds.height;
+        const isLargeSection = sectionHeight > viewportHeight * SNAP_DISABLE_RATIO;
+
+        sectionElement.dataset.snap = isLargeSection ? 'off' : 'on';
+    }, [bounds.height, enabled, ref, viewportHeight]);
 }
