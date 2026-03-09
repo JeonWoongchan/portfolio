@@ -2,11 +2,13 @@
 
 import {createContext, useContext} from 'react';
 import type {CSSProperties, ReactNode, RefObject} from 'react';
+import { useInView } from 'react-intersection-observer';
 import {cn} from '@/lib/utils';
 import SectionScrollAction from "@/src/components/common/SectionScrollAction";
 import {useRegisterSection} from '@/src/hooks/section/useRegisterSectionRef';
 import useSectionVisibility, {useSectionSnapState} from '@/src/hooks/section/useSectionVisibility';
 import {SECTION_TONE_STYLE_MAP, type SectionTone} from "@/src/utils/sectionTone";
+import {useRevealStyle} from "@/src/hooks/ui/useRevealStyle";
 
 interface ContainerProps {
     children: ReactNode;
@@ -105,13 +107,21 @@ export function SectionHeader({
     children,
     className = '',
 }: ContainerProps) {
+    const { ref: headerRef, inView } = useInView({
+        threshold: 0.5,
+        triggerOnce: true,
+    });
+    const isVisible = inView;
+    const { revealClassName, getRevealStyle } = useRevealStyle({ isVisible });
 
     return (
         <div
+            ref={headerRef}
             className={cn(
-                'relative flex flex-col items-center gap-3 p-4 mb-6', 'fade-in-down',
-                className
+                'relative flex flex-col items-center gap-3 p-4 mb-6',
+                className, revealClassName
             )}
+            style={getRevealStyle(100)}
         >
             {children}
         </div>

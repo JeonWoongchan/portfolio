@@ -77,16 +77,6 @@ export const SKILL_DATA = [
                 "tags": ["Server State Management"]
             },
             {
-                "name": "Jest",
-                "content": "JavaScript testing framework",
-                "tags": ["Unit Testing", "Mocking"]
-            },
-            {
-                "name": "Vitest",
-                "content": "Vite-native testing framework",
-                "tags": ["Unit Testing", "ESM"]
-            },
-            {
                 "name": "Storybook",
                 "content": "UI component development & documentation",
                 "tags": ["Component Driven Development", "Docs"]

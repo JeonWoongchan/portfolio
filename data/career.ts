@@ -47,7 +47,7 @@ export const CAREER_DATA = [
                 highlights: [
                     '모노레포 도입을 통한 공통 컴포넌트 약 15개 정리로 개발 생산성 개선',
                     '디자인 토큰 기반 디자인 시스템 구축으로 UI/UX 일관성 확보',
-                    'HLS → WebRTC 전환으로 영상 지연 시간 약 10초 → 0.5초 단축',
+                    'HLS → WebRTC 전환으로 실시간 CCTV영상 송출 지연시간 약 10초 → 0.5초 단축',
                 ],
                 stack: ['TypeScript', 'Next.js', 'Turborepo', 'Tailwind CSS', 'Zustand', 'shadcn/ui', 'Docker'],
             },
@@ -59,7 +59,7 @@ export const CAREER_DATA = [
                 description:
                     '교차로 내 차량과 보행자 정보 수집 및 분석하여 3D모델을 활용한 디지털트윈으로 표출하는 대시보드 솔루션',
                 highlights: [
-                    'Cesium.js 기반 디지털트윈 3D모델 렌더링 구조 개선으로 초기 로딩 30초 → 1.5초 단축',
+                    'Cesium.js 기반 디지털트윈 3D모델 렌더링 구조 개선으로 초기 로딩 최대 1분 → 1.5초 단축',
                     '대용량 디지털트윈 리소스의 메모리 누수 구간을 개선하여 장시간 구동 시 메모리 사용량을 1.5GB → 100MB 미만으로 절감'
                 ],
                 stack: ['JavaScript', 'React', 'Redux Toolkit', 'CesiumJS'],
@@ -72,6 +72,7 @@ export const CAREER_DATA = [
                 description:
                     '인천항 부잔교 출입 인원에 대한 돌발상황 검지 결과와 CCTV 영상을 실시간으로 표출하는 대시보드',
                 highlights: [
+                    'Polling 기반 돌발상황 데이터 수신 구조를 SSE로 전환해 실시간성을 개선하고, 1초 Polling 기준 시간당 3,600건의 반복 요청을 제거',
                     'Docker 런타임 환경변수 주입 방식을 도입하여 배포 환경 간 설정 불일치 문제 해소 및 배포 안정성 향상'
                 ],
                 stack: ['JavaScript', 'React', 'Redux Toolkit', 'Docker'],
