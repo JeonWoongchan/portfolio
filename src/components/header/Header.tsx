@@ -1,9 +1,8 @@
-﻿'use client'
+'use client'
 
 import { useState } from 'react'
 import { useScroll } from '@/src/hooks/scroll/useScroll'
 import { useSectionStore } from '@/src/store/useSectionStore'
-import { useHeroIntroStore } from '@/src/store/useHeroIntroStore'
 import ExpandedMenu from "@/src/components/header/headerMenu";
 import BrandSignature from "@/src/components/common/BrandSignature";
 
@@ -13,17 +12,12 @@ const CONTAINER_CLASSES =
 export default function Header() {
     const { scrollY } = useScroll()
     const { scrollTo } = useSectionStore()
-    const phase = useHeroIntroStore((state) => state.phase)
     const [isMenuOpen, setIsMenuOpen] = useState(false)
-
-    const isHeaderVisible = phase >= 2
     const showCollapsedBrand = !isMenuOpen && scrollY < 300
 
     return (
         <header
-            className={`fixed top-0 z-5 flex h-20 left-0 right-0 select-none items-center justify-center transition-all duration-500 ease-in-out ${
-                isHeaderVisible ? "translate-y-0 opacity-100" : "-translate-y-3 opacity-0 pointer-events-none"
-            }`}
+            className={`fixed top-0 left-0 right-0 z-5 flex h-20 select-none items-center justify-center fade-in`}
         >
             <nav className="flex items-center justify-center py-4">
                 <div
@@ -51,4 +45,3 @@ export function CollapsedBrand() {
         </div>
     )
 }
-
