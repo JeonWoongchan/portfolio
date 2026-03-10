@@ -10,9 +10,9 @@ export interface BootLine {
 
 export const BOOT_LINES: ReadonlyArray<BootLine> = [
     { text: "$ initializing system...", delay: 0 },
-    { text: "$ loading modules...", delay: 600 },
-    { text: "$ compiling portfolio...", delay: 1200 },
-    { text: "$ ready.", delay: 1800 },
+    { text: "$ loading modules...", delay: 1000 },
+    { text: "$ compiling portfolio...", delay: 1800 },
+    { text: "$ ready.", delay: 2600 },
 ];
 
 export const CODE_LINES: ReadonlyArray<string> = [
