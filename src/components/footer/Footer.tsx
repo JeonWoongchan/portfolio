@@ -57,7 +57,6 @@ export default function Footer({ open, onOpenChange }: FooterProps) {
                         </SectionDescription>
                         <SectionScrollAction
                             direction="up"
-                            variant="inline"
                             label="Back to top"
                             onAction={handleBackToTop}
                         />

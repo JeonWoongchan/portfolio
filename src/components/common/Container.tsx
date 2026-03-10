@@ -58,8 +58,8 @@ export function Section({
     slideDownClassName = '',
     style,
     ref,
-    nextSection,
-    onNextAction,
+    nextSection, // 다음으로 보여줄 섹션
+    onNextAction, // 버튼 누르고 실행할 함수
     sectionKey,
     visibilityThreshold = 0.2,
     tone,
@@ -94,7 +94,6 @@ export function Section({
                         target={nextSection}
                         onAction={onNextAction}
                         direction="down"
-                        variant="hint"
                         className={slideDownClassName}
                     />
                 )}
