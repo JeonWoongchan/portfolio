@@ -156,7 +156,15 @@ a {
 
 header.fade-in {
     opacity: 0;
-    animation: fadeIn 0.8s ease-out 4s forwards;
+    animation: fadeIn 0.8s ease-out 2s forwards;
+}
+
+header.fade-in.fade-delay-2 {
+    animation-delay: 2s;
+}
+
+header.fade-in.fade-delay-5 {
+    animation-delay: 5s;
 }
 
 @keyframes fadeInUp {

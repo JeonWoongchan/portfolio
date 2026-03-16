@@ -12,7 +12,7 @@ interface SectionStore {
 
 export const useSectionStore = create<SectionStore>((set, get) => ({
     refs: {},
-    currentSectionKey: null,
+    currentSectionKey: 'Hero',
 
     setRef: (key: string, element: HTMLElement | null) => {
         set((state) => ({
