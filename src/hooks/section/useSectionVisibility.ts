@@ -41,6 +41,39 @@ const useSectionVisibility = (
 
 export default useSectionVisibility;
 
+// 현재 섹션이 실시간으로 뷰포트 기준선 안에 있는지 판별한다.
+export function useCurrentSectionInView(
+    ref: RefObject<HTMLElement | null>,
+    threshold = 0.5,
+    enabled = true
+) {
+    const { ref: inViewRef, inView } = useInView({
+        threshold,
+        triggerOnce: false,
+        skip: !enabled,
+    });
+
+    useEffect(() => {
+        if (!enabled) {
+            return;
+        }
+
+        const sectionElement = ref.current;
+
+        if (!sectionElement) {
+            return;
+        }
+
+        inViewRef(sectionElement);
+
+        return () => {
+            inViewRef(null);
+        };
+    }, [enabled, inViewRef, ref]);
+
+    return enabled ? inView : false;
+}
+
 // 섹션 높이가 뷰포트보다 크게 확장되면 스냅을 끄고, 일반 길이면 스냅을 유지한다.
 export function useSectionSnapState(
     ref: RefObject<HTMLElement | null>,

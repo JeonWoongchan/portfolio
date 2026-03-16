@@ -145,6 +145,27 @@ a {
 }
 
 /*나타나는 애니메이션*/
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+header.fade-in {
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out 2s forwards;
+}
+
+header.fade-in.fade-delay-2 {
+    animation-delay: 2s;
+}
+
+header.fade-in.fade-delay-5 {
+    animation-delay: 5s;
+}
 
 @keyframes fadeInUp {
     from {
@@ -178,15 +199,6 @@ a {
 .fade-in-down {
     opacity: 0;
     animation: fadeInDown 0.8s ease-out 0.2s forwards;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
 }
 
 @keyframes blink {

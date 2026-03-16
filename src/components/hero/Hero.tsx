@@ -12,6 +12,7 @@ import { BOOT_LINES } from "@/data/brand";
 import { useHeroIntroSequence } from "@/src/hooks/hero/useHeroIntroSequence";
 
 export default function Hero() {
+    // Hero는 boot -> logo -> content가 순차적으로 이어지는 연출을 위해 전용 phase 훅 사용
     const phase = useHeroIntroSequence();
     const isContentVisible = phase >= 2;
     const contentAnimationClassName = isContentVisible
@@ -70,4 +71,3 @@ export default function Hero() {
         </Section>
     );
 }
-

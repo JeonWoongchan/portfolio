@@ -1,12 +1,16 @@
-﻿'use client'
+'use client'
 
-import {createContext, useContext} from 'react';
+import {createContext, useContext, useEffect} from 'react';
 import type {CSSProperties, ReactNode, RefObject} from 'react';
 import { useInView } from 'react-intersection-observer';
 import {cn} from '@/lib/utils';
 import SectionScrollAction from "@/src/components/common/SectionScrollAction";
 import {useRegisterSection} from '@/src/hooks/section/useRegisterSectionRef';
-import useSectionVisibility, {useSectionSnapState} from '@/src/hooks/section/useSectionVisibility';
+import useSectionVisibility, {
+    useCurrentSectionInView,
+    useSectionSnapState,
+} from '@/src/hooks/section/useSectionVisibility';
+import {useSectionStore} from '@/src/store/useSectionStore';
 import {SECTION_TONE_STYLE_MAP, type SectionTone} from "@/src/utils/sectionTone";
 import {useRevealStyle} from "@/src/hooks/ui/useRevealStyle";
 
@@ -70,9 +74,19 @@ export function Section({
     );
     const shouldObserveVisibility = Boolean(sectionKey);
     const isVisible = useSectionVisibility(sectionRef, visibilityThreshold, shouldObserveVisibility);
+    const isCurrentSectionInView = useCurrentSectionInView(sectionRef, 0.5, shouldObserveVisibility);
+    const setCurrentSectionKey = useSectionStore((state) => state.setCurrentSectionKey);
     // 동적 콘텐츠로 섹션 높이가 커진 경우 내부 스크롤이 막히지 않도록 스냅 상태를 조정한다.
     useSectionSnapState(sectionRef);
     const toneConfig = tone ? SECTION_TONE_STYLE_MAP[tone] : null;
+
+    useEffect(() => {
+        if (!sectionKey || !isCurrentSectionInView) {
+            return;
+        }
+
+        setCurrentSectionKey(sectionKey);
+    }, [isCurrentSectionInView, sectionKey, setCurrentSectionKey]);
 
     return (
         <SectionVisibilityContext.Provider value={{isVisible}}>
@@ -94,7 +108,6 @@ export function Section({
                         target={nextSection}
                         onAction={onNextAction}
                         direction="down"
-                        variant="hint"
                         className={slideDownClassName}
                     />
                 )}

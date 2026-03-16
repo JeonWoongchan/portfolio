@@ -1,23 +1,22 @@
 'use client';
 
-import { useEffect } from 'react';
-import { type HeroIntroPhase, useHeroIntroStore } from '@/src/store/useHeroIntroStore';
+import { useEffect, useState } from 'react';
 
 interface UseHeroIntroSequenceOptions {
     bootToLogoDelayMs?: number;
     logoToContentDelayMs?: number;
 }
 
-const BOOT_TO_LOGO_DELAY_MS = 2400;
-const LOGO_TO_CONTENT_DELAY_MS = 3600;
+const BOOT_TO_LOGO_DELAY_MS = 3000;
+export const LOGO_TO_CONTENT_DELAY_MS = 3600;
+
+type HeroIntroPhase = 0 | 1 | 2;
 
 export function useHeroIntroSequence({
     bootToLogoDelayMs = BOOT_TO_LOGO_DELAY_MS,
     logoToContentDelayMs = LOGO_TO_CONTENT_DELAY_MS,
 }: UseHeroIntroSequenceOptions = {}): HeroIntroPhase {
-    const phase = useHeroIntroStore((state) => state.phase);
-    const setPhase = useHeroIntroStore((state) => state.setPhase);
-    const resetPhase = useHeroIntroStore((state) => state.resetPhase);
+    const [phase, setPhase] = useState<HeroIntroPhase>(0);
 
     useEffect(() => {
         const bootToLogo = setTimeout(() => {
@@ -31,10 +30,9 @@ export function useHeroIntroSequence({
         return () => {
             clearTimeout(bootToLogo);
             clearTimeout(logoToContent);
-            resetPhase();
+            setPhase(0);
         };
-    }, [bootToLogoDelayMs, logoToContentDelayMs, resetPhase, setPhase]);
+    }, [bootToLogoDelayMs, logoToContentDelayMs]);
 
     return phase;
 }
-
