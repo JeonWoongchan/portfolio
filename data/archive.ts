@@ -86,20 +86,30 @@ export const ARCHIVE_DATA = [
                 periodStart: "2024.10",
                 periodEnd: "2024.10",
                 title: "JWT를 활용한 React 로그인 구현",
-                link: "https://velog.io/@jchan715/React-%EB%A6%AC%EC%95%A1%ED%8A%B8-%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EC%B2%98%EB%A6%ACJWT",
+                link: "https://velog.io/@jchan715/React-%EB%A6%`AC%EC%95%A1%ED%8A%B8-%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EC%B2%98%EB%A6%ACJWT",
                 description:
                     "JWT를 활용한 로그인 동작방식과 AccessToken, RefreshToken 관리 방안 기록",
                 tags: ["React", "JWT"],
             },
             {
                 id: 4,
-                periodStart: "2025.02",
-                periodEnd: "2025.02",
+                periodStart: "2026.02",
+                periodEnd: "2026.02",
                 title: "Props Drilling 개선 방향",
                 link: "https://velog.io/@jchan715/Props-Drilling-%EC%A4%84%EC%9D%B4%EA%B8%B0ContextZustandTanstack-Query",
                 description:
                     "포트폴리오 리뉴얼 프로젝트 중 상태 관리 기준에 맞는 Props Drilling 개선에 대해 고민한 내용을 기록",
                 tags: ["React", "State Management"],
+            },
+            {
+                id: 5,
+                periodStart: "2026.03",
+                periodEnd: "2026.03",
+                title: "SSR/SSG/ISR/CSR 렌더링 방식 선정",
+                link: "https://velog.io/@jchan715/Next.js-%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4-%EB%B0%B0%ED%8F%AC-%ED%9A%8C%EA%B3%A0-%EC%99%9C-SSG%EB%A5%BC-%EC%84%A0%ED%83%9D%ED%96%88%EC%9D%84%EA%B9%8C",
+                description:
+                    "포트폴리오 리뉴얼 프로젝트에서 페이지 성격에 따라 Next.js 렌더링 방식을 적용한 과정을 기록",
+                tags: ["Next.js", "SSR/SSG/ISR/CSR"],
             },
         ],
     },
