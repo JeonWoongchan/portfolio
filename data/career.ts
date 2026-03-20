@@ -88,7 +88,7 @@ export const CAREER_DATA = [
                     '분산된 AI 모델·학습 데이터 통합 관리를 위한 MLOps 도입 및 기획~배포 End-to-End 개발 경험',
                     'NAS-DB 데이터 동기화 정합성 문제 해결을 위한 SAGA 패턴 기반 보상 트랜잭션 설계',
                 ],
-                stack: ['JavaScript', 'Next.js', 'Nest.js', 'PostgreSQL', 'Tailwind CSS', 'Zustand', 'shadcn/ui', 'Docker', 'Storybook'],
+                stack: ['JavaScript', 'Next.js', 'Nest.js', 'PostgreSQL', 'Tailwind CSS', 'Zustand', 'Docker', 'Storybook'],
             },
         ],
     }
