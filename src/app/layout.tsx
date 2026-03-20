@@ -2,6 +2,7 @@ import type {Metadata} from "next";
 import type { ReactNode } from 'react';
 import "./globals.css";
 import Header from "@/src/components/header/Header";
+import ScrollSnapController from "@/src/components/common/ScrollSnapController";
 
 export const metadata: Metadata = {
     title: "전웅찬 포트폴리오 사이트",
@@ -21,8 +22,9 @@ export default function RootLayout({
     return (
         <html lang="ko">
         <body className="antialiased font-['Pretendard']">
-        <Header />
-        {children}
+            <ScrollSnapController/>
+            <Header />
+            {children}
         </body>
         </html>
     );
