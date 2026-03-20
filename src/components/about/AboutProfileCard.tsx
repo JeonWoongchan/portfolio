@@ -26,7 +26,7 @@ export default function AboutProfileCard() {
                     iconClassName="size-5"
                 />
                 <BodyText className={"lg:text-lg"}>{ABOUT_PROFILE_TEXT_DATA.name}</BodyText>
-                <SmallText className="mb-4 text-(--color-accent)">{ABOUT_PROFILE_TEXT_DATA.role}</SmallText>
+                <SmallText className="mb-2 text-(--color-accent)">{ABOUT_PROFILE_TEXT_DATA.role}</SmallText>
             </CardHeader>
             <CardContent className="self-center">
                 {ABOUT_PROFILE_TEXT_DATA.metaItems.map((metaItem) => {

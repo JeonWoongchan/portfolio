@@ -9,7 +9,7 @@ export default function TerminalLine({ text, delay }: TerminalLineProps) {
   const { displayed, started, isTyping } = useTypewriterText({
     text,
     startDelayMs: delay,
-    intervalMs: 30,
+    intervalMs: 15,
   });
 
   if (!started) {
@@ -23,4 +23,3 @@ export default function TerminalLine({ text, delay }: TerminalLineProps) {
     </div>
   );
 }
-

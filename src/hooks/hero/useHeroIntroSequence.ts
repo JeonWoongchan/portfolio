@@ -7,7 +7,7 @@ interface UseHeroIntroSequenceOptions {
     logoToContentDelayMs?: number;
 }
 
-const BOOT_TO_LOGO_DELAY_MS = 3000;
+const BOOT_TO_LOGO_DELAY_MS = 2500;
 export const LOGO_TO_CONTENT_DELAY_MS = 3600;
 
 type HeroIntroPhase = 0 | 1 | 2;
