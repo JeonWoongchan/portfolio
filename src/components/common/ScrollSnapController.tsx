@@ -12,8 +12,6 @@ export default function ScrollSnapController() {
             const timeDiff = now - lastTime;
             const speed = Math.abs(e.deltaY) / timeDiff; // 방향 무관하게 절댓값만
 
-            console.log('speed:', speed);
-
             if (speed > SPEED_THRESHOLD) {
                 document.documentElement.style.scrollSnapType = 'none';
             } else {
