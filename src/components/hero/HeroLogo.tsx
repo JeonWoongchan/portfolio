@@ -40,7 +40,7 @@ export default function HeroLogo({ visible }: HeroLogoProps) {
                     <div className="hero-logo-typing font-mono text-4xl font-bold tracking-wider text-(--color-accent) md:text-5xl">
                         <TypeIt
                             options={{
-                                speed: 120,
+                                speed: 100,
                                 cursor: true,
                                 cursorChar: "|",
                                 waitUntilVisible: false,
