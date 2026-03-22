@@ -13,7 +13,7 @@ export const CAREER_DATA = [
             {
                 title: '머신러닝 기반 교통 신호 최적화 대시보드',
                 periodStart: "2025.10",
-                periodEnd: "2025.12",
+                periodEnd: "2025.11",
                 roles: ['Frontend 개발'],
                 description:
                     '교차로의 실시간 차량 신호 데이터 및 최적화 알고리즘을 통한 신호 최적화 결과를 시각화하는 교통 관제 솔루션',
