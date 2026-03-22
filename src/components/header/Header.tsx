@@ -9,7 +9,7 @@ import BrandSignature from "@/src/components/common/BrandSignature";
 const CONTAINER_CLASSES =
     'flex items-center rounded-full border border-border/50 bg-(--color-navy) backdrop-blur-md transition-all duration-500 text-(--color-accent)'
 const HERO_SECTION_KEY = 'Hero'
-const HERO_FADE_DELAY_SECONDS = 5
+const HERO_FADE_DELAY_SECONDS = 4.5
 const DEFAULT_FADE_DELAY_SECONDS = 2
 
 export default function Header() {
