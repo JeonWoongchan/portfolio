@@ -4,7 +4,7 @@ export const CAREER_DATA = [
     {
         company: '유리네트웍스',
         periodStart: "2025.10",
-        periodEnd: "2025.12",
+        periodEnd: "2025.11",
         quote: '지능형 교통 관제 시스템(ITS) 관련 시스템을 개발하는 기업',
         team: 'ITS개발팀 · 프리랜서',
         badges: ['Frontend 개발'],
@@ -24,7 +24,7 @@ export const CAREER_DATA = [
                 stack: ['JavaScript', 'React', 'Redux Toolkit', 'TanStack Query', 'Docker'],
             },
         ],
-        isCurrent: true,
+        isCurrent: false,
     },
     {
         company: '글로벌브릿지',
@@ -44,7 +44,7 @@ export const CAREER_DATA = [
                     'AI 객체 검지 데이터를 고객 맞춤형 요구사항에 따라 시각화하는 범용 대시보드 솔루션',
                 highlights: [
                     '모노레포 도입을 통한 프로젝트별 공통 컴포넌트 평균 10개 정리로 개발 생산성 개선',
-                    'shadcn/ui 컴포넌트와 디자인 토큰 연동과 토큰 규격, 컴포넌트 사용 가이드 문서화를 통한 통한 디자인 시스템 구축',
+                    '디자인 토큰과 shadcn/ui 컴포넌트 연동, 토큰 규격 및 사용 가이드 문서화를 통해 디자인 시스템 구축',
                 ],
                 stack: ['TypeScript', 'Next.js', 'Turborepo', 'Tailwind CSS', 'Zustand', 'shadcn/ui', 'Docker'],
             },
@@ -54,9 +54,9 @@ export const CAREER_DATA = [
                 periodEnd: "2025.06",
                 roles: ['Frontend 개발'],
                 description:
-                    '교차로 내 차량과 보행자 정보 수집 및 분석하여 3D모델을 활용한 디지털트윈으로 표출하는 대시보드 솔루션',
+                    '교차로 내 차량과 보행자 정보 수집 및 분석하여 3D 모델을 활용한 디지털트윈으로 표출하는 대시보드 솔루션',
                 highlights: [
-                    'Cesium.js 기반 디지털트윈 3D모델 렌더링 구조 개선으로 초기 로딩 약 30초 → 1.5초 단축',
+                    'Cesium.js 기반 디지털트윈 3D 모델 렌더링 구조 개선으로 초기 로딩 약 30초 → 1.5초 단축',
                     '대용량 디지털트윈 리소스의 메모리 누수 구간을 개선하여 장시간 구동 시 메모리 사용량을 1.5GB → 500MB 미만으로 절감'
                 ],
                 stack: ['JavaScript', 'React', 'Redux Toolkit', 'CesiumJS'],
@@ -82,7 +82,7 @@ export const CAREER_DATA = [
                 description:
                     '모델 파일과 함께 학습 모델, 학습 클래스 등의 데이터를 통합 관리할 수 있는 AI 모델 관리 시스템',
                 highlights: [
-                    '분산된 AI 모델·학습 데이터 통합 관리를 위한 MLOps 도입 및 기획~배포 End-to-End 개발 경험',
+                    '분산된 AI 모델·학습 데이터 통합 관리를 위한 MLOps 도입 및 기획부터 배포까지 End-to-End 개발 경험',
                     'NAS-DB 데이터 동기화 정합성 문제 해결을 위한 보상 트랜잭션 로직 설계',
                 ],
                 stack: ['JavaScript', 'Next.js', 'Nest.js', 'PostgreSQL', 'Tailwind CSS', 'Zustand', 'Docker', 'Storybook'],
