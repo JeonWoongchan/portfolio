@@ -47,7 +47,7 @@ export const CAREER_DATA = [
                     'Monorepo 도입 후 프로젝트별 공통 컴포넌트 평균 10개를 재사용 가능한 구조로 정리해 신규 프로젝트 개발 기간 2주 단축',
                     '디자인 토큰과 shadcn/ui를 연동하고 토큰 규격 및 사용 가이드를 문서화해 디자인 시스템 구축',
                 ],
-                stack: ['TypeScript', 'Next.js', 'Turborepo', 'Tailwind CSS', 'Zustand', 'shadcn/ui'],
+                stack: ['TypeScript', 'Next.js', 'Turborepo', 'Tailwind CSS', 'Zustand', 'shadcn/ui', 'Docker'],
             },
             {
                 title: '교차로 시뮬레이션 3D 시각화 시스템',
