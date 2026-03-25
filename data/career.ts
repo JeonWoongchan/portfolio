@@ -6,7 +6,7 @@ export const CAREER_DATA = [
         periodStart: '2025.10',
         periodEnd: '2025.12',
         quote: '지능형 교통 시스템(ITS) 관련 솔루션을 개발하는 기업',
-        team: 'ITS개발팀 · 프리랜서',
+        team: 'ITS 개발팀 · 프리랜서',
         badges: ['Frontend 개발'],
         stack: ['JavaScript', 'React', 'Redux Toolkit', 'TanStack Query', 'Docker'],
         projects: [
@@ -18,7 +18,7 @@ export const CAREER_DATA = [
                 description:
                     '지역별 교통량과 신호 데이터를 기반으로, 신호 최적화 결과를 확인할 수 있는 시스템',
                 highlights: [
-                    '대용량 신호 데이터의 조회 전략 분리와 TanStack Query 캐싱 도입으로 초기 페이지 로딩 시간 5초 → 1초 미만 단축',
+                    '대용량 신호 데이터의 조회 전략 분리와 TanStack Query 캐싱 도입으로 초기 페이지 로딩 시간 10초 → 2초 미만 단축',
                     '로딩 지연 구간에 스켈레톤 UI를 적용해 사용자 체감 속도를 개선하고 고객사 사용성 테스트 통과에 기여',
                 ],
                 stack: ['JavaScript', 'React', 'Redux Toolkit', 'TanStack Query', 'Docker'],
@@ -50,9 +50,9 @@ export const CAREER_DATA = [
                 stack: ['TypeScript', 'Next.js', 'Turborepo', 'Tailwind CSS', 'Zustand', 'shadcn/ui', 'Docker'],
             },
             {
-                title: '교차로 시뮬레이션 3D 시각화 시스템',
+                title: '교차로 시뮬레이션 3D 시각화 대시보드',
                 periodStart: '2024.08',
-                periodEnd: '2025.06',
+                periodEnd: '2025.02',
                 roles: ['Frontend 개발'],
                 description:
                     '교차로별 도로, 차량, 보행자 등을 3D로 시각화해 교통 흐름을 직관적으로 확인할 수 있는 시스템',
