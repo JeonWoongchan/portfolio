@@ -38,7 +38,7 @@ export default function SkillsContent({ categories }: SkillsContentProps) {
             <div className="flex flex-col gap-4">
                 {filteredCategories.map((category, index) => (
                     <div
-                        key={category.key}
+                        key={`${selectedKey}-${category.key}`}
                         className={cn(revealClassName)}
                         style={getRevealStyle(ROW_BASE_DELAY_MS + index * ROW_STAGGER_DELAY_MS)}
                     >
@@ -49,4 +49,3 @@ export default function SkillsContent({ categories }: SkillsContentProps) {
         </div>
     );
 }
-
