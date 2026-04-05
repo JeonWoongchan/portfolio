@@ -9,6 +9,8 @@
         "lint": "eslint"
     },
     "dependencies": {
+        "@supabase/ssr": "^0.10.0",
+        "@supabase/supabase-js": "^2.101.1",
         "class-variance-authority": "^0.7.1",
         "clsx": "^2.1.1",
         "lucide-react": "^0.563.0",
@@ -22,6 +24,7 @@
         "tailwind-merge": "^3.4.0",
         "typeit-react": "^2.7.8",
         "vaul": "^1.1.2",
+        "zod": "^4.3.6",
         "zustand": "^5.0.11"
     },
     "devDependencies": {
