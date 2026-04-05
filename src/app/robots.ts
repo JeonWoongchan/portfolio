@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 // robots/sitemap에서 공통으로 사용할 기본 사이트 URL
-const DEFAULT_SITE_URL = "https://portfolio-2026.vercel.app";
+const DEFAULT_SITE_URL = "https://woongchan.vercel.app/";
 // 환경변수가 설정되면 해당 도메인을 우선 사용
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? DEFAULT_SITE_URL;
 

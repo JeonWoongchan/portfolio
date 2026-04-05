@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 // 운영/개발 환경 모두에서 재사용할 기본 사이트 URL
-const DEFAULT_SITE_URL = "https://portfolio-2026.vercel.app";
+const DEFAULT_SITE_URL = "https://woongchan.vercel.app/";
 // 배포 환경변수가 있으면 우선 사용하고, 없으면 기본값 사용
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? DEFAULT_SITE_URL;
 const HOME_CHANGE_FREQUENCY: MetadataRoute.Sitemap[number]["changeFrequency"] =

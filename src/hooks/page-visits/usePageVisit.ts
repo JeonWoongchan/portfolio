@@ -1,14 +1,13 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+
 import {
-    savePageVisit,
     getPageVisitCount,
-} from '@/src/lib/page-visits/pageVisitApi';
-import {
-    getOrCreateVisitorId,
-    getTodayDate,
-} from '@/src/lib/page-visits/visitorId';
+    savePageVisit,
+} from '@/src/apis/page-visit-api';
+import {getTodayDate} from "@/src/utils/getTodayDate";
+import {getOrCreateVisitorId} from "@/src/utils/getOrCreateVisitorId";
 
 export function usePageVisit() {
     const [count, setCount] = useState<number | null>(null);
@@ -34,14 +33,12 @@ export function usePageVisit() {
             setError(null);
 
             try {
-                // 방문자 수 저장
                 await savePageVisit({
                     visitorId,
                     visitedAt,
                     visitedDate,
                 });
 
-                // 방문자 수 조회
                 const nextCount = await getPageVisitCount();
 
                 if (isCancelled) {

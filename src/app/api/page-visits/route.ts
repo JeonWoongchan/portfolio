@@ -1,48 +1,11 @@
 import { NextResponse } from "next/server";
-import { ZodError } from "zod";
 
+import { getErrorResponse } from "@/src/server/common/error-response";
 import {
     createOrGetPageVisit,
     getPageVisitCountByDate,
-} from "@/src/services/page-visits.service";
-import {
-    pageVisitPayloadSchema,
-} from "@/src/validators/page-visits";
-
-function getErrorResponse(error: unknown, defaultMessage: string) {
-    if (error instanceof ZodError) {
-        return NextResponse.json(
-            {
-                error: defaultMessage,
-                message: error.issues[0]?.message ?? "요청 검증에 실패했습니다.",
-            },
-            {
-                status: 400,
-            }
-        );
-    }
-
-    const message =
-        error instanceof Error
-            ? error.message
-            : "알 수 없는 오류가 발생했습니다.";
-    const status =
-        message.includes("필수") ||
-        message.includes("형식") ||
-        message.includes("필요")
-            ? 400
-            : 500;
-
-    return NextResponse.json(
-        {
-            error: defaultMessage,
-            message,
-        },
-        {
-            status,
-        }
-    );
-}
+} from "@/src/server/page-visit/page-visit.service";
+import { pageVisitPayloadSchema } from "@/src/validators/page-visits";
 
 export async function GET() {
     try {
@@ -81,3 +44,4 @@ export async function POST(request: Request) {
         return getErrorResponse(error, "page_visits 생성에 실패했습니다.");
     }
 }
+
