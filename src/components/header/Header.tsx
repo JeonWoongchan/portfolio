@@ -3,7 +3,6 @@
 import { useState } from 'react'
 import { useScroll } from '@/src/hooks/scroll/useScroll'
 import { useSectionStore } from '@/src/store/useSectionStore'
-import PageVisitBadge from "@/src/components/header/PageVisitBadge";
 import BrandSignature from "@/src/components/common/BrandSignature";
 import ExpandedMenu from "@/src/components/header/ExpandedMenu";
 
@@ -41,7 +40,6 @@ export default function Header() {
                             <ExpandedMenu onMenuClickAction={scrollTo} />
                         )}
                     </div>
-                    <PageVisitBadge />
                 </nav>
             </div>
         </header>

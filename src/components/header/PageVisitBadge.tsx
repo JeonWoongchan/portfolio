@@ -10,8 +10,9 @@ export default function PageVisitBadge() {
     }
 
     return (
-        <span className="whitespace-nowrap px-1 text-xs text-white/70 tabular-nums">
-            {isLoading || count === null ? '...' : `${count} visitors`}
+        <span className="whitespace-nowrap px-2 py-0.5 text-xs text-white/70 tabular-nums border rounded-lg">
+            <span className="inline-block h-2 w-2 mr-1 rounded-full bg-(--color-highlight)" />
+            {isLoading || count === null ? '0 visitors' : `${count.toLocaleString()} visitors`}
         </span>
     );
 }
