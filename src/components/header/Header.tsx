@@ -3,8 +3,8 @@
 import { useState } from 'react'
 import { useScroll } from '@/src/hooks/scroll/useScroll'
 import { useSectionStore } from '@/src/store/useSectionStore'
-import ExpandedMenu from "@/src/components/header/headerMenu";
 import BrandSignature from "@/src/components/common/BrandSignature";
+import ExpandedMenu from "@/src/components/header/ExpandedMenu";
 
 const CONTAINER_CLASSES =
     'flex items-center rounded-full border border-border/50 bg-(--color-navy) backdrop-blur-md transition-all duration-500 text-(--color-accent)'
@@ -25,21 +25,23 @@ export default function Header() {
 
     return (
         <header
-            className={`fixed top-0 left-0 right-0 z-5 flex h-20 select-none items-center justify-center fade-in ${headerFadeDelayClassName}`}
+            className={`fixed top-0 left-0 right-0 z-5 h-20 select-none fade-in ${headerFadeDelayClassName}`}
         >
-            <nav className="flex items-center justify-center py-4">
-                <div
-                    className={CONTAINER_CLASSES}
-                    onMouseEnter={() => setIsMenuOpen(true)}
-                    onMouseLeave={() => setIsMenuOpen(false)}
-                >
-                    {showCollapsedBrand && currentSectionKey === HERO_SECTION_KEY ? (
-                        <CollapsedBrand/>
-                    ) : (
-                        <ExpandedMenu onMenuClickAction={scrollTo} />
-                    )}
-                </div>
-            </nav>
+            <div className="relative h-full w-full">
+                <nav className="flex h-full items-center justify-center py-4">
+                    <div
+                        className={CONTAINER_CLASSES}
+                        onMouseEnter={() => setIsMenuOpen(true)}
+                        onMouseLeave={() => setIsMenuOpen(false)}
+                    >
+                        {showCollapsedBrand && currentSectionKey === HERO_SECTION_KEY ? (
+                            <CollapsedBrand/>
+                        ) : (
+                            <ExpandedMenu onMenuClickAction={scrollTo} />
+                        )}
+                    </div>
+                </nav>
+            </div>
         </header>
     )
 }

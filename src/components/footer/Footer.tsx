@@ -10,6 +10,7 @@ import SectionScrollAction from "@/src/components/common/SectionScrollAction";
 import SocialStackLinks from "@/src/components/common/SocialStackLinks";
 import { useSectionStore } from "@/src/store/useSectionStore";
 import { SECTION_TONE_STYLE_MAP } from "@/src/utils/sectionTone";
+import PageVisitBadge from "@/src/components/header/PageVisitBadge";
 
 interface FooterProps {
     open: boolean;
@@ -52,9 +53,12 @@ export default function Footer({ open, onOpenChange }: FooterProps) {
                         <SocialStackLinks className="self-end max-md:self-center" clickable={true}/>
                     </div>
                     <div className="flex w-full items-end justify-between border-t border-(--color-border) pt-4">
-                        <SectionDescription className="text-sm opacity-70">
-                            2026 Jeon Woongchan. All rights reserved.
-                        </SectionDescription>
+                        <div className="flex items-end gap-2 py-2">
+                            <SectionDescription className="text-sm opacity-70">
+                                2026 Jeon Woongchan. All rights reserved.
+                            </SectionDescription>
+                            <PageVisitBadge/>
+                        </div>
                         <SectionScrollAction
                             direction="up"
                             label="Back to top"
