@@ -98,7 +98,7 @@ export const ARCHIVE_DATA = [
                 title: "Props Drilling 개선 방향",
                 link: "https://velog.io/@jchan715/Props-Drilling-%EC%A4%84%EC%9D%B4%EA%B8%B0ContextZustandTanstack-Query",
                 description:
-                    "포트폴리오 리뉴얼 프로젝트 중 상태 관리 기준에 맞는 Props Drilling 개선에 대해 고민한 내용을 기록",
+                    "포트폴리오 리뉴얼 프로젝트 중 상태 관리 기준에 맞는 Props Drilling 개선에 대한 고민",
                 tags: ["React", "State Management"],
             },
             {
@@ -108,7 +108,7 @@ export const ARCHIVE_DATA = [
                 title: "SSR/SSG/ISR/CSR 렌더링 방식 선정",
                 link: "https://velog.io/@jchan715/Next.js-%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4-%EB%B0%B0%ED%8F%AC-%ED%9A%8C%EA%B3%A0-%EC%99%9C-SSG%EB%A5%BC-%EC%84%A0%ED%83%9D%ED%96%88%EC%9D%84%EA%B9%8C",
                 description:
-                    "포트폴리오 리뉴얼 프로젝트에서 페이지 성격에 따라 Next.js 렌더링 방식을 적용한 과정을 기록",
+                    "포트폴리오 리뉴얼 프로젝트에서 페이지 성격에 따라 Next.js 렌더링 방식을 적용한 과정",
                 tags: ["Next.js", "SSR/SSG/ISR/CSR"],
             },
             {
@@ -118,8 +118,18 @@ export const ARCHIVE_DATA = [
                 title: "프론트엔드 성능(FCP, LCP) 측정 방법과 최적화 방안",
                 link: "https://velog.io/@jchan715/%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C-%EC%84%B1%EB%8A%A5FCP-LCP-%EC%B8%A1%EC%A0%95-%EB%B0%8F-%EC%B5%9C%EC%A0%81%ED%99%94-%EB%B0%A9%EC%95%88",
                 description:
-                    "Chrome DevTools Performance 탭을 활용해 FCP와 LCP를 측정하고 최적화 방안을 정리",
+                    "Chrome DevTools Performance 탭을 활용해 FCP와 LCP를 측정하고 최적화 방안",
                 tags: ["Performance", "FCP", "LCP"],
+            },
+            {
+                id: 7,
+                periodStart: "2026.04",
+                periodEnd: "2026.04",
+                title: "모노레포와 디자인 시스템 도입기(feat. AI Context 활용까지)",
+                link: "https://velog.io/@jchan715/%EB%AA%A8%EB%85%B8%EB%A0%88%ED%8F%AC%EC%99%80-%EB%94%94%EC%9E%90%EC%9D%B8-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EB%8F%84%EC%9E%85%EA%B8%B0feat.-AI-Context-%ED%99%9C%EC%9A%A9%EA%B9%8C%EC%A7%80",
+                description:
+                    "실무에서 모노레포와 디자인 시스템을 설계하고 적용한 경험을 기록",
+                tags: ["Monorepo", "Design System", "실무 경험"],
             },
         ],
     },
