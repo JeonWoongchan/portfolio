@@ -1,5 +1,6 @@
 const VISITOR_STORAGE_KEY = "portfolio-visitor-id";
 
+// localStorage에 방문자 ID 기록 또는 조회
 export function getOrCreateVisitorId() {
     const existingVisitorId = window.localStorage.getItem(VISITOR_STORAGE_KEY);
 

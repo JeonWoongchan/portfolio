@@ -1,6 +1,8 @@
 import type {Metadata} from "next";
 import type { ReactNode } from 'react';
 import "./globals.css";
+import AppProviders from "@/src/components/common/AppProviders";
+import PageVisitSync from "@/src/components/common/PageVisitSync";
 import Header from "@/src/components/header/Header";
 import ScrollSnapController from "@/src/components/common/ScrollSnapController";
 
@@ -22,9 +24,12 @@ export default function RootLayout({
     return (
         <html lang="ko">
         <body className="antialiased font-['Pretendard']">
-            <ScrollSnapController/>
-            <Header />
-            {children}
+            <AppProviders>
+                <PageVisitSync />
+                <ScrollSnapController/>
+                <Header />
+                {children}
+            </AppProviders>
         </body>
         </html>
     );
