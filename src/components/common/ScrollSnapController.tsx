@@ -6,7 +6,7 @@ const DESKTOP_MEDIA_QUERY = '(min-width: 768px)';
 
 export default function ScrollSnapController() {
     useEffect(() => {
-        const SPEED_THRESHOLD = 4;
+        const SPEED_THRESHOLD = 3;
         const mediaQuery = window.matchMedia(DESKTOP_MEDIA_QUERY);
         let lastTime = 0;
 
@@ -23,8 +23,9 @@ export default function ScrollSnapController() {
             const now = Date.now();
             const timeDiff = now - lastTime;
             const speed = Math.abs(e.deltaY) / timeDiff;
+            const isScrollingUp = e.deltaY < 0;
 
-            if (speed > SPEED_THRESHOLD) {
+            if (isScrollingUp && speed > SPEED_THRESHOLD) {
                 document.documentElement.style.scrollSnapType = 'none';
             } else {
                 resetScrollSnapType();

@@ -18,6 +18,8 @@ const DEFAULT_HIDDEN_CLASS_NAME = "opacity-0";
 const DEFAULT_VISIBLE_CLASS_NAME = "fade-in-up";
 
 // 섹션 가시성 상태에 맞춰 공통 애니메이션 클래스/지연 스타일을 제공하는 훅
+// SectionBody에 애니메이션을 일괄 적용하지 않은 이유는,
+// 타이틀과 설명 등 헤더 내부 요소별로 다른 애니메이션과 delay를 주기 위함임.
 export function useRevealStyle({
     isVisible,
     hiddenClassName = DEFAULT_HIDDEN_CLASS_NAME,

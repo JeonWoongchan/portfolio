@@ -1,11 +1,11 @@
 import type {
     CreatePageVisitRequest,
-    PageVisitCountResponse,
+    PageVisitSyncResponse,
 } from "@/src/types/page-visit";
 
 const PAGE_VISITS_ENDPOINT = "/api/page-visits";
 
-export async function savePageVisit(payload: CreatePageVisitRequest) {
+export async function syncPageVisit(payload: CreatePageVisitRequest) {
     const response = await fetch(PAGE_VISITS_ENDPOINT, {
         body: JSON.stringify(payload),
         headers: {
@@ -15,18 +15,10 @@ export async function savePageVisit(payload: CreatePageVisitRequest) {
     });
 
     if (!response.ok) {
-        throw new Error("방문 기록 요청에 실패했습니다.");
-    }
-}
-
-export async function getPageVisitCount() {
-    const response = await fetch(PAGE_VISITS_ENDPOINT);
-
-    if (!response.ok) {
-        throw new Error("방문자 수 조회 요청에 실패했습니다.");
+        throw new Error("방문자 동기화 요청에 실패했습니다.");
     }
 
-    const result = (await response.json()) as PageVisitCountResponse;
+    const result = (await response.json()) as PageVisitSyncResponse;
 
-    return result.data.count;
+    return result.data;
 }

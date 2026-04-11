@@ -6,8 +6,8 @@ import { createSupabaseClient } from "@/src/server/supabase/client";
 
 const TABLE_NAME = "page_visits";
 
-// 전체 방문 수를 조회
-export async function getPageVisitCountByDate() {
+// 누적 방문 기록 수 조회
+export async function getPageVisitCount() {
     const supabase = createSupabaseClient();
     const { count, error } = await supabase
         .from(TABLE_NAME)
@@ -23,7 +23,7 @@ export async function getPageVisitCountByDate() {
     return count ?? 0;
 }
 
-// 방문자와 날짜 기준으로 기존 방문 기록을 조회
+// 해당 visitorId와 날짜의 방문 기록 조회
 export async function getPageVisitByVisitorAndDate(params: {
     visitorId: string;
     visitedDate: string;
@@ -46,7 +46,7 @@ export async function getPageVisitByVisitorAndDate(params: {
     return data;
 }
 
-// 기존 방문 기록을 재사용하거나 없으면 새로 생성
+// 방문 기록이 없으면 생성하고, 있으면 기존 기록 반환
 export async function createOrGetPageVisit(payload: {
     visitorId: PageVisitPayload["visitorId"];
     visitedAt: PageVisitPayload["visitedAt"];
@@ -80,4 +80,20 @@ export async function createOrGetPageVisit(payload: {
     }
 
     return data;
+}
+
+//  방문 기록을 동기화한 뒤 누적 방문 기록 수 조회
+export async function syncPageVisitAndGetCount(payload: {
+    visitorId: PageVisitPayload["visitorId"];
+    visitedAt: PageVisitPayload["visitedAt"];
+    visitedDate: PageVisitPayload["visitedDate"];
+}) {
+    await createOrGetPageVisit(payload);
+
+    const count = await getPageVisitCount();
+
+    return {
+        count,
+        hasVisitedToday: true,
+    };
 }
