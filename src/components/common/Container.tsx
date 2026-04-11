@@ -12,7 +12,6 @@ import useSectionVisibility, {
 } from '@/src/hooks/section/useSectionVisibility';
 import {useSectionStore} from '@/src/store/useSectionStore';
 import {SECTION_TONE_STYLE_MAP, type SectionTone} from "@/src/utils/sectionTone";
-import {useRevealStyle} from "@/src/hooks/ui/useRevealStyle";
 
 interface ContainerProps {
     children: ReactNode;
@@ -124,17 +123,15 @@ export function SectionHeader({
         threshold: 0.5,
         triggerOnce: true,
     });
-    const isVisible = inView;
-    const { revealClassName, getRevealStyle } = useRevealStyle({ isVisible });
 
     return (
         <div
             ref={headerRef}
             className={cn(
-                'relative flex flex-col items-center gap-3 p-4 mb-6',
-                className, revealClassName
+                'relative flex flex-col items-center gap-3 p-4 mb-6 transition-opacity duration-700',
+                inView ? 'opacity-1 fade-in-down' : 'opacity-0',
+                className
             )}
-            style={getRevealStyle(100)}
         >
             {children}
         </div>
