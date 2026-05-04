@@ -5,7 +5,7 @@ import CareerContent from '@/src/components/career/CareerContent';
 
 export default function Career() {
     return (
-        <Section sectionKey={'Career'} nextSection={'Archive'} tone="navyLight">
+        <Section sectionKey={'Career'} nextSection={'Archive'} tone="navy">
             <SectionHeader>
                 <SectionTitle>Career</SectionTitle>
                 <SectionDescription>다양한 업무와 프로젝트를 통해 경험과 노하우를 쌓고 있습니다.</SectionDescription>
