@@ -3,8 +3,6 @@ import type { ReactNode } from 'react';
 import "./globals.css";
 import AppProviders from "@/src/components/common/AppProviders";
 import PageVisitSync from "@/src/components/common/PageVisitSync";
-import Header from "@/src/components/header/Header";
-import ScrollSnapController from "@/src/components/common/ScrollSnapController";
 
 export const metadata: Metadata = {
     title: "전웅찬 포트폴리오 사이트",
@@ -26,8 +24,6 @@ export default function RootLayout({
         <body className="antialiased font-['Pretendard']">
             <AppProviders>
                 <PageVisitSync />
-                <ScrollSnapController/>
-                <Header />
                 {children}
             </AppProviders>
         </body>
