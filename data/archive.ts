@@ -55,6 +55,16 @@ export const ARCHIVE_DATA = [
                     "프론트엔드 개발자 경력 소개를 위한 포트폴리오 사이트 리뉴얼 프로젝트",
                 tags: ["TypeScript", "Next.js", "SSG"],
             },
+            {
+                id: 6,
+                periodStart: "2026.04",
+                periodEnd: "2026.05",
+                title: "Open Issue Map",
+                link: "https://github.com/JeonWoongchan/open-issue-map",
+                description:
+                    "GitHub 계정으로 로그인하고 간단한 설문에 답하면, 사용자 수준과 시간에 맞는 오픈소스 이슈를 추천해주는 서비스",
+                tags: ["TypeScript", "Next.js", "Live Service"],
+            },
         ],
     },
     {
