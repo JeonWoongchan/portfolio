@@ -29,7 +29,7 @@ export default function Archive() {
             <Section
                 sectionKey={"Archive"}
                 onNextAction={handleOpenDrawer}
-                tone="navy"
+                tone="navyLight"
             >
                 <SectionHeader>
                     <SectionTitle>Archive</SectionTitle>
