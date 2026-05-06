@@ -5,6 +5,7 @@ import Career from "@/src/components/career/Career";
 import Archive from "@/src/components/archive/Archive";
 import Header from "@/src/components/header/Header";
 import ScrollSnapController from "@/src/components/common/ScrollSnapController";
+import LiveService from "@/src/components/live-service/LiveService";
 
 // TODO: 블로그 - Tailwind 유지보수 개선(토큰화, 반응형 표준화, 버튼 폭 정책) 내용을 회고로 작성한다.
 export default function App() {
@@ -16,8 +17,9 @@ export default function App() {
                 <Hero />
                 <About />
                 <Skills />
-                <Archive />
+                <LiveService />
                 <Career />
+                <Archive />
             </main>
         </>
     );

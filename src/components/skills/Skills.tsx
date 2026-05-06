@@ -9,7 +9,7 @@ export default function Skills() {
     return (
         <Section
             sectionKey={"Skills"}
-            nextSection={"Career"}
+            nextSection={"LiveService"}
             tone="navy"
         >
             <SectionHeader>

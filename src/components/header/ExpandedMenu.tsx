@@ -4,7 +4,13 @@ import {cn} from "@/lib/utils";
 import {VerticalDivider} from "@/src/components/common/VerticalDivider";
 import { BrandLogo } from "@/src/components/common/BrandLogo";
 
-const MENU_LIST = ['About', 'Skills', 'Career', 'Archive'] as const
+const MENU_LIST = [
+    { label: "About", sectionKey: "About" },
+    { label: "Skills", sectionKey: "Skills" },
+    { label: "Service", sectionKey: "LiveService" },
+    { label: "Career", sectionKey: "Career" },
+    { label: "Archive", sectionKey: "Archive" },
+] as const
 const MENU_BUTTON_CLASSES = 'px-1 py-1 md:px-3 md:py-1.5 text-sm md:text-md cursor-pointer hover:bg-(--color-gray) hover:rounded-full text-white'
 
 type ExpandedMenuProps = {
@@ -29,7 +35,7 @@ export default function ExpandedMenu({ onMenuClickAction }: ExpandedMenuProps) {
             </button>
             <VerticalDivider className="mx-0 bg-border/60" />
             {MENU_LIST.map((menu) => (
-                <MenuButton key={menu} menu={menu} onClick={onMenuClickAction} />
+                <MenuButton key={menu.sectionKey} menu={menu} onClick={onMenuClickAction} />
             ))}
         </div>
     )
@@ -40,9 +46,9 @@ function MenuButton({ menu, onClick }: MenuButtonProps) {
         <button
             type="button"
             className={cn(MENU_BUTTON_CLASSES)}
-            onClick={() => onClick(menu)}
+            onClick={() => onClick(menu.sectionKey)}
         >
-            {menu}
+            {menu.label}
         </button>
     )
 }

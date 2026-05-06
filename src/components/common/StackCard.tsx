@@ -11,7 +11,12 @@ interface StackCardProps {
     tooltipSide?: "top" | "right" | "bottom" | "left";
 }
 
-export default function StackCard({stackName, compact = false, imageClassName, tooltipSide = "bottom"}: StackCardProps) {
+export default function StackCard({
+    stackName,
+    compact = false,
+    imageClassName,
+    tooltipSide = "bottom"
+}: StackCardProps) {
     const stack = stackMeta[stackName] ?? {img: "/placeholder.svg", color: "#ffffff"};
 
     return (
