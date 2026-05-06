@@ -24,13 +24,16 @@ const cardVariants = cva(
 )
 
 function Card({
+    as: Comp = "div",
     className,
     variant = "default",
     interaction = "static",
     ...props
-}: React.ComponentProps<"div"> & VariantProps<typeof cardVariants>) {
+}: React.ComponentProps<"div"> & VariantProps<typeof cardVariants> & {
+    as?: React.ElementType
+}) {
     return (
-        <div
+        <Comp
             data-slot="card"
             className={cn(cardVariants({ variant, interaction, className }))}
             {...props}

@@ -8,6 +8,8 @@ export type StackName =
     | "Git"
     | "GitHub"
     | "Vercel"
+    | "Neon"
+    | "Cloudflare"
     | "VS Code"
     | "IntelliJ IDEA"
     | "Redux Toolkit"
@@ -71,8 +73,16 @@ export const stackMeta: Record<StackName, StackMeta> = {
     },
 
     Vercel: {
-    img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg",
-    color: "#ffffff",
+        img: "/vercel.svg",
+        color: "#000000",
+    },
+    Neon: {
+        img: "https://avatars.githubusercontent.com/u/77690634?s=200&v=4",
+        color: "#00e599",
+    },
+    Cloudflare: {
+        img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cloudflare/cloudflare-original.svg",
+        color: "#f38020",
     },
     "VS Code": {
         img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
