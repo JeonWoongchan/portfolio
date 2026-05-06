@@ -18,7 +18,6 @@
 ![메인(Hero)](./docs/images/hero.png)
 
 - 목적: 첫 인상 전달, 개발자 브랜딩, 인트로 애니메이션
-- 구현: `useHeroIntroSequence` 훅으로 단계(phase) 기반 UI 전환 관리
 - 관련 코드:
   - `src/components/hero/*`
   - `src/hooks/hero/useHeroIntroSequence.ts`
@@ -27,7 +26,6 @@
 ![소개(About)](./docs/images/about.png)
 
 - 목적: 개발 성향, 협업 방식, 핵심 강점 소개
-- 구현: `data/about.ts`의 정적 데이터 기반 카드 렌더링
 - 관련 코드:
   - `src/components/about/*`
   - `data/about.ts`
@@ -36,34 +34,40 @@
 ![기술 스택(Skills)](./docs/images/skills.png)
 
 - 목적: 카테고리별 기술 스택(Frontend/Library/DevOps/Backend) 전달
-- 구현: `data/skills.ts` 데이터 중심 렌더링 + 공통 카드 컴포넌트 재사용
 - 관련 코드:
   - `src/components/skills/*`
   - `data/skills.ts`
 
-### 4) Career
+### 4) Service
+![기술 스택(Skills)](./docs/images/service.png)
+
+- 목적: 서비스 관점의 프론트엔드 역량을 보여주기 위해 실제 운영 중인 서비스를 소개
+- 관련 코드:
+  - `src/components/live-service/*`
+  - `data/liveService.ts`
+  - `src/types/liveService.ts`
+  - `components/ui/carousel.tsx`
+
+### 5) Career
 ![경력(Career)](./docs/images/career.png)
 
 - 목적: 회사/프로젝트 단위 경력과 성과 하이라이트 전달
-- 구현: `data/career.ts` 구조화 데이터(`period`, `highlights`, `stack`) 기반 카드 조합
 - 관련 코드:
   - `src/components/career/*`
   - `data/career.ts`
 
-### 5) Archive
+### 6) Archive
 ![아카이브(Archive)](./docs/images/archive.png)
 
 - 목적: 프로젝트/블로그 이력 아카이브
-- 구현: 카테고리 필터 + 링크 리스트 UI
 - 관련 코드:
   - `src/components/archive/*`
   - `data/archive.ts`
 
-### 6) Footer
+### 7) Footer
 ![푸터(Footer)](./docs/images/footer.png)
 
 - 목적: 사이트 하단에서 연락 채널, 저작권, 보조 내비게이션 정보를 명확히 제공
-- 구현: 푸터 전용 컴포넌트에서 링크 그룹/카피라이트/정책 링크를 일관된 레이아웃으로 구성
 - 관련 코드:
     - `src/components/footer/*`
     - `src/components/common/*`
@@ -75,7 +79,7 @@
 ├─ src/
 │  ├─ app/                  # App Router 엔트리
 │  ├─ components/
-│  │  ├─ hero/about/skills/career/archive
+│  │  ├─ hero/about/skills/live-service/career/archive
 │  │  └─ common
 │  ├─ hooks/                # UI/스크롤/섹션 관련 커스텀 훅
 │  ├─ store/                # Zustand 전역 상태
@@ -85,5 +89,4 @@
 ├─ components/ui/           # 공통 UI 프리미티브
 └─ public/                  # 정적 에셋
 ```
-
 
