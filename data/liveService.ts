@@ -8,7 +8,7 @@ const LIVE_SERVICE_DATA = {
         "오픈소스에 기여하고 싶지만 시작점을 찾기 어려운 사용자를 위해 추천 이슈 탐색, 관심 이슈 저장, PR 활동 확인 흐름을 한 화면에서 관리하도록 설계했습니다.",
     images: [
         {
-            src: "/images/open-issue-map/login.png",
+            src: "/images/open-issue-map/landing.png",
             alt: "Open Issue Map 로그인 화면",
             title: "GitHub OAuth 진입",
         },
